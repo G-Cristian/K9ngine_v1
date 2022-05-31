@@ -1,0 +1,49 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+using System.Drawing;
+using System.IO;
+
+namespace K9ngine_v1_editor
+{
+    public class Texture : BaseAsset
+    {
+        public enum FormatEnum { RGB24, ARGB32 };
+        [Serializable]
+        public class TextureMetadata
+        {
+            public Int32 Guid { get; set; }
+            public String Path { get; set; }
+            public uint Version { get; set; }
+            public FormatEnum Format { get; set; }
+            public bool GammaCorrect { get; set; }
+
+            public TextureMetadata()
+            {
+
+            }
+            public TextureMetadata(Int32 guid, String path, uint version, FormatEnum format, bool gammaCorrect)
+            {
+                Guid = guid;
+                Path = path;
+                Version = version;
+                Format = format;
+                GammaCorrect = gammaCorrect;
+            }
+        }
+        public override int Guid { get => Metadata != null ? Metadata.Guid : 0; set { if (Metadata != null) { Metadata.Guid = value; } } }
+
+        public override string Name { get => Metadata != null ? Path.GetFileNameWithoutExtension(Metadata.Path) : string.Empty; set { if (Metadata != null) { Metadata.Path = value;} } }
+        public Image Data { get; private set; }
+        public TextureMetadata Metadata { get; private set; }
+
+        public Texture(Image data, TextureMetadata metadata)
+        {
+            Data = data;
+            Metadata = metadata;
+        }
+    }
+}
