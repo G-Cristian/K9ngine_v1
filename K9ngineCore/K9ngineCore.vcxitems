@@ -15,6 +15,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)Handle.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Hasher.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)K9Debug.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Path.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)SingleResourceManager.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Path.cpp" />
   </ItemGroup>
 </Project>
