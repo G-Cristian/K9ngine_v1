@@ -93,6 +93,7 @@ namespace K9ngineCore {
 			friend class Handle<T>;
 		public:
 			typedef T ValueType;
+			static const Handle<T> NullHandle;
 
 			HandleTable(size_t size);
 			HandleTable(const HandleTable<T>&) = delete;
@@ -146,13 +147,15 @@ namespace K9ngineCore {
 
 		template<typename T>
 		bool Handle<T>::isValid() const {
-			K9ASSERT(_pHandleTable != nullptr);
-			return _pHandleTable->isValid(_uid, _index);
+			return _pHandleTable != nullptr && _pHandleTable->isValid(_uid, _index);
 		}
 
 		/****************************************/
 		/****** HANDLE TABLE DEFINITIONS ********/
 		/****************************************/
+
+		template<typename T>
+		const Handle<T> HandleTable<T>::NullHandle(nullptr, (uint64_t)-1, (size_t)-1);
 
 		template<typename T>
 		HandleTable<T>::HandleTable(size_t size) {

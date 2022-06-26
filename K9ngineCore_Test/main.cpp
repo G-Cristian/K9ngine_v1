@@ -32,6 +32,7 @@ bool getHandle();
 bool getValid();
 bool getInvalid();
 bool starOperator();
+bool nullHandleIsInvalid();
 
 /******** PATH TESTS ***********/
 bool getDirectoryEmptyString();
@@ -70,6 +71,8 @@ int main(int argc, char** argv) {
 	EXEC_TEST(getValid, success, fail, total);
 	EXEC_TEST(getInvalid, success, fail, total);
 	EXEC_TEST(starOperator, success, fail, total);
+	EXEC_TEST(nullHandleIsInvalid, success, fail, total);
+
 	/********* PATH TESTS *************/
 	EXEC_TEST(getDirectoryEmptyString, success, fail, total);
 	EXEC_TEST(getDirectoryOnlyFileName, success, fail, total);
@@ -181,6 +184,13 @@ bool starOperator() {
 	Handle<int> handle2 = table.getHandle(h2);
 
 	return *handle1 == 1 && *handle2 == 2;
+}
+
+bool nullHandleIsInvalid() {
+	using namespace K9ngineCore::Memory;
+	Handle<int> nullHandle = HandleTable<int>::NullHandle;
+
+	return !nullHandle.isValid();
 }
 
 bool getDirectoryEmptyString() {
