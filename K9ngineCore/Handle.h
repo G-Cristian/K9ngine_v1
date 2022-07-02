@@ -103,7 +103,7 @@ namespace K9ngineCore {
 			HandleTable& operator=(HandleTable<T>&&) noexcept = delete;
 
 			bool isValid(uint64_t uid, size_t index) const {
-				K9ASSERT(index < _elements.size());
+				K9ASSERT(index < _elements.size(), "HandleTable::isValid, index out of range");
 				return (_elements[index].uid == uid && _elements[index].value != nullptr);
 			}
 
@@ -112,7 +112,7 @@ namespace K9ngineCore {
 			Handle<T> getHandle(size_t index);
 		private:
 			T* getElementValue(size_t index) {
-				K9ASSERT(index < _elements.size());
+				K9ASSERT(index < _elements.size(), "HandleTable::getElementValue, index out of range");
 				return _elements[index].value;
 			}
 
@@ -135,13 +135,13 @@ namespace K9ngineCore {
 		
 		template<typename T>
 		inline T& Handle<T>::operator*() {
-			K9ASSERT(isValid());
+			K9ASSERT(isValid(), "Handle<T>::operator*, handle not valid");
 			return *(_pHandleTable->getElementValue(_index));
 		}
 
 		template<typename T>
 		inline T* Handle<T>::operator->() {
-			K9ASSERT(isValid());
+			K9ASSERT(isValid(), "Handle<T>::operator->, handle not valid");
 			return _pHandleTable->getElementValue(_index);
 		}
 
@@ -169,8 +169,8 @@ namespace K9ngineCore {
 
 		template<typename T>
 		size_t HandleTable<T>::createHandle(uint64_t uid, T* value) {
-			K9ASSERT(_nextFreeElement != InvalidIndex && _nextFreeElement < _elements.size());
-			K9ASSERT(_elements[_nextFreeElement].value == nullptr);
+			K9ASSERT(_nextFreeElement != InvalidIndex && _nextFreeElement < _elements.size(), "HandleTable<T>::createHandle, no more space");
+			K9ASSERT(_elements[_nextFreeElement].value == nullptr, "HandleTable<T>::createHandle, element must be freed before reassigning");
 
 			uint64_t newElementIndex = _nextFreeElement;
 
@@ -184,7 +184,7 @@ namespace K9ngineCore {
 
 		template<typename T>
 		void HandleTable<T>::deleteHandle(size_t index) {
-			K9ASSERT(index < _elements.size());
+			K9ASSERT(index < _elements.size(), "HandleTable<T>::deleteHandle, index out of range");
 
 			HandleElement<T>& element = _elements[index];
 
@@ -200,7 +200,7 @@ namespace K9ngineCore {
 
 		template<typename T>
 		Handle<T> HandleTable<T>::getHandle(size_t index) {
-			K9ASSERT(index < _elements.size());
+			K9ASSERT(index < _elements.size(), "HandleTable<T>::getHandle, index out of range");
 			Handle<T> handle(this, _elements[index].uid, index);
 			return handle;
 		}

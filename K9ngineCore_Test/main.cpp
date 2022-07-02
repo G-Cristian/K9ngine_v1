@@ -7,6 +7,7 @@
 #include <string>
 
 #include "Handle.h"
+#include "K9Debug.h"
 #include "Path.h"
 
 #define EXEC_TEST(name, success, fail, total) do{\
@@ -22,6 +23,9 @@
 using namespace K9ngineCore;
 using namespace K9ngineCore::Memory;
 using namespace K9ngineCore::Utility;
+
+/******** K9ASSERT ***********/
+//bool showError();
 
 /******** HANDLE TESTS ***********/
 bool createIntTable();
@@ -62,6 +66,10 @@ int main(int argc, char** argv) {
 	int success = 0;
 	int fail = 0;
 	int total = 0;
+
+	/******** K9ASSERT ***********/
+	//EXEC_TEST(showError,success, fail, total);
+
 	/********* HANDLE TESTS *************/
 	EXEC_TEST(createIntTable, success, fail, total);
 	EXEC_TEST(addElement, success, fail, total);
@@ -104,6 +112,13 @@ int main(int argc, char** argv) {
 	return 0;
 }
 
+/******** K9ASSERT ***********/
+//bool showError() {
+//	K9ASSERT(false, "Asserted");
+//	return true;
+//}
+
+/******** HANDLE TESTS ***********/
 bool createIntTable() {
 	using namespace K9ngineCore::Memory;
 	HandleTable<int> table(2);
@@ -193,6 +208,7 @@ bool nullHandleIsInvalid() {
 	return !nullHandle.isValid();
 }
 
+/********* PATH TESTS *************/
 bool getDirectoryEmptyString() {
 	return Path::getDirectory("") == std::string("");
 }
