@@ -25,7 +25,7 @@ using namespace K9ngineCore::Memory;
 using namespace K9ngineCore::Utility;
 
 /******** K9ASSERT ***********/
-//bool showError();
+bool K9ASSERTTest();
 
 /******** HANDLE TESTS ***********/
 bool createIntTable();
@@ -68,7 +68,7 @@ int main(int argc, char** argv) {
 	int total = 0;
 
 	/******** K9ASSERT ***********/
-	//EXEC_TEST(showError,success, fail, total);
+	EXEC_TEST(K9ASSERTTest,success, fail, total);
 
 	/********* HANDLE TESTS *************/
 	EXEC_TEST(createIntTable, success, fail, total);
@@ -113,10 +113,17 @@ int main(int argc, char** argv) {
 }
 
 /******** K9ASSERT ***********/
-//bool showError() {
-//	K9ASSERT(false, "Asserted");
-//	return true;
-//}
+bool K9ASSERTTest() {
+	bool ret = false;
+	try {
+		K9ASSERT(false, "Asserted");
+	}
+	catch (std::exception& ex) {
+		ret = true;
+	}
+	
+	return ret;
+}
 
 /******** HANDLE TESTS ***********/
 bool createIntTable() {
