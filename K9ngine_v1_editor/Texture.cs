@@ -12,6 +12,8 @@ namespace K9ngine_v1_editor
     public class Texture : BaseAsset
     {
         public enum FormatEnum { RGB24, ARGB32 };
+        public enum WrapMode { REPEAT, CLAMP_TO_EDGE };
+        public enum FilterMode { NEAREST, LINEAR, LINEAR_MIPMAP_LINEAR };
         [Serializable]
         public class TextureMetadata
         {
@@ -19,6 +21,10 @@ namespace K9ngine_v1_editor
             public String Path { get; set; }
             public uint Version { get; set; }
             public FormatEnum Format { get; set; }
+            public WrapMode WrapModeS { get; set; }
+            public WrapMode WrapModeT { get; set; }
+            public FilterMode FilterModeMin { get; set; }
+            public FilterMode FilterModeMag { get; set; }
             public bool GammaCorrect { get; set; }
 
             public TextureMetadata()

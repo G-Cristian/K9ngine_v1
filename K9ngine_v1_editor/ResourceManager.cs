@@ -211,10 +211,18 @@ namespace K9ngine_v1_editor
                 var width = BitConverter.GetBytes(texture.Data.Width);
                 var height = BitConverter.GetBytes(texture.Data.Height);
                 var nrChannelsAsArray = BitConverter.GetBytes(nrChannels);
+                var wrapS = BitConverter.GetBytes((int)texture.Metadata.WrapModeS);
+                var wrapT = BitConverter.GetBytes((int)texture.Metadata.WrapModeT);
+                var filterMin = BitConverter.GetBytes((int)texture.Metadata.FilterModeMin);
+                var filterMag = BitConverter.GetBytes((int)texture.Metadata.FilterModeMag);
                 var gammaCorrect = BitConverter.GetBytes(texture.Metadata.GammaCorrect);
                 file.Write(width, 0, width.Length);
                 file.Write(height, 0, height.Length);
                 file.Write(nrChannelsAsArray, 0, nrChannelsAsArray.Length);
+                file.Write(wrapS, 0, wrapS.Length);
+                file.Write(wrapT, 0, wrapT.Length);
+                file.Write(filterMin, 0, filterMin.Length);
+                file.Write(filterMag, 0, filterMag.Length);
                 file.Write(gammaCorrect, 0, gammaCorrect.Length);
             }
             Bitmap bitmap = (Bitmap)texture.Data;

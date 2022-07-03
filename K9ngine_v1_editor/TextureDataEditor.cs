@@ -20,15 +20,24 @@ namespace K9ngine_v1_editor
 
         private void TextureDataEditor_Load(object sender, EventArgs e)
         {
-            if(Texture != null)
+            cbWrapS.DataSource = Enum.GetValues(typeof(Texture.WrapMode));
+            cbWrapT.DataSource = Enum.GetValues(typeof(Texture.WrapMode));
+
+            cbFilterMin.DataSource = Enum.GetValues(typeof(Texture.FilterMode));
+            cbFilterMag.DataSource = Enum.GetValues(typeof(Texture.FilterMode));
+
+            if (Texture != null)
             {
                 Texture.TextureMetadata textureMetadata = Texture.Metadata;
                 tbGUID.Text = textureMetadata.Guid.ToString();
                 tbName.Text = Texture.Name;
                 tbVersion.Text = textureMetadata.Version.ToString();
                 tbFormat.Text = textureMetadata.Format.ToString();
+                cbWrapS.SelectedIndex = ((int)textureMetadata.WrapModeS);
+                cbWrapT.SelectedIndex = ((int)textureMetadata.WrapModeT);
+                cbFilterMin.SelectedIndex = ((int)textureMetadata.FilterModeMin);
+                cbFilterMag.SelectedIndex = ((int)textureMetadata.FilterModeMag);
                 cbGammaCorrect.SelectedIndex = textureMetadata.GammaCorrect ? 0 : 1;
-
             }
         }
 
@@ -40,6 +49,23 @@ namespace K9ngine_v1_editor
             {
                 textureMetadata.Version = version;
             }
+
+            Texture.WrapMode wrapModeS;
+            Enum.TryParse<Texture.WrapMode>(cbWrapS.SelectedValue.ToString(), out wrapModeS);
+            textureMetadata.WrapModeS = wrapModeS;
+
+            Texture.WrapMode wrapModeT;
+            Enum.TryParse<Texture.WrapMode>(cbWrapT.SelectedValue.ToString(), out wrapModeT);
+            textureMetadata.WrapModeT = wrapModeT;
+
+            Texture.FilterMode filterModeMin;
+            Enum.TryParse<Texture.FilterMode>(cbFilterMin.SelectedValue.ToString(), out filterModeMin);
+            textureMetadata.FilterModeMin = filterModeMin;
+
+            Texture.FilterMode filterModeMag;
+            Enum.TryParse<Texture.FilterMode>(cbFilterMag.SelectedValue.ToString(), out filterModeMag);
+            textureMetadata.FilterModeMag = filterModeMag;
+
             textureMetadata.GammaCorrect = cbGammaCorrect.SelectedIndex == 0;
 
             ResourceManager.GetInstance().SaveTextureMetadata(textureMetadata);
