@@ -38,6 +38,7 @@ namespace K9ngine_v1_editor
                 cbFilterMin.SelectedIndex = ((int)textureMetadata.FilterModeMin);
                 cbFilterMag.SelectedIndex = ((int)textureMetadata.FilterModeMag);
                 cbGammaCorrect.SelectedIndex = textureMetadata.GammaCorrect ? 0 : 1;
+                cbFlipY.SelectedIndex = textureMetadata.FlipY ? 0 : 1;
             }
         }
 
@@ -67,6 +68,7 @@ namespace K9ngine_v1_editor
             textureMetadata.FilterModeMag = filterModeMag;
 
             textureMetadata.GammaCorrect = cbGammaCorrect.SelectedIndex == 0;
+            textureMetadata.FlipY = cbFlipY.SelectedIndex == 0;
 
             ResourceManager.GetInstance().SaveTextureMetadata(textureMetadata);
         }

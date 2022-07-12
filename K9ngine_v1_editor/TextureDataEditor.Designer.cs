@@ -49,6 +49,8 @@ namespace K9ngine_v1_editor
             this.label8 = new System.Windows.Forms.Label();
             this.cbFilterMag = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.cbFlipY = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -141,7 +143,7 @@ namespace K9ngine_v1_editor
             // btnSave
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.Location = new System.Drawing.Point(426, 306);
+            this.btnSave.Location = new System.Drawing.Point(426, 321);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 11;
@@ -152,7 +154,7 @@ namespace K9ngine_v1_editor
             // btnExport
             // 
             this.btnExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExport.Location = new System.Drawing.Point(345, 306);
+            this.btnExport.Location = new System.Drawing.Point(345, 321);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(75, 23);
             this.btnExport.TabIndex = 12;
@@ -228,11 +230,33 @@ namespace K9ngine_v1_editor
             this.label9.TabIndex = 19;
             this.label9.Text = "Filter Mag";
             // 
+            // cbFlipY
+            // 
+            this.cbFlipY.FormattingEnabled = true;
+            this.cbFlipY.Items.AddRange(new object[] {
+            "Yes",
+            "No"});
+            this.cbFlipY.Location = new System.Drawing.Point(107, 301);
+            this.cbFlipY.Name = "cbFlipY";
+            this.cbFlipY.Size = new System.Drawing.Size(66, 23);
+            this.cbFlipY.TabIndex = 22;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(10, 304);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(36, 15);
+            this.label10.TabIndex = 21;
+            this.label10.Text = "Flip Y";
+            // 
             // TextureDataEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(513, 341);
+            this.ClientSize = new System.Drawing.Size(513, 356);
+            this.Controls.Add(this.cbFlipY);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.cbFilterMag);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.cbWrapT);
@@ -283,5 +307,7 @@ namespace K9ngine_v1_editor
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cbFilterMag;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox cbFlipY;
+        private System.Windows.Forms.Label label10;
     }
 }

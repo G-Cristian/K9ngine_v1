@@ -180,7 +180,7 @@ namespace K9ngine_v1_editor
                             throw new Exception("Format not supported.");
                     }
 
-                    metadata = new Texture.TextureMetadata(guid, path, 0, format, false);
+                    metadata = new Texture.TextureMetadata(guid, path, 0, format, false, false);
                     SaveMetadata<Texture.TextureMetadata>(metadata, metadata.Path);
                 }
 
@@ -216,6 +216,7 @@ namespace K9ngine_v1_editor
                 var filterMin = BitConverter.GetBytes((int)texture.Metadata.FilterModeMin);
                 var filterMag = BitConverter.GetBytes((int)texture.Metadata.FilterModeMag);
                 var gammaCorrect = BitConverter.GetBytes(texture.Metadata.GammaCorrect);
+                var flipY = BitConverter.GetBytes(texture.Metadata.FlipY);
                 file.Write(width, 0, width.Length);
                 file.Write(height, 0, height.Length);
                 file.Write(nrChannelsAsArray, 0, nrChannelsAsArray.Length);
@@ -224,6 +225,7 @@ namespace K9ngine_v1_editor
                 file.Write(filterMin, 0, filterMin.Length);
                 file.Write(filterMag, 0, filterMag.Length);
                 file.Write(gammaCorrect, 0, gammaCorrect.Length);
+                file.Write(flipY, 0, flipY.Length);
             }
             Bitmap bitmap = (Bitmap)texture.Data;
             Rectangle rect = new Rectangle(0, 0, bitmap.Width, bitmap.Height);

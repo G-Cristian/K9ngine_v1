@@ -26,18 +26,20 @@ namespace K9ngine_v1_editor
             public FilterMode FilterModeMin { get; set; }
             public FilterMode FilterModeMag { get; set; }
             public bool GammaCorrect { get; set; }
+            public bool FlipY { get; set; }
 
             public TextureMetadata()
             {
 
             }
-            public TextureMetadata(Int32 guid, String path, uint version, FormatEnum format, bool gammaCorrect)
+            public TextureMetadata(Int32 guid, String path, uint version, FormatEnum format, bool gammaCorrect, bool flipY)
             {
                 Guid = guid;
                 Path = path;
                 Version = version;
                 Format = format;
                 GammaCorrect = gammaCorrect;
+                FlipY = flipY;
             }
         }
         public override int Guid { get => Metadata != null ? Metadata.Guid : 0; set { if (Metadata != null) { Metadata.Guid = value; } } }
