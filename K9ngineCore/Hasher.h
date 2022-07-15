@@ -1,6 +1,7 @@
 #ifndef HASHER_H
 #define HASHER_H
 
+#include <cstdint>
 #include <string>
 
 namespace K9ngineCore {

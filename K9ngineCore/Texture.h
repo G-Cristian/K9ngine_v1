@@ -3,7 +3,7 @@
 
 #include <glad/glad.h>
 
-#include <stdint.h>
+#include <cstdint>
 
 namespace K9ngineCore {
 	namespace Graphics {
