@@ -416,18 +416,31 @@ namespace K9ngine_v1_editor
                 SaveInt(file, mesh.Vertices.Count);
                 //Save number of Indices
                 SaveInt(file, mesh.Indices.Count);
+                SaveInt(file, (int)mesh.VerticesType);
+
+                VertexSaver vertexSaver = null;
+                switch (mesh.VerticesType)
+                {
+                    case Mesh.VerticesTypeEnum.PositionNormal:
+                        vertexSaver = new VertexSaverPositionNormal();
+                        break;
+                    case Mesh.VerticesTypeEnum.PositionNormalColor:
+                        vertexSaver = new VertexSaverPositionNormalColor();
+                        break;
+                    case Mesh.VerticesTypeEnum.PositionNormalTexCoord:
+                        vertexSaver = new VertexSaverPositionNormalTexCoord();
+                        break;
+                    case Mesh.VerticesTypeEnum.PositionNormalTexCoordColor:
+                        vertexSaver = new VertexSaverPositionNormalTexCoordColor();
+                        break;
+                    default:
+                        break;
+                }
 
                 //Save vertices
                 foreach (Vertex vertex in mesh.Vertices)
                 {
-                    SaveFloat(file, vertex.Position.x);
-                    SaveFloat(file, vertex.Position.y);
-                    SaveFloat(file, vertex.Position.z);
-                    SaveFloat(file, vertex.Normal.x);
-                    SaveFloat(file, vertex.Normal.y);
-                    SaveFloat(file, vertex.Normal.z);
-                    SaveFloat(file, vertex.TextureCoord.x);
-                    SaveFloat(file, vertex.TextureCoord.y);
+                    vertexSaver.Save(SaveFloat, file, vertex);
                 }
 
                 //Save Indices
