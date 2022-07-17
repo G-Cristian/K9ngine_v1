@@ -69,8 +69,9 @@ namespace K9ngineCore {
 						return nullptr;
 					}
 
-					std::ifstream imgFile(path);
-					//imgFile.exceptions(std::ifstream::failbit | std::ifstream::badbit);
+					std::ifstream imgFile;
+					imgFile.exceptions(std::ifstream::failbit | std::ifstream::badbit);
+					imgFile.open(path);
 					K9ASSERT(imgFile.is_open(), (std::string("Cannot open file ") + path).c_str());
 					if (imgFile.is_open()) {
 						int bytesWidth = width * nrChannels;
