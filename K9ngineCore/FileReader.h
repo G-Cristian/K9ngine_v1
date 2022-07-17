@@ -1,6 +1,8 @@
 #ifndef FILEREADER_H
 #define FILEREADER_H
 
+#include "K9Debug.h"
+
 #include <fstream>
 #include <string>
 
@@ -20,10 +22,10 @@ namespace K9ngineCore {
 
 		public:
 			FileReader(const std::string& fileName) :
-				_fileName(fileName),
-				_file(fileName)
+				_fileName(fileName)
 			{
-				//file.exceptions(std::ifstream::failbit | std::ifstream::badbit);
+				_file.exceptions(std::ifstream::failbit | std::ifstream::badbit);
+				_file.open(fileName);
 			}
 
 			~FileReader() {
