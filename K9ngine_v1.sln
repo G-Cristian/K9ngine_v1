@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.32126.315
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34723.18
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "K9ngine_v1_editor", "K9ngine_v1_editor\K9ngine_v1_editor.csproj", "{253EA720-1E9F-4155-B7D6-87ECD113A686}"
 EndProject
@@ -9,11 +9,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "K9ngineCore", "K9ngineCore\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "K9ngineCore_Test", "K9ngineCore_Test\K9ngineCore_Test.vcxproj", "{C318273B-7DE1-4A22-AC9E-D3E4B99521AD}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "K9GameApp", "K9GameApp\K9GameApp.vcxproj", "{E19C2CBB-86B8-4ED6-ACB2-A35A9BADDA0F}"
+EndProject
 Global
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		K9ngineCore\K9ngineCore.vcxitems*{960f16b1-c49a-485f-a001-215c427d7bdc}*SharedItemsImports = 9
-		K9ngineCore\K9ngineCore.vcxitems*{c318273b-7de1-4a22-ac9e-d3e4b99521ad}*SharedItemsImports = 4
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|x64 = Debug|x64
@@ -45,11 +43,28 @@ Global
 		{C318273B-7DE1-4A22-AC9E-D3E4B99521AD}.Release|x64.Build.0 = Release|x64
 		{C318273B-7DE1-4A22-AC9E-D3E4B99521AD}.Release|x86.ActiveCfg = Release|Win32
 		{C318273B-7DE1-4A22-AC9E-D3E4B99521AD}.Release|x86.Build.0 = Release|Win32
+		{E19C2CBB-86B8-4ED6-ACB2-A35A9BADDA0F}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{E19C2CBB-86B8-4ED6-ACB2-A35A9BADDA0F}.Debug|Any CPU.Build.0 = Debug|x64
+		{E19C2CBB-86B8-4ED6-ACB2-A35A9BADDA0F}.Debug|x64.ActiveCfg = Debug|x64
+		{E19C2CBB-86B8-4ED6-ACB2-A35A9BADDA0F}.Debug|x64.Build.0 = Debug|x64
+		{E19C2CBB-86B8-4ED6-ACB2-A35A9BADDA0F}.Debug|x86.ActiveCfg = Debug|Win32
+		{E19C2CBB-86B8-4ED6-ACB2-A35A9BADDA0F}.Debug|x86.Build.0 = Debug|Win32
+		{E19C2CBB-86B8-4ED6-ACB2-A35A9BADDA0F}.Release|Any CPU.ActiveCfg = Release|x64
+		{E19C2CBB-86B8-4ED6-ACB2-A35A9BADDA0F}.Release|Any CPU.Build.0 = Release|x64
+		{E19C2CBB-86B8-4ED6-ACB2-A35A9BADDA0F}.Release|x64.ActiveCfg = Release|x64
+		{E19C2CBB-86B8-4ED6-ACB2-A35A9BADDA0F}.Release|x64.Build.0 = Release|x64
+		{E19C2CBB-86B8-4ED6-ACB2-A35A9BADDA0F}.Release|x86.ActiveCfg = Release|Win32
+		{E19C2CBB-86B8-4ED6-ACB2-A35A9BADDA0F}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4B6E81C5-9DD8-4A08-94A1-3161938253E4}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		K9ngineCore\K9ngineCore.vcxitems*{960f16b1-c49a-485f-a001-215c427d7bdc}*SharedItemsImports = 9
+		K9ngineCore\K9ngineCore.vcxitems*{c318273b-7de1-4a22-ac9e-d3e4b99521ad}*SharedItemsImports = 4
+		K9ngineCore\K9ngineCore.vcxitems*{e19c2cbb-86b8-4ed6-acb2-a35a9badda0f}*SharedItemsImports = 4
 	EndGlobalSection
 EndGlobal

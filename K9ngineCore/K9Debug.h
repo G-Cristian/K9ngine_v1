@@ -18,7 +18,7 @@ namespace K9ngineCore {
 										}\
 									}while (false)
 #elif !defined(NDEBUG)
-#define K9ASSERT(expression, msg) do{if(!(expression))K9MessageBox::ShowError(msg, __FILE__, __LINE__);}while(false)
+#define K9ASSERT(expression, msg) do{if(!(expression))K9ngineCore::K9MessageBox::ShowError(msg, __FILE__, __LINE__);}while(false)
 #else
 #define K9ASSERT(expression, msg)
 #endif // !NDEBUG
