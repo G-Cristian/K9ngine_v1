@@ -76,6 +76,15 @@ bool loadThreeRGBPixelsImage();
 bool loadThreeVerticalRGBPixelsImage();
 bool loadThreeVerticalFlipYRGBPixelsImage();
 
+/******** LOGGER TESTS ***********/
+bool logMessage();
+bool logWarning();
+bool logError();
+bool addRemoveTabs();
+bool addTabsRemoveMoreTabsThanAdded();
+bool addTabsRemoveMoreTabsThanAddedAndAddTabAgain();
+
+
 int main(int argc, char** argv) {
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 	//_CrtSetReportMode(_CRT_ERROR, _CRTDBG_MODE_DEBUG);
@@ -134,6 +143,14 @@ int main(int argc, char** argv) {
 	EXEC_TEST(loadThreeRGBPixelsImage, success, fail, total);
 	EXEC_TEST(loadThreeVerticalRGBPixelsImage, success, fail, total);
 	EXEC_TEST(loadThreeVerticalFlipYRGBPixelsImage, success, fail, total);
+
+	/******** LOGGER TESTS ***********/
+	EXEC_TEST(logMessage, success, fail, total);
+	EXEC_TEST(logWarning, success, fail, total);
+	EXEC_TEST(logError, success, fail, total);
+	EXEC_TEST(addRemoveTabs, success, fail, total);
+	EXEC_TEST(addTabsRemoveMoreTabsThanAdded, success, fail, total);
+	EXEC_TEST(addTabsRemoveMoreTabsThanAddedAndAddTabAgain, success, fail, total);
 
 	std::cout << std::endl;
 	std::cout << "SUCCESS: " << success << std::endl;
@@ -618,5 +635,117 @@ bool loadThreeVerticalFlipYRGBPixelsImage() {
 		std::cout << e.what() << std::endl;
 		bOk = false;
 	}
+	return bOk;
+}
+
+/******** LOGGER TESTS ***********/
+bool logMessage() {
+	bool bOk = true;
+	try {
+		LOG_MESSAGE("logMessage()");
+	}
+	catch (...) {
+		bOk = false;
+	}
+
+	return bOk;
+}
+
+bool logWarning() {
+	bool bOk = true;
+	try {
+		LOG_WARNING("logWarning()");
+	}
+	catch (...) {
+		bOk = false;
+	}
+
+	return bOk;
+}
+
+bool logError() {
+	bool bOk = true;
+	try {
+		LOG_ERROR("logError()");
+
+	}
+	catch (...) {
+		bOk = false;
+	}
+
+	return bOk;
+}
+
+bool addRemoveTabs() {
+	bool bOk = true;
+	try {
+		LOG_ERROR("No tabs");
+		ADD_TAB();
+		LOG_ERROR("One tab");
+		ADD_TAB();
+		LOG_ERROR("Two tabs");
+		REMOVE_TAB();
+		LOG_ERROR("One tab again");
+		REMOVE_TAB();
+		LOG_ERROR("No tabs again");
+	}
+	catch (...) {
+		bOk = false;
+	}
+
+	return bOk;
+}
+
+bool addTabsRemoveMoreTabsThanAdded() {
+	bool bOk = true;
+	try {
+		LOG_ERROR("No tabs");
+		ADD_TAB();
+		LOG_ERROR("One tab");
+		ADD_TAB();
+		LOG_ERROR("Two tabs");
+		REMOVE_TAB();
+		LOG_ERROR("One tab again");
+		REMOVE_TAB();
+		LOG_ERROR("No tabs again");
+		REMOVE_TAB();
+		LOG_ERROR("No tabs again");
+		REMOVE_TAB();
+		REMOVE_TAB();
+		LOG_ERROR("No tabs again");
+	}
+	catch (...) {
+		bOk = false;
+	}
+
+	return bOk;
+}
+
+bool addTabsRemoveMoreTabsThanAddedAndAddTabAgain() {
+	bool bOk = true;
+	try {
+		LOG_ERROR("No tabs");
+		ADD_TAB();
+		LOG_ERROR("One tab");
+		ADD_TAB();
+		LOG_ERROR("Two tabs");
+		REMOVE_TAB();
+		LOG_ERROR("One tab again");
+		REMOVE_TAB();
+		LOG_ERROR("No tabs again");
+		REMOVE_TAB();
+		LOG_ERROR("No tabs again");
+		REMOVE_TAB();
+		REMOVE_TAB();
+		LOG_ERROR("No tabs again");
+		ADD_TAB();
+		LOG_ERROR("Add One last tab");
+		REMOVE_TAB();
+		LOG_ERROR("Remove last tab again");
+	}
+	catch (...) {
+		bOk = false;
+	}
+
 	return bOk;
 }

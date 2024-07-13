@@ -18,6 +18,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Handle.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Hasher.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)K9Debug.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Logger.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)MessageBox.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Path.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)ResourceLoader.h" />
@@ -27,6 +28,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)FileReader.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Logger.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)MessageBox.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Path.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Shader.cpp" />
