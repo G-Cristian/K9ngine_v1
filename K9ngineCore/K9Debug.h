@@ -12,8 +12,8 @@ namespace K9ngineCore {
 
 #if (defined(K9_LOG_CONSOLE) && K9_LOG_CONSOLE>0) || (defined(K9_LOG_FILE) && K9_LOG_FILE>0)
 
-#define ADD_TAB() gLogger.AddTab();
-#define REMOVE_TAB() gLogger.RemoveTab();
+#define LOG_ADD_TAB() gLogger.AddTab();
+#define LOG_REMOVE_TAB() gLogger.RemoveTab();
 
 #if K9_LOG_CONSOLE>2 && K9_LOG_FILE>2
 
@@ -74,8 +74,8 @@ namespace K9ngineCore {
 #define LOG_MESSAGE(msg)
 #define LOG_WARNING(msg)
 #define LOG_ERROR(msg)
-#define ADD_TAB()
-#define REMOVE_TAB()
+#define LOG_ADD_TAB()
+#define LOG_REMOVE_TAB()
 
 #endif // !(defined(K9_LOG_CONSOLE) && K9_LOG_CONSOLE>0) || (defined(K9_LOG_FILE) && K9_LOG_FILE>0)
 

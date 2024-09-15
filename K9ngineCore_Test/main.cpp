@@ -680,13 +680,13 @@ bool addRemoveTabs() {
 	bool bOk = true;
 	try {
 		LOG_ERROR("No tabs");
-		ADD_TAB();
+		LOG_ADD_TAB();
 		LOG_ERROR("One tab");
-		ADD_TAB();
+		LOG_ADD_TAB();
 		LOG_ERROR("Two tabs");
-		REMOVE_TAB();
+		LOG_REMOVE_TAB();
 		LOG_ERROR("One tab again");
-		REMOVE_TAB();
+		LOG_REMOVE_TAB();
 		LOG_ERROR("No tabs again");
 	}
 	catch (...) {
@@ -700,18 +700,18 @@ bool addTabsRemoveMoreTabsThanAdded() {
 	bool bOk = true;
 	try {
 		LOG_ERROR("No tabs");
-		ADD_TAB();
+		LOG_ADD_TAB();
 		LOG_ERROR("One tab");
-		ADD_TAB();
+		LOG_ADD_TAB();
 		LOG_ERROR("Two tabs");
-		REMOVE_TAB();
+		LOG_REMOVE_TAB();
 		LOG_ERROR("One tab again");
-		REMOVE_TAB();
+		LOG_REMOVE_TAB();
 		LOG_ERROR("No tabs again");
-		REMOVE_TAB();
+		LOG_REMOVE_TAB();
 		LOG_ERROR("No tabs again");
-		REMOVE_TAB();
-		REMOVE_TAB();
+		LOG_REMOVE_TAB();
+		LOG_REMOVE_TAB();
 		LOG_ERROR("No tabs again");
 	}
 	catch (...) {
@@ -725,22 +725,22 @@ bool addTabsRemoveMoreTabsThanAddedAndAddTabAgain() {
 	bool bOk = true;
 	try {
 		LOG_ERROR("No tabs");
-		ADD_TAB();
+		LOG_ADD_TAB();
 		LOG_ERROR("One tab");
-		ADD_TAB();
+		LOG_ADD_TAB();
 		LOG_ERROR("Two tabs");
-		REMOVE_TAB();
+		LOG_REMOVE_TAB();
 		LOG_ERROR("One tab again");
-		REMOVE_TAB();
+		LOG_REMOVE_TAB();
 		LOG_ERROR("No tabs again");
-		REMOVE_TAB();
+		LOG_REMOVE_TAB();
 		LOG_ERROR("No tabs again");
-		REMOVE_TAB();
-		REMOVE_TAB();
+		LOG_REMOVE_TAB();
+		LOG_REMOVE_TAB();
 		LOG_ERROR("No tabs again");
-		ADD_TAB();
+		LOG_ADD_TAB();
 		LOG_ERROR("Add One last tab");
-		REMOVE_TAB();
+		LOG_REMOVE_TAB();
 		LOG_ERROR("Remove last tab again");
 	}
 	catch (...) {

@@ -1,11 +1,15 @@
 #ifndef K9_GAME_H
 #define K9_GAME_H
 
+#include "OpenGLWrapper.h"
+#include "K9WindowsManager.h"
+
 namespace K9ngineGame {
   class K9Game {
   public:
     explicit K9Game(const char* settingsFullpath = "K9ngineSettings.txt") :
-        mMsPerFixedUpdate(16.0)   // 1000 ms/60 fs = 16.66 ms per frame
+        mWindowsManager(4, 3)
+      , mMsPerFixedUpdate(16.0)   // 1000 ms/60 fs = 16.66 ms per frame
       , mSettingsFullPath(settingsFullpath)
       , mMustClose(false)
     {}
@@ -21,7 +25,7 @@ namespace K9ngineGame {
 
     double getCurrentTime();
 
-    void init();
+    bool init();
     void start();
 
     void processInput();
@@ -32,6 +36,7 @@ namespace K9ngineGame {
 
     void cleanup();
 
+    K9WindowsManager mWindowsManager;
     double mMsPerFixedUpdate;
     const char* mSettingsFullPath;
     bool mMustClose;

@@ -20,6 +20,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)K9Debug.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Logger.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)MessageBox.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)OpenGLWrapper.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Path.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)ResourceLoader.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Shader.h" />
