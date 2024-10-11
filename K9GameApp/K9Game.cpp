@@ -30,6 +30,7 @@ namespace K9ngineGame {
 
   bool K9Game::init() {
     using namespace K9ngineCore;
+    using namespace K9ngineCore::K9Graphics;
     LOG_ADD_TAB();
     // TODO: Init settings.
     // TODO: Init necessary stuff.
@@ -38,7 +39,7 @@ namespace K9ngineGame {
       mWindowsManager.createWindow("Test Game", 600, 600);
       mWindowsManager.setCurrent(0);
 
-      int version = OpenGLWrapper::init();
+      int version = GraphicsContext::init();
       if (version == 0) {
         LOG_ERROR("OpenGLWrapper::init() == 0");
       }
@@ -95,6 +96,8 @@ namespace K9ngineGame {
   }
 
   void K9Game::render(double elapsed) {
+    using namespace K9ngineCore::K9Graphics;
+    GraphicsContext::clearColor(1.0f, 0.0f, 0.0f, 1.0f);
     // TODO: Update rendering engine (elapsed)
     mWindowsManager.update();
   }

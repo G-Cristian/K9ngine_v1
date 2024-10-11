@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)FileReader.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Logger.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)MessageBox.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Path.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Shader.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Texture.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)FileReader.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Handle.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Hasher.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)K9Debug.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Logger.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)MessageBox.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Path.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)ResourceLoader.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Shader.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)SingleResourceManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Texture.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\OpenGLContext.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\GraphicsContext.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Graphics">
+      <UniqueIdentifier>{f38c61b1-c87f-4016-8138-cdf5a4fe4bc3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
