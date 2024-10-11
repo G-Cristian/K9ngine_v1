@@ -1,7 +1,7 @@
 #ifndef K9_GAME_H
 #define K9_GAME_H
 
-#include "OpenGLWrapper.h"
+#include "Graphics/GraphicsContext.h"
 #include "K9WindowsManager.h"
 
 namespace K9ngineGame {

@@ -15,12 +15,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)FileReader.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\GraphicsContext.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\OpenGLContext.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Handle.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Hasher.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)K9Debug.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Logger.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)MessageBox.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)OpenGLWrapper.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Path.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)ResourceLoader.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Shader.h" />
