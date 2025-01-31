@@ -5,8 +5,11 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Logger.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)MessageBox.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Path.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Shader.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Shader_old.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Texture.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Graphics\Shader.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)FileReader.h" />
@@ -17,13 +20,16 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)MessageBox.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Path.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)ResourceLoader.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)Shader.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Shader_old.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)SingleResourceManager.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Texture.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\OpenGLContext.h">
       <Filter>Graphics</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\GraphicsContext.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\Shader.h">
       <Filter>Graphics</Filter>
     </ClInclude>
   </ItemGroup>
