@@ -65,10 +65,26 @@ namespace K9ngineCore {
         return foundErrors;
       }
 
-      static bool isShaderCompileStatusOk(GLuint shader) {
-        GLint status{};
-        glGetShaderiv(shader, GL_COMPILE_STATUS, &status);
-        return status == 1;
+      static std::string getProgramInfoLog(GLuint program, GLuint length) {
+        std::string log;
+
+        if (length > 0) {
+          char* chLog = (char*)malloc(length);
+          int chWrittn{ 0 };
+          glGetProgramInfoLog(program, length, &chWrittn, chLog);
+          if (chLog != NULL) {
+            log = std::string(chLog);
+          }
+          free(chLog);
+        }
+
+        return log;
+      }
+
+      static GLint getProgramInfoLogLength(GLuint program) {
+        GLint length{ 0 };
+        glGetProgramiv(program, GL_INFO_LOG_LENGTH, &length);
+        return length;
       }
 
       static std::string getShaderInfoLog(GLuint shader, GLuint length) {
@@ -91,6 +107,18 @@ namespace K9ngineCore {
         GLint length{ 0 };
         glGetShaderiv(shader, GL_INFO_LOG_LENGTH, &length);
         return length;
+      }
+
+      static bool isProgramLinkStatusOk(GLuint program) {
+        GLint status{};
+        glGetProgramiv(program, GL_LINK_STATUS, &status);
+        return status == 1;
+      }
+
+      static bool isShaderCompileStatusOk(GLuint shader) {
+        GLint status{};
+        glGetShaderiv(shader, GL_COMPILE_STATUS, &status);
+        return status == 1;
       }
 
       static void linkProgram(GLuint program) {
