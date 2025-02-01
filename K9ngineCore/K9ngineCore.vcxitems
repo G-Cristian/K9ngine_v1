@@ -16,6 +16,8 @@
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)FileReader.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\GraphicsContext.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\Material.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\MaterialProperty.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\OpenGLContext.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\Shader.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Handle.h" />
@@ -31,6 +33,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)FileReader.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Graphics\Material.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Graphics\Shader.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Logger.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)MessageBox.cpp" />
