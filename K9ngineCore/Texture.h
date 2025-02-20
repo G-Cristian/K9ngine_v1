@@ -3,6 +3,8 @@
 
 #include <glad/glad.h>
 
+#include "Common/Hasher.h"
+
 #include <cstdint>
 
 namespace K9ngineCore {
@@ -18,7 +20,7 @@ namespace K9ngineCore {
 
 		class Texture {
 		public:
-			Texture(uint64_t guid, GLuint texId) :
+			Texture(Common::Hash guid, GLuint texId) :
 				_guid(guid),
 				_texId(texId) {
 			}
@@ -29,7 +31,7 @@ namespace K9ngineCore {
 			Texture(Texture&& rhs) noexcept :
 				_guid(rhs._guid),
 				_texId(rhs._texId) {
-				rhs._guid = 0;
+				rhs._guid = Common::Hash{};
 				rhs._texId = 0;
 			}
 			
@@ -41,10 +43,10 @@ namespace K9ngineCore {
 
 			Texture& operator=(Texture&& rhs) noexcept;
 
-			uint64_t guid() const { return _guid; }
+			Common::Hash guid() const { return _guid; }
 			GLuint texId() const { return _texId; }
 		private:
-			uint64_t _guid;
+			Common::Hash _guid;
 			GLuint _texId;
 		};
 

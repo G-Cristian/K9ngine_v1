@@ -2,7 +2,7 @@
 #define RESOURCELOADER_H
 
 #include "FileReader.h"
-#include "Hasher.h"
+#include "Common/Hasher.h"
 #include "K9Debug.h"
 #include "Path.h"
 #include "Texture.h"
@@ -152,7 +152,7 @@ namespace K9ngineCore {
 			glTexImage2D(GL_TEXTURE_2D, 0, channelsFormat, data->width(), data->height(), 0, channelsFormat, GL_UNSIGNED_BYTE, (const void*)data->data());
 			glGenerateMipmap(GL_TEXTURE_2D);
 
-			return new Texture(Utility::hashString(path), textureID);
+			return new Texture(Common::hashString(path), textureID);
 		}
 	}
 }
