@@ -52,7 +52,7 @@ namespace K9ngineCore {
 				_guid = rhs._guid;
 				_texId = rhs._texId;
 
-				rhs._guid = 0;
+				rhs._guid = Common::Hash{};
 				rhs._texId = 0;
 			}
 
