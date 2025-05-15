@@ -1,0 +1,130 @@
+\doxysection{K9ngine\+Core\+::Single\+Resource\+Manager\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_k9ngine_core_1_1_single_resource_manager}{}\label{class_k9ngine_core_1_1_single_resource_manager}\index{K9ngineCore::SingleResourceManager$<$ T $>$@{K9ngineCore::SingleResourceManager$<$ T $>$}}
+
+
+{\ttfamily \#include $<$Single\+Resource\+Manager.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager_ae829fbc7c7c6c61a6dbe3ae609626eb7}{Single\+Resource\+Manager}} (size\+\_\+t elements\+Count)
+\item 
+\mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager_a2f85e4fe3ca2a6faa62397513d03f2b0}{Single\+Resource\+Manager}} (const \mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager}{Single\+Resource\+Manager}} \&)=delete
+\item 
+\mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager_a33ed0f1a064599399e0045f1e417a2ff}{Single\+Resource\+Manager}} (\mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager}{Single\+Resource\+Manager}} \&\&) noexcept=delete
+\item 
+\mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager}{Single\+Resource\+Manager}} \& \mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager_a166487be803b73b9656938ca8383db20}{operator=}} (const \mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager}{Single\+Resource\+Manager}} \&)=delete
+\item 
+\mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager}{Single\+Resource\+Manager}} \& \mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager_ac76cdefc14651d2fbe20f08ba5d8a930}{operator=}} (\mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager}{Single\+Resource\+Manager}} \&\&) noexcept=delete
+\item 
+\mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{Memory\+::\+Handle}}$<$ T $>$ \mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager_ab7b5d73984759a0f55f9ffaad774e079}{load\+Resource\+If\+Needed}} (const std\+::string \&path)
+\item 
+{\footnotesize template$<$typename... Args$>$ }\\\mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{Memory\+::\+Handle}}$<$ T $>$ \mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager_a57caabf1cbd2a1ec233d0b05bf97a069}{create\+Resource\+If\+Needed}} (const std\+::string \&s\+Id, Args \&\&... args)
+\item 
+{\footnotesize template$<$typename... Args$>$ }\\\mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{Memory\+::\+Handle}}$<$ T $>$ \mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager_a4234529b2b3d7f4ad85267306203cb7d}{create\+Resource\+If\+Needed}} (uint64\+\_\+t id, Args \&\&... args)
+\item 
+\mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{Memory\+::\+Handle}}$<$ T $>$ \mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager_a08ff835f95693d27734ab339f8792801}{get\+Handle}} (const std\+::string \&path) const
+\item 
+\mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{Memory\+::\+Handle}}$<$ T $>$ \mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager_a12a7e5a798227b353376a2bbfe111b41}{get\+Handle}} (uint64\+\_\+t uid) const
+\item 
+void \mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager_ad126abcfadd540a84cb71b3522dc4b60}{delete\+Resource}} (const std\+::string \&s\+Id)
+\item 
+void \mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager_a408f563c2c988dd7ec85dcc4f8c3df12}{delete\+Resource}} (uint64\+\_\+t id)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_k9ngine_core_1_1_single_resource_manager_ae829fbc7c7c6c61a6dbe3ae609626eb7}\index{K9ngineCore::SingleResourceManager$<$ T $>$@{K9ngineCore::SingleResourceManager$<$ T $>$}!SingleResourceManager@{SingleResourceManager}}
+\index{SingleResourceManager@{SingleResourceManager}!K9ngineCore::SingleResourceManager$<$ T $>$@{K9ngineCore::SingleResourceManager$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{SingleResourceManager()}{SingleResourceManager()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_single_resource_manager_ae829fbc7c7c6c61a6dbe3ae609626eb7} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager}{K9ngine\+Core\+::\+Single\+Resource\+Manager}}$<$ T $>$\+::\+Single\+Resource\+Manager (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{elements\+Count}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_k9ngine_core_1_1_single_resource_manager_a2f85e4fe3ca2a6faa62397513d03f2b0}\index{K9ngineCore::SingleResourceManager$<$ T $>$@{K9ngineCore::SingleResourceManager$<$ T $>$}!SingleResourceManager@{SingleResourceManager}}
+\index{SingleResourceManager@{SingleResourceManager}!K9ngineCore::SingleResourceManager$<$ T $>$@{K9ngineCore::SingleResourceManager$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{SingleResourceManager()}{SingleResourceManager()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_single_resource_manager_a2f85e4fe3ca2a6faa62397513d03f2b0} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager}{K9ngine\+Core\+::\+Single\+Resource\+Manager}}$<$ T $>$\+::\+Single\+Resource\+Manager (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager}{Single\+Resource\+Manager}}$<$ T $>$ \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\Hypertarget{class_k9ngine_core_1_1_single_resource_manager_a33ed0f1a064599399e0045f1e417a2ff}\index{K9ngineCore::SingleResourceManager$<$ T $>$@{K9ngineCore::SingleResourceManager$<$ T $>$}!SingleResourceManager@{SingleResourceManager}}
+\index{SingleResourceManager@{SingleResourceManager}!K9ngineCore::SingleResourceManager$<$ T $>$@{K9ngineCore::SingleResourceManager$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{SingleResourceManager()}{SingleResourceManager()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_single_resource_manager_a33ed0f1a064599399e0045f1e417a2ff} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager}{K9ngine\+Core\+::\+Single\+Resource\+Manager}}$<$ T $>$\+::\+Single\+Resource\+Manager (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager}{Single\+Resource\+Manager}}$<$ T $>$ \&\&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}, {\ttfamily [noexcept]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_k9ngine_core_1_1_single_resource_manager_a57caabf1cbd2a1ec233d0b05bf97a069}\index{K9ngineCore::SingleResourceManager$<$ T $>$@{K9ngineCore::SingleResourceManager$<$ T $>$}!createResourceIfNeeded@{createResourceIfNeeded}}
+\index{createResourceIfNeeded@{createResourceIfNeeded}!K9ngineCore::SingleResourceManager$<$ T $>$@{K9ngineCore::SingleResourceManager$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{createResourceIfNeeded()}{createResourceIfNeeded()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_single_resource_manager_a57caabf1cbd2a1ec233d0b05bf97a069} 
+template$<$typename T$>$ \\
+template$<$typename... Args$>$ \\
+\mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{Memory\+::\+Handle}}$<$ T $>$ \mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager}{K9ngine\+Core\+::\+Single\+Resource\+Manager}}$<$ T $>$\+::create\+Resource\+If\+Needed (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s\+Id}{, }\item[{Args \&\&...}]{args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_k9ngine_core_1_1_single_resource_manager_a4234529b2b3d7f4ad85267306203cb7d}\index{K9ngineCore::SingleResourceManager$<$ T $>$@{K9ngineCore::SingleResourceManager$<$ T $>$}!createResourceIfNeeded@{createResourceIfNeeded}}
+\index{createResourceIfNeeded@{createResourceIfNeeded}!K9ngineCore::SingleResourceManager$<$ T $>$@{K9ngineCore::SingleResourceManager$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{createResourceIfNeeded()}{createResourceIfNeeded()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_single_resource_manager_a4234529b2b3d7f4ad85267306203cb7d} 
+template$<$typename T$>$ \\
+template$<$typename... Args$>$ \\
+\mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{Memory\+::\+Handle}}$<$ T $>$ \mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager}{K9ngine\+Core\+::\+Single\+Resource\+Manager}}$<$ T $>$\+::create\+Resource\+If\+Needed (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{id}{, }\item[{Args \&\&...}]{args}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_k9ngine_core_1_1_single_resource_manager_ad126abcfadd540a84cb71b3522dc4b60}\index{K9ngineCore::SingleResourceManager$<$ T $>$@{K9ngineCore::SingleResourceManager$<$ T $>$}!deleteResource@{deleteResource}}
+\index{deleteResource@{deleteResource}!K9ngineCore::SingleResourceManager$<$ T $>$@{K9ngineCore::SingleResourceManager$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{deleteResource()}{deleteResource()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_single_resource_manager_ad126abcfadd540a84cb71b3522dc4b60} 
+template$<$typename T$>$ \\
+void \mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager}{K9ngine\+Core\+::\+Single\+Resource\+Manager}}$<$ T $>$\+::delete\+Resource (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s\+Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_k9ngine_core_1_1_single_resource_manager_a408f563c2c988dd7ec85dcc4f8c3df12}\index{K9ngineCore::SingleResourceManager$<$ T $>$@{K9ngineCore::SingleResourceManager$<$ T $>$}!deleteResource@{deleteResource}}
+\index{deleteResource@{deleteResource}!K9ngineCore::SingleResourceManager$<$ T $>$@{K9ngineCore::SingleResourceManager$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{deleteResource()}{deleteResource()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_single_resource_manager_a408f563c2c988dd7ec85dcc4f8c3df12} 
+template$<$typename T$>$ \\
+void \mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager}{K9ngine\+Core\+::\+Single\+Resource\+Manager}}$<$ T $>$\+::delete\+Resource (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_k9ngine_core_1_1_single_resource_manager_a08ff835f95693d27734ab339f8792801}\index{K9ngineCore::SingleResourceManager$<$ T $>$@{K9ngineCore::SingleResourceManager$<$ T $>$}!getHandle@{getHandle}}
+\index{getHandle@{getHandle}!K9ngineCore::SingleResourceManager$<$ T $>$@{K9ngineCore::SingleResourceManager$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getHandle()}{getHandle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_single_resource_manager_a08ff835f95693d27734ab339f8792801} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{Memory\+::\+Handle}}$<$ T $>$ \mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager}{K9ngine\+Core\+::\+Single\+Resource\+Manager}}$<$ T $>$\+::get\+Handle (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_k9ngine_core_1_1_single_resource_manager_a12a7e5a798227b353376a2bbfe111b41}\index{K9ngineCore::SingleResourceManager$<$ T $>$@{K9ngineCore::SingleResourceManager$<$ T $>$}!getHandle@{getHandle}}
+\index{getHandle@{getHandle}!K9ngineCore::SingleResourceManager$<$ T $>$@{K9ngineCore::SingleResourceManager$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getHandle()}{getHandle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_single_resource_manager_a12a7e5a798227b353376a2bbfe111b41} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{Memory\+::\+Handle}}$<$ T $>$ \mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager}{K9ngine\+Core\+::\+Single\+Resource\+Manager}}$<$ T $>$\+::get\+Handle (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{uid}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_k9ngine_core_1_1_single_resource_manager_ab7b5d73984759a0f55f9ffaad774e079}\index{K9ngineCore::SingleResourceManager$<$ T $>$@{K9ngineCore::SingleResourceManager$<$ T $>$}!loadResourceIfNeeded@{loadResourceIfNeeded}}
+\index{loadResourceIfNeeded@{loadResourceIfNeeded}!K9ngineCore::SingleResourceManager$<$ T $>$@{K9ngineCore::SingleResourceManager$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{loadResourceIfNeeded()}{loadResourceIfNeeded()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_single_resource_manager_ab7b5d73984759a0f55f9ffaad774e079} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{Memory\+::\+Handle}}$<$ T $>$ \mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager}{K9ngine\+Core\+::\+Single\+Resource\+Manager}}$<$ T $>$\+::load\+Resource\+If\+Needed (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_k9ngine_core_1_1_single_resource_manager_a166487be803b73b9656938ca8383db20}\index{K9ngineCore::SingleResourceManager$<$ T $>$@{K9ngineCore::SingleResourceManager$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!K9ngineCore::SingleResourceManager$<$ T $>$@{K9ngineCore::SingleResourceManager$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_single_resource_manager_a166487be803b73b9656938ca8383db20} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager}{Single\+Resource\+Manager}} \& \mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager}{K9ngine\+Core\+::\+Single\+Resource\+Manager}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager}{Single\+Resource\+Manager}}$<$ T $>$ \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\Hypertarget{class_k9ngine_core_1_1_single_resource_manager_ac76cdefc14651d2fbe20f08ba5d8a930}\index{K9ngineCore::SingleResourceManager$<$ T $>$@{K9ngineCore::SingleResourceManager$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!K9ngineCore::SingleResourceManager$<$ T $>$@{K9ngineCore::SingleResourceManager$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_single_resource_manager_ac76cdefc14651d2fbe20f08ba5d8a930} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager}{Single\+Resource\+Manager}} \& \mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager}{K9ngine\+Core\+::\+Single\+Resource\+Manager}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager}{Single\+Resource\+Manager}}$<$ T $>$ \&\&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}, {\ttfamily [noexcept]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/lococ/source/repos/\+K9ngine\+\_\+v1/\+K9ngine\+Core/\mbox{\hyperlink{_single_resource_manager_8h}{Single\+Resource\+Manager.\+h}}\end{DoxyCompactItemize}

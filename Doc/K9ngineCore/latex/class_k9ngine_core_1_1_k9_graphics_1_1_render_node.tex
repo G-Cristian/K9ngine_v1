@@ -1,0 +1,108 @@
+\doxysection{K9ngine\+Core\+::K9\+Graphics\+::Render\+Node Class Reference}
+\hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_render_node}{}\label{class_k9ngine_core_1_1_k9_graphics_1_1_render_node}\index{K9ngineCore::K9Graphics::RenderNode@{K9ngineCore::K9Graphics::RenderNode}}
+
+
+{\ttfamily \#include $<$Render\+Node.\+h$>$}
+
+Inheritance diagram for K9ngine\+Core\+::K9\+Graphics\+::Render\+Node\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_k9ngine_core_1_1_k9_graphics_1_1_render_node}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_render_node_acc66461d35023bb4b16d361256c96b03}{Rendering\+Component\+Ptr}} = \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{Memory\+::\+Handle}}$<$\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component}{Rendering\+Component}}$>$
+\item 
+using \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_render_node_a88cd67562184a41ef0c282443f00eb1a}{Rendering\+Component\+Const\+Ptr}} = \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{Memory\+::\+Handle}}$<$const \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component}{Rendering\+Component}}$>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node}{K9ngine\+Core\+::\+K9\+Graphics\+::\+INode}}}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node_a7795b37d9d35c5e7e1930528e18d070b}{Node\+Ptr}} = std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node}{INode}}$>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_render_node_a16d1158eb01c333cff303db0ab30901b}{Render\+Node}} (\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph}{Scene\+Graph}} \&, \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_render_node_a88cd67562184a41ef0c282443f00eb1a}{Rendering\+Component\+Const\+Ptr}})
+\item 
+const \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_render_node_a88cd67562184a41ef0c282443f00eb1a}{Rendering\+Component\+Const\+Ptr}} \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_render_node_ac85c6b484db3836836308d1ed8ae8305}{get\+Rendering\+Component}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node}{K9ngine\+Core\+::\+K9\+Graphics\+::\+INode}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node_ab2a99e87e50dddda2d170da5e7711c56}{INode}} (\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph}{Scene\+Graph}} \&scene\+Graph)
+\item 
+virtual \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node_af7af0ed9a1b287e00dc6b29a2f6e9b22}{\texorpdfstring{$\sim$}{\string~}\+INode}} ()=default
+\item 
+virtual void \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node_a556f52cf2f62db15deeac262bef9d942}{accept}} (\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_scene_graph_visitor}{IScene\+Graph\+Visitor}} \&)=0
+\item 
+const \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph}{Scene\+Graph}} \& \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node_a78129060cbc8e0632fffcdf42629adbb}{get\+Scene\+Graph}} () const
+\item 
+\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph}{Scene\+Graph}} \& \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node_a5baddc98cf7b1aa7e657edc8a586b010}{get\+Scene\+Graph}} ()
+\item 
+bool \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node_a99582529e2688395af83a7a33aac774b}{is\+Dirty}} () const
+\item 
+const \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node_a7795b37d9d35c5e7e1930528e18d070b}{Node\+Ptr}} \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node_af5369a3099d4441dd7bd34e4ad7df585}{get\+Parent}} () const
+\item 
+\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node_a7795b37d9d35c5e7e1930528e18d070b}{Node\+Ptr}} \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node_a6ec0a908998da5d777faa82f4971319a}{get\+Parent}} ()
+\item 
+const std\+::vector$<$ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node_a7795b37d9d35c5e7e1930528e18d070b}{Node\+Ptr}} $>$ \& \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node_a44fb8699ede0d4d4f890d5feeb47905b}{get\+Children}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node}{K9ngine\+Core\+::\+K9\+Graphics\+::\+INode}}}
+\begin{DoxyCompactItemize}
+\item 
+friend \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node_a2b436d58bbcafb358b18ed8dab9bb2a9}{Scene\+Graph}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node}{K9ngine\+Core\+::\+K9\+Graphics\+::\+INode}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node_a7795b37d9d35c5e7e1930528e18d070b}{Node\+Ptr}} $>$ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node_aa713f8b03bd51ab5c675ab1ad699ac7a}{m\+Children}} \{\}
+\item 
+\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node_a7795b37d9d35c5e7e1930528e18d070b}{Node\+Ptr}} \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node_a288938753fe5959eed88101cf94ad022}{m\+Parent}} \{ nullptr \}
+\item 
+\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph}{Scene\+Graph}} \& \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node_ae45a2ade53f527d3b8dc401d8aa831eb}{m\+Scene\+Graph}}
+\item 
+bool \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node_a92334c23e708c60268d11c8b6e7968d1}{m\+Is\+Dirty}} \{ false \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_render_node_a88cd67562184a41ef0c282443f00eb1a}\index{K9ngineCore::K9Graphics::RenderNode@{K9ngineCore::K9Graphics::RenderNode}!RenderingComponentConstPtr@{RenderingComponentConstPtr}}
+\index{RenderingComponentConstPtr@{RenderingComponentConstPtr}!K9ngineCore::K9Graphics::RenderNode@{K9ngineCore::K9Graphics::RenderNode}}
+\doxysubsubsection{\texorpdfstring{RenderingComponentConstPtr}{RenderingComponentConstPtr}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_render_node_a88cd67562184a41ef0c282443f00eb1a} 
+using \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_render_node_a88cd67562184a41ef0c282443f00eb1a}{K9ngine\+Core\+::\+K9\+Graphics\+::\+Render\+Node\+::\+Rendering\+Component\+Const\+Ptr}} = \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{Memory\+::\+Handle}}$<$const \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component}{Rendering\+Component}}$>$}
+
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_render_node_acc66461d35023bb4b16d361256c96b03}\index{K9ngineCore::K9Graphics::RenderNode@{K9ngineCore::K9Graphics::RenderNode}!RenderingComponentPtr@{RenderingComponentPtr}}
+\index{RenderingComponentPtr@{RenderingComponentPtr}!K9ngineCore::K9Graphics::RenderNode@{K9ngineCore::K9Graphics::RenderNode}}
+\doxysubsubsection{\texorpdfstring{RenderingComponentPtr}{RenderingComponentPtr}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_render_node_acc66461d35023bb4b16d361256c96b03} 
+using \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_render_node_acc66461d35023bb4b16d361256c96b03}{K9ngine\+Core\+::\+K9\+Graphics\+::\+Render\+Node\+::\+Rendering\+Component\+Ptr}} = \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{Memory\+::\+Handle}}$<$\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component}{Rendering\+Component}}$>$}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_render_node_a16d1158eb01c333cff303db0ab30901b}\index{K9ngineCore::K9Graphics::RenderNode@{K9ngineCore::K9Graphics::RenderNode}!RenderNode@{RenderNode}}
+\index{RenderNode@{RenderNode}!K9ngineCore::K9Graphics::RenderNode@{K9ngineCore::K9Graphics::RenderNode}}
+\doxysubsubsection{\texorpdfstring{RenderNode()}{RenderNode()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_render_node_a16d1158eb01c333cff303db0ab30901b} 
+K9ngine\+Core\+::\+K9\+Graphics\+::\+Render\+Node\+::\+Render\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph}{Scene\+Graph}} \&}]{scene\+Graph}{, }\item[{\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_render_node_a88cd67562184a41ef0c282443f00eb1a}{Rendering\+Component\+Const\+Ptr}}}]{rendering\+Component}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_render_node_ac85c6b484db3836836308d1ed8ae8305}\index{K9ngineCore::K9Graphics::RenderNode@{K9ngineCore::K9Graphics::RenderNode}!getRenderingComponent@{getRenderingComponent}}
+\index{getRenderingComponent@{getRenderingComponent}!K9ngineCore::K9Graphics::RenderNode@{K9ngineCore::K9Graphics::RenderNode}}
+\doxysubsubsection{\texorpdfstring{getRenderingComponent()}{getRenderingComponent()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_render_node_ac85c6b484db3836836308d1ed8ae8305} 
+const \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_render_node_a88cd67562184a41ef0c282443f00eb1a}{Render\+Node\+::\+Rendering\+Component\+Const\+Ptr}} K9ngine\+Core\+::\+K9\+Graphics\+::\+Render\+Node\+::get\+Rendering\+Component (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/lococ/source/repos/\+K9ngine\+\_\+v1/\+K9ngine\+Core/\+Graphics/\mbox{\hyperlink{_render_node_8h}{Render\+Node.\+h}}\item 
+C\+:/\+Users/lococ/source/repos/\+K9ngine\+\_\+v1/\+K9ngine\+Core/\+Graphics/\mbox{\hyperlink{_render_node_8cpp}{Render\+Node.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,142 @@
+\doxysection{K9ngine\+Core\+::K9\+Math\+::Transform Class Reference}
+\hypertarget{class_k9ngine_core_1_1_k9_math_1_1_transform}{}\label{class_k9ngine_core_1_1_k9_math_1_1_transform}\index{K9ngineCore::K9Math::Transform@{K9ngineCore::K9Math::Transform}}
+
+
+{\ttfamily \#include $<$Transform.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform_afe2992d39b110ef9ccbdbb289a4bac82}{Transform}} ()
+\item 
+\mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform_ac680ab254917b170ad324a2e17ddff07}{Transform}} (const \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_aec1af5b18afcd0c2d9ec1ea27909c612}{Vec4}} \&location, const \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}} \&rotation, const \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}} \&\mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform_a1e475315d1e58d4d853bdefb5d62a288}{scale}})
+\item 
+const \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a7bf85a92761d1bd2110c7ae7ebfd2cfe}{Mat4}} \& \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform_adf8d476d274eb755f6297a1ff5ec5a97}{get\+Transform\+Mat4}} () const
+\item 
+const \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_aec1af5b18afcd0c2d9ec1ea27909c612}{Vec4}} \& \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform_a59ad48a93be06b086786e250bef119d2}{get\+Location}} () const
+\item 
+void \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform_a579a09d2fabeeeb12aa4e125dd9535bd}{set\+Location}} (const \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_aec1af5b18afcd0c2d9ec1ea27909c612}{Vec4}} \&)
+\item 
+void \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform_a51f7c25847471f3f54f30ce6f6a8676b}{translate}} (const \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}} \&)
+\item 
+const \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}} \& \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform_a040cf6156dcb4d73898d4bb0ac0af52a}{get\+Rotation}} () const
+\item 
+void \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform_a76b57df1d90d5bb1b02b7a7dd8474c71}{set\+Rotation}} (const \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}} \&)
+\item 
+void \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform_a20baeac872e2d9a82a3408df3b7fb693}{rotate}} (const \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}} \&)
+\item 
+const \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}} \& \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform_a15f8e2622f9f5f6864136b48c0068b48}{get\+Scale}} () const
+\item 
+void \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform_a98e3044637cd5d1b6496bf501e0951c0}{set\+Scale}} (const \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}} \&)
+\item 
+void \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform_a1e475315d1e58d4d853bdefb5d62a288}{scale}} (const \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}} \&)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform}{Transform}} \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform_a1d6ce3a5dbf34bfe4eb168b28f7083e6}{identity}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform}{Transform}} \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform_aefaf6fbac7757967ae0d0a9765f5f0d9}{operator\texorpdfstring{$\ast$}{*}}} (const \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform}{Transform}} \&, const \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform}{Transform}} \&)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_k9ngine_core_1_1_k9_math_1_1_transform_afe2992d39b110ef9ccbdbb289a4bac82}\index{K9ngineCore::K9Math::Transform@{K9ngineCore::K9Math::Transform}!Transform@{Transform}}
+\index{Transform@{Transform}!K9ngineCore::K9Math::Transform@{K9ngineCore::K9Math::Transform}}
+\doxysubsubsection{\texorpdfstring{Transform()}{Transform()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_math_1_1_transform_afe2992d39b110ef9ccbdbb289a4bac82} 
+K9ngine\+Core\+::\+K9\+Math\+::\+Transform\+::\+Transform (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_k9ngine_core_1_1_k9_math_1_1_transform_ac680ab254917b170ad324a2e17ddff07}\index{K9ngineCore::K9Math::Transform@{K9ngineCore::K9Math::Transform}!Transform@{Transform}}
+\index{Transform@{Transform}!K9ngineCore::K9Math::Transform@{K9ngineCore::K9Math::Transform}}
+\doxysubsubsection{\texorpdfstring{Transform()}{Transform()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_math_1_1_transform_ac680ab254917b170ad324a2e17ddff07} 
+K9ngine\+Core\+::\+K9\+Math\+::\+Transform\+::\+Transform (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_aec1af5b18afcd0c2d9ec1ea27909c612}{Vec4}} \&}]{location}{, }\item[{const \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}} \&}]{rotation}{, }\item[{const \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}} \&}]{scale}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_k9ngine_core_1_1_k9_math_1_1_transform_a59ad48a93be06b086786e250bef119d2}\index{K9ngineCore::K9Math::Transform@{K9ngineCore::K9Math::Transform}!getLocation@{getLocation}}
+\index{getLocation@{getLocation}!K9ngineCore::K9Math::Transform@{K9ngineCore::K9Math::Transform}}
+\doxysubsubsection{\texorpdfstring{getLocation()}{getLocation()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_math_1_1_transform_a59ad48a93be06b086786e250bef119d2} 
+const \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_aec1af5b18afcd0c2d9ec1ea27909c612}{Vec4}} \& K9ngine\+Core\+::\+K9\+Math\+::\+Transform\+::get\+Location (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_k9ngine_core_1_1_k9_math_1_1_transform_a040cf6156dcb4d73898d4bb0ac0af52a}\index{K9ngineCore::K9Math::Transform@{K9ngineCore::K9Math::Transform}!getRotation@{getRotation}}
+\index{getRotation@{getRotation}!K9ngineCore::K9Math::Transform@{K9ngineCore::K9Math::Transform}}
+\doxysubsubsection{\texorpdfstring{getRotation()}{getRotation()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_math_1_1_transform_a040cf6156dcb4d73898d4bb0ac0af52a} 
+const \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}} \& K9ngine\+Core\+::\+K9\+Math\+::\+Transform\+::get\+Rotation (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_k9ngine_core_1_1_k9_math_1_1_transform_a15f8e2622f9f5f6864136b48c0068b48}\index{K9ngineCore::K9Math::Transform@{K9ngineCore::K9Math::Transform}!getScale@{getScale}}
+\index{getScale@{getScale}!K9ngineCore::K9Math::Transform@{K9ngineCore::K9Math::Transform}}
+\doxysubsubsection{\texorpdfstring{getScale()}{getScale()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_math_1_1_transform_a15f8e2622f9f5f6864136b48c0068b48} 
+const \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}} \& K9ngine\+Core\+::\+K9\+Math\+::\+Transform\+::get\+Scale (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_k9ngine_core_1_1_k9_math_1_1_transform_adf8d476d274eb755f6297a1ff5ec5a97}\index{K9ngineCore::K9Math::Transform@{K9ngineCore::K9Math::Transform}!getTransformMat4@{getTransformMat4}}
+\index{getTransformMat4@{getTransformMat4}!K9ngineCore::K9Math::Transform@{K9ngineCore::K9Math::Transform}}
+\doxysubsubsection{\texorpdfstring{getTransformMat4()}{getTransformMat4()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_math_1_1_transform_adf8d476d274eb755f6297a1ff5ec5a97} 
+const \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a7bf85a92761d1bd2110c7ae7ebfd2cfe}{Mat4}} \& K9ngine\+Core\+::\+K9\+Math\+::\+Transform\+::get\+Transform\+Mat4 (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_k9ngine_core_1_1_k9_math_1_1_transform_a1d6ce3a5dbf34bfe4eb168b28f7083e6}\index{K9ngineCore::K9Math::Transform@{K9ngineCore::K9Math::Transform}!identity@{identity}}
+\index{identity@{identity}!K9ngineCore::K9Math::Transform@{K9ngineCore::K9Math::Transform}}
+\doxysubsubsection{\texorpdfstring{identity()}{identity()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_math_1_1_transform_a1d6ce3a5dbf34bfe4eb168b28f7083e6} 
+\mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform}{Transform}} K9ngine\+Core\+::\+K9\+Math\+::\+Transform\+::identity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_k9ngine_core_1_1_k9_math_1_1_transform_a20baeac872e2d9a82a3408df3b7fb693}\index{K9ngineCore::K9Math::Transform@{K9ngineCore::K9Math::Transform}!rotate@{rotate}}
+\index{rotate@{rotate}!K9ngineCore::K9Math::Transform@{K9ngineCore::K9Math::Transform}}
+\doxysubsubsection{\texorpdfstring{rotate()}{rotate()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_math_1_1_transform_a20baeac872e2d9a82a3408df3b7fb693} 
+void K9ngine\+Core\+::\+K9\+Math\+::\+Transform\+::rotate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}} \&}]{delta}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_k9ngine_core_1_1_k9_math_1_1_transform_a1e475315d1e58d4d853bdefb5d62a288}\index{K9ngineCore::K9Math::Transform@{K9ngineCore::K9Math::Transform}!scale@{scale}}
+\index{scale@{scale}!K9ngineCore::K9Math::Transform@{K9ngineCore::K9Math::Transform}}
+\doxysubsubsection{\texorpdfstring{scale()}{scale()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_math_1_1_transform_a1e475315d1e58d4d853bdefb5d62a288} 
+void K9ngine\+Core\+::\+K9\+Math\+::\+Transform\+::scale (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}} \&}]{delta}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_k9ngine_core_1_1_k9_math_1_1_transform_a579a09d2fabeeeb12aa4e125dd9535bd}\index{K9ngineCore::K9Math::Transform@{K9ngineCore::K9Math::Transform}!setLocation@{setLocation}}
+\index{setLocation@{setLocation}!K9ngineCore::K9Math::Transform@{K9ngineCore::K9Math::Transform}}
+\doxysubsubsection{\texorpdfstring{setLocation()}{setLocation()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_math_1_1_transform_a579a09d2fabeeeb12aa4e125dd9535bd} 
+void K9ngine\+Core\+::\+K9\+Math\+::\+Transform\+::set\+Location (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_aec1af5b18afcd0c2d9ec1ea27909c612}{Vec4}} \&}]{location}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_k9ngine_core_1_1_k9_math_1_1_transform_a76b57df1d90d5bb1b02b7a7dd8474c71}\index{K9ngineCore::K9Math::Transform@{K9ngineCore::K9Math::Transform}!setRotation@{setRotation}}
+\index{setRotation@{setRotation}!K9ngineCore::K9Math::Transform@{K9ngineCore::K9Math::Transform}}
+\doxysubsubsection{\texorpdfstring{setRotation()}{setRotation()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_math_1_1_transform_a76b57df1d90d5bb1b02b7a7dd8474c71} 
+void K9ngine\+Core\+::\+K9\+Math\+::\+Transform\+::set\+Rotation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}} \&}]{rotation}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_k9ngine_core_1_1_k9_math_1_1_transform_a98e3044637cd5d1b6496bf501e0951c0}\index{K9ngineCore::K9Math::Transform@{K9ngineCore::K9Math::Transform}!setScale@{setScale}}
+\index{setScale@{setScale}!K9ngineCore::K9Math::Transform@{K9ngineCore::K9Math::Transform}}
+\doxysubsubsection{\texorpdfstring{setScale()}{setScale()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_math_1_1_transform_a98e3044637cd5d1b6496bf501e0951c0} 
+void K9ngine\+Core\+::\+K9\+Math\+::\+Transform\+::set\+Scale (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}} \&}]{scale}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_k9ngine_core_1_1_k9_math_1_1_transform_a51f7c25847471f3f54f30ce6f6a8676b}\index{K9ngineCore::K9Math::Transform@{K9ngineCore::K9Math::Transform}!translate@{translate}}
+\index{translate@{translate}!K9ngineCore::K9Math::Transform@{K9ngineCore::K9Math::Transform}}
+\doxysubsubsection{\texorpdfstring{translate()}{translate()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_math_1_1_transform_a51f7c25847471f3f54f30ce6f6a8676b} 
+void K9ngine\+Core\+::\+K9\+Math\+::\+Transform\+::translate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}} \&}]{delta}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_k9ngine_core_1_1_k9_math_1_1_transform_aefaf6fbac7757967ae0d0a9765f5f0d9}\index{K9ngineCore::K9Math::Transform@{K9ngineCore::K9Math::Transform}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!K9ngineCore::K9Math::Transform@{K9ngineCore::K9Math::Transform}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}}{operator*}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_math_1_1_transform_aefaf6fbac7757967ae0d0a9765f5f0d9} 
+\mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform}{Transform}} operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform}{Transform}} \&}]{}{, }\item[{const \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform}{Transform}} \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/lococ/source/repos/\+K9ngine\+\_\+v1/\+K9ngine\+Core/\+Math/\mbox{\hyperlink{_transform_8h}{Transform.\+h}}\item 
+C\+:/\+Users/lococ/source/repos/\+K9ngine\+\_\+v1/\+K9ngine\+Core/\+Math/\mbox{\hyperlink{_transform_8cpp}{Transform.\+cpp}}\end{DoxyCompactItemize}

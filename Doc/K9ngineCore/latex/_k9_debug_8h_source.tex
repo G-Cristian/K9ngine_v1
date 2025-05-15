@@ -1,0 +1,109 @@
+\doxysection{K9\+Debug.\+h}
+\hypertarget{_k9_debug_8h_source}{}\label{_k9_debug_8h_source}\index{C:/Users/lococ/source/repos/K9ngine\_v1/K9ngineCore/K9Debug.h@{C:/Users/lococ/source/repos/K9ngine\_v1/K9ngineCore/K9Debug.h}}
+\mbox{\hyperlink{_k9_debug_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ K9DEBUG\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ K9DEBUG\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_logger_8h}{Logger.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_message_box_8h}{MessageBox.h}}"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <cstdlib>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <exception>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_k9ngine_core}{K9ngineCore}}\ \{}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#if\ (defined(K9\_LOG\_CONSOLE)\ \&\&\ K9\_LOG\_CONSOLE>0)\ ||\ (defined(K9\_LOG\_FILE)\ \&\&\ K9\_LOG\_FILE>0)}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ LOG\_ADD\_TAB()\ gLogger.AddTab();}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ LOG\_REMOVE\_TAB()\ gLogger.RemoveTab();}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#if\ K9\_LOG\_CONSOLE>2\ \&\&\ K9\_LOG\_FILE>2}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ LOG\_MESSAGE(msg)\ gLogger.Log(std::stringstream()\ <<\ "{}MESSAGE:\ "{}\ <<\ msg,\ true,\ true)}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#elif\ K9\_LOG\_CONSOLE>2}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ LOG\_MESSAGE(msg)\ gLogger.Log(std::stringstream()\ <<\ "{}MESSAGE:\ "{}\ <<\ msg,\ true,\ false)}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#elif\ K9\_LOG\_FILE>2}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ LOG\_MESSAGE(msg)\ gLogger.Log(std::stringstream()\ <<\ "{}MESSAGE:\ "{}\ <<\ msg,\ false,\ true)}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ LOG\_MESSAGE(msg)}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#endif\ }}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#if\ K9\_LOG\_CONSOLE>1\ \&\&\ K9\_LOG\_FILE>1}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ LOG\_WARNING(msg)\ gLogger.Log(std::stringstream()\ <<\ "{}WARNING:\ "{}\ <<\ msg,\ true,\ true)}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#elif\ K9\_LOG\_CONSOLE>1}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ LOG\_WARNING(msg)\ gLogger.Log(std::stringstream()\ <<\ "{}WARNING:\ "{}\ <<\ msg,\ true,\ false)}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#elif\ K9\_LOG\_FILE>1}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ LOG\_WARNING(msg)\ gLogger.Log(std::stringstream()\ <<\ "{}WARNING:\ "{}\ <<\ msg,\ false,\ true)}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ LOG\_WARNING(msg)}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#endif\ }}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#if\ K9\_LOG\_CONSOLE>0\ \&\&\ K9\_LOG\_FILE>0}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ LOG\_ERROR(msg)\ gLogger.Log(std::stringstream()\ <<\ "{}ERROR:\ "{}\ <<\ msg,\ true,\ true)}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#elif\ K9\_LOG\_CONSOLE>0}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ LOG\_ERROR(msg)\ gLogger.Log(std::stringstream()\ <<\ "{}ERROR:\ "{}\ <<\ msg,\ true,\ false)}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#elif\ K9\_LOG\_FILE>0}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ LOG\_ERROR(msg)\ gLogger.Log(std::stringstream()\ <<\ "{}ERROR:\ "{}\ <<\ msg,\ false,\ true)}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ LOG\_ERROR(msg)}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#endif\ }}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#define\ LOG\_MESSAGE(msg)}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#define\ LOG\_WARNING(msg)}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ LOG\_ERROR(msg)}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ LOG\_ADD\_TAB()}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#define\ LOG\_REMOVE\_TAB()}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !(defined(K9\_LOG\_CONSOLE)\ \&\&\ K9\_LOG\_CONSOLE>0)\ ||\ (defined(K9\_LOG\_FILE)\ \&\&\ K9\_LOG\_FILE>0)}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#if\ defined(K9TESTS)}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#define\ K9ASSERT(expression,\ msg)\ \ \ do\{\(\backslash\)}}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if(!(expression))\{\(\backslash\)}}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ char\ lineStr[10];\(\backslash\)}}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_itoa\_s(\_\_LINE\_\_,\ lineStr,\ 10);\(\backslash\)}}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ finalMsg\ =\ std::string(msg)\ +\ "{}.\ "{}\ +\ std::string(\_\_FILE\_\_)\ +\ "{}.\ "{}\ +\ std::string(lineStr);\(\backslash\)}}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ throw\ std::exception(finalMsg.c\_str());\(\backslash\)}}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\(\backslash\)}}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}while\ (false)}}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#elif\ !defined(NDEBUG)}}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#define\ K9ASSERT(expression,\ msg)\ do\{\(\backslash\)}}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if(!(expression))\{\(\backslash\)}}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ K9ngineCore::K9MessageBox::ShowError(msg,\ \_\_FILE\_\_,\ \_\_LINE\_\_);\(\backslash\)}}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\(\backslash\)}}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}while(false)}}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#define\ K9ASSERT(expression,\ msg)}}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !NDEBUG}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !K9DEBUG\_H}}
+
+\end{DoxyCode}

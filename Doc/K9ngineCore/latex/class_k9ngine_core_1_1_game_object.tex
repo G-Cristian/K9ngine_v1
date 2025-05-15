@@ -1,0 +1,163 @@
+\doxysection{K9ngine\+Core\+::Game\+Object Class Reference}
+\hypertarget{class_k9ngine_core_1_1_game_object}{}\label{class_k9ngine_core_1_1_game_object}\index{K9ngineCore::GameObject@{K9ngineCore::GameObject}}
+
+
+{\ttfamily \#include $<$Game\+Object.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{class_k9ngine_core_1_1_game_object_a62ac235d386688dd4b8f224c5a6129fa}{Transform\+Change\+Event\+Type}} = \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event}{Transform\+Change\+Event}}$<$\mbox{\hyperlink{class_k9ngine_core_1_1_game_object}{Game\+Object}}$>$
+\item 
+using \mbox{\hyperlink{class_k9ngine_core_1_1_game_object_affd5eb3f9ca271e56396b949ff91ad46}{Observer\+Type}} = \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_a881cdcc4c48efc19a0ba0a8c7a4a0c6d}{Transform\+Change\+Event\+Type\+::\+Observer\+Type}}
+\item 
+using \mbox{\hyperlink{class_k9ngine_core_1_1_game_object_a88ef42e93d54f6e1c3341cc3773adfd1}{Observer\+Type\+Ptr}} = Transform\+Change\+Event\+Type\+::\+Observer\+Type\+Ptr
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_k9ngine_core_1_1_game_object_a215f8fbbfb71eb71387f37539d9181d3}{Game\+Object}} (const \mbox{\hyperlink{namespace_k9ngine_core_1_1_common_a98863712a349c520a34ab6d65d3f6b9e}{Hash}} \&id)
+\item 
+\mbox{\hyperlink{class_k9ngine_core_1_1_game_object_a8dce02c22e4d992e0595889a7b7da1f5}{Game\+Object}} (const \mbox{\hyperlink{namespace_k9ngine_core_1_1_common_a98863712a349c520a34ab6d65d3f6b9e}{Hash}} \&id, const \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform}{Transform}} \&transform)
+\item 
+void \mbox{\hyperlink{class_k9ngine_core_1_1_game_object_ac26ec54f50a49f4f12bdefb3997a02b5}{add\+Observer}} (\mbox{\hyperlink{class_k9ngine_core_1_1_game_object_a88ef42e93d54f6e1c3341cc3773adfd1}{Observer\+Type\+Ptr}})
+\item 
+void \mbox{\hyperlink{class_k9ngine_core_1_1_game_object_a0a62a6732790da14fa82f144fd682766}{remove\+Observer}} (\mbox{\hyperlink{class_k9ngine_core_1_1_game_object_a88ef42e93d54f6e1c3341cc3773adfd1}{Observer\+Type\+Ptr}})
+\item 
+const \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform}{Transform}} \& \mbox{\hyperlink{class_k9ngine_core_1_1_game_object_aa4b4ec25b28f9dbaacae0afdfd525d53}{get\+Transform}} () const
+\item 
+void \mbox{\hyperlink{class_k9ngine_core_1_1_game_object_af145d88f56372caab3f7ff33626793ea}{move\+To}} (float x, float y, float z)
+\item 
+void \mbox{\hyperlink{class_k9ngine_core_1_1_game_object_a764d4054391e6ccf9795a939b04c0fe4}{move\+To}} (const \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}} \&location)
+\item 
+void \mbox{\hyperlink{class_k9ngine_core_1_1_game_object_ada007c31d9c09e2a87b7a1ccc206f06d}{move}} (float x, float y, float z)
+\item 
+void \mbox{\hyperlink{class_k9ngine_core_1_1_game_object_a0f35180d78a88608a5df019b14f7f751}{move}} (const \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}} \&delta)
+\item 
+void \mbox{\hyperlink{class_k9ngine_core_1_1_game_object_afbec58e1c7f42ccb0a946d11a6bc6f8c}{set\+Scale}} (float x, float y, float z)
+\item 
+void \mbox{\hyperlink{class_k9ngine_core_1_1_game_object_a7a66d4c6c8d11a71086bb98a31cbbd4c}{set\+Scale}} (const \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}} \&\mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_abc98a7eb4a595c9115b4ecb887a789b7}{scale}})
+\item 
+void \mbox{\hyperlink{class_k9ngine_core_1_1_game_object_a7eecf30304802ab28b138afe39459282}{set\+Rotation}} (float x, float y, float z)
+\item 
+void \mbox{\hyperlink{class_k9ngine_core_1_1_game_object_a6a5725334d745671a2c03728cdee6977}{set\+Rotation}} (const \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}} \&angle)
+\item 
+const \mbox{\hyperlink{namespace_k9ngine_core_1_1_common_a98863712a349c520a34ab6d65d3f6b9e}{Hash}} \& \mbox{\hyperlink{class_k9ngine_core_1_1_game_object_aa2196a3c0b89d2a9e2913b18e16b2ef1}{get\+Id}} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{class_k9ngine_core_1_1_game_object_affd5eb3f9ca271e56396b949ff91ad46}\index{K9ngineCore::GameObject@{K9ngineCore::GameObject}!ObserverType@{ObserverType}}
+\index{ObserverType@{ObserverType}!K9ngineCore::GameObject@{K9ngineCore::GameObject}}
+\doxysubsubsection{\texorpdfstring{ObserverType}{ObserverType}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_game_object_affd5eb3f9ca271e56396b949ff91ad46} 
+using \mbox{\hyperlink{class_k9ngine_core_1_1_game_object_affd5eb3f9ca271e56396b949ff91ad46}{K9ngine\+Core\+::\+Game\+Object\+::\+Observer\+Type}} = \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_a881cdcc4c48efc19a0ba0a8c7a4a0c6d}{Transform\+Change\+Event\+Type\+::\+Observer\+Type}}}
+
+\Hypertarget{class_k9ngine_core_1_1_game_object_a88ef42e93d54f6e1c3341cc3773adfd1}\index{K9ngineCore::GameObject@{K9ngineCore::GameObject}!ObserverTypePtr@{ObserverTypePtr}}
+\index{ObserverTypePtr@{ObserverTypePtr}!K9ngineCore::GameObject@{K9ngineCore::GameObject}}
+\doxysubsubsection{\texorpdfstring{ObserverTypePtr}{ObserverTypePtr}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_game_object_a88ef42e93d54f6e1c3341cc3773adfd1} 
+using \mbox{\hyperlink{class_k9ngine_core_1_1_game_object_a88ef42e93d54f6e1c3341cc3773adfd1}{K9ngine\+Core\+::\+Game\+Object\+::\+Observer\+Type\+Ptr}} = Transform\+Change\+Event\+Type\+::\+Observer\+Type\+Ptr}
+
+\Hypertarget{class_k9ngine_core_1_1_game_object_a62ac235d386688dd4b8f224c5a6129fa}\index{K9ngineCore::GameObject@{K9ngineCore::GameObject}!TransformChangeEventType@{TransformChangeEventType}}
+\index{TransformChangeEventType@{TransformChangeEventType}!K9ngineCore::GameObject@{K9ngineCore::GameObject}}
+\doxysubsubsection{\texorpdfstring{TransformChangeEventType}{TransformChangeEventType}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_game_object_a62ac235d386688dd4b8f224c5a6129fa} 
+using \mbox{\hyperlink{class_k9ngine_core_1_1_game_object_a62ac235d386688dd4b8f224c5a6129fa}{K9ngine\+Core\+::\+Game\+Object\+::\+Transform\+Change\+Event\+Type}} = \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event}{Transform\+Change\+Event}}$<$\mbox{\hyperlink{class_k9ngine_core_1_1_game_object}{Game\+Object}}$>$}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_k9ngine_core_1_1_game_object_a215f8fbbfb71eb71387f37539d9181d3}\index{K9ngineCore::GameObject@{K9ngineCore::GameObject}!GameObject@{GameObject}}
+\index{GameObject@{GameObject}!K9ngineCore::GameObject@{K9ngineCore::GameObject}}
+\doxysubsubsection{\texorpdfstring{GameObject()}{GameObject()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_game_object_a215f8fbbfb71eb71387f37539d9181d3} 
+K9ngine\+Core\+::\+Game\+Object\+::\+Game\+Object (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_k9ngine_core_1_1_common_a98863712a349c520a34ab6d65d3f6b9e}{Hash}} \&}]{id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_k9ngine_core_1_1_game_object_a8dce02c22e4d992e0595889a7b7da1f5}\index{K9ngineCore::GameObject@{K9ngineCore::GameObject}!GameObject@{GameObject}}
+\index{GameObject@{GameObject}!K9ngineCore::GameObject@{K9ngineCore::GameObject}}
+\doxysubsubsection{\texorpdfstring{GameObject()}{GameObject()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_game_object_a8dce02c22e4d992e0595889a7b7da1f5} 
+K9ngine\+Core\+::\+Game\+Object\+::\+Game\+Object (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_k9ngine_core_1_1_common_a98863712a349c520a34ab6d65d3f6b9e}{Hash}} \&}]{id}{, }\item[{const \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform}{Transform}} \&}]{transform}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_k9ngine_core_1_1_game_object_ac26ec54f50a49f4f12bdefb3997a02b5}\index{K9ngineCore::GameObject@{K9ngineCore::GameObject}!addObserver@{addObserver}}
+\index{addObserver@{addObserver}!K9ngineCore::GameObject@{K9ngineCore::GameObject}}
+\doxysubsubsection{\texorpdfstring{addObserver()}{addObserver()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_game_object_ac26ec54f50a49f4f12bdefb3997a02b5} 
+void K9ngine\+Core\+::\+Game\+Object\+::add\+Observer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_k9ngine_core_1_1_game_object_a88ef42e93d54f6e1c3341cc3773adfd1}{Observer\+Type\+Ptr}}}]{observer}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_k9ngine_core_1_1_game_object_aa2196a3c0b89d2a9e2913b18e16b2ef1}\index{K9ngineCore::GameObject@{K9ngineCore::GameObject}!getId@{getId}}
+\index{getId@{getId}!K9ngineCore::GameObject@{K9ngineCore::GameObject}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_game_object_aa2196a3c0b89d2a9e2913b18e16b2ef1} 
+const \mbox{\hyperlink{namespace_k9ngine_core_1_1_common_a98863712a349c520a34ab6d65d3f6b9e}{Hash}} \& K9ngine\+Core\+::\+Game\+Object\+::get\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_k9ngine_core_1_1_game_object_aa4b4ec25b28f9dbaacae0afdfd525d53}\index{K9ngineCore::GameObject@{K9ngineCore::GameObject}!getTransform@{getTransform}}
+\index{getTransform@{getTransform}!K9ngineCore::GameObject@{K9ngineCore::GameObject}}
+\doxysubsubsection{\texorpdfstring{getTransform()}{getTransform()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_game_object_aa4b4ec25b28f9dbaacae0afdfd525d53} 
+const \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform}{Transform}} \& K9ngine\+Core\+::\+Game\+Object\+::get\+Transform (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_k9ngine_core_1_1_game_object_a0f35180d78a88608a5df019b14f7f751}\index{K9ngineCore::GameObject@{K9ngineCore::GameObject}!move@{move}}
+\index{move@{move}!K9ngineCore::GameObject@{K9ngineCore::GameObject}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_game_object_a0f35180d78a88608a5df019b14f7f751} 
+void K9ngine\+Core\+::\+Game\+Object\+::move (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}} \&}]{delta}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_k9ngine_core_1_1_game_object_ada007c31d9c09e2a87b7a1ccc206f06d}\index{K9ngineCore::GameObject@{K9ngineCore::GameObject}!move@{move}}
+\index{move@{move}!K9ngineCore::GameObject@{K9ngineCore::GameObject}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_game_object_ada007c31d9c09e2a87b7a1ccc206f06d} 
+void K9ngine\+Core\+::\+Game\+Object\+::move (\begin{DoxyParamCaption}\item[{float}]{x}{, }\item[{float}]{y}{, }\item[{float}]{z}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_k9ngine_core_1_1_game_object_a764d4054391e6ccf9795a939b04c0fe4}\index{K9ngineCore::GameObject@{K9ngineCore::GameObject}!moveTo@{moveTo}}
+\index{moveTo@{moveTo}!K9ngineCore::GameObject@{K9ngineCore::GameObject}}
+\doxysubsubsection{\texorpdfstring{moveTo()}{moveTo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_game_object_a764d4054391e6ccf9795a939b04c0fe4} 
+void K9ngine\+Core\+::\+Game\+Object\+::move\+To (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}} \&}]{location}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_k9ngine_core_1_1_game_object_af145d88f56372caab3f7ff33626793ea}\index{K9ngineCore::GameObject@{K9ngineCore::GameObject}!moveTo@{moveTo}}
+\index{moveTo@{moveTo}!K9ngineCore::GameObject@{K9ngineCore::GameObject}}
+\doxysubsubsection{\texorpdfstring{moveTo()}{moveTo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_game_object_af145d88f56372caab3f7ff33626793ea} 
+void K9ngine\+Core\+::\+Game\+Object\+::move\+To (\begin{DoxyParamCaption}\item[{float}]{x}{, }\item[{float}]{y}{, }\item[{float}]{z}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_k9ngine_core_1_1_game_object_a0a62a6732790da14fa82f144fd682766}\index{K9ngineCore::GameObject@{K9ngineCore::GameObject}!removeObserver@{removeObserver}}
+\index{removeObserver@{removeObserver}!K9ngineCore::GameObject@{K9ngineCore::GameObject}}
+\doxysubsubsection{\texorpdfstring{removeObserver()}{removeObserver()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_game_object_a0a62a6732790da14fa82f144fd682766} 
+void K9ngine\+Core\+::\+Game\+Object\+::remove\+Observer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_k9ngine_core_1_1_game_object_a88ef42e93d54f6e1c3341cc3773adfd1}{Observer\+Type\+Ptr}}}]{observer}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_k9ngine_core_1_1_game_object_a6a5725334d745671a2c03728cdee6977}\index{K9ngineCore::GameObject@{K9ngineCore::GameObject}!setRotation@{setRotation}}
+\index{setRotation@{setRotation}!K9ngineCore::GameObject@{K9ngineCore::GameObject}}
+\doxysubsubsection{\texorpdfstring{setRotation()}{setRotation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_game_object_a6a5725334d745671a2c03728cdee6977} 
+void K9ngine\+Core\+::\+Game\+Object\+::set\+Rotation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}} \&}]{angle}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_k9ngine_core_1_1_game_object_a7eecf30304802ab28b138afe39459282}\index{K9ngineCore::GameObject@{K9ngineCore::GameObject}!setRotation@{setRotation}}
+\index{setRotation@{setRotation}!K9ngineCore::GameObject@{K9ngineCore::GameObject}}
+\doxysubsubsection{\texorpdfstring{setRotation()}{setRotation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_game_object_a7eecf30304802ab28b138afe39459282} 
+void K9ngine\+Core\+::\+Game\+Object\+::set\+Rotation (\begin{DoxyParamCaption}\item[{float}]{x}{, }\item[{float}]{y}{, }\item[{float}]{z}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_k9ngine_core_1_1_game_object_a7a66d4c6c8d11a71086bb98a31cbbd4c}\index{K9ngineCore::GameObject@{K9ngineCore::GameObject}!setScale@{setScale}}
+\index{setScale@{setScale}!K9ngineCore::GameObject@{K9ngineCore::GameObject}}
+\doxysubsubsection{\texorpdfstring{setScale()}{setScale()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_game_object_a7a66d4c6c8d11a71086bb98a31cbbd4c} 
+void K9ngine\+Core\+::\+Game\+Object\+::set\+Scale (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}} \&}]{scale}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_k9ngine_core_1_1_game_object_afbec58e1c7f42ccb0a946d11a6bc6f8c}\index{K9ngineCore::GameObject@{K9ngineCore::GameObject}!setScale@{setScale}}
+\index{setScale@{setScale}!K9ngineCore::GameObject@{K9ngineCore::GameObject}}
+\doxysubsubsection{\texorpdfstring{setScale()}{setScale()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_game_object_afbec58e1c7f42ccb0a946d11a6bc6f8c} 
+void K9ngine\+Core\+::\+Game\+Object\+::set\+Scale (\begin{DoxyParamCaption}\item[{float}]{x}{, }\item[{float}]{y}{, }\item[{float}]{z}{}\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/lococ/source/repos/\+K9ngine\+\_\+v1/\+K9ngine\+Core/\mbox{\hyperlink{_game_object_8h}{Game\+Object.\+h}}\item 
+C\+:/\+Users/lococ/source/repos/\+K9ngine\+\_\+v1/\+K9ngine\+Core/\mbox{\hyperlink{_game_object_8cpp}{Game\+Object.\+cpp}}\end{DoxyCompactItemize}

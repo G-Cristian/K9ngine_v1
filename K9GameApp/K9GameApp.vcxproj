@@ -134,14 +134,10 @@
   <ItemGroup>
     <ClCompile Include="..\glad.c" />
     <ClCompile Include="K9Game.cpp" />
-    <ClCompile Include="K9Window.cpp" />
-    <ClCompile Include="K9WindowsManager.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="K9Game.h" />
-    <ClInclude Include="K9Window.h" />
-    <ClInclude Include="K9WindowsManager.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>

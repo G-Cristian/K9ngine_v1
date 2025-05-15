@@ -1,0 +1,94 @@
+\doxysection{K9ngine\+Core\+::Common\+::Transform\+Change\+Event\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_k9ngine_core_1_1_common_1_1_transform_change_event}{}\label{class_k9ngine_core_1_1_common_1_1_transform_change_event}\index{K9ngineCore::Common::TransformChangeEvent$<$ T $>$@{K9ngineCore::Common::TransformChangeEvent$<$ T $>$}}
+
+
+{\ttfamily \#include $<$Transform\+Change\+Event.\+h$>$}
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_1_1_event_arg}{Event\+Arg}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_ae7545dd751201dd56060dc309ae13ca6}{Subject}} = T
+\item 
+using \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_a881cdcc4c48efc19a0ba0a8c7a4a0c6d}{Observer\+Type}} = \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_i_observer}{IObserver}}$<$\mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_ae7545dd751201dd56060dc309ae13ca6}{Subject}}, \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_1_1_event_arg}{Event\+Arg}}$>$
+\item 
+using \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_a8baf173fe03e256a73834783fee01599}{Observer\+Type\+Ptr}} = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_a881cdcc4c48efc19a0ba0a8c7a4a0c6d}{Observer\+Type}} $>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_a0233717b5008e19a96c95be3748a36c9}{Transform\+Change\+Event}} (\mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_ae7545dd751201dd56060dc309ae13ca6}{Subject}} \texorpdfstring{$\ast$}{*}subject)
+\item 
+\mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event}{Transform\+Change\+Event}}$<$ \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_ae7545dd751201dd56060dc309ae13ca6}{Subject}} $>$ \& \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_a47d76e48ebf224aadf0d39b74ff68a33}{operator+=}} (\mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_a8baf173fe03e256a73834783fee01599}{Observer\+Type\+Ptr}})
+\item 
+\mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event}{Transform\+Change\+Event}}$<$ \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_ae7545dd751201dd56060dc309ae13ca6}{Subject}} $>$ \& \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_a94981807147722f49a5e01b1a151c711}{operator-\/=}} (\mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_a8baf173fe03e256a73834783fee01599}{Observer\+Type\+Ptr}})
+\item 
+void \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_a5e29396a77131286ea08e13c0b9eaca2}{notify}} (const \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform}{K9\+Math\+::\+Transform}} \&, const \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform}{K9\+Math\+::\+Transform}} \&) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{class_k9ngine_core_1_1_common_1_1_transform_change_event_a881cdcc4c48efc19a0ba0a8c7a4a0c6d}\index{K9ngineCore::Common::TransformChangeEvent$<$ T $>$@{K9ngineCore::Common::TransformChangeEvent$<$ T $>$}!ObserverType@{ObserverType}}
+\index{ObserverType@{ObserverType}!K9ngineCore::Common::TransformChangeEvent$<$ T $>$@{K9ngineCore::Common::TransformChangeEvent$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{ObserverType}{ObserverType}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_common_1_1_transform_change_event_a881cdcc4c48efc19a0ba0a8c7a4a0c6d} 
+template$<$typename T$>$ \\
+using \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event}{K9ngine\+Core\+::\+Common\+::\+Transform\+Change\+Event}}$<$ T $>$\+::\+Observer\+Type = \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_i_observer}{IObserver}}$<$\mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_ae7545dd751201dd56060dc309ae13ca6}{Subject}}, \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_1_1_event_arg}{Event\+Arg}}$>$}
+
+\Hypertarget{class_k9ngine_core_1_1_common_1_1_transform_change_event_a8baf173fe03e256a73834783fee01599}\index{K9ngineCore::Common::TransformChangeEvent$<$ T $>$@{K9ngineCore::Common::TransformChangeEvent$<$ T $>$}!ObserverTypePtr@{ObserverTypePtr}}
+\index{ObserverTypePtr@{ObserverTypePtr}!K9ngineCore::Common::TransformChangeEvent$<$ T $>$@{K9ngineCore::Common::TransformChangeEvent$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{ObserverTypePtr}{ObserverTypePtr}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_common_1_1_transform_change_event_a8baf173fe03e256a73834783fee01599} 
+template$<$typename T$>$ \\
+using \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event}{K9ngine\+Core\+::\+Common\+::\+Transform\+Change\+Event}}$<$ T $>$\+::\+Observer\+Type\+Ptr = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_a881cdcc4c48efc19a0ba0a8c7a4a0c6d}{Observer\+Type}} $>$}
+
+\Hypertarget{class_k9ngine_core_1_1_common_1_1_transform_change_event_ae7545dd751201dd56060dc309ae13ca6}\index{K9ngineCore::Common::TransformChangeEvent$<$ T $>$@{K9ngineCore::Common::TransformChangeEvent$<$ T $>$}!Subject@{Subject}}
+\index{Subject@{Subject}!K9ngineCore::Common::TransformChangeEvent$<$ T $>$@{K9ngineCore::Common::TransformChangeEvent$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Subject}{Subject}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_common_1_1_transform_change_event_ae7545dd751201dd56060dc309ae13ca6} 
+template$<$typename T$>$ \\
+using \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event}{K9ngine\+Core\+::\+Common\+::\+Transform\+Change\+Event}}$<$ T $>$\+::\+Subject = T}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_k9ngine_core_1_1_common_1_1_transform_change_event_a0233717b5008e19a96c95be3748a36c9}\index{K9ngineCore::Common::TransformChangeEvent$<$ T $>$@{K9ngineCore::Common::TransformChangeEvent$<$ T $>$}!TransformChangeEvent@{TransformChangeEvent}}
+\index{TransformChangeEvent@{TransformChangeEvent}!K9ngineCore::Common::TransformChangeEvent$<$ T $>$@{K9ngineCore::Common::TransformChangeEvent$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{TransformChangeEvent()}{TransformChangeEvent()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_common_1_1_transform_change_event_a0233717b5008e19a96c95be3748a36c9} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event}{K9ngine\+Core\+::\+Common\+::\+Transform\+Change\+Event}}$<$ T $>$\+::\+Transform\+Change\+Event$<$ T $>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_ae7545dd751201dd56060dc309ae13ca6}{Subject}} \texorpdfstring{$\ast$}{*}}]{subject}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_k9ngine_core_1_1_common_1_1_transform_change_event_a5e29396a77131286ea08e13c0b9eaca2}\index{K9ngineCore::Common::TransformChangeEvent$<$ T $>$@{K9ngineCore::Common::TransformChangeEvent$<$ T $>$}!notify@{notify}}
+\index{notify@{notify}!K9ngineCore::Common::TransformChangeEvent$<$ T $>$@{K9ngineCore::Common::TransformChangeEvent$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{notify()}{notify()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_common_1_1_transform_change_event_a5e29396a77131286ea08e13c0b9eaca2} 
+template$<$typename T$>$ \\
+void \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event}{K9ngine\+Core\+::\+Common\+::\+Transform\+Change\+Event}}$<$ T $>$\+::notify (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform}{K9\+Math\+::\+Transform}} \&}]{old\+Value}{, }\item[{const \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform}{K9\+Math\+::\+Transform}} \&}]{new\+Value}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_k9ngine_core_1_1_common_1_1_transform_change_event_a47d76e48ebf224aadf0d39b74ff68a33}\index{K9ngineCore::Common::TransformChangeEvent$<$ T $>$@{K9ngineCore::Common::TransformChangeEvent$<$ T $>$}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!K9ngineCore::Common::TransformChangeEvent$<$ T $>$@{K9ngineCore::Common::TransformChangeEvent$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_common_1_1_transform_change_event_a47d76e48ebf224aadf0d39b74ff68a33} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event}{Transform\+Change\+Event}}$<$ T $>$ \& \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event}{K9ngine\+Core\+::\+Common\+::\+Transform\+Change\+Event}}$<$ T $>$\+::operator+= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_a8baf173fe03e256a73834783fee01599}{Observer\+Type\+Ptr}}}]{observer}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_k9ngine_core_1_1_common_1_1_transform_change_event_a94981807147722f49a5e01b1a151c711}\index{K9ngineCore::Common::TransformChangeEvent$<$ T $>$@{K9ngineCore::Common::TransformChangeEvent$<$ T $>$}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!K9ngineCore::Common::TransformChangeEvent$<$ T $>$@{K9ngineCore::Common::TransformChangeEvent$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/=()}{operator-=()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_common_1_1_transform_change_event_a94981807147722f49a5e01b1a151c711} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event}{Transform\+Change\+Event}}$<$ T $>$ \& \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event}{K9ngine\+Core\+::\+Common\+::\+Transform\+Change\+Event}}$<$ T $>$\+::operator-\/= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_a8baf173fe03e256a73834783fee01599}{Observer\+Type\+Ptr}}}]{observer}{}\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/lococ/source/repos/\+K9ngine\+\_\+v1/\+K9ngine\+Core/\+Common/\mbox{\hyperlink{_transform_change_event_8h}{Transform\+Change\+Event.\+h}}\end{DoxyCompactItemize}

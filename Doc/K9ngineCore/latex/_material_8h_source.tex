@@ -1,0 +1,38 @@
+\doxysection{Material.\+h}
+\hypertarget{_material_8h_source}{}\label{_material_8h_source}\index{C:/Users/lococ/source/repos/K9ngine\_v1/K9ngineCore/Graphics/Material.h@{C:/Users/lococ/source/repos/K9ngine\_v1/K9ngineCore/Graphics/Material.h}}
+\mbox{\hyperlink{_material_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MATERIAL\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MATERIAL\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_graphics_context_8h}{GraphicsContext.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_material_property_8h}{MaterialProperty.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_shader_program_8h}{ShaderProgram.h}}"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_k9ngine_core}{K9ngineCore}}\ \{}
+\DoxyCodeLine{00014\ \ \ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_graphics}{K9Graphics}}\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_material_a11170a64a710f43366b398d62cc15252}{Material}}\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \textcolor{keyword}{using\ }PropertiesContainer\ =\ std::unordered\_map<MaterialProperty::PropertyIdType,\ std::shared\_ptr<MaterialProperty>>;}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_material_a11170a64a710f43366b398d62cc15252}{Material}}(std::shared\_ptr<ShaderProgram>\ program);}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_material_ac0b9d80fc0702997bc41ab0daa83b3e7}{addOrSetProperty}}(std::shared\_ptr<MaterialProperty>);}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_material_ab8f9a1090cdd94f08a7a09cf06e0aca5}{hasProperty}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_material_property_a45976287a0c635fdc303a6d2691ffbd6}{MaterialProperty::PropertyIdType}}\&)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ std::shared\_ptr<const\ MaterialProperty>\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_material_a154dcf0f4afbd6128abefd8ee8d635ea}{getProperty}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_material_property_a45976287a0c635fdc303a6d2691ffbd6}{MaterialProperty::PropertyIdType}}\&)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_material_a050f06dcf5ff9af439a83f113a3673f3}{use}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ PropertiesContainer\ mProperties\{\};}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ std::shared\_ptr<ShaderProgram>\ mProgram;}
+\DoxyCodeLine{00028\ \ \ \ \ \};}
+\DoxyCodeLine{00029\ \ \ \}}
+\DoxyCodeLine{00030\ \}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

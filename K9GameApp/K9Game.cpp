@@ -1,8 +1,10 @@
 #include "K9Game.h"
 
+#include "Graphics/Renderer.h"
+#include "Handle.h"
 #include "K9Debug.h"
-#include "K9Window.h"
-#include "K9WindowsManager.h"
+#include "Windows/K9Window.h"
+#include "Windows/K9WindowsManager.h"
 
 #include <chrono>
 
@@ -22,10 +24,10 @@ namespace K9ngineGame {
     cleanup();
   }
 
-  double K9Game::getCurrentTime() {
+  float K9Game::getCurrentTime() {
     using namespace std::chrono;
 
-    return duration_cast<milliseconds>(system_clock::now().time_since_epoch()).count();
+    return static_cast<float>(duration_cast<milliseconds>(system_clock::now().time_since_epoch()).count());
   }
 
   bool K9Game::init() {
@@ -55,10 +57,10 @@ namespace K9ngineGame {
   }
 
   void K9Game::start() {
-    double previous = getCurrentTime();
-    double lag = 0.0;
-    double current = 0.0;
-    double elapsed = 0.0;
+    float previous = getCurrentTime();
+    float lag = 0.0;
+    float current = 0.0;
+    float elapsed = 0.0;
     while (!mMustClose) {
       current = getCurrentTime();
       elapsed = current - previous;
@@ -90,15 +92,16 @@ namespace K9ngineGame {
     // TODO: Update physics engine (mMsPerFixedUpdate) (besides updating physics will call the corresponding OnCollision events)
   }
 
-  void K9Game::update(double elapsed) {
+  void K9Game::update(float elapsed) {
     // TODO: Update scripts engine (elapsed) which must call every update scripts
     mMustClose = mMustClose || mWindowsManager.currentWindow().shouldClose();
   }
 
-  void K9Game::render(double elapsed) {
+  void K9Game::render(float elapsed) {
     using namespace K9ngineCore::K9Graphics;
     GraphicsContext::clearColor(1.0f, 0.0f, 0.0f, 1.0f);
     // TODO: Update rendering engine (elapsed)
+    mRenderer.render(elapsed);
     mWindowsManager.update();
   }
 

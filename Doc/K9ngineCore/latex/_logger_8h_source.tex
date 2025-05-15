@@ -1,0 +1,44 @@
+\doxysection{Logger.\+h}
+\hypertarget{_logger_8h_source}{}\label{_logger_8h_source}\index{C:/Users/lococ/source/repos/K9ngine\_v1/K9ngineCore/Logger.h@{C:/Users/lococ/source/repos/K9ngine\_v1/K9ngineCore/Logger.h}}
+\mbox{\hyperlink{_logger_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#if\ (defined(K9\_LOG\_CONSOLE)\ \&\&\ K9\_LOG\_CONSOLE>0)\ ||\ \ (defined(K9\_LOG\_FILE)\ \&\&\ K9\_LOG\_FILE>0)}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_k9ngine_core}{K9ngineCore}}\ \{}
+\DoxyCodeLine{00012\ \ \ \textcolor{keyword}{class\ }Logger\ \{}
+\DoxyCodeLine{00013\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ Logger();}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{void}\ AddTab();}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{void}\ RemoveTab();}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ Log(\textcolor{keywordtype}{char}*,\ \textcolor{keywordtype}{bool},\ \textcolor{keywordtype}{bool});}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ Log(\textcolor{keyword}{const}\ std::stringstream\&,\ \textcolor{keywordtype}{bool},\ \textcolor{keywordtype}{bool});}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ Log(\textcolor{keyword}{const}\ std::string\&,\ \textcolor{keywordtype}{bool},\ \textcolor{keywordtype}{bool});}
+\DoxyCodeLine{00022\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00023\ \ \ \ \ Logger(Logger\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00024\ \ \ \ \ Logger(Logger\&\&)\ noexcept\ =\ delete;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ Logger\&\ operator=(Logger\&)\ =\ delete;}
+\DoxyCodeLine{00027\ \ \ \ \ Logger\&\ operator=(Logger\&\&)\ noexcept\ =\ delete;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ std::\textcolor{keywordtype}{string}\ mLogPath;}
+\DoxyCodeLine{00030\ \ \ \ \ std::\textcolor{keywordtype}{string}\ mSpaces;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ static\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ mInstancesCount;}
+\DoxyCodeLine{00033\ \ \ \ \ static\ std::mutex\ mMutex;}
+\DoxyCodeLine{00034\ \ \ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ extern\ Logger\ gLogger;}
+\DoxyCodeLine{00037\ \}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

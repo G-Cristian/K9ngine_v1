@@ -16,7 +16,12 @@ namespace K9ngineCore {
     typedef GLsizei K9sizei;
     typedef GLuint K9uint;
 
-    typedef OpenGLShaderType ShaderType;
+    using BoolValues = OpenGLBoolValues;
+    using BufferDataUsage = OpenGLBufferDataUsage;
+    using ShaderType = OpenGLShaderType;
+    using TargetBuffer = OpenGLTargetBuffer;
+    using TypeEnum = OpenGLTypeEnum;
+
     typedef OpenGLContext GraphicsContext;
   }
 }

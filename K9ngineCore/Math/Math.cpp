@@ -11,6 +11,11 @@ namespace K9ngineCore {
     using Vec3 = glm::vec3;
     using Vec4 = glm::vec4;
 
+    Mat4 identityMat4()
+    {
+      return Mat4{1.0f};
+    }
+
     Mat4 translate(const Mat4& mat, const Vec3& delta) {
       return glm::translate(mat, delta);
     }

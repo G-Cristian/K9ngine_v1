@@ -12,6 +12,8 @@ namespace K9ngineCore {
     using Vec3 = glm::vec3;
     using Vec4 = glm::vec4;
 
+    Mat4 identityMat4();
+
     Mat4 translate(const Mat4& mat, const Vec3& delta);
     Mat4 rotateX(const Mat4& mat, float angle);
     Mat4 rotateY(const Mat4& mat, float angle);

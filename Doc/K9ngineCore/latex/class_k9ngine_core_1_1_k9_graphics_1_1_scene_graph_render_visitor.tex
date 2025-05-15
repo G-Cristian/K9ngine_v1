@@ -1,0 +1,80 @@
+\doxysection{K9ngine\+Core\+::K9\+Graphics\+::Scene\+Graph\+Render\+Visitor Class Reference}
+\hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_render_visitor}{}\label{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_render_visitor}\index{K9ngineCore::K9Graphics::SceneGraphRenderVisitor@{K9ngineCore::K9Graphics::SceneGraphRenderVisitor}}
+
+
+{\ttfamily \#include $<$Scene\+Graph\+Render\+Visitor.\+h$>$}
+
+Inheritance diagram for K9ngine\+Core\+::K9\+Graphics\+::Scene\+Graph\+Render\+Visitor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_render_visitor}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_render_visitor_afec7ca6747b988a91edaed348c14a6fd}{Scene\+Graph\+Render\+Visitor}} (\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph}{Scene\+Graph}} \&)
+\item 
+void \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_render_visitor_aedc4a89cb5dbcb24406ed1773ba0e53c}{visit}} (\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_render_node}{Render\+Node}} \&) override final
+\item 
+void \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_render_visitor_add1d07f1fe23c335c0c35402d6e8c23c}{visit}} (\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node}{Transform\+Node}} \&) override final
+\item 
+std\+::shared\+\_\+ptr$<$ std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_item}{Rendering\+Item}} $>$ $>$ $>$ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_render_visitor_a11f1892c61bf25c9adc1b3084f9ff6fb}{get\+Rendering\+Items}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_scene_graph_visitor}{K9ngine\+Core\+::\+K9\+Graphics\+::\+IScene\+Graph\+Visitor}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_scene_graph_visitor_ae818965a98bcec4be91417b90f4c5507}{IScene\+Graph\+Visitor}} (\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph}{Scene\+Graph}} \&)
+\item 
+virtual \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_scene_graph_visitor_a14a3c4a3199e3a738a77dff62e0e9a23}{\texorpdfstring{$\sim$}{\string~}\+IScene\+Graph\+Visitor}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_scene_graph_visitor}{K9ngine\+Core\+::\+K9\+Graphics\+::\+IScene\+Graph\+Visitor}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph}{Scene\+Graph}} \& \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_scene_graph_visitor_a06511b7604de5f69d9bea948022faff3}{m\+Scene\+Graph}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_render_visitor_afec7ca6747b988a91edaed348c14a6fd}\index{K9ngineCore::K9Graphics::SceneGraphRenderVisitor@{K9ngineCore::K9Graphics::SceneGraphRenderVisitor}!SceneGraphRenderVisitor@{SceneGraphRenderVisitor}}
+\index{SceneGraphRenderVisitor@{SceneGraphRenderVisitor}!K9ngineCore::K9Graphics::SceneGraphRenderVisitor@{K9ngineCore::K9Graphics::SceneGraphRenderVisitor}}
+\doxysubsubsection{\texorpdfstring{SceneGraphRenderVisitor()}{SceneGraphRenderVisitor()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_render_visitor_afec7ca6747b988a91edaed348c14a6fd} 
+K9ngine\+Core\+::\+K9\+Graphics\+::\+Scene\+Graph\+Render\+Visitor\+::\+Scene\+Graph\+Render\+Visitor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph}{Scene\+Graph}} \&}]{scene\+Graph}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_render_visitor_a11f1892c61bf25c9adc1b3084f9ff6fb}\index{K9ngineCore::K9Graphics::SceneGraphRenderVisitor@{K9ngineCore::K9Graphics::SceneGraphRenderVisitor}!getRenderingItems@{getRenderingItems}}
+\index{getRenderingItems@{getRenderingItems}!K9ngineCore::K9Graphics::SceneGraphRenderVisitor@{K9ngineCore::K9Graphics::SceneGraphRenderVisitor}}
+\doxysubsubsection{\texorpdfstring{getRenderingItems()}{getRenderingItems()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_render_visitor_a11f1892c61bf25c9adc1b3084f9ff6fb} 
+std\+::shared\+\_\+ptr$<$ std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_item}{Rendering\+Item}} $>$ $>$ $>$ K9ngine\+Core\+::\+K9\+Graphics\+::\+Scene\+Graph\+Render\+Visitor\+::get\+Rendering\+Items (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_render_visitor_aedc4a89cb5dbcb24406ed1773ba0e53c}\index{K9ngineCore::K9Graphics::SceneGraphRenderVisitor@{K9ngineCore::K9Graphics::SceneGraphRenderVisitor}!visit@{visit}}
+\index{visit@{visit}!K9ngineCore::K9Graphics::SceneGraphRenderVisitor@{K9ngineCore::K9Graphics::SceneGraphRenderVisitor}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_render_visitor_aedc4a89cb5dbcb24406ed1773ba0e53c} 
+void K9ngine\+Core\+::\+K9\+Graphics\+::\+Scene\+Graph\+Render\+Visitor\+::visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_render_node}{Render\+Node}} \&}]{node}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_scene_graph_visitor_af2773064fa13101cb7e0db5387d27021}{K9ngine\+Core\+::\+K9\+Graphics\+::\+IScene\+Graph\+Visitor}}.
+
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_render_visitor_add1d07f1fe23c335c0c35402d6e8c23c}\index{K9ngineCore::K9Graphics::SceneGraphRenderVisitor@{K9ngineCore::K9Graphics::SceneGraphRenderVisitor}!visit@{visit}}
+\index{visit@{visit}!K9ngineCore::K9Graphics::SceneGraphRenderVisitor@{K9ngineCore::K9Graphics::SceneGraphRenderVisitor}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_render_visitor_add1d07f1fe23c335c0c35402d6e8c23c} 
+void K9ngine\+Core\+::\+K9\+Graphics\+::\+Scene\+Graph\+Render\+Visitor\+::visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node}{Transform\+Node}} \&}]{node}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_scene_graph_visitor_a48f7f46f9069d3159e4c5d74a06cb27f}{K9ngine\+Core\+::\+K9\+Graphics\+::\+IScene\+Graph\+Visitor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/lococ/source/repos/\+K9ngine\+\_\+v1/\+K9ngine\+Core/\+Graphics/\mbox{\hyperlink{_scene_graph_render_visitor_8h}{Scene\+Graph\+Render\+Visitor.\+h}}\item 
+C\+:/\+Users/lococ/source/repos/\+K9ngine\+\_\+v1/\+K9ngine\+Core/\+Graphics/\mbox{\hyperlink{_scene_graph_render_visitor_8cpp}{Scene\+Graph\+Render\+Visitor.\+cpp}}\end{DoxyCompactItemize}

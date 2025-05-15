@@ -1,0 +1,59 @@
+\doxysection{Transform\+Node.\+h}
+\hypertarget{_transform_node_8h_source}{}\label{_transform_node_8h_source}\index{C:/Users/lococ/source/repos/K9ngine\_v1/K9ngineCore/Graphics/TransformNode.h@{C:/Users/lococ/source/repos/K9ngine\_v1/K9ngineCore/Graphics/TransformNode.h}}
+\mbox{\hyperlink{_transform_node_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_observer_8h}{../Common/IObserver.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_transform_change_event_8h}{../Common/TransformChangeEvent.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_game_object_8h}{../GameObject.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_handle_8h}{../Handle.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_transform_8h}{../Math/Transform.h}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_node_8h}{INode.h}}"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_k9ngine_core}{K9ngineCore}}\ \{}
+\DoxyCodeLine{00013\ \ \ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_graphics}{K9Graphics}}\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph}{SceneGraph}};}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_a06b0c0ef1bab8bce52c8548f5f1cda9a}{TransformNode}}\ :\textcolor{keyword}{public}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node_ab2a99e87e50dddda2d170da5e7711c56}{INode}}\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_ac0517a28039a04a92bd474536509c5be}{GameObjectPtr}}\ =\ \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{Memory::Handle<K9ngineCore::GameObject>}};;}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_a997e984648b7b978850244c259ad5eca}{GameObjectConstPtr}}\ =\ \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{Memory::Handle<const\ GameObject>}};}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_ac070e793203074e5254a166558521f85}{GameObjectTransformChangeEvent}}\ =\ \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event}{Common::TransformChangeEvent<GameObject>}};}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_aabeeeba2c450aa6f40d54193c7a0f2f8}{TransformObserverSubject}}\ =\ \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_ae7545dd751201dd56060dc309ae13ca6}{GameObjectTransformChangeEvent::Subject}};}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_ad2775edcde4e635654db8e48e53ce1b1}{TransformObserverEventArg}}\ =\ GameObjectTransformChangeEvent::EventArg;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_ac0517a28039a04a92bd474536509c5be}{GameObjectPtr}}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_adc39090dbb07ca83aaa4707d866392dc}{NullGameObjectPtr}};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{comment}{\ \ \ \ \ \ /********************************/}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ \ \ \ \ \ /*******\ INNER\ CLASSES\ **********/}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_1_1_transform_change_observer_ad521280c67c7bcd11535ed6b6aff584a}{TransformChangeObserver}}\ :\textcolor{keyword}{public}\ \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_i_observer}{Common::IObserver}}<TransformObserverSubject,\ TransformObserverEventArg>\{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_1_1_transform_change_observer_ad521280c67c7bcd11535ed6b6aff584a}{TransformChangeObserver}}(\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_a06b0c0ef1bab8bce52c8548f5f1cda9a}{TransformNode}}*);}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_1_1_transform_change_observer_a145435159048e4ddf16643ed6c74ad77}{\string~TransformChangeObserver}}()\ \textcolor{keyword}{override}\ \textcolor{keyword}{final};}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_1_1_transform_change_observer_a2d53e34046c22e5939749f51819c33c0}{update}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_aabeeeba2c450aa6f40d54193c7a0f2f8}{TransformObserverSubject}}\&,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_ad2775edcde4e635654db8e48e53ce1b1}{TransformObserverEventArg}}\&)\ \textcolor{keyword}{const}\ \textcolor{keyword}{override}\ \textcolor{keyword}{final};}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_a06b0c0ef1bab8bce52c8548f5f1cda9a}{TransformNode}}*\ mNode;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{comment}{\ \ \ \ \ \ /********************************/}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_a06b0c0ef1bab8bce52c8548f5f1cda9a}{TransformNode}}(\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node_a2b436d58bbcafb358b18ed8dab9bb2a9}{SceneGraph}}\&,\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_ac0517a28039a04a92bd474536509c5be}{GameObjectPtr}});}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_a61e03ab17ce4a9443db000539c3181a3}{\string~TransformNode}}()\ override\ final;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_a5a2e096759ab40ddd2f7320ea559e59a}{accept}}(\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_scene_graph_visitor}{ISceneGraphVisitor}}\&)\ override\ final;}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ const\ \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math}{K9Math}}::\mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform}{Transform}}\&\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_a4a9cdde7a482774bc8b59838dc6cd623}{getTransform}}()\ const;}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ private:}
+\DoxyCodeLine{00047\ \ \ \ \ private:}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ std::shared\_ptr<\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_1_1_transform_change_observer}{TransformChangeObserver}}>\ mTransformChangeObserver;}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_ac0517a28039a04a92bd474536509c5be}{GameObjectPtr}}\ mGameObject;}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \};}
+\DoxyCodeLine{00052\ \ \ \}}
+\DoxyCodeLine{00053\ \}}
+
+\end{DoxyCode}

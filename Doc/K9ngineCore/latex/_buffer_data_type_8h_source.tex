@@ -1,0 +1,36 @@
+\doxysection{Buffer\+Data\+Type.\+h}
+\hypertarget{_buffer_data_type_8h_source}{}\label{_buffer_data_type_8h_source}\index{C:/Users/lococ/source/repos/K9ngine\_v1/K9ngineCore/Graphics/BufferDataType.h@{C:/Users/lococ/source/repos/K9ngine\_v1/K9ngineCore/Graphics/BufferDataType.h}}
+\mbox{\hyperlink{_buffer_data_type_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_graphics_context_8h}{GraphicsContext.h}}"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_k9ngine_core}{K9ngineCore}}\ \{}
+\DoxyCodeLine{00009\ \ \ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_graphics}{K9Graphics}}\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ \ \ \ *\ Type\ of\ buffer\ such\ as\ usage,\ target\ buffer,\ etc.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_buffer_data_type_a3d0f5affc9099f3eb83120e6bc144a86}{BufferDataType}}\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_buffer_data_type_a3d0f5affc9099f3eb83120e6bc144a86}{BufferDataType}}(\textcolor{keyword}{const}\ std::string\&,\ \textcolor{keyword}{const}\ std::vector<float>\&,\ \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_graphics_a2a891917d5cc31d499ad94bf6cef35a3}{TargetBuffer}},\ \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_graphics_a87aebd6f3b0f3797de69722df234427c}{BufferDataUsage}},\ \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_graphics_a94d250993989ebb8c4599e9cf4a779d5}{BoolValues}});}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<float>\&\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_buffer_data_type_a20e8d330d3d2866d535360c0100c20eb}{getData}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_buffer_data_type_acba064f370f6d57af6629c716838241f}{getName}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_graphics_a2a891917d5cc31d499ad94bf6cef35a3}{TargetBuffer}}\&\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_buffer_data_type_a58416d295fbbdbb72cd40813784ce0f3}{getTargetBuffer}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_graphics_a87aebd6f3b0f3797de69722df234427c}{BufferDataUsage}}\&\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_buffer_data_type_a3310912d341d057e38663adb062ec58a}{getDataUsage}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_graphics_a94d250993989ebb8c4599e9cf4a779d5}{BoolValues}}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_buffer_data_type_ab12ba721d3902f68dfb9305fb65af7f7}{normalized}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ std::vector<float>\ mData;}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ std::string\ mName;}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_graphics_a2a891917d5cc31d499ad94bf6cef35a3}{TargetBuffer}}\ mTargetBuffer;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_graphics_a87aebd6f3b0f3797de69722df234427c}{BufferDataUsage}}\ mDataUsage;}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_graphics_a94d250993989ebb8c4599e9cf4a779d5}{BoolValues}}\ mNormalized;}
+\DoxyCodeLine{00028\ \ \ \ \ \};}
+\DoxyCodeLine{00029\ \ \ \}}
+\DoxyCodeLine{00030\ \}}
+
+\end{DoxyCode}

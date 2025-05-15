@@ -1,0 +1,50 @@
+\doxysection{Scene\+Graph.\+h}
+\hypertarget{_scene_graph_8h_source}{}\label{_scene_graph_8h_source}\index{C:/Users/lococ/source/repos/K9ngine\_v1/K9ngineCore/Graphics/SceneGraph.h@{C:/Users/lococ/source/repos/K9ngine\_v1/K9ngineCore/Graphics/SceneGraph.h}}
+\mbox{\hyperlink{_scene_graph_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_node_8h}{INode.h}}"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <queue>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_k9ngine_core}{K9ngineCore}}\ \{}
+\DoxyCodeLine{00009\ \ \ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_graphics}{K9Graphics}}\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_scene_graph_visitor}{ISceneGraphVisitor}};}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node}{TransformNode}};}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_a31e769e29c3569206ae08742e9123311}{SceneGraph}}\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ \ \ \ \ \ /********************************/}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ \ \ \ \ \ /*******\ INNER\ CLASSES\ **********/}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{comment}{\ \ \ \ \ \ /**********************************/}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{comment}{\ \ \ \ \ \ /********\ CONSTRUCTORS/DESTRUCTORS\ ************/}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_a31e769e29c3569206ae08742e9123311}{SceneGraph}}();}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{comment}{\ \ \ \ \ \ /**********************************/}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_a31e769e29c3569206ae08742e9123311}{SceneGraph}}\&\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_ad23ac091049d8c8421ab628313c87b7c}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_a31e769e29c3569206ae08742e9123311}{SceneGraph}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_a31e769e29c3569206ae08742e9123311}{SceneGraph}}\&\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_aeb239ac562c3acd431b4b190945d4857}{operator=}}(\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_a31e769e29c3569206ae08742e9123311}{SceneGraph}}\&\&)\ noexcept\ =\ delete;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{comment}{\ \ \ \ \ \ /********\ MEMBER\ FUNCTIONS\ ************/}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_a39e0db5ad2b6f15c4a88ac37ed81f597}{cleanDirty}}(\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node}{INode}}*);}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_a5d2f3a13f1395ec1f4900d1bdc34e3b5}{propagateDirtyUpwards}}();}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_a5d2f3a13f1395ec1f4900d1bdc34e3b5}{propagateDirtyUpwards}}(\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node}{INode}}*);}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_af6133037b5d65054953889fd7d9a1e53}{accept}}(\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_scene_graph_visitor}{ISceneGraphVisitor}}\&);}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_a50bc17ecc268427bbf837ad0f9736e7e}{setDirty}}(\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node}{INode}}*);}
+\DoxyCodeLine{00036\ \ \ \ \ private:}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{comment}{\ \ \ \ \ \ /**********************************/}}
+\DoxyCodeLine{00039\ \ \ \ \ private:}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ std::queue<\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node}{INode}}*>\ mDirtyNodes\{\};}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ std::shared\_ptr<INode>\ mRoot;}
+\DoxyCodeLine{00042\ \ \ \ \ \};}
+\DoxyCodeLine{00043\ \ \ \}}
+\DoxyCodeLine{00044\ \}}
+
+\end{DoxyCode}

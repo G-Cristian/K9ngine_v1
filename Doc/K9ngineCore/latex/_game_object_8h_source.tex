@@ -1,0 +1,57 @@
+\doxysection{Game\+Object.\+h}
+\hypertarget{_game_object_8h_source}{}\label{_game_object_8h_source}\index{C:/Users/lococ/source/repos/K9ngine\_v1/K9ngineCore/GameObject.h@{C:/Users/lococ/source/repos/K9ngine\_v1/K9ngineCore/GameObject.h}}
+\mbox{\hyperlink{_game_object_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ GAMEOBJECT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ GAMEOBJECT\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_hasher_8h}{Common/Hasher.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_observer_8h}{Common/IObserver.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_transform_change_event_8h}{Common/TransformChangeEvent.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_math_8h}{Math/Math.h}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_transform_8h}{Math/Transform.h}}"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_k9ngine_core}{K9ngineCore}}\{}
+\DoxyCodeLine{00013\ \ \ \textcolor{keyword}{using\ namespace\ }K9ngineCore::Common;}
+\DoxyCodeLine{00014\ \ \ \textcolor{keyword}{using\ namespace\ }K9ngineCore::K9Math;}
+\DoxyCodeLine{00015\ \ \ }
+\DoxyCodeLine{00016\ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_k9ngine_core_1_1_game_object_a215f8fbbfb71eb71387f37539d9181d3}{GameObject}}\ \{}
+\DoxyCodeLine{00017\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_k9ngine_core_1_1_game_object_a62ac235d386688dd4b8f224c5a6129fa}{TransformChangeEventType}}\ =\ \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event}{TransformChangeEvent<GameObject>}};}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_k9ngine_core_1_1_game_object_affd5eb3f9ca271e56396b949ff91ad46}{ObserverType}}\ =\ \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_a881cdcc4c48efc19a0ba0a8c7a4a0c6d}{TransformChangeEventType::ObserverType}};}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_k9ngine_core_1_1_game_object_a88ef42e93d54f6e1c3341cc3773adfd1}{ObserverTypePtr}}\ =\ \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_a8baf173fe03e256a73834783fee01599}{TransformChangeEventType::ObserverTypePtr}};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_k9ngine_core_1_1_game_object_a215f8fbbfb71eb71387f37539d9181d3}{GameObject}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_k9ngine_core_1_1_common_a98863712a349c520a34ab6d65d3f6b9e}{Hash}}\&\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_k9ngine_core_1_1_game_object_a215f8fbbfb71eb71387f37539d9181d3}{GameObject}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_k9ngine_core_1_1_common_a98863712a349c520a34ab6d65d3f6b9e}{Hash}}\&\ \textcolor{keywordtype}{id},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform}{Transform}}\&\ transform);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_k9ngine_core_1_1_game_object_ac26ec54f50a49f4f12bdefb3997a02b5}{addObserver}}(\mbox{\hyperlink{class_k9ngine_core_1_1_game_object_a88ef42e93d54f6e1c3341cc3773adfd1}{ObserverTypePtr}});}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_k9ngine_core_1_1_game_object_a0a62a6732790da14fa82f144fd682766}{removeObserver}}(\mbox{\hyperlink{class_k9ngine_core_1_1_game_object_a88ef42e93d54f6e1c3341cc3773adfd1}{ObserverTypePtr}});}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform}{Transform}}\&\ \mbox{\hyperlink{class_k9ngine_core_1_1_game_object_aa4b4ec25b28f9dbaacae0afdfd525d53}{getTransform}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00029\ \ \ \ \ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_k9ngine_core_1_1_game_object_af145d88f56372caab3f7ff33626793ea}{moveTo}}(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{float}\ z);}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_k9ngine_core_1_1_game_object_af145d88f56372caab3f7ff33626793ea}{moveTo}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}}\&\ location);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_k9ngine_core_1_1_game_object_ada007c31d9c09e2a87b7a1ccc206f06d}{move}}(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{float}\ z);}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_k9ngine_core_1_1_game_object_ada007c31d9c09e2a87b7a1ccc206f06d}{move}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}}\&\ delta);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_k9ngine_core_1_1_game_object_afbec58e1c7f42ccb0a946d11a6bc6f8c}{setScale}}(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{float}\ z);}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_k9ngine_core_1_1_game_object_afbec58e1c7f42ccb0a946d11a6bc6f8c}{setScale}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}}\&\ \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_abc98a7eb4a595c9115b4ecb887a789b7}{scale}});}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_k9ngine_core_1_1_game_object_a7eecf30304802ab28b138afe39459282}{setRotation}}(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{float}\ z);}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_k9ngine_core_1_1_game_object_a7eecf30304802ab28b138afe39459282}{setRotation}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}}\&\ angle);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_k9ngine_core_1_1_common_a98863712a349c520a34ab6d65d3f6b9e}{Hash}}\&\ \mbox{\hyperlink{class_k9ngine_core_1_1_game_object_aa2196a3c0b89d2a9e2913b18e16b2ef1}{getId}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{class_k9ngine_core_1_1_game_object_a62ac235d386688dd4b8f224c5a6129fa}{TransformChangeEventType}}\ mTransformChangeEvent;}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform}{Transform}}\ mTransform;}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{namespace_k9ngine_core_1_1_common_a98863712a349c520a34ab6d65d3f6b9e}{Hash}}\ mId;}
+\DoxyCodeLine{00048\ \ \ \};}
+\DoxyCodeLine{00049\ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !GAMEOBJECT\_H}}
+
+\end{DoxyCode}

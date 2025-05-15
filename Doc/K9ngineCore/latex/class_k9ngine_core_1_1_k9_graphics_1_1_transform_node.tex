@@ -1,0 +1,169 @@
+\doxysection{K9ngine\+Core\+::K9\+Graphics\+::Transform\+Node Class Reference}
+\hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node}{}\label{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node}\index{K9ngineCore::K9Graphics::TransformNode@{K9ngineCore::K9Graphics::TransformNode}}
+
+
+{\ttfamily \#include $<$Transform\+Node.\+h$>$}
+
+Inheritance diagram for K9ngine\+Core\+::K9\+Graphics\+::Transform\+Node\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_1_1_transform_change_observer}{Transform\+Change\+Observer}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_ac0517a28039a04a92bd474536509c5be}{Game\+Object\+Ptr}} = \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{Memory\+::\+Handle}}$<$\mbox{\hyperlink{class_k9ngine_core_1_1_game_object}{K9ngine\+Core\+::\+Game\+Object}}$>$
+\item 
+using \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_a997e984648b7b978850244c259ad5eca}{Game\+Object\+Const\+Ptr}} = \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{Memory\+::\+Handle}}$<$const \mbox{\hyperlink{class_k9ngine_core_1_1_game_object}{Game\+Object}}$>$
+\item 
+using \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_ac070e793203074e5254a166558521f85}{Game\+Object\+Transform\+Change\+Event}} = \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event}{Common\+::\+Transform\+Change\+Event}}$<$\mbox{\hyperlink{class_k9ngine_core_1_1_game_object}{Game\+Object}}$>$
+\item 
+using \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_aabeeeba2c450aa6f40d54193c7a0f2f8}{Transform\+Observer\+Subject}} = \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_ae7545dd751201dd56060dc309ae13ca6}{Game\+Object\+Transform\+Change\+Event\+::\+Subject}}
+\item 
+using \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_ad2775edcde4e635654db8e48e53ce1b1}{Transform\+Observer\+Event\+Arg}} = Game\+Object\+Transform\+Change\+Event\+::\+Event\+Arg
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node}{K9ngine\+Core\+::\+K9\+Graphics\+::\+INode}}}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node_a7795b37d9d35c5e7e1930528e18d070b}{Node\+Ptr}} = std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node}{INode}}$>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_a06b0c0ef1bab8bce52c8548f5f1cda9a}{Transform\+Node}} (\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph}{Scene\+Graph}} \&, \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_ac0517a28039a04a92bd474536509c5be}{Game\+Object\+Ptr}})
+\item 
+\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_a61e03ab17ce4a9443db000539c3181a3}{\texorpdfstring{$\sim$}{\string~}\+Transform\+Node}} () override final
+\item 
+void \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_a5a2e096759ab40ddd2f7320ea559e59a}{accept}} (\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_scene_graph_visitor}{IScene\+Graph\+Visitor}} \&) override final
+\item 
+const \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform}{K9\+Math\+::\+Transform}} \& \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_a4a9cdde7a482774bc8b59838dc6cd623}{get\+Transform}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node}{K9ngine\+Core\+::\+K9\+Graphics\+::\+INode}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node_ab2a99e87e50dddda2d170da5e7711c56}{INode}} (\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph}{Scene\+Graph}} \&scene\+Graph)
+\item 
+virtual \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node_af7af0ed9a1b287e00dc6b29a2f6e9b22}{\texorpdfstring{$\sim$}{\string~}\+INode}} ()=default
+\item 
+const \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph}{Scene\+Graph}} \& \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node_a78129060cbc8e0632fffcdf42629adbb}{get\+Scene\+Graph}} () const
+\item 
+\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph}{Scene\+Graph}} \& \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node_a5baddc98cf7b1aa7e657edc8a586b010}{get\+Scene\+Graph}} ()
+\item 
+bool \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node_a99582529e2688395af83a7a33aac774b}{is\+Dirty}} () const
+\item 
+const \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node_a7795b37d9d35c5e7e1930528e18d070b}{Node\+Ptr}} \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node_af5369a3099d4441dd7bd34e4ad7df585}{get\+Parent}} () const
+\item 
+\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node_a7795b37d9d35c5e7e1930528e18d070b}{Node\+Ptr}} \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node_a6ec0a908998da5d777faa82f4971319a}{get\+Parent}} ()
+\item 
+const std\+::vector$<$ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node_a7795b37d9d35c5e7e1930528e18d070b}{Node\+Ptr}} $>$ \& \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node_a44fb8699ede0d4d4f890d5feeb47905b}{get\+Children}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_ac0517a28039a04a92bd474536509c5be}{Game\+Object\+Ptr}} \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_adc39090dbb07ca83aaa4707d866392dc}{Null\+Game\+Object\+Ptr}} = \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle_table}{Memory\+::\+Handle\+Table}}$<$\mbox{\hyperlink{class_k9ngine_core_1_1_game_object}{K9ngine\+Core\+::\+Game\+Object}}$>$\+::\+Null\+Handle
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node}{K9ngine\+Core\+::\+K9\+Graphics\+::\+INode}}}
+\begin{DoxyCompactItemize}
+\item 
+friend \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node_a2b436d58bbcafb358b18ed8dab9bb2a9}{Scene\+Graph}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node}{K9ngine\+Core\+::\+K9\+Graphics\+::\+INode}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node_a7795b37d9d35c5e7e1930528e18d070b}{Node\+Ptr}} $>$ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node_aa713f8b03bd51ab5c675ab1ad699ac7a}{m\+Children}} \{\}
+\item 
+\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node_a7795b37d9d35c5e7e1930528e18d070b}{Node\+Ptr}} \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node_a288938753fe5959eed88101cf94ad022}{m\+Parent}} \{ nullptr \}
+\item 
+\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph}{Scene\+Graph}} \& \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node_ae45a2ade53f527d3b8dc401d8aa831eb}{m\+Scene\+Graph}}
+\item 
+bool \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node_a92334c23e708c60268d11c8b6e7968d1}{m\+Is\+Dirty}} \{ false \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_a997e984648b7b978850244c259ad5eca}\index{K9ngineCore::K9Graphics::TransformNode@{K9ngineCore::K9Graphics::TransformNode}!GameObjectConstPtr@{GameObjectConstPtr}}
+\index{GameObjectConstPtr@{GameObjectConstPtr}!K9ngineCore::K9Graphics::TransformNode@{K9ngineCore::K9Graphics::TransformNode}}
+\doxysubsubsection{\texorpdfstring{GameObjectConstPtr}{GameObjectConstPtr}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_a997e984648b7b978850244c259ad5eca} 
+using \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_a997e984648b7b978850244c259ad5eca}{K9ngine\+Core\+::\+K9\+Graphics\+::\+Transform\+Node\+::\+Game\+Object\+Const\+Ptr}} = \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{Memory\+::\+Handle}}$<$const \mbox{\hyperlink{class_k9ngine_core_1_1_game_object}{Game\+Object}}$>$}
+
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_ac0517a28039a04a92bd474536509c5be}\index{K9ngineCore::K9Graphics::TransformNode@{K9ngineCore::K9Graphics::TransformNode}!GameObjectPtr@{GameObjectPtr}}
+\index{GameObjectPtr@{GameObjectPtr}!K9ngineCore::K9Graphics::TransformNode@{K9ngineCore::K9Graphics::TransformNode}}
+\doxysubsubsection{\texorpdfstring{GameObjectPtr}{GameObjectPtr}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_ac0517a28039a04a92bd474536509c5be} 
+using \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_ac0517a28039a04a92bd474536509c5be}{K9ngine\+Core\+::\+K9\+Graphics\+::\+Transform\+Node\+::\+Game\+Object\+Ptr}} = \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{Memory\+::\+Handle}}$<$\mbox{\hyperlink{class_k9ngine_core_1_1_game_object}{K9ngine\+Core\+::\+Game\+Object}}$>$}
+
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_ac070e793203074e5254a166558521f85}\index{K9ngineCore::K9Graphics::TransformNode@{K9ngineCore::K9Graphics::TransformNode}!GameObjectTransformChangeEvent@{GameObjectTransformChangeEvent}}
+\index{GameObjectTransformChangeEvent@{GameObjectTransformChangeEvent}!K9ngineCore::K9Graphics::TransformNode@{K9ngineCore::K9Graphics::TransformNode}}
+\doxysubsubsection{\texorpdfstring{GameObjectTransformChangeEvent}{GameObjectTransformChangeEvent}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_ac070e793203074e5254a166558521f85} 
+using \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_ac070e793203074e5254a166558521f85}{K9ngine\+Core\+::\+K9\+Graphics\+::\+Transform\+Node\+::\+Game\+Object\+Transform\+Change\+Event}} = \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event}{Common\+::\+Transform\+Change\+Event}}$<$\mbox{\hyperlink{class_k9ngine_core_1_1_game_object}{Game\+Object}}$>$}
+
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_ad2775edcde4e635654db8e48e53ce1b1}\index{K9ngineCore::K9Graphics::TransformNode@{K9ngineCore::K9Graphics::TransformNode}!TransformObserverEventArg@{TransformObserverEventArg}}
+\index{TransformObserverEventArg@{TransformObserverEventArg}!K9ngineCore::K9Graphics::TransformNode@{K9ngineCore::K9Graphics::TransformNode}}
+\doxysubsubsection{\texorpdfstring{TransformObserverEventArg}{TransformObserverEventArg}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_ad2775edcde4e635654db8e48e53ce1b1} 
+using \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_ad2775edcde4e635654db8e48e53ce1b1}{K9ngine\+Core\+::\+K9\+Graphics\+::\+Transform\+Node\+::\+Transform\+Observer\+Event\+Arg}} = Game\+Object\+Transform\+Change\+Event\+::\+Event\+Arg}
+
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_aabeeeba2c450aa6f40d54193c7a0f2f8}\index{K9ngineCore::K9Graphics::TransformNode@{K9ngineCore::K9Graphics::TransformNode}!TransformObserverSubject@{TransformObserverSubject}}
+\index{TransformObserverSubject@{TransformObserverSubject}!K9ngineCore::K9Graphics::TransformNode@{K9ngineCore::K9Graphics::TransformNode}}
+\doxysubsubsection{\texorpdfstring{TransformObserverSubject}{TransformObserverSubject}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_aabeeeba2c450aa6f40d54193c7a0f2f8} 
+using \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_aabeeeba2c450aa6f40d54193c7a0f2f8}{K9ngine\+Core\+::\+K9\+Graphics\+::\+Transform\+Node\+::\+Transform\+Observer\+Subject}} = \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_ae7545dd751201dd56060dc309ae13ca6}{Game\+Object\+Transform\+Change\+Event\+::\+Subject}}}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_a06b0c0ef1bab8bce52c8548f5f1cda9a}\index{K9ngineCore::K9Graphics::TransformNode@{K9ngineCore::K9Graphics::TransformNode}!TransformNode@{TransformNode}}
+\index{TransformNode@{TransformNode}!K9ngineCore::K9Graphics::TransformNode@{K9ngineCore::K9Graphics::TransformNode}}
+\doxysubsubsection{\texorpdfstring{TransformNode()}{TransformNode()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_a06b0c0ef1bab8bce52c8548f5f1cda9a} 
+K9ngine\+Core\+::\+K9\+Graphics\+::\+Transform\+Node\+::\+Transform\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph}{Scene\+Graph}} \&}]{scene}{, }\item[{\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_ac0517a28039a04a92bd474536509c5be}{Game\+Object\+Ptr}}}]{game\+Object}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_a61e03ab17ce4a9443db000539c3181a3}\index{K9ngineCore::K9Graphics::TransformNode@{K9ngineCore::K9Graphics::TransformNode}!````~TransformNode@{\texorpdfstring{$\sim$}{\string~}TransformNode}}
+\index{````~TransformNode@{\texorpdfstring{$\sim$}{\string~}TransformNode}!K9ngineCore::K9Graphics::TransformNode@{K9ngineCore::K9Graphics::TransformNode}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}TransformNode()}{\string~TransformNode()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_a61e03ab17ce4a9443db000539c3181a3} 
+K9ngine\+Core\+::\+K9\+Graphics\+::\+Transform\+Node\+::\texorpdfstring{$\sim$}{\string~}\+Transform\+Node (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_a5a2e096759ab40ddd2f7320ea559e59a}\index{K9ngineCore::K9Graphics::TransformNode@{K9ngineCore::K9Graphics::TransformNode}!accept@{accept}}
+\index{accept@{accept}!K9ngineCore::K9Graphics::TransformNode@{K9ngineCore::K9Graphics::TransformNode}}
+\doxysubsubsection{\texorpdfstring{accept()}{accept()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_a5a2e096759ab40ddd2f7320ea559e59a} 
+void K9ngine\+Core\+::\+K9\+Graphics\+::\+Transform\+Node\+::accept (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_scene_graph_visitor}{IScene\+Graph\+Visitor}} \&}]{visitor}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node_a556f52cf2f62db15deeac262bef9d942}{K9ngine\+Core\+::\+K9\+Graphics\+::\+INode}}.
+
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_a4a9cdde7a482774bc8b59838dc6cd623}\index{K9ngineCore::K9Graphics::TransformNode@{K9ngineCore::K9Graphics::TransformNode}!getTransform@{getTransform}}
+\index{getTransform@{getTransform}!K9ngineCore::K9Graphics::TransformNode@{K9ngineCore::K9Graphics::TransformNode}}
+\doxysubsubsection{\texorpdfstring{getTransform()}{getTransform()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_a4a9cdde7a482774bc8b59838dc6cd623} 
+const \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform}{K9\+Math\+::\+Transform}} \& K9ngine\+Core\+::\+K9\+Graphics\+::\+Transform\+Node\+::get\+Transform (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_adc39090dbb07ca83aaa4707d866392dc}\index{K9ngineCore::K9Graphics::TransformNode@{K9ngineCore::K9Graphics::TransformNode}!NullGameObjectPtr@{NullGameObjectPtr}}
+\index{NullGameObjectPtr@{NullGameObjectPtr}!K9ngineCore::K9Graphics::TransformNode@{K9ngineCore::K9Graphics::TransformNode}}
+\doxysubsubsection{\texorpdfstring{NullGameObjectPtr}{NullGameObjectPtr}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_adc39090dbb07ca83aaa4707d866392dc} 
+const \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node_ac0517a28039a04a92bd474536509c5be}{Transform\+Node\+::\+Game\+Object\+Ptr}} K9ngine\+Core\+::\+K9\+Graphics\+::\+Transform\+Node\+::\+Null\+Game\+Object\+Ptr = \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle_table}{Memory\+::\+Handle\+Table}}$<$\mbox{\hyperlink{class_k9ngine_core_1_1_game_object}{K9ngine\+Core\+::\+Game\+Object}}$>$\+::\+Null\+Handle\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/lococ/source/repos/\+K9ngine\+\_\+v1/\+K9ngine\+Core/\+Graphics/\mbox{\hyperlink{_transform_node_8h}{Transform\+Node.\+h}}\item 
+C\+:/\+Users/lococ/source/repos/\+K9ngine\+\_\+v1/\+K9ngine\+Core/\+Graphics/\mbox{\hyperlink{_transform_node_8cpp}{Transform\+Node.\+cpp}}\end{DoxyCompactItemize}

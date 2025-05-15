@@ -1,0 +1,98 @@
+\doxysection{Transform\+Change\+Event.\+h}
+\hypertarget{_transform_change_event_8h_source}{}\label{_transform_change_event_8h_source}\index{C:/Users/lococ/source/repos/K9ngine\_v1/K9ngineCore/Common/TransformChangeEvent.h@{C:/Users/lococ/source/repos/K9ngine\_v1/K9ngineCore/Common/TransformChangeEvent.h}}
+\mbox{\hyperlink{_transform_change_event_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_transform_8h}{../Math/Transform.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_k9_debug_8h}{../K9Debug.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_observer_8h}{IObserver.h}}"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <set>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_k9ngine_core}{K9ngineCore}}\ \{}
+\DoxyCodeLine{00012\ \ \ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_k9ngine_core_1_1_common}{Common}}\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_a0233717b5008e19a96c95be3748a36c9}{TransformChangeEvent}}\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_1_1_event_arg}{EventArg}};}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_ae7545dd751201dd56060dc309ae13ca6}{Subject}}\ =\ T;}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_a881cdcc4c48efc19a0ba0a8c7a4a0c6d}{ObserverType}}\ =\ \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_i_observer}{IObserver<Subject,\ EventArg>}};}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_a8baf173fe03e256a73834783fee01599}{ObserverTypePtr}}\ =\ std::shared\_ptr<\ ObserverType\ >;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_1_1_event_arg_a6a9ec2446be7bf539f8fefbbd139a509}{EventArg}}\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_1_1_event_arg_a6a9ec2446be7bf539f8fefbbd139a509}{EventArg}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform}{K9Math::Transform}}\&,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform}{K9Math::Transform}}\&);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform}{K9Math::Transform}}\&\ \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_1_1_event_arg_ad31ff67e37b7a9c290808e2fd606347e}{getOldValue}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform}{K9Math::Transform}}\&\ \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_1_1_event_arg_a191dc993d07c9c47c2d161406d15c060}{getNewValue}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform}{K9Math::Transform}}\ mOldValue;}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform}{K9Math::Transform}}\ mNewValue;}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_a0233717b5008e19a96c95be3748a36c9}{TransformChangeEvent}}(\mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_ae7545dd751201dd56060dc309ae13ca6}{Subject}}*\ subject);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_a0233717b5008e19a96c95be3748a36c9}{TransformChangeEvent<Subject>}}\&\ \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_a47d76e48ebf224aadf0d39b74ff68a33}{operator+=}}(\mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_a8baf173fe03e256a73834783fee01599}{ObserverTypePtr}});}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_a0233717b5008e19a96c95be3748a36c9}{TransformChangeEvent<Subject>}}\&\ \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_a94981807147722f49a5e01b1a151c711}{operator-\/=}}(\mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_a8baf173fe03e256a73834783fee01599}{ObserverTypePtr}});}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_a5e29396a77131286ea08e13c0b9eaca2}{notify}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform}{K9Math::Transform}}\&,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform}{K9Math::Transform}}\&)\textcolor{keyword}{const};}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ std::set<\ ObserverTypePtr\ >\ mObservers\{\};}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_ae7545dd751201dd56060dc309ae13ca6}{Subject}}*\ mSubject;}
+\DoxyCodeLine{00041\ \ \ \ \ \};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_1_1_event_arg_a6a9ec2446be7bf539f8fefbbd139a509}{TransformChangeEvent<T>::EventArg::EventArg}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform}{K9Math::Transform}}\&\ oldValue,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform}{K9Math::Transform}}\&\ newValue)}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ :\ mOldValue\{oldValue\}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ ,\ mNewValue\{newValue\}\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform}{K9Math::Transform}}\&\ \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_1_1_event_arg_ad31ff67e37b7a9c290808e2fd606347e}{TransformChangeEvent<T>::EventArg::getOldValue}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ mOldValue;\ \}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform}{K9Math::Transform}}\&\ \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_1_1_event_arg_a191dc993d07c9c47c2d161406d15c060}{TransformChangeEvent<T>::EventArg::getNewValue}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ mNewValue;\ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_a0233717b5008e19a96c95be3748a36c9}{TransformChangeEvent<T>::TransformChangeEvent<T>}}(\mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_ae7545dd751201dd56060dc309ae13ca6}{Subject}}*\ subject)}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ :mSubject\{\ subject\ \}\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \mbox{\hyperlink{_k9_debug_8h_a6634cdad87399d6a7a117d92811644a9}{K9ASSERT}}(subject,\ \textcolor{stringliteral}{"{}Subject\ is\ null"{}});}
+\DoxyCodeLine{00059\ \ \ \ \ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_a0233717b5008e19a96c95be3748a36c9}{TransformChangeEvent<T>}}\&\ \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_a47d76e48ebf224aadf0d39b74ff68a33}{TransformChangeEvent<T>::operator+=}}(\mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_a8baf173fe03e256a73834783fee01599}{ObserverTypePtr}}\ observer)\ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \mbox{\hyperlink{_k9_debug_8h_a6634cdad87399d6a7a117d92811644a9}{K9ASSERT}}(!mObservers.contains(observer),\ \textcolor{stringliteral}{"{}Observer\ already\ exists."{}});}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ mObservers.insert(observer);}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_a0233717b5008e19a96c95be3748a36c9}{TransformChangeEvent<T>}}\&\ \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_a94981807147722f49a5e01b1a151c711}{TransformChangeEvent<T>::operator-\/=}}(\mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_a8baf173fe03e256a73834783fee01599}{ObserverTypePtr}}\ observer)\ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \textcolor{keyword}{auto}\ found\ =\ mObservers.find(observer);}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (found\ !=\ mObservers.cend())\ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ mObservers.erase(found);}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00076\ \ \ \ \ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_a5e29396a77131286ea08e13c0b9eaca2}{TransformChangeEvent<T>::notify}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform}{K9Math::Transform}}\&\ oldValue,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform}{K9Math::Transform}}\&\ newValue)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \mbox{\hyperlink{_k9_debug_8h_a6634cdad87399d6a7a117d92811644a9}{K9ASSERT}}(mSubject,\ \textcolor{stringliteral}{"{}Subject\ is\ null"{}});}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mSubject)}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ mObservers.begin();\ it\ !=\ mObservers.end();\ it++)\ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_k9_debug_8h_a6634cdad87399d6a7a117d92811644a9}{K9ASSERT}}(*it,\ \textcolor{stringliteral}{"{}Observer\ is\ null"{}});}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (*it)\ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ (*it)-\/>update(*mSubject,\ \mbox{\hyperlink{class_k9ngine_core_1_1_common_1_1_transform_change_event_1_1_event_arg}{EventArg}}(oldValue,\ newValue));}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00090\ \ \ \ \ \}}
+\DoxyCodeLine{00091\ \ \ \}}
+\DoxyCodeLine{00092\ \}}
+
+\end{DoxyCode}
