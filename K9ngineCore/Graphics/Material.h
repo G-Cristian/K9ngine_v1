@@ -3,7 +3,7 @@
 
 #include "GraphicsContext.h"
 #include "MaterialProperty.h"
-#include "Shader.h"
+#include "ShaderProgram.h"
 
 #include <memory>
 #include <string>
@@ -12,21 +12,28 @@
 
 namespace K9ngineCore {
   namespace K9Graphics {
+    struct VertexBufferObjectData;
+
     class Material {
       using PropertiesContainer = std::unordered_map<MaterialProperty::PropertyIdType, std::shared_ptr<MaterialProperty>>;
     public:
-      Material(const Shader&, const Shader&);
+      explicit Material(std::shared_ptr<ShaderProgram> program);
 
       void addOrSetProperty(std::shared_ptr<MaterialProperty>);
       bool hasProperty(const MaterialProperty::PropertyIdType&) const;
       std::shared_ptr<const MaterialProperty> getProperty(const MaterialProperty::PropertyIdType&) const;
 
-      K9uint getProgramId() const { return mProgramId; }
-      bool isCorrect() const { return mCorrect; }
+      /*
+      * Binds the buffer, sets the attribute pointer and enables the vertex attribute array
+      * @param vbo The vertex buffer object
+      * @param data Information to bind the buffer (target buffer) and data for the attribute pointer.
+      */
+      bool setVertexAttribute(K9uint vbo, const VertexBufferObjectData& data) const;
+
+      bool use() const;
     private:
       PropertiesContainer mProperties{};
-      K9uint mProgramId{ 0 };
-      bool mCorrect {false};
+      std::shared_ptr<ShaderProgram> mProgram;
     };
   }
 }

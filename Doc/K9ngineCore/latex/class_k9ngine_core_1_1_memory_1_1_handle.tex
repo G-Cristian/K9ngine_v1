@@ -1,0 +1,140 @@
+\doxysection{K9ngine\+Core\+::Memory\+::Handle\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_k9ngine_core_1_1_memory_1_1_handle}{}\label{class_k9ngine_core_1_1_memory_1_1_handle}\index{K9ngineCore::Memory::Handle$<$ T $>$@{K9ngineCore::Memory::Handle$<$ T $>$}}
+
+
+{\ttfamily \#include $<$Handle.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef T \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle_a9fd118b09c8ad4171645d16018dfafad}{Value\+Type}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle_a376878f0060c781d03c0f425acf0e3fa}{Handle}} (const \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{Handle}}$<$ T $>$ \&)=default
+\item 
+\mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle_a50dc326a8205d31f50923e0ff4689295}{Handle}} (\mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{Handle}}$<$ T $>$ \&\&other) noexcept
+\item 
+T \& \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle_a938c9d437f303d062fb3caffcfabd99b}{operator=}} (const \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{Handle}}$<$ T $>$ \&other)
+\item 
+T \& \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle_ac677d392f9672e130aa70800b7bb4bd1}{operator=}} (\mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{Handle}}$<$ T $>$ \&\&other) noexcept
+\item 
+T \& \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle_a5b44aec935dbd1f2866ab73dab85ac53}{operator\texorpdfstring{$\ast$}{*}}} ()
+\item 
+const T \& \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle_a147c0523d66769b2cdec445c84058514}{operator\texorpdfstring{$\ast$}{*}}} () const
+\item 
+T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle_a5c8e5677fb0c3a52cd87aec658e0ee48}{operator-\/$>$}} ()
+\item 
+const T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle_a72fa56a66cbb20bde4d144a32405ed86}{operator-\/$>$}} () const
+\item 
+uint64\+\_\+t \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle_abc0eff855493800410924e4210f13be9}{uid}} () const
+\item 
+bool \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle_ad22061af7fbda9a35cb57c742d198b9f}{is\+Valid}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle_ab1e629b9c25c08c8e6f9a7db52a7b0cc}{Handle\+Table$<$ T $>$}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{class_k9ngine_core_1_1_memory_1_1_handle_a9fd118b09c8ad4171645d16018dfafad}\index{K9ngineCore::Memory::Handle$<$ T $>$@{K9ngineCore::Memory::Handle$<$ T $>$}!ValueType@{ValueType}}
+\index{ValueType@{ValueType}!K9ngineCore::Memory::Handle$<$ T $>$@{K9ngineCore::Memory::Handle$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{ValueType}{ValueType}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_memory_1_1_handle_a9fd118b09c8ad4171645d16018dfafad} 
+template$<$typename T$>$ \\
+typedef T \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{K9ngine\+Core\+::\+Memory\+::\+Handle}}$<$ T $>$\+::\+Value\+Type}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_k9ngine_core_1_1_memory_1_1_handle_a376878f0060c781d03c0f425acf0e3fa}\index{K9ngineCore::Memory::Handle$<$ T $>$@{K9ngineCore::Memory::Handle$<$ T $>$}!Handle@{Handle}}
+\index{Handle@{Handle}!K9ngineCore::Memory::Handle$<$ T $>$@{K9ngineCore::Memory::Handle$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Handle()}{Handle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_memory_1_1_handle_a376878f0060c781d03c0f425acf0e3fa} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{K9ngine\+Core\+::\+Memory\+::\+Handle}}$<$ T $>$\+::\+Handle (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{Handle}}$<$ T $>$ \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{class_k9ngine_core_1_1_memory_1_1_handle_a50dc326a8205d31f50923e0ff4689295}\index{K9ngineCore::Memory::Handle$<$ T $>$@{K9ngineCore::Memory::Handle$<$ T $>$}!Handle@{Handle}}
+\index{Handle@{Handle}!K9ngineCore::Memory::Handle$<$ T $>$@{K9ngineCore::Memory::Handle$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Handle()}{Handle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_memory_1_1_handle_a50dc326a8205d31f50923e0ff4689295} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{K9ngine\+Core\+::\+Memory\+::\+Handle}}$<$ T $>$\+::\+Handle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{Handle}}$<$ T $>$ \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_k9ngine_core_1_1_memory_1_1_handle_ad22061af7fbda9a35cb57c742d198b9f}\index{K9ngineCore::Memory::Handle$<$ T $>$@{K9ngineCore::Memory::Handle$<$ T $>$}!isValid@{isValid}}
+\index{isValid@{isValid}!K9ngineCore::Memory::Handle$<$ T $>$@{K9ngineCore::Memory::Handle$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{isValid()}{isValid()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_memory_1_1_handle_ad22061af7fbda9a35cb57c742d198b9f} 
+template$<$typename T$>$ \\
+bool \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{K9ngine\+Core\+::\+Memory\+::\+Handle}}$<$ T $>$\+::is\+Valid (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_k9ngine_core_1_1_memory_1_1_handle_a5b44aec935dbd1f2866ab73dab85ac53}\index{K9ngineCore::Memory::Handle$<$ T $>$@{K9ngineCore::Memory::Handle$<$ T $>$}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!K9ngineCore::Memory::Handle$<$ T $>$@{K9ngineCore::Memory::Handle$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_memory_1_1_handle_a5b44aec935dbd1f2866ab73dab85ac53} 
+template$<$typename T$>$ \\
+T \& \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{K9ngine\+Core\+::\+Memory\+::\+Handle}}$<$ T $>$\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_k9ngine_core_1_1_memory_1_1_handle_a147c0523d66769b2cdec445c84058514}\index{K9ngineCore::Memory::Handle$<$ T $>$@{K9ngineCore::Memory::Handle$<$ T $>$}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!K9ngineCore::Memory::Handle$<$ T $>$@{K9ngineCore::Memory::Handle$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_memory_1_1_handle_a147c0523d66769b2cdec445c84058514} 
+template$<$typename T$>$ \\
+const T \& \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{K9ngine\+Core\+::\+Memory\+::\+Handle}}$<$ T $>$\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_k9ngine_core_1_1_memory_1_1_handle_a5c8e5677fb0c3a52cd87aec658e0ee48}\index{K9ngineCore::Memory::Handle$<$ T $>$@{K9ngineCore::Memory::Handle$<$ T $>$}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!K9ngineCore::Memory::Handle$<$ T $>$@{K9ngineCore::Memory::Handle$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/$>$()}{operator->()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_memory_1_1_handle_a5c8e5677fb0c3a52cd87aec658e0ee48} 
+template$<$typename T$>$ \\
+T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{K9ngine\+Core\+::\+Memory\+::\+Handle}}$<$ T $>$\+::operator-\/$>$ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_k9ngine_core_1_1_memory_1_1_handle_a72fa56a66cbb20bde4d144a32405ed86}\index{K9ngineCore::Memory::Handle$<$ T $>$@{K9ngineCore::Memory::Handle$<$ T $>$}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!K9ngineCore::Memory::Handle$<$ T $>$@{K9ngineCore::Memory::Handle$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/$>$()}{operator->()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_memory_1_1_handle_a72fa56a66cbb20bde4d144a32405ed86} 
+template$<$typename T$>$ \\
+const T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{K9ngine\+Core\+::\+Memory\+::\+Handle}}$<$ T $>$\+::operator-\/$>$ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_k9ngine_core_1_1_memory_1_1_handle_a938c9d437f303d062fb3caffcfabd99b}\index{K9ngineCore::Memory::Handle$<$ T $>$@{K9ngineCore::Memory::Handle$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!K9ngineCore::Memory::Handle$<$ T $>$@{K9ngineCore::Memory::Handle$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_memory_1_1_handle_a938c9d437f303d062fb3caffcfabd99b} 
+template$<$typename T$>$ \\
+T \& \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{K9ngine\+Core\+::\+Memory\+::\+Handle}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{Handle}}$<$ T $>$ \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_k9ngine_core_1_1_memory_1_1_handle_ac677d392f9672e130aa70800b7bb4bd1}\index{K9ngineCore::Memory::Handle$<$ T $>$@{K9ngineCore::Memory::Handle$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!K9ngineCore::Memory::Handle$<$ T $>$@{K9ngineCore::Memory::Handle$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_memory_1_1_handle_ac677d392f9672e130aa70800b7bb4bd1} 
+template$<$typename T$>$ \\
+T \& \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{K9ngine\+Core\+::\+Memory\+::\+Handle}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{Handle}}$<$ T $>$ \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\Hypertarget{class_k9ngine_core_1_1_memory_1_1_handle_abc0eff855493800410924e4210f13be9}\index{K9ngineCore::Memory::Handle$<$ T $>$@{K9ngineCore::Memory::Handle$<$ T $>$}!uid@{uid}}
+\index{uid@{uid}!K9ngineCore::Memory::Handle$<$ T $>$@{K9ngineCore::Memory::Handle$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{uid()}{uid()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_memory_1_1_handle_abc0eff855493800410924e4210f13be9} 
+template$<$typename T$>$ \\
+uint64\+\_\+t \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{K9ngine\+Core\+::\+Memory\+::\+Handle}}$<$ T $>$\+::uid (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_k9ngine_core_1_1_memory_1_1_handle_ab1e629b9c25c08c8e6f9a7db52a7b0cc}\index{K9ngineCore::Memory::Handle$<$ T $>$@{K9ngineCore::Memory::Handle$<$ T $>$}!HandleTable$<$ T $>$@{HandleTable$<$ T $>$}}
+\index{HandleTable$<$ T $>$@{HandleTable$<$ T $>$}!K9ngineCore::Memory::Handle$<$ T $>$@{K9ngineCore::Memory::Handle$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{HandleTable$<$ T $>$}{HandleTable< T >}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_memory_1_1_handle_ab1e629b9c25c08c8e6f9a7db52a7b0cc} 
+template$<$typename T$>$ \\
+friend class \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle_table}{Handle\+Table}}$<$ T $>$\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/lococ/source/repos/\+K9ngine\+\_\+v1/\+K9ngine\+Core/\mbox{\hyperlink{_handle_8h}{Handle.\+h}}\end{DoxyCompactItemize}

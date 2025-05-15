@@ -1,0 +1,227 @@
+\doxysection{K9ngine\+Core\+::K9\+Graphics\+::Open\+GLContext Class Reference}
+\hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context}{}\label{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context}\index{K9ngineCore::K9Graphics::OpenGLContext@{K9ngineCore::K9Graphics::OpenGLContext}}
+
+
+{\ttfamily \#include $<$Open\+GLContext.\+h$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a35d2fdbca1d19dca6530c485c604d64f}{init}} ()
+\item 
+static void \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_aeb8457c1711b809de7937940cd3a7578}{attach\+Shader}} (GLuint program, GLuint shader)
+\item 
+static void \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a722faac8ab95834db16925f4d24775eb}{bind\+Array\+Buffer}} (GLuint buffer)
+\item 
+static void \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a8b64558854d65f996d4f503f017a7023}{bind\+Buffer}} (\mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_graphics_a0acc5dd027cd3a91323bf06c440fc604}{Open\+GLTarget\+Buffer}} target\+Buffer, GLuint buffer)
+\item 
+static void \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a75f66903ac2d68dcb5c06557361f0047}{bind\+Vertex\+Array}} (GLuint vertex\+Array)
+\item 
+{\footnotesize template$<$class T$>$ }\\static void \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a0189eb6868e515cfc3eb05edb8ab279d}{buffer\+Array\+Buffer\+Data}} (const T \texorpdfstring{$\ast$}{*}data, unsigned int n, \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_graphics_a34a6443b03015b3c684849cee2a94dcd}{Open\+GLBuffer\+Data\+Usage}} usage)
+\item 
+{\footnotesize template$<$class T$>$ }\\static void \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a09b38396598c59bea8c966b546a128ce}{buffer\+Data}} (\mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_graphics_a0acc5dd027cd3a91323bf06c440fc604}{Open\+GLTarget\+Buffer}} target\+Buffer, const T \texorpdfstring{$\ast$}{*}data, unsigned int n, \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_graphics_a34a6443b03015b3c684849cee2a94dcd}{Open\+GLBuffer\+Data\+Usage}} usage)
+\item 
+static void \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a0dc55bb1bd5821c1b892880685d514e6}{clear\+Color}} ()
+\item 
+static void \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_ae39cd1429efae5eac10c980d13ba1a80}{clear\+Color}} (GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha)
+\item 
+static void \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a232827a812824c6e2da0a06c86c04cd7}{compile\+Shader}} (GLuint shader)
+\item 
+static GLuint \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a8b188780a0e6d74255402652348a1aa0}{create\+Program}} ()
+\item 
+static GLuint \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a0f31b9b5e5d02224bcb1a2b306c99cb5}{create\+Shader}} (\mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_graphics_af37724e5d43c90f920006ea944fde6d2}{Open\+GLShader\+Type}} shader\+Type)
+\item 
+static bool \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a2c3e233c6be160e3d733a018713593a5}{check\+And\+Log\+Errors}} ()
+\item 
+static void \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a5ae5ec8793d43fff22e3bcd7b8d3504c}{generate\+Buffers}} (GLsizei n, GLuint \texorpdfstring{$\ast$}{*}buffers)
+\item 
+static void \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a8939b3200bc91ff6da7f2e3e3df51b8f}{generate\+Vertex\+Arrays}} (GLsizei n, GLuint \texorpdfstring{$\ast$}{*}VAOs)
+\item 
+static std\+::string \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_ab23131af6782af38cd2b241fb579d6c4}{get\+Program\+Info\+Log}} (GLuint program, GLuint length)
+\item 
+static GLint \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_afb49ee61aa425d288d03686409d7b8dc}{get\+Program\+Info\+Log\+Length}} (GLuint program)
+\item 
+static std\+::string \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a2c4195689e5baaf72c55c2a37a9a96f8}{get\+Shader\+Info\+Log}} (GLuint shader, GLuint length)
+\item 
+static GLint \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a5fe28ba46ab4c1736b9d98a3e8c70d6b}{get\+Shader\+Info\+Log\+Length}} (GLuint shader)
+\item 
+static bool \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a0ccace1f9539b7495c66d1c0aa435acd}{is\+Program\+Link\+Status\+Ok}} (GLuint program)
+\item 
+static bool \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_aeb5d05aa71207c787343edfb126e8ffc}{is\+Shader\+Compile\+Status\+Ok}} (GLuint shader)
+\item 
+static void \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_aa2766b6f1d3b8c6158bd8967a48608d0}{link\+Program}} (GLuint program)
+\item 
+static void \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a04806cdec37f32b98ea32966a1c96c15}{set\+Clear\+Color}} (GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha)
+\item 
+static void \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a33eb3d93a6bc3dd3b4b7ae8522e6aec9}{set\+Vertex\+Attribute\+Ptr}} (GLuint index, GLint size, \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_graphics_adffa4078f83df827a15d02157215d7bf}{Open\+GLType\+Enum}} type, \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_graphics_add4530b0dc4efb151e2ee2d8d990cb5e}{Open\+GLBool\+Values}} normalized, GLsizei stride, const void \texorpdfstring{$\ast$}{*}pointer)
+\item 
+static void \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a20fc91ce1f4e3bf06d47df181483475e}{shader\+Source}} (GLuint shader, GLsizei count, const GLchar \texorpdfstring{$\ast$}{*}const \texorpdfstring{$\ast$}{*}string, const GLint \texorpdfstring{$\ast$}{*}length)
+\item 
+static void \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_ae80ebafee8477755d7f6ae5ec63a6345}{use\+Program}} (GLuint program)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_aeb8457c1711b809de7937940cd3a7578}\index{K9ngineCore::K9Graphics::OpenGLContext@{K9ngineCore::K9Graphics::OpenGLContext}!attachShader@{attachShader}}
+\index{attachShader@{attachShader}!K9ngineCore::K9Graphics::OpenGLContext@{K9ngineCore::K9Graphics::OpenGLContext}}
+\doxysubsubsection{\texorpdfstring{attachShader()}{attachShader()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_aeb8457c1711b809de7937940cd3a7578} 
+static void K9ngine\+Core\+::\+K9\+Graphics\+::\+Open\+GLContext\+::attach\+Shader (\begin{DoxyParamCaption}\item[{GLuint}]{program}{, }\item[{GLuint}]{shader}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a722faac8ab95834db16925f4d24775eb}\index{K9ngineCore::K9Graphics::OpenGLContext@{K9ngineCore::K9Graphics::OpenGLContext}!bindArrayBuffer@{bindArrayBuffer}}
+\index{bindArrayBuffer@{bindArrayBuffer}!K9ngineCore::K9Graphics::OpenGLContext@{K9ngineCore::K9Graphics::OpenGLContext}}
+\doxysubsubsection{\texorpdfstring{bindArrayBuffer()}{bindArrayBuffer()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a722faac8ab95834db16925f4d24775eb} 
+static void K9ngine\+Core\+::\+K9\+Graphics\+::\+Open\+GLContext\+::bind\+Array\+Buffer (\begin{DoxyParamCaption}\item[{GLuint}]{buffer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a8b64558854d65f996d4f503f017a7023}\index{K9ngineCore::K9Graphics::OpenGLContext@{K9ngineCore::K9Graphics::OpenGLContext}!bindBuffer@{bindBuffer}}
+\index{bindBuffer@{bindBuffer}!K9ngineCore::K9Graphics::OpenGLContext@{K9ngineCore::K9Graphics::OpenGLContext}}
+\doxysubsubsection{\texorpdfstring{bindBuffer()}{bindBuffer()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a8b64558854d65f996d4f503f017a7023} 
+static void K9ngine\+Core\+::\+K9\+Graphics\+::\+Open\+GLContext\+::bind\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_graphics_a0acc5dd027cd3a91323bf06c440fc604}{Open\+GLTarget\+Buffer}}}]{target\+Buffer}{, }\item[{GLuint}]{buffer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a75f66903ac2d68dcb5c06557361f0047}\index{K9ngineCore::K9Graphics::OpenGLContext@{K9ngineCore::K9Graphics::OpenGLContext}!bindVertexArray@{bindVertexArray}}
+\index{bindVertexArray@{bindVertexArray}!K9ngineCore::K9Graphics::OpenGLContext@{K9ngineCore::K9Graphics::OpenGLContext}}
+\doxysubsubsection{\texorpdfstring{bindVertexArray()}{bindVertexArray()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a75f66903ac2d68dcb5c06557361f0047} 
+static void K9ngine\+Core\+::\+K9\+Graphics\+::\+Open\+GLContext\+::bind\+Vertex\+Array (\begin{DoxyParamCaption}\item[{GLuint}]{vertex\+Array}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a0189eb6868e515cfc3eb05edb8ab279d}\index{K9ngineCore::K9Graphics::OpenGLContext@{K9ngineCore::K9Graphics::OpenGLContext}!bufferArrayBufferData@{bufferArrayBufferData}}
+\index{bufferArrayBufferData@{bufferArrayBufferData}!K9ngineCore::K9Graphics::OpenGLContext@{K9ngineCore::K9Graphics::OpenGLContext}}
+\doxysubsubsection{\texorpdfstring{bufferArrayBufferData()}{bufferArrayBufferData()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a0189eb6868e515cfc3eb05edb8ab279d} 
+template$<$class T$>$ \\
+static void K9ngine\+Core\+::\+K9\+Graphics\+::\+Open\+GLContext\+::buffer\+Array\+Buffer\+Data (\begin{DoxyParamCaption}\item[{const T \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{unsigned int}]{n}{, }\item[{\mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_graphics_a34a6443b03015b3c684849cee2a94dcd}{Open\+GLBuffer\+Data\+Usage}}}]{usage}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a09b38396598c59bea8c966b546a128ce}\index{K9ngineCore::K9Graphics::OpenGLContext@{K9ngineCore::K9Graphics::OpenGLContext}!bufferData@{bufferData}}
+\index{bufferData@{bufferData}!K9ngineCore::K9Graphics::OpenGLContext@{K9ngineCore::K9Graphics::OpenGLContext}}
+\doxysubsubsection{\texorpdfstring{bufferData()}{bufferData()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a09b38396598c59bea8c966b546a128ce} 
+template$<$class T$>$ \\
+static void K9ngine\+Core\+::\+K9\+Graphics\+::\+Open\+GLContext\+::buffer\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_graphics_a0acc5dd027cd3a91323bf06c440fc604}{Open\+GLTarget\+Buffer}}}]{target\+Buffer}{, }\item[{const T \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{unsigned int}]{n}{, }\item[{\mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_graphics_a34a6443b03015b3c684849cee2a94dcd}{Open\+GLBuffer\+Data\+Usage}}}]{usage}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a2c3e233c6be160e3d733a018713593a5}\index{K9ngineCore::K9Graphics::OpenGLContext@{K9ngineCore::K9Graphics::OpenGLContext}!checkAndLogErrors@{checkAndLogErrors}}
+\index{checkAndLogErrors@{checkAndLogErrors}!K9ngineCore::K9Graphics::OpenGLContext@{K9ngineCore::K9Graphics::OpenGLContext}}
+\doxysubsubsection{\texorpdfstring{checkAndLogErrors()}{checkAndLogErrors()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a2c3e233c6be160e3d733a018713593a5} 
+static bool K9ngine\+Core\+::\+K9\+Graphics\+::\+Open\+GLContext\+::check\+And\+Log\+Errors (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a0dc55bb1bd5821c1b892880685d514e6}\index{K9ngineCore::K9Graphics::OpenGLContext@{K9ngineCore::K9Graphics::OpenGLContext}!clearColor@{clearColor}}
+\index{clearColor@{clearColor}!K9ngineCore::K9Graphics::OpenGLContext@{K9ngineCore::K9Graphics::OpenGLContext}}
+\doxysubsubsection{\texorpdfstring{clearColor()}{clearColor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a0dc55bb1bd5821c1b892880685d514e6} 
+static void K9ngine\+Core\+::\+K9\+Graphics\+::\+Open\+GLContext\+::clear\+Color (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_ae39cd1429efae5eac10c980d13ba1a80}\index{K9ngineCore::K9Graphics::OpenGLContext@{K9ngineCore::K9Graphics::OpenGLContext}!clearColor@{clearColor}}
+\index{clearColor@{clearColor}!K9ngineCore::K9Graphics::OpenGLContext@{K9ngineCore::K9Graphics::OpenGLContext}}
+\doxysubsubsection{\texorpdfstring{clearColor()}{clearColor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_ae39cd1429efae5eac10c980d13ba1a80} 
+static void K9ngine\+Core\+::\+K9\+Graphics\+::\+Open\+GLContext\+::clear\+Color (\begin{DoxyParamCaption}\item[{GLfloat}]{red}{, }\item[{GLfloat}]{green}{, }\item[{GLfloat}]{blue}{, }\item[{GLfloat}]{alpha}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a232827a812824c6e2da0a06c86c04cd7}\index{K9ngineCore::K9Graphics::OpenGLContext@{K9ngineCore::K9Graphics::OpenGLContext}!compileShader@{compileShader}}
+\index{compileShader@{compileShader}!K9ngineCore::K9Graphics::OpenGLContext@{K9ngineCore::K9Graphics::OpenGLContext}}
+\doxysubsubsection{\texorpdfstring{compileShader()}{compileShader()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a232827a812824c6e2da0a06c86c04cd7} 
+static void K9ngine\+Core\+::\+K9\+Graphics\+::\+Open\+GLContext\+::compile\+Shader (\begin{DoxyParamCaption}\item[{GLuint}]{shader}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a8b188780a0e6d74255402652348a1aa0}\index{K9ngineCore::K9Graphics::OpenGLContext@{K9ngineCore::K9Graphics::OpenGLContext}!createProgram@{createProgram}}
+\index{createProgram@{createProgram}!K9ngineCore::K9Graphics::OpenGLContext@{K9ngineCore::K9Graphics::OpenGLContext}}
+\doxysubsubsection{\texorpdfstring{createProgram()}{createProgram()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a8b188780a0e6d74255402652348a1aa0} 
+static GLuint K9ngine\+Core\+::\+K9\+Graphics\+::\+Open\+GLContext\+::create\+Program (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a0f31b9b5e5d02224bcb1a2b306c99cb5}\index{K9ngineCore::K9Graphics::OpenGLContext@{K9ngineCore::K9Graphics::OpenGLContext}!createShader@{createShader}}
+\index{createShader@{createShader}!K9ngineCore::K9Graphics::OpenGLContext@{K9ngineCore::K9Graphics::OpenGLContext}}
+\doxysubsubsection{\texorpdfstring{createShader()}{createShader()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a0f31b9b5e5d02224bcb1a2b306c99cb5} 
+static GLuint K9ngine\+Core\+::\+K9\+Graphics\+::\+Open\+GLContext\+::create\+Shader (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_graphics_af37724e5d43c90f920006ea944fde6d2}{Open\+GLShader\+Type}}}]{shader\+Type}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a5ae5ec8793d43fff22e3bcd7b8d3504c}\index{K9ngineCore::K9Graphics::OpenGLContext@{K9ngineCore::K9Graphics::OpenGLContext}!generateBuffers@{generateBuffers}}
+\index{generateBuffers@{generateBuffers}!K9ngineCore::K9Graphics::OpenGLContext@{K9ngineCore::K9Graphics::OpenGLContext}}
+\doxysubsubsection{\texorpdfstring{generateBuffers()}{generateBuffers()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a5ae5ec8793d43fff22e3bcd7b8d3504c} 
+static void K9ngine\+Core\+::\+K9\+Graphics\+::\+Open\+GLContext\+::generate\+Buffers (\begin{DoxyParamCaption}\item[{GLsizei}]{n}{, }\item[{GLuint \texorpdfstring{$\ast$}{*}}]{buffers}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a8939b3200bc91ff6da7f2e3e3df51b8f}\index{K9ngineCore::K9Graphics::OpenGLContext@{K9ngineCore::K9Graphics::OpenGLContext}!generateVertexArrays@{generateVertexArrays}}
+\index{generateVertexArrays@{generateVertexArrays}!K9ngineCore::K9Graphics::OpenGLContext@{K9ngineCore::K9Graphics::OpenGLContext}}
+\doxysubsubsection{\texorpdfstring{generateVertexArrays()}{generateVertexArrays()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a8939b3200bc91ff6da7f2e3e3df51b8f} 
+static void K9ngine\+Core\+::\+K9\+Graphics\+::\+Open\+GLContext\+::generate\+Vertex\+Arrays (\begin{DoxyParamCaption}\item[{GLsizei}]{n}{, }\item[{GLuint \texorpdfstring{$\ast$}{*}}]{VAOs}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_ab23131af6782af38cd2b241fb579d6c4}\index{K9ngineCore::K9Graphics::OpenGLContext@{K9ngineCore::K9Graphics::OpenGLContext}!getProgramInfoLog@{getProgramInfoLog}}
+\index{getProgramInfoLog@{getProgramInfoLog}!K9ngineCore::K9Graphics::OpenGLContext@{K9ngineCore::K9Graphics::OpenGLContext}}
+\doxysubsubsection{\texorpdfstring{getProgramInfoLog()}{getProgramInfoLog()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_ab23131af6782af38cd2b241fb579d6c4} 
+static std\+::string K9ngine\+Core\+::\+K9\+Graphics\+::\+Open\+GLContext\+::get\+Program\+Info\+Log (\begin{DoxyParamCaption}\item[{GLuint}]{program}{, }\item[{GLuint}]{length}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_afb49ee61aa425d288d03686409d7b8dc}\index{K9ngineCore::K9Graphics::OpenGLContext@{K9ngineCore::K9Graphics::OpenGLContext}!getProgramInfoLogLength@{getProgramInfoLogLength}}
+\index{getProgramInfoLogLength@{getProgramInfoLogLength}!K9ngineCore::K9Graphics::OpenGLContext@{K9ngineCore::K9Graphics::OpenGLContext}}
+\doxysubsubsection{\texorpdfstring{getProgramInfoLogLength()}{getProgramInfoLogLength()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_afb49ee61aa425d288d03686409d7b8dc} 
+static GLint K9ngine\+Core\+::\+K9\+Graphics\+::\+Open\+GLContext\+::get\+Program\+Info\+Log\+Length (\begin{DoxyParamCaption}\item[{GLuint}]{program}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a2c4195689e5baaf72c55c2a37a9a96f8}\index{K9ngineCore::K9Graphics::OpenGLContext@{K9ngineCore::K9Graphics::OpenGLContext}!getShaderInfoLog@{getShaderInfoLog}}
+\index{getShaderInfoLog@{getShaderInfoLog}!K9ngineCore::K9Graphics::OpenGLContext@{K9ngineCore::K9Graphics::OpenGLContext}}
+\doxysubsubsection{\texorpdfstring{getShaderInfoLog()}{getShaderInfoLog()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a2c4195689e5baaf72c55c2a37a9a96f8} 
+static std\+::string K9ngine\+Core\+::\+K9\+Graphics\+::\+Open\+GLContext\+::get\+Shader\+Info\+Log (\begin{DoxyParamCaption}\item[{GLuint}]{shader}{, }\item[{GLuint}]{length}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a5fe28ba46ab4c1736b9d98a3e8c70d6b}\index{K9ngineCore::K9Graphics::OpenGLContext@{K9ngineCore::K9Graphics::OpenGLContext}!getShaderInfoLogLength@{getShaderInfoLogLength}}
+\index{getShaderInfoLogLength@{getShaderInfoLogLength}!K9ngineCore::K9Graphics::OpenGLContext@{K9ngineCore::K9Graphics::OpenGLContext}}
+\doxysubsubsection{\texorpdfstring{getShaderInfoLogLength()}{getShaderInfoLogLength()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a5fe28ba46ab4c1736b9d98a3e8c70d6b} 
+static GLint K9ngine\+Core\+::\+K9\+Graphics\+::\+Open\+GLContext\+::get\+Shader\+Info\+Log\+Length (\begin{DoxyParamCaption}\item[{GLuint}]{shader}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a35d2fdbca1d19dca6530c485c604d64f}\index{K9ngineCore::K9Graphics::OpenGLContext@{K9ngineCore::K9Graphics::OpenGLContext}!init@{init}}
+\index{init@{init}!K9ngineCore::K9Graphics::OpenGLContext@{K9ngineCore::K9Graphics::OpenGLContext}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a35d2fdbca1d19dca6530c485c604d64f} 
+static int K9ngine\+Core\+::\+K9\+Graphics\+::\+Open\+GLContext\+::init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a0ccace1f9539b7495c66d1c0aa435acd}\index{K9ngineCore::K9Graphics::OpenGLContext@{K9ngineCore::K9Graphics::OpenGLContext}!isProgramLinkStatusOk@{isProgramLinkStatusOk}}
+\index{isProgramLinkStatusOk@{isProgramLinkStatusOk}!K9ngineCore::K9Graphics::OpenGLContext@{K9ngineCore::K9Graphics::OpenGLContext}}
+\doxysubsubsection{\texorpdfstring{isProgramLinkStatusOk()}{isProgramLinkStatusOk()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a0ccace1f9539b7495c66d1c0aa435acd} 
+static bool K9ngine\+Core\+::\+K9\+Graphics\+::\+Open\+GLContext\+::is\+Program\+Link\+Status\+Ok (\begin{DoxyParamCaption}\item[{GLuint}]{program}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_aeb5d05aa71207c787343edfb126e8ffc}\index{K9ngineCore::K9Graphics::OpenGLContext@{K9ngineCore::K9Graphics::OpenGLContext}!isShaderCompileStatusOk@{isShaderCompileStatusOk}}
+\index{isShaderCompileStatusOk@{isShaderCompileStatusOk}!K9ngineCore::K9Graphics::OpenGLContext@{K9ngineCore::K9Graphics::OpenGLContext}}
+\doxysubsubsection{\texorpdfstring{isShaderCompileStatusOk()}{isShaderCompileStatusOk()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_aeb5d05aa71207c787343edfb126e8ffc} 
+static bool K9ngine\+Core\+::\+K9\+Graphics\+::\+Open\+GLContext\+::is\+Shader\+Compile\+Status\+Ok (\begin{DoxyParamCaption}\item[{GLuint}]{shader}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_aa2766b6f1d3b8c6158bd8967a48608d0}\index{K9ngineCore::K9Graphics::OpenGLContext@{K9ngineCore::K9Graphics::OpenGLContext}!linkProgram@{linkProgram}}
+\index{linkProgram@{linkProgram}!K9ngineCore::K9Graphics::OpenGLContext@{K9ngineCore::K9Graphics::OpenGLContext}}
+\doxysubsubsection{\texorpdfstring{linkProgram()}{linkProgram()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_aa2766b6f1d3b8c6158bd8967a48608d0} 
+static void K9ngine\+Core\+::\+K9\+Graphics\+::\+Open\+GLContext\+::link\+Program (\begin{DoxyParamCaption}\item[{GLuint}]{program}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a04806cdec37f32b98ea32966a1c96c15}\index{K9ngineCore::K9Graphics::OpenGLContext@{K9ngineCore::K9Graphics::OpenGLContext}!setClearColor@{setClearColor}}
+\index{setClearColor@{setClearColor}!K9ngineCore::K9Graphics::OpenGLContext@{K9ngineCore::K9Graphics::OpenGLContext}}
+\doxysubsubsection{\texorpdfstring{setClearColor()}{setClearColor()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a04806cdec37f32b98ea32966a1c96c15} 
+static void K9ngine\+Core\+::\+K9\+Graphics\+::\+Open\+GLContext\+::set\+Clear\+Color (\begin{DoxyParamCaption}\item[{GLfloat}]{red}{, }\item[{GLfloat}]{green}{, }\item[{GLfloat}]{blue}{, }\item[{GLfloat}]{alpha}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a33eb3d93a6bc3dd3b4b7ae8522e6aec9}\index{K9ngineCore::K9Graphics::OpenGLContext@{K9ngineCore::K9Graphics::OpenGLContext}!setVertexAttributePtr@{setVertexAttributePtr}}
+\index{setVertexAttributePtr@{setVertexAttributePtr}!K9ngineCore::K9Graphics::OpenGLContext@{K9ngineCore::K9Graphics::OpenGLContext}}
+\doxysubsubsection{\texorpdfstring{setVertexAttributePtr()}{setVertexAttributePtr()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a33eb3d93a6bc3dd3b4b7ae8522e6aec9} 
+static void K9ngine\+Core\+::\+K9\+Graphics\+::\+Open\+GLContext\+::set\+Vertex\+Attribute\+Ptr (\begin{DoxyParamCaption}\item[{GLuint}]{index}{, }\item[{GLint}]{size}{, }\item[{\mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_graphics_adffa4078f83df827a15d02157215d7bf}{Open\+GLType\+Enum}}}]{type}{, }\item[{\mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_graphics_add4530b0dc4efb151e2ee2d8d990cb5e}{Open\+GLBool\+Values}}}]{normalized}{, }\item[{GLsizei}]{stride}{, }\item[{const void \texorpdfstring{$\ast$}{*}}]{pointer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a20fc91ce1f4e3bf06d47df181483475e}\index{K9ngineCore::K9Graphics::OpenGLContext@{K9ngineCore::K9Graphics::OpenGLContext}!shaderSource@{shaderSource}}
+\index{shaderSource@{shaderSource}!K9ngineCore::K9Graphics::OpenGLContext@{K9ngineCore::K9Graphics::OpenGLContext}}
+\doxysubsubsection{\texorpdfstring{shaderSource()}{shaderSource()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_a20fc91ce1f4e3bf06d47df181483475e} 
+static void K9ngine\+Core\+::\+K9\+Graphics\+::\+Open\+GLContext\+::shader\+Source (\begin{DoxyParamCaption}\item[{GLuint}]{shader}{, }\item[{GLsizei}]{count}{, }\item[{const GLchar \texorpdfstring{$\ast$}{*}const \texorpdfstring{$\ast$}{*}}]{string}{, }\item[{const GLint \texorpdfstring{$\ast$}{*}}]{length}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_ae80ebafee8477755d7f6ae5ec63a6345}\index{K9ngineCore::K9Graphics::OpenGLContext@{K9ngineCore::K9Graphics::OpenGLContext}!useProgram@{useProgram}}
+\index{useProgram@{useProgram}!K9ngineCore::K9Graphics::OpenGLContext@{K9ngineCore::K9Graphics::OpenGLContext}}
+\doxysubsubsection{\texorpdfstring{useProgram()}{useProgram()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_open_g_l_context_ae80ebafee8477755d7f6ae5ec63a6345} 
+static void K9ngine\+Core\+::\+K9\+Graphics\+::\+Open\+GLContext\+::use\+Program (\begin{DoxyParamCaption}\item[{GLuint}]{program}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/lococ/source/repos/\+K9ngine\+\_\+v1/\+K9ngine\+Core/\+Graphics/\mbox{\hyperlink{_open_g_l_context_8h}{Open\+GLContext.\+h}}\end{DoxyCompactItemize}

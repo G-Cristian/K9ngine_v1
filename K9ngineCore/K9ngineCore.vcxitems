@@ -15,36 +15,67 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)Common\Hasher.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Common\IObserver.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Common\TransformChangeEvent.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)FileReader.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)GameObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\BufferDataType.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\GraphicsContext.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\INode.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\ISceneGraphVisitor.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\Material.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\MaterialProperty.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\Mesh.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\OpenGLContext.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\Renderer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\RenderingComponent.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\RenderingItem.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\RenderNode.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\SceneGraph.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\SceneGraphRenderVisitor.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\Shader.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\ShaderProgram.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\TransformNode.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\VertexBufferObjectData.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Handle.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)Hasher.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)K9Debug.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Logger.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Math\Math.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Math\Transform.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)MessageBox.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Path.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)ResourceLoader.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Shader_old.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)SingleResourceManager.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Texture.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Windows\K9Window.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Windows\K9WindowsManager.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)Common\Hasher.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)FileReader.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)GameObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Graphics\BufferDataType.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Graphics\INode.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Graphics\ISceneGraphVisitor.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Graphics\Material.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Graphics\Renderer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Graphics\RenderingComponent.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Graphics\RenderingItem.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Graphics\RenderNode.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Graphics\SceneGraph.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Graphics\SceneGraphRenderVisitor.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Graphics\Shader.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Graphics\ShaderProgram.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Graphics\TransformNode.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Logger.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Math\Math.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Math\Transform.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)MessageBox.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Path.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Shader_old.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Texture.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Windows\K9Window.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Windows\K9WindowsManager.cpp" />
   </ItemGroup>
 </Project>

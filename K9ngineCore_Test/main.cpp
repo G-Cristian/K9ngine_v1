@@ -7,6 +7,8 @@
 #include <string>
 
 #include "FileReader.h"
+#include "GameObject.h"
+#include "Graphics/TransformNode.h"
 #include "Handle.h"
 #include "K9Debug.h"
 #include "Path.h"

@@ -1,0 +1,39 @@
+\doxysection{Shader\+\_\+old.\+h}
+\hypertarget{_shader__old_8h_source}{}\label{_shader__old_8h_source}\index{C:/Users/lococ/source/repos/K9ngine\_v1/K9ngineCore/Shader\_old.h@{C:/Users/lococ/source/repos/K9ngine\_v1/K9ngineCore/Shader\_old.h}}
+\mbox{\hyperlink{_shader__old_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SHADER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SHADER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{comment}{/***************************************/}}
+\DoxyCodeLine{00005\ \textcolor{comment}{/******\ Code\ from\ learnopengl.com\ ******/}}
+\DoxyCodeLine{00006\ \textcolor{comment}{/***************************************/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <glad/glad.h>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <glm/glm.hpp>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_shader__old_afda51298dbeb52ac3562614ec7e34f84}{Shader\_old}}\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_shader__old_ae24fc769c80488444d723d27927565ad}{ID}};}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_shader__old_afda51298dbeb52ac3562614ec7e34f84}{Shader\_old}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ vertexPath,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ fragmentPath);}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_shader__old_a6b9a9b38a89d6f422c31a1cccb40ad48}{use}}();}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_shader__old_a2d2261dfea268f93ca2e94ef46411ab3}{setBool}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keywordtype}{bool}\ value)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_shader__old_a0d22da8c59862523aa916b090a76a51f}{setInt}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keywordtype}{int}\ value)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_shader__old_a382fe0b55c4fbbda4be846b8be7f3ce2}{setFloat}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keywordtype}{float}\ value)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_shader__old_aab2841fcde7b82323d9f5b5d51888e12}{setVec3}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keyword}{const}\ glm::vec3\&\ vec)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_shader__old_adb7394b91c7544ed572ab9c63e510665}{setMat3}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keyword}{const}\ glm::mat3\&\ matrix3)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_shader__old_a66557918876349da978f6ec2d2f17009}{setMat4}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keyword}{const}\ glm::mat4\&\ matrix4)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00027\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00028\ \ \ \ \ std::string\ readFile(std::ifstream\&)\textcolor{keyword}{const};}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ compileShader(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ shaderCode,\ GLenum\ shaderType)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ createLinkProgram(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ vertexShader,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ fragmentShader)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00031\ \};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

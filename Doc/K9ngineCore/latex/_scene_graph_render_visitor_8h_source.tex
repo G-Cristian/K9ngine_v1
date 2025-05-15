@@ -1,0 +1,37 @@
+\doxysection{Scene\+Graph\+Render\+Visitor.\+h}
+\hypertarget{_scene_graph_render_visitor_8h_source}{}\label{_scene_graph_render_visitor_8h_source}\index{C:/Users/lococ/source/repos/K9ngine\_v1/K9ngineCore/Graphics/SceneGraphRenderVisitor.h@{C:/Users/lococ/source/repos/K9ngine\_v1/K9ngineCore/Graphics/SceneGraphRenderVisitor.h}}
+\mbox{\hyperlink{_scene_graph_render_visitor_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_math_8h}{../Math/Math.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_scene_graph_visitor_8h}{ISceneGraphVisitor.h}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <stack>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_k9ngine_core}{K9ngineCore}}\ \{}
+\DoxyCodeLine{00011\ \ \ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_graphics}{K9Graphics}}\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_render_node}{RenderNode}};}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_item}{RenderingItem}};}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph}{SceneGraph}};}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node}{TransformNode}};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_render_visitor_afec7ca6747b988a91edaed348c14a6fd}{SceneGraphRenderVisitor}}\ :\textcolor{keyword}{public}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_scene_graph_visitor_ae818965a98bcec4be91417b90f4c5507}{ISceneGraphVisitor}}}
+\DoxyCodeLine{00018\ \ \ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_render_visitor_afec7ca6747b988a91edaed348c14a6fd}{SceneGraphRenderVisitor}}(\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph}{SceneGraph}}\&);}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_render_visitor_aedc4a89cb5dbcb24406ed1773ba0e53c}{visit}}(\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_render_node}{RenderNode}}\&)\ \textcolor{keyword}{override}\ \textcolor{keyword}{final};}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_render_visitor_aedc4a89cb5dbcb24406ed1773ba0e53c}{visit}}(\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_transform_node}{TransformNode}}\&)\ \textcolor{keyword}{override}\ \textcolor{keyword}{final};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ std::shared\_ptr<std::vector<std::shared\_ptr<RenderingItem>>>\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_render_visitor_a11f1892c61bf25c9adc1b3084f9ff6fb}{getRenderingItems}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ std::stack<K9Math::Mat4>\ mTransforms\{\};}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ std::shared\_ptr<std::vector<std::shared\_ptr<RenderingItem>>>\ mRenderingItems;}
+\DoxyCodeLine{00029\ \ \ \ \ \};}
+\DoxyCodeLine{00030\ \ \ \}}
+\DoxyCodeLine{00031\ \}}
+
+\end{DoxyCode}

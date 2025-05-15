@@ -1,0 +1,32 @@
+\doxysection{Shader\+Program.\+h}
+\hypertarget{_shader_program_8h_source}{}\label{_shader_program_8h_source}\index{C:/Users/lococ/source/repos/K9ngine\_v1/K9ngineCore/Graphics/ShaderProgram.h@{C:/Users/lococ/source/repos/K9ngine\_v1/K9ngineCore/Graphics/ShaderProgram.h}}
+\mbox{\hyperlink{_shader_program_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_graphics_context_8h}{GraphicsContext.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_material_property_8h}{MaterialProperty.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_shader_8h}{Shader.h}}"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_k9ngine_core}{K9ngineCore}}\ \{}
+\DoxyCodeLine{00013\ \ \ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_graphics}{K9Graphics}}\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_shader_program_a92a437bc47c2683254a459bce4ba102b}{ShaderProgram}}\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_shader_program_a92a437bc47c2683254a459bce4ba102b}{ShaderProgram}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_shader}{Shader}}\&,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_shader}{Shader}}\&);}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_shader_program_a7ade03fd38c4adc761c6131d7d05fe6b}{use}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_graphics_adac2d8c0e6d99d4021119da2b4bf2100}{K9uint}}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_shader_program_aa5dd7efdf324f51d8843c4c916bc6ae6}{getProgramId}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ mProgramId;\ \}}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_shader_program_aad51b4dd0da3e012fde6dcef3b689d42}{isCorrect}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ mCorrect;\ \}}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_graphics_adac2d8c0e6d99d4021119da2b4bf2100}{K9uint}}\ mProgramId\{\ 0\ \};}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ mCorrect\{\ \textcolor{keyword}{false}\ \};}
+\DoxyCodeLine{00024\ \ \ \ \ \};}
+\DoxyCodeLine{00025\ \ \ \}}
+\DoxyCodeLine{00026\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,91 @@
+\doxysection{K9ngine\+Core\+::K9\+Graphics\+::Rendering\+Component Class Reference}
+\hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component}{}\label{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component}\index{K9ngineCore::K9Graphics::RenderingComponent@{K9ngineCore::K9Graphics::RenderingComponent}}
+
+
+{\ttfamily \#include $<$Rendering\+Component.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component_ab480145d7459a5db002ff7aa027b0b25}{Game\+Object\+Ptr}} = \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{Memory\+::\+Handle}}$<$\mbox{\hyperlink{class_k9ngine_core_1_1_game_object}{Game\+Object}}$>$
+\item 
+using \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component_afc67d45ca314012e39130633566a6f12}{Buffer\+Data\+Type\+Ptr}} = \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{Memory\+::\+Handle}}$<$\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_buffer_data_type}{Buffer\+Data\+Type}}$>$
+\item 
+using \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component_a42af4530aec820babfa55285dc68aa45}{Buffer\+Data\+Type\+Const\+Ptr}} = \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{Memory\+::\+Handle}}$<$const \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_buffer_data_type}{Buffer\+Data\+Type}}$>$
+\item 
+using \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component_aaffe8712322d1fa796b1aadaeb2ba681}{Hash}} = \mbox{\hyperlink{namespace_k9ngine_core_1_1_common_a98863712a349c520a34ab6d65d3f6b9e}{Common\+::\+Hash}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component_ab6c10dac4b600ebe010c08267accdaf5}{Rendering\+Component}} (const \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component_aaffe8712322d1fa796b1aadaeb2ba681}{Hash}} \&, \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component_ab480145d7459a5db002ff7aa027b0b25}{Game\+Object\+Ptr}}, const \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_material}{Material}} \&, const std\+::vector$<$ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component_a42af4530aec820babfa55285dc68aa45}{Buffer\+Data\+Type\+Const\+Ptr}} $>$ \&)
+\item 
+const \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component_aaffe8712322d1fa796b1aadaeb2ba681}{Hash}} \& \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component_a305e139e84a10022449de4e863af95fc}{get\+Id}} () const
+\item 
+const \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component_ab480145d7459a5db002ff7aa027b0b25}{Game\+Object\+Ptr}} \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component_aa7750a1b049aa2d1453290da48f9464a}{get\+Game\+Object}} () const
+\item 
+void \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component_ace08a84387dcde83b114ec48d58bb64a}{render}} (float elapsed\+Time) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component_a42af4530aec820babfa55285dc68aa45}\index{K9ngineCore::K9Graphics::RenderingComponent@{K9ngineCore::K9Graphics::RenderingComponent}!BufferDataTypeConstPtr@{BufferDataTypeConstPtr}}
+\index{BufferDataTypeConstPtr@{BufferDataTypeConstPtr}!K9ngineCore::K9Graphics::RenderingComponent@{K9ngineCore::K9Graphics::RenderingComponent}}
+\doxysubsubsection{\texorpdfstring{BufferDataTypeConstPtr}{BufferDataTypeConstPtr}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component_a42af4530aec820babfa55285dc68aa45} 
+using \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component_a42af4530aec820babfa55285dc68aa45}{K9ngine\+Core\+::\+K9\+Graphics\+::\+Rendering\+Component\+::\+Buffer\+Data\+Type\+Const\+Ptr}} = \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{Memory\+::\+Handle}}$<$const \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_buffer_data_type}{Buffer\+Data\+Type}}$>$}
+
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component_afc67d45ca314012e39130633566a6f12}\index{K9ngineCore::K9Graphics::RenderingComponent@{K9ngineCore::K9Graphics::RenderingComponent}!BufferDataTypePtr@{BufferDataTypePtr}}
+\index{BufferDataTypePtr@{BufferDataTypePtr}!K9ngineCore::K9Graphics::RenderingComponent@{K9ngineCore::K9Graphics::RenderingComponent}}
+\doxysubsubsection{\texorpdfstring{BufferDataTypePtr}{BufferDataTypePtr}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component_afc67d45ca314012e39130633566a6f12} 
+using \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component_afc67d45ca314012e39130633566a6f12}{K9ngine\+Core\+::\+K9\+Graphics\+::\+Rendering\+Component\+::\+Buffer\+Data\+Type\+Ptr}} = \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{Memory\+::\+Handle}}$<$\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_buffer_data_type}{Buffer\+Data\+Type}}$>$}
+
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component_ab480145d7459a5db002ff7aa027b0b25}\index{K9ngineCore::K9Graphics::RenderingComponent@{K9ngineCore::K9Graphics::RenderingComponent}!GameObjectPtr@{GameObjectPtr}}
+\index{GameObjectPtr@{GameObjectPtr}!K9ngineCore::K9Graphics::RenderingComponent@{K9ngineCore::K9Graphics::RenderingComponent}}
+\doxysubsubsection{\texorpdfstring{GameObjectPtr}{GameObjectPtr}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component_ab480145d7459a5db002ff7aa027b0b25} 
+using \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component_ab480145d7459a5db002ff7aa027b0b25}{K9ngine\+Core\+::\+K9\+Graphics\+::\+Rendering\+Component\+::\+Game\+Object\+Ptr}} = \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{Memory\+::\+Handle}}$<$\mbox{\hyperlink{class_k9ngine_core_1_1_game_object}{Game\+Object}}$>$}
+
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component_aaffe8712322d1fa796b1aadaeb2ba681}\index{K9ngineCore::K9Graphics::RenderingComponent@{K9ngineCore::K9Graphics::RenderingComponent}!Hash@{Hash}}
+\index{Hash@{Hash}!K9ngineCore::K9Graphics::RenderingComponent@{K9ngineCore::K9Graphics::RenderingComponent}}
+\doxysubsubsection{\texorpdfstring{Hash}{Hash}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component_aaffe8712322d1fa796b1aadaeb2ba681} 
+using \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component_aaffe8712322d1fa796b1aadaeb2ba681}{K9ngine\+Core\+::\+K9\+Graphics\+::\+Rendering\+Component\+::\+Hash}} = \mbox{\hyperlink{namespace_k9ngine_core_1_1_common_a98863712a349c520a34ab6d65d3f6b9e}{Common\+::\+Hash}}}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component_ab6c10dac4b600ebe010c08267accdaf5}\index{K9ngineCore::K9Graphics::RenderingComponent@{K9ngineCore::K9Graphics::RenderingComponent}!RenderingComponent@{RenderingComponent}}
+\index{RenderingComponent@{RenderingComponent}!K9ngineCore::K9Graphics::RenderingComponent@{K9ngineCore::K9Graphics::RenderingComponent}}
+\doxysubsubsection{\texorpdfstring{RenderingComponent()}{RenderingComponent()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component_ab6c10dac4b600ebe010c08267accdaf5} 
+K9ngine\+Core\+::\+K9\+Graphics\+::\+Rendering\+Component\+::\+Rendering\+Component (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component_aaffe8712322d1fa796b1aadaeb2ba681}{Hash}} \&}]{id}{, }\item[{\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component_ab480145d7459a5db002ff7aa027b0b25}{Game\+Object\+Ptr}}}]{game\+Object}{, }\item[{const \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_material}{Material}} \&}]{material}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component_a42af4530aec820babfa55285dc68aa45}{Buffer\+Data\+Type\+Const\+Ptr}} $>$ \&}]{buffers\+Data}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component_aa7750a1b049aa2d1453290da48f9464a}\index{K9ngineCore::K9Graphics::RenderingComponent@{K9ngineCore::K9Graphics::RenderingComponent}!getGameObject@{getGameObject}}
+\index{getGameObject@{getGameObject}!K9ngineCore::K9Graphics::RenderingComponent@{K9ngineCore::K9Graphics::RenderingComponent}}
+\doxysubsubsection{\texorpdfstring{getGameObject()}{getGameObject()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component_aa7750a1b049aa2d1453290da48f9464a} 
+const \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component_ab480145d7459a5db002ff7aa027b0b25}{Rendering\+Component\+::\+Game\+Object\+Ptr}} K9ngine\+Core\+::\+K9\+Graphics\+::\+Rendering\+Component\+::get\+Game\+Object (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component_a305e139e84a10022449de4e863af95fc}\index{K9ngineCore::K9Graphics::RenderingComponent@{K9ngineCore::K9Graphics::RenderingComponent}!getId@{getId}}
+\index{getId@{getId}!K9ngineCore::K9Graphics::RenderingComponent@{K9ngineCore::K9Graphics::RenderingComponent}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component_a305e139e84a10022449de4e863af95fc} 
+const \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component_aaffe8712322d1fa796b1aadaeb2ba681}{Hash}} \& K9ngine\+Core\+::\+K9\+Graphics\+::\+Rendering\+Component\+::get\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component_ace08a84387dcde83b114ec48d58bb64a}\index{K9ngineCore::K9Graphics::RenderingComponent@{K9ngineCore::K9Graphics::RenderingComponent}!render@{render}}
+\index{render@{render}!K9ngineCore::K9Graphics::RenderingComponent@{K9ngineCore::K9Graphics::RenderingComponent}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component_ace08a84387dcde83b114ec48d58bb64a} 
+void K9ngine\+Core\+::\+K9\+Graphics\+::\+Rendering\+Component\+::render (\begin{DoxyParamCaption}\item[{float}]{elapsed\+Time}{}\end{DoxyParamCaption}) const}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/lococ/source/repos/\+K9ngine\+\_\+v1/\+K9ngine\+Core/\+Graphics/\mbox{\hyperlink{_rendering_component_8h}{Rendering\+Component.\+h}}\item 
+C\+:/\+Users/lococ/source/repos/\+K9ngine\+\_\+v1/\+K9ngine\+Core/\+Graphics/\mbox{\hyperlink{_rendering_component_8cpp}{Rendering\+Component.\+cpp}}\end{DoxyCompactItemize}

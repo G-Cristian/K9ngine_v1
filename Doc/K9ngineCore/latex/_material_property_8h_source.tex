@@ -1,0 +1,32 @@
+\doxysection{Material\+Property.\+h}
+\hypertarget{_material_property_8h_source}{}\label{_material_property_8h_source}\index{C:/Users/lococ/source/repos/K9ngine\_v1/K9ngineCore/Graphics/MaterialProperty.h@{C:/Users/lococ/source/repos/K9ngine\_v1/K9ngineCore/Graphics/MaterialProperty.h}}
+\mbox{\hyperlink{_material_property_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MATERIALPROPERTY\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MATERIALPROPERTY\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_k9ngine_core}{K9ngineCore}}\ \{}
+\DoxyCodeLine{00007\ \ \ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_graphics}{K9Graphics}}\ \{}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_material_property_a66ab73d4485238118507863b54a75194}{MaterialProperty}}\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_material_property_a45976287a0c635fdc303a6d2691ffbd6}{PropertyIdType}}\ =\ std::string;}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_material_property_a66ab73d4485238118507863b54a75194}{MaterialProperty}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_material_property_a45976287a0c635fdc303a6d2691ffbd6}{PropertyIdType}}\&\ \textcolor{keywordtype}{id})\ :}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_material_property_a7fa3471538869048965e541e17e82774}{mId}}(id)\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_material_property_a45976287a0c635fdc303a6d2691ffbd6}{PropertyIdType}}\&\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_material_property_a3115ef2f5589deee5f57db7ecf436114}{getId}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_material_property_a7fa3471538869048965e541e17e82774}{mId}};\ \}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_material_property_ae818ebc768dfdcf10c5a94fbc737572e}{getValue}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_material_property_adfe7259cc1eb34ae2118bddb06887f52}{setInt}}(\textcolor{keywordtype}{int})\ =\ 0;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_material_property_a45976287a0c635fdc303a6d2691ffbd6}{PropertyIdType}}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_material_property_a7fa3471538869048965e541e17e82774}{mId}};}
+\DoxyCodeLine{00022\ \ \ \ \ \};}
+\DoxyCodeLine{00023\ \ \ \}}
+\DoxyCodeLine{00024\ \}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !MATERIALPROPERTY\_H}}
+
+\end{DoxyCode}

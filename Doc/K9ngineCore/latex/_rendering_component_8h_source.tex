@@ -1,0 +1,51 @@
+\doxysection{Rendering\+Component.\+h}
+\hypertarget{_rendering_component_8h_source}{}\label{_rendering_component_8h_source}\index{C:/Users/lococ/source/repos/K9ngine\_v1/K9ngineCore/Graphics/RenderingComponent.h@{C:/Users/lococ/source/repos/K9ngine\_v1/K9ngineCore/Graphics/RenderingComponent.h}}
+\mbox{\hyperlink{_rendering_component_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_hasher_8h}{../Common/Hasher.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_handle_8h}{../Handle.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_buffer_data_type_8h}{BufferDataType.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_graphics_context_8h}{GraphicsContext.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_material_8h}{Material.h}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_k9ngine_core}{K9ngineCore}}\ \{}
+\DoxyCodeLine{00013\ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_k9ngine_core_1_1_game_object}{GameObject}};}
+\DoxyCodeLine{00014\ \ \ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_graphics}{K9Graphics}}\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component_ab6c10dac4b600ebe010c08267accdaf5}{RenderingComponent}}\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \textcolor{keyword}{struct\ }VertexBufferObjectData\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ std::string\ name\{\};}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_graphics_a2a891917d5cc31d499ad94bf6cef35a3}{TargetBuffer}}\ targetBuffer\{\ \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_graphics_a0acc5dd027cd3a91323bf06c440fc604a9e60758b18ca0bb38bb8848828ed1fb6}{TargetBuffer::K9\_ARRAY\_BUFFER}}\ \};}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_graphics_a94d250993989ebb8c4599e9cf4a779d5}{BoolValues}}\ normalized\{\ \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_graphics_add4530b0dc4efb151e2ee2d8d990cb5eaf71fee47d50dc01d967785edb6fd6e5d}{BoolValues::K9\_FALSE}}\};}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component_ab480145d7459a5db002ff7aa027b0b25}{GameObjectPtr}}\ =\ \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{Memory::Handle<GameObject>}};}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component_afc67d45ca314012e39130633566a6f12}{BufferDataTypePtr}}\ =\ \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{Memory::Handle<BufferDataType>}};}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component_a42af4530aec820babfa55285dc68aa45}{BufferDataTypeConstPtr}}\ =\ \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{Memory::Handle<const\ BufferDataType>}};}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component_aaffe8712322d1fa796b1aadaeb2ba681}{Hash}}\ =\ \mbox{\hyperlink{namespace_k9ngine_core_1_1_common_a98863712a349c520a34ab6d65d3f6b9e}{Common::Hash}};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component_ab6c10dac4b600ebe010c08267accdaf5}{RenderingComponent}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component_aaffe8712322d1fa796b1aadaeb2ba681}{Hash}}\&,\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component_ab480145d7459a5db002ff7aa027b0b25}{GameObjectPtr}},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_material}{Material}}\&,\ \textcolor{keyword}{const}\ std::vector<BufferDataTypeConstPtr>\&);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component_aaffe8712322d1fa796b1aadaeb2ba681}{Hash}}\&\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component_a305e139e84a10022449de4e863af95fc}{getId}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component_ab480145d7459a5db002ff7aa027b0b25}{GameObjectPtr}}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component_aa7750a1b049aa2d1453290da48f9464a}{getGameObject}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component_ace08a84387dcde83b114ec48d58bb64a}{render}}(\textcolor{keywordtype}{float}\ elapsedTime)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_material}{Material}}\ mMaterial;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ std::vector<VertexBufferObjectData>\ mVertexBufferObjectsData;}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ std::unique\_ptr<K9uint[]>\ mVertexBufferObjects;}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component_ab480145d7459a5db002ff7aa027b0b25}{GameObjectPtr}}\ mGameObject;}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_rendering_component_aaffe8712322d1fa796b1aadaeb2ba681}{Hash}}\ mId\{\};}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_graphics_adac2d8c0e6d99d4021119da2b4bf2100}{K9uint}}\ mVAO\ =\ \{\};}
+\DoxyCodeLine{00043\ \ \ \ \ \};}
+\DoxyCodeLine{00044\ \ \ \}}
+\DoxyCodeLine{00045\ \}}
+
+\end{DoxyCode}

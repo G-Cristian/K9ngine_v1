@@ -10,10 +10,26 @@
 
 namespace K9ngineCore {
   namespace K9Graphics {
+    enum class OpenGLBoolValues : GLboolean {
+      K9_FALSE = GL_FALSE,
+      K9_TRUE = GL_TRUE
+    };
+
+    enum class OpenGLBufferDataUsage : GLenum {
+      K9_STATIC_DRAW = GL_STATIC_DRAW
+    };
 
     enum class OpenGLShaderType : GLenum{
       K9_VERTEX_SHADER = GL_VERTEX_SHADER,
       K9_FRAGMENT_SHADER = GL_FRAGMENT_SHADER
+    };
+
+    enum class OpenGLTargetBuffer : GLenum {
+      K9_ARRAY_BUFFER = GL_ARRAY_BUFFER
+    };
+
+    enum class OpenGLTypeEnum : GLenum {
+      K9_FLOAT = GL_FLOAT
     };
 
     class OpenGLContext {
@@ -28,6 +44,28 @@ namespace K9ngineCore {
 
       static void attachShader(GLuint program, GLuint shader) {
         glAttachShader(program, shader);
+      }
+
+      static void bindArrayBuffer(GLuint buffer) {
+        glBindBuffer(GL_ARRAY_BUFFER, buffer);
+      }
+
+      static void bindBuffer(OpenGLTargetBuffer targetBuffer, GLuint buffer) {
+        glBindBuffer(std::to_underlying(targetBuffer), buffer);
+      }
+
+      static void bindVertexArray(GLuint vertexArray) {
+        glBindVertexArray(vertexArray);
+      }
+
+      template<class T>
+      static void bufferArrayBufferData(const T* data, unsigned int n, OpenGLBufferDataUsage usage) {
+        glBufferData(GL_ARRAY_BUFFER, n * sizeof(T), data, std::to_underlying(usage));
+      }
+
+      template<class T>
+      static void bufferData(OpenGLTargetBuffer targetBuffer, const T* data, unsigned int n, OpenGLBufferDataUsage usage) {
+        glBufferData(std::to_underlying(targetBuffer), n * sizeof(T), data, std::to_underlying(usage));
       }
 
       static void clearColor() {
@@ -63,6 +101,14 @@ namespace K9ngineCore {
         }
 
         return foundErrors;
+      }
+
+      static void generateBuffers(GLsizei n, GLuint* buffers) {
+        glGenBuffers(n, buffers);
+      }
+
+      static void generateVertexArrays(GLsizei n, GLuint* VAOs) {
+        glGenVertexArrays(n, VAOs);
       }
 
       static std::string getProgramInfoLog(GLuint program, GLuint length) {
@@ -129,8 +175,16 @@ namespace K9ngineCore {
         glClearColor(red, green, blue, alpha);
       }
 
+      static void setVertexAttributePointer(GLuint index, GLint size, OpenGLTypeEnum type, OpenGLBoolValues normalized, GLsizei stride, const void* pointer) {
+        glVertexAttribPointer(index, size, std::to_underlying(type), std::to_underlying(normalized), stride, pointer);
+      }
+
       static void shaderSource(GLuint shader, GLsizei count, const GLchar* const* string, const GLint* length) {
         glShaderSource(shader, count, string, length);
+      }
+
+      static void useProgram(GLuint program) {
+        glUseProgram(program);
       }
     };
   }

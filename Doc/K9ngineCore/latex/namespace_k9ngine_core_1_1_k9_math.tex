@@ -1,0 +1,139 @@
+\doxysection{K9ngine\+Core\+::K9\+Math Namespace Reference}
+\hypertarget{namespace_k9ngine_core_1_1_k9_math}{}\label{namespace_k9ngine_core_1_1_k9_math}\index{K9ngineCore::K9Math@{K9ngineCore::K9Math}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform}{Transform}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a7bf85a92761d1bd2110c7ae7ebfd2cfe}{Mat4}} = glm\+::mat4
+\item 
+using \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_ae19cb92b3cd67d78df069f27197c1bbd}{Vec2}} = glm\+::vec2
+\item 
+using \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}} = glm\+::vec3
+\item 
+using \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_aec1af5b18afcd0c2d9ec1ea27909c612}{Vec4}} = glm\+::vec4
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a7bf85a92761d1bd2110c7ae7ebfd2cfe}{Mat4}} \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a7ac651bf0a9a7380f333c4b267660b21}{identity\+Mat4}} ()
+\item 
+\mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a7bf85a92761d1bd2110c7ae7ebfd2cfe}{Mat4}} \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a9bfb3965bb7c67a249444aea16ca7835}{translate}} (const \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a7bf85a92761d1bd2110c7ae7ebfd2cfe}{Mat4}} \&mat, const \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}} \&delta)
+\item 
+\mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a7bf85a92761d1bd2110c7ae7ebfd2cfe}{Mat4}} \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a4a7b25bdf762b4c96136fe37ddb94623}{rotateX}} (const \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a7bf85a92761d1bd2110c7ae7ebfd2cfe}{Mat4}} \&mat, float angle)
+\item 
+\mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a7bf85a92761d1bd2110c7ae7ebfd2cfe}{Mat4}} \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_ae604ab36ac8bb8a7626cc0593469ce4f}{rotateY}} (const \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a7bf85a92761d1bd2110c7ae7ebfd2cfe}{Mat4}} \&mat, float angle)
+\item 
+\mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a7bf85a92761d1bd2110c7ae7ebfd2cfe}{Mat4}} \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_af45486eb80027f2db1106b397e049c64}{rotateZ}} (const \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a7bf85a92761d1bd2110c7ae7ebfd2cfe}{Mat4}} \&mat, float angle)
+\item 
+\mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a7bf85a92761d1bd2110c7ae7ebfd2cfe}{Mat4}} \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_abc98a7eb4a595c9115b4ecb887a789b7}{scale}} (const \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a7bf85a92761d1bd2110c7ae7ebfd2cfe}{Mat4}} \&mat, const \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}} \&value)
+\item 
+\mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}} \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_ad81a40a1b4c93517ec42f17a8259ca51}{normalize}} (\mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}} vec)
+\item 
+\mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_aec1af5b18afcd0c2d9ec1ea27909c612}{Vec4}} \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_aa6d7c085a13de2a34d6eceb574c4d799}{normalize}} (\mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_aec1af5b18afcd0c2d9ec1ea27909c612}{Vec4}} vec)
+\item 
+float \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0166d3dae2de668ec5c16d544a4d578f}{dot}} (\mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}} vec1, \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}} vec2)
+\item 
+float \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a7eff71d29d38f01e767d12ef3fb80c50}{dot}} (\mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_aec1af5b18afcd0c2d9ec1ea27909c612}{Vec4}} vec1, \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_aec1af5b18afcd0c2d9ec1ea27909c612}{Vec4}} vec2)
+\item 
+\mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}} \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a28280b7aa9c2a5c8bd8185666ed0c30f}{cross}} (\mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}} vec1, \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}} vec2)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{namespace_k9ngine_core_1_1_k9_math_a7bf85a92761d1bd2110c7ae7ebfd2cfe}\index{K9ngineCore::K9Math@{K9ngineCore::K9Math}!Mat4@{Mat4}}
+\index{Mat4@{Mat4}!K9ngineCore::K9Math@{K9ngineCore::K9Math}}
+\doxysubsubsection{\texorpdfstring{Mat4}{Mat4}}
+{\footnotesize\ttfamily \label{namespace_k9ngine_core_1_1_k9_math_a7bf85a92761d1bd2110c7ae7ebfd2cfe} 
+using \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a7bf85a92761d1bd2110c7ae7ebfd2cfe}{K9ngine\+Core\+::\+K9\+Math\+::\+Mat4}} = glm\+::mat4}
+
+\Hypertarget{namespace_k9ngine_core_1_1_k9_math_ae19cb92b3cd67d78df069f27197c1bbd}\index{K9ngineCore::K9Math@{K9ngineCore::K9Math}!Vec2@{Vec2}}
+\index{Vec2@{Vec2}!K9ngineCore::K9Math@{K9ngineCore::K9Math}}
+\doxysubsubsection{\texorpdfstring{Vec2}{Vec2}}
+{\footnotesize\ttfamily \label{namespace_k9ngine_core_1_1_k9_math_ae19cb92b3cd67d78df069f27197c1bbd} 
+using \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_ae19cb92b3cd67d78df069f27197c1bbd}{K9ngine\+Core\+::\+K9\+Math\+::\+Vec2}} = glm\+::vec2}
+
+\Hypertarget{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}\index{K9ngineCore::K9Math@{K9ngineCore::K9Math}!Vec3@{Vec3}}
+\index{Vec3@{Vec3}!K9ngineCore::K9Math@{K9ngineCore::K9Math}}
+\doxysubsubsection{\texorpdfstring{Vec3}{Vec3}}
+{\footnotesize\ttfamily \label{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c} 
+using \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{K9ngine\+Core\+::\+K9\+Math\+::\+Vec3}} = glm\+::vec3}
+
+\Hypertarget{namespace_k9ngine_core_1_1_k9_math_aec1af5b18afcd0c2d9ec1ea27909c612}\index{K9ngineCore::K9Math@{K9ngineCore::K9Math}!Vec4@{Vec4}}
+\index{Vec4@{Vec4}!K9ngineCore::K9Math@{K9ngineCore::K9Math}}
+\doxysubsubsection{\texorpdfstring{Vec4}{Vec4}}
+{\footnotesize\ttfamily \label{namespace_k9ngine_core_1_1_k9_math_aec1af5b18afcd0c2d9ec1ea27909c612} 
+using \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_aec1af5b18afcd0c2d9ec1ea27909c612}{K9ngine\+Core\+::\+K9\+Math\+::\+Vec4}} = glm\+::vec4}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespace_k9ngine_core_1_1_k9_math_a28280b7aa9c2a5c8bd8185666ed0c30f}\index{K9ngineCore::K9Math@{K9ngineCore::K9Math}!cross@{cross}}
+\index{cross@{cross}!K9ngineCore::K9Math@{K9ngineCore::K9Math}}
+\doxysubsubsection{\texorpdfstring{cross()}{cross()}}
+{\footnotesize\ttfamily \label{namespace_k9ngine_core_1_1_k9_math_a28280b7aa9c2a5c8bd8185666ed0c30f} 
+\mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}} K9ngine\+Core\+::\+K9\+Math\+::cross (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}}}]{vec1}{, }\item[{\mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}}}]{vec2}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespace_k9ngine_core_1_1_k9_math_a0166d3dae2de668ec5c16d544a4d578f}\index{K9ngineCore::K9Math@{K9ngineCore::K9Math}!dot@{dot}}
+\index{dot@{dot}!K9ngineCore::K9Math@{K9ngineCore::K9Math}}
+\doxysubsubsection{\texorpdfstring{dot()}{dot()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{namespace_k9ngine_core_1_1_k9_math_a0166d3dae2de668ec5c16d544a4d578f} 
+float K9ngine\+Core\+::\+K9\+Math\+::dot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}}}]{vec1}{, }\item[{\mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}}}]{vec2}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespace_k9ngine_core_1_1_k9_math_a7eff71d29d38f01e767d12ef3fb80c50}\index{K9ngineCore::K9Math@{K9ngineCore::K9Math}!dot@{dot}}
+\index{dot@{dot}!K9ngineCore::K9Math@{K9ngineCore::K9Math}}
+\doxysubsubsection{\texorpdfstring{dot()}{dot()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{namespace_k9ngine_core_1_1_k9_math_a7eff71d29d38f01e767d12ef3fb80c50} 
+float K9ngine\+Core\+::\+K9\+Math\+::dot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_aec1af5b18afcd0c2d9ec1ea27909c612}{Vec4}}}]{vec1}{, }\item[{\mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_aec1af5b18afcd0c2d9ec1ea27909c612}{Vec4}}}]{vec2}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespace_k9ngine_core_1_1_k9_math_a7ac651bf0a9a7380f333c4b267660b21}\index{K9ngineCore::K9Math@{K9ngineCore::K9Math}!identityMat4@{identityMat4}}
+\index{identityMat4@{identityMat4}!K9ngineCore::K9Math@{K9ngineCore::K9Math}}
+\doxysubsubsection{\texorpdfstring{identityMat4()}{identityMat4()}}
+{\footnotesize\ttfamily \label{namespace_k9ngine_core_1_1_k9_math_a7ac651bf0a9a7380f333c4b267660b21} 
+\mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a7bf85a92761d1bd2110c7ae7ebfd2cfe}{Mat4}} K9ngine\+Core\+::\+K9\+Math\+::identity\+Mat4 (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespace_k9ngine_core_1_1_k9_math_ad81a40a1b4c93517ec42f17a8259ca51}\index{K9ngineCore::K9Math@{K9ngineCore::K9Math}!normalize@{normalize}}
+\index{normalize@{normalize}!K9ngineCore::K9Math@{K9ngineCore::K9Math}}
+\doxysubsubsection{\texorpdfstring{normalize()}{normalize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{namespace_k9ngine_core_1_1_k9_math_ad81a40a1b4c93517ec42f17a8259ca51} 
+\mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}} K9ngine\+Core\+::\+K9\+Math\+::normalize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}}}]{vec}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespace_k9ngine_core_1_1_k9_math_aa6d7c085a13de2a34d6eceb574c4d799}\index{K9ngineCore::K9Math@{K9ngineCore::K9Math}!normalize@{normalize}}
+\index{normalize@{normalize}!K9ngineCore::K9Math@{K9ngineCore::K9Math}}
+\doxysubsubsection{\texorpdfstring{normalize()}{normalize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{namespace_k9ngine_core_1_1_k9_math_aa6d7c085a13de2a34d6eceb574c4d799} 
+\mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_aec1af5b18afcd0c2d9ec1ea27909c612}{Vec4}} K9ngine\+Core\+::\+K9\+Math\+::normalize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_aec1af5b18afcd0c2d9ec1ea27909c612}{Vec4}}}]{vec}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespace_k9ngine_core_1_1_k9_math_a4a7b25bdf762b4c96136fe37ddb94623}\index{K9ngineCore::K9Math@{K9ngineCore::K9Math}!rotateX@{rotateX}}
+\index{rotateX@{rotateX}!K9ngineCore::K9Math@{K9ngineCore::K9Math}}
+\doxysubsubsection{\texorpdfstring{rotateX()}{rotateX()}}
+{\footnotesize\ttfamily \label{namespace_k9ngine_core_1_1_k9_math_a4a7b25bdf762b4c96136fe37ddb94623} 
+\mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a7bf85a92761d1bd2110c7ae7ebfd2cfe}{Mat4}} K9ngine\+Core\+::\+K9\+Math\+::rotateX (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a7bf85a92761d1bd2110c7ae7ebfd2cfe}{Mat4}} \&}]{mat}{, }\item[{float}]{angle}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespace_k9ngine_core_1_1_k9_math_ae604ab36ac8bb8a7626cc0593469ce4f}\index{K9ngineCore::K9Math@{K9ngineCore::K9Math}!rotateY@{rotateY}}
+\index{rotateY@{rotateY}!K9ngineCore::K9Math@{K9ngineCore::K9Math}}
+\doxysubsubsection{\texorpdfstring{rotateY()}{rotateY()}}
+{\footnotesize\ttfamily \label{namespace_k9ngine_core_1_1_k9_math_ae604ab36ac8bb8a7626cc0593469ce4f} 
+\mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a7bf85a92761d1bd2110c7ae7ebfd2cfe}{Mat4}} K9ngine\+Core\+::\+K9\+Math\+::rotateY (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a7bf85a92761d1bd2110c7ae7ebfd2cfe}{Mat4}} \&}]{mat}{, }\item[{float}]{angle}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespace_k9ngine_core_1_1_k9_math_af45486eb80027f2db1106b397e049c64}\index{K9ngineCore::K9Math@{K9ngineCore::K9Math}!rotateZ@{rotateZ}}
+\index{rotateZ@{rotateZ}!K9ngineCore::K9Math@{K9ngineCore::K9Math}}
+\doxysubsubsection{\texorpdfstring{rotateZ()}{rotateZ()}}
+{\footnotesize\ttfamily \label{namespace_k9ngine_core_1_1_k9_math_af45486eb80027f2db1106b397e049c64} 
+\mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a7bf85a92761d1bd2110c7ae7ebfd2cfe}{Mat4}} K9ngine\+Core\+::\+K9\+Math\+::rotateZ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a7bf85a92761d1bd2110c7ae7ebfd2cfe}{Mat4}} \&}]{mat}{, }\item[{float}]{angle}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespace_k9ngine_core_1_1_k9_math_abc98a7eb4a595c9115b4ecb887a789b7}\index{K9ngineCore::K9Math@{K9ngineCore::K9Math}!scale@{scale}}
+\index{scale@{scale}!K9ngineCore::K9Math@{K9ngineCore::K9Math}}
+\doxysubsubsection{\texorpdfstring{scale()}{scale()}}
+{\footnotesize\ttfamily \label{namespace_k9ngine_core_1_1_k9_math_abc98a7eb4a595c9115b4ecb887a789b7} 
+\mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a7bf85a92761d1bd2110c7ae7ebfd2cfe}{Mat4}} K9ngine\+Core\+::\+K9\+Math\+::scale (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a7bf85a92761d1bd2110c7ae7ebfd2cfe}{Mat4}} \&}]{mat}{, }\item[{const \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}} \&}]{value}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespace_k9ngine_core_1_1_k9_math_a9bfb3965bb7c67a249444aea16ca7835}\index{K9ngineCore::K9Math@{K9ngineCore::K9Math}!translate@{translate}}
+\index{translate@{translate}!K9ngineCore::K9Math@{K9ngineCore::K9Math}}
+\doxysubsubsection{\texorpdfstring{translate()}{translate()}}
+{\footnotesize\ttfamily \label{namespace_k9ngine_core_1_1_k9_math_a9bfb3965bb7c67a249444aea16ca7835} 
+\mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a7bf85a92761d1bd2110c7ae7ebfd2cfe}{Mat4}} K9ngine\+Core\+::\+K9\+Math\+::translate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a7bf85a92761d1bd2110c7ae7ebfd2cfe}{Mat4}} \&}]{mat}{, }\item[{const \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}} \&}]{delta}{}\end{DoxyParamCaption})}
+

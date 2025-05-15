@@ -6,25 +6,64 @@
 namespace K9ngineCore {
   using namespace K9ngineCore::Common;
   using namespace K9ngineCore::K9Math;
-  GameObject::GameObject(Hash id)
-    : GameObject(id, Vec4{ 0.0, 0.0, 0.0, 1.0 }, Vec3{ 0.0, 0.0, 0.0 }, Vec3{ 1.0, 1.0, 1.0 }) {
+  GameObject::GameObject(const Hash& id)
+    : GameObject(id, Transform{}) {
   }
 
-  GameObject::GameObject(Hash id, Vec4 location, Vec3 rotation, Vec3 scale)
-    : mLocation{ location }
-    , mRotation{ rotation }
-    , mScale{ scale }
+  GameObject::GameObject(const Hash& id, const Transform& transform)
+    : mTransformChangeEvent{this}
+    , mTransform{ transform }
     , mId{ id } {
   }
 
-  const Vec4& GameObject::getLocation() const { return mLocation; }
-  void GameObject::setLocation(Vec4 location) { mLocation = location; }
+  void GameObject::addObserver(ObserverTypePtr observer) {
+    mTransformChangeEvent += observer;
+  }
 
-  const Vec3& GameObject::getRotation() const { return mRotation; }
-  void GameObject::setRotation(Vec3 rotation) { mRotation = rotation; }
+  void GameObject::removeObserver(ObserverTypePtr observer) {
+    mTransformChangeEvent -= observer;
+  }
 
-  const Vec3& GameObject::getScale() const { return mScale; }
-  void GameObject::setScale(Vec3 scale) { mScale = scale; }
+  const Transform& GameObject::getTransform() const { return mTransform; }
+
+  void GameObject::moveTo(float x, float y, float z) {
+    moveTo(Vec3(x, y, z));
+  }
+
+  void GameObject::moveTo(const Vec3& location) {
+    const auto delta = location - Vec3(mTransform.getLocation());
+    move(delta);
+  }
+
+  void GameObject::move(float x, float y, float z) {
+    move(Vec3(x, y, z));
+  }
+
+  void GameObject::move(const Vec3& delta) {
+    const auto oldTransform = mTransform;
+    mTransform.translate(delta);
+    mTransformChangeEvent.notify(oldTransform, mTransform);
+  }
+
+  void GameObject::setScale(float x, float y, float z) {
+    setScale(Vec3(x, y, z));
+  }
+
+  void GameObject::setScale(const Vec3& scale) {
+    const auto oldTransform = mTransform;
+    mTransform.setScale(scale);
+    mTransformChangeEvent.notify(oldTransform, mTransform);
+  }
+
+  void GameObject::setRotation(float x, float y, float z) {
+    setRotation(Vec3(x, y, z));
+  }
+
+  void GameObject::setRotation(const Vec3& angle) {
+    const auto oldTransform = mTransform;
+    mTransform.setRotation(angle);
+    mTransformChangeEvent.notify(oldTransform, mTransform);
+  }
 
   const Hash& GameObject::getId() const { return mId; }
 }

@@ -1,0 +1,43 @@
+\doxysection{Transform.\+h}
+\hypertarget{_transform_8h_source}{}\label{_transform_8h_source}\index{C:/Users/lococ/source/repos/K9ngine\_v1/K9ngineCore/Math/Transform.h@{C:/Users/lococ/source/repos/K9ngine\_v1/K9ngineCore/Math/Transform.h}}
+\mbox{\hyperlink{_transform_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_math_8h}{Math.h}}"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_k9ngine_core}{K9ngineCore}}\ \{}
+\DoxyCodeLine{00006\ \ \ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math}{K9Math}}\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform_afe2992d39b110ef9ccbdbb289a4bac82}{Transform}}\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform_afe2992d39b110ef9ccbdbb289a4bac82}{Transform}}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform_aefaf6fbac7757967ae0d0a9765f5f0d9}{operator*}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform_afe2992d39b110ef9ccbdbb289a4bac82}{Transform}}\&,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform_afe2992d39b110ef9ccbdbb289a4bac82}{Transform}}\&);}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform_afe2992d39b110ef9ccbdbb289a4bac82}{Transform}}();}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform_afe2992d39b110ef9ccbdbb289a4bac82}{Transform}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_aec1af5b18afcd0c2d9ec1ea27909c612}{Vec4}}\&\ location,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}}\&\ rotation,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}}\&\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform_a1e475315d1e58d4d853bdefb5d62a288}{scale}});}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform_afe2992d39b110ef9ccbdbb289a4bac82}{Transform}}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform_a1d6ce3a5dbf34bfe4eb168b28f7083e6}{identity}}();}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a7bf85a92761d1bd2110c7ae7ebfd2cfe}{Mat4}}\&\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform_adf8d476d274eb755f6297a1ff5ec5a97}{getTransformMat4}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_aec1af5b18afcd0c2d9ec1ea27909c612}{Vec4}}\&\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform_a59ad48a93be06b086786e250bef119d2}{getLocation}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform_a579a09d2fabeeeb12aa4e125dd9535bd}{setLocation}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_aec1af5b18afcd0c2d9ec1ea27909c612}{Vec4}}\&);}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform_a51f7c25847471f3f54f30ce6f6a8676b}{translate}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}}\&);}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}}\&\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform_a040cf6156dcb4d73898d4bb0ac0af52a}{getRotation}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform_a76b57df1d90d5bb1b02b7a7dd8474c71}{setRotation}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}}\&);}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform_a20baeac872e2d9a82a3408df3b7fb693}{rotate}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}}\&);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}}\&\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform_a15f8e2622f9f5f6864136b48c0068b48}{getScale}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform_a98e3044637cd5d1b6496bf501e0951c0}{setScale}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}}\&);}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_k9ngine_core_1_1_k9_math_1_1_transform_a1e475315d1e58d4d853bdefb5d62a288}{scale}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}}\&);}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a7bf85a92761d1bd2110c7ae7ebfd2cfe}{Mat4}}\ mTransformCache;}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_aec1af5b18afcd0c2d9ec1ea27909c612}{Vec4}}\ mLocation;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}}\ mRotation;}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \mbox{\hyperlink{namespace_k9ngine_core_1_1_k9_math_a0a65a2b3bc20e5d9b44daa9992ea1b5c}{Vec3}}\ mScale;}
+\DoxyCodeLine{00035\ \ \ \ \ \};}
+\DoxyCodeLine{00036\ \ \ \}}
+\DoxyCodeLine{00037\ \}}
+
+\end{DoxyCode}

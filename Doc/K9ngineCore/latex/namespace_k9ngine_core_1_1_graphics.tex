@@ -1,0 +1,90 @@
+\doxysection{K9ngine\+Core\+::Graphics Namespace Reference}
+\hypertarget{namespace_k9ngine_core_1_1_graphics}{}\label{namespace_k9ngine_core_1_1_graphics}\index{K9ngineCore::Graphics@{K9ngineCore::Graphics}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_k9ngine_core_1_1_graphics_1_1_texture}{Texture}}
+\item 
+class \mbox{\hyperlink{class_k9ngine_core_1_1_graphics_1_1_texture_data}{Texture\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespace_k9ngine_core_1_1_graphics_acf83b2994b71caecf31f9e1f848da509}{Texture\+Wrap\+Mode}} \{ \mbox{\hyperlink{namespace_k9ngine_core_1_1_graphics_acf83b2994b71caecf31f9e1f848da509a5be68175be14dfaa080165456c2e9555}{REPEAT}}
+, \mbox{\hyperlink{namespace_k9ngine_core_1_1_graphics_acf83b2994b71caecf31f9e1f848da509aca305cdc5d749d643055111218063f26}{CLAMP\+\_\+\+TO\+\_\+\+EDGE}}
+ \}
+\item 
+enum class \mbox{\hyperlink{namespace_k9ngine_core_1_1_graphics_a6a67a577144c284eba167c5d2ba95dc2}{Texture\+Filter\+Mode}} \{ \mbox{\hyperlink{namespace_k9ngine_core_1_1_graphics_a6a67a577144c284eba167c5d2ba95dc2aad135772d7cf93dd0ccf9d2474b34e6a}{NEAREST}}
+, \mbox{\hyperlink{namespace_k9ngine_core_1_1_graphics_a6a67a577144c284eba167c5d2ba95dc2aaac544aacc3615aada24897a215f5046}{LINEAR}}
+, \mbox{\hyperlink{namespace_k9ngine_core_1_1_graphics_a6a67a577144c284eba167c5d2ba95dc2ab127db2c1e3a1fa7097b0cc774cbcd24}{LINEAR\+\_\+\+MIPMAP\+\_\+\+LINEAR}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+GLint \mbox{\hyperlink{namespace_k9ngine_core_1_1_graphics_a02a6cb93816f5e63c419de610f0f6c0f}{K9\+Wrap\+Mode\+To\+API}} (\mbox{\hyperlink{namespace_k9ngine_core_1_1_graphics_acf83b2994b71caecf31f9e1f848da509}{Texture\+Wrap\+Mode}} wrap\+Mode)
+\item 
+GLint \mbox{\hyperlink{namespace_k9ngine_core_1_1_graphics_a22651c72fa06893716cee6a6315078f2}{K9\+Filter\+Mode\+To\+API}} (\mbox{\hyperlink{namespace_k9ngine_core_1_1_graphics_a6a67a577144c284eba167c5d2ba95dc2}{Texture\+Filter\+Mode}} filter\+Mode)
+\item 
+GLint \mbox{\hyperlink{namespace_k9ngine_core_1_1_graphics_a067b947ae9d718c8bf458325c7c51617}{K9\+Number\+Of\+Channels\+To\+API}} (int number\+Of\+Channels)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{namespace_k9ngine_core_1_1_graphics_a6a67a577144c284eba167c5d2ba95dc2}\index{K9ngineCore::Graphics@{K9ngineCore::Graphics}!TextureFilterMode@{TextureFilterMode}}
+\index{TextureFilterMode@{TextureFilterMode}!K9ngineCore::Graphics@{K9ngineCore::Graphics}}
+\doxysubsubsection{\texorpdfstring{TextureFilterMode}{TextureFilterMode}}
+{\footnotesize\ttfamily \label{namespace_k9ngine_core_1_1_graphics_a6a67a577144c284eba167c5d2ba95dc2} 
+enum class \mbox{\hyperlink{namespace_k9ngine_core_1_1_graphics_a6a67a577144c284eba167c5d2ba95dc2}{K9ngine\+Core\+::\+Graphics\+::\+Texture\+Filter\+Mode}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NEAREST@{NEAREST}!K9ngineCore::Graphics@{K9ngineCore::Graphics}}\index{K9ngineCore::Graphics@{K9ngineCore::Graphics}!NEAREST@{NEAREST}}}\Hypertarget{namespace_k9ngine_core_1_1_graphics_a6a67a577144c284eba167c5d2ba95dc2aad135772d7cf93dd0ccf9d2474b34e6a}\label{namespace_k9ngine_core_1_1_graphics_a6a67a577144c284eba167c5d2ba95dc2aad135772d7cf93dd0ccf9d2474b34e6a} 
+NEAREST&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LINEAR@{LINEAR}!K9ngineCore::Graphics@{K9ngineCore::Graphics}}\index{K9ngineCore::Graphics@{K9ngineCore::Graphics}!LINEAR@{LINEAR}}}\Hypertarget{namespace_k9ngine_core_1_1_graphics_a6a67a577144c284eba167c5d2ba95dc2aaac544aacc3615aada24897a215f5046}\label{namespace_k9ngine_core_1_1_graphics_a6a67a577144c284eba167c5d2ba95dc2aaac544aacc3615aada24897a215f5046} 
+LINEAR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LINEAR\_MIPMAP\_LINEAR@{LINEAR\_MIPMAP\_LINEAR}!K9ngineCore::Graphics@{K9ngineCore::Graphics}}\index{K9ngineCore::Graphics@{K9ngineCore::Graphics}!LINEAR\_MIPMAP\_LINEAR@{LINEAR\_MIPMAP\_LINEAR}}}\Hypertarget{namespace_k9ngine_core_1_1_graphics_a6a67a577144c284eba167c5d2ba95dc2ab127db2c1e3a1fa7097b0cc774cbcd24}\label{namespace_k9ngine_core_1_1_graphics_a6a67a577144c284eba167c5d2ba95dc2ab127db2c1e3a1fa7097b0cc774cbcd24} 
+LINEAR\+\_\+\+MIPMAP\+\_\+\+LINEAR&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{namespace_k9ngine_core_1_1_graphics_acf83b2994b71caecf31f9e1f848da509}\index{K9ngineCore::Graphics@{K9ngineCore::Graphics}!TextureWrapMode@{TextureWrapMode}}
+\index{TextureWrapMode@{TextureWrapMode}!K9ngineCore::Graphics@{K9ngineCore::Graphics}}
+\doxysubsubsection{\texorpdfstring{TextureWrapMode}{TextureWrapMode}}
+{\footnotesize\ttfamily \label{namespace_k9ngine_core_1_1_graphics_acf83b2994b71caecf31f9e1f848da509} 
+enum class \mbox{\hyperlink{namespace_k9ngine_core_1_1_graphics_acf83b2994b71caecf31f9e1f848da509}{K9ngine\+Core\+::\+Graphics\+::\+Texture\+Wrap\+Mode}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REPEAT@{REPEAT}!K9ngineCore::Graphics@{K9ngineCore::Graphics}}\index{K9ngineCore::Graphics@{K9ngineCore::Graphics}!REPEAT@{REPEAT}}}\Hypertarget{namespace_k9ngine_core_1_1_graphics_acf83b2994b71caecf31f9e1f848da509a5be68175be14dfaa080165456c2e9555}\label{namespace_k9ngine_core_1_1_graphics_acf83b2994b71caecf31f9e1f848da509a5be68175be14dfaa080165456c2e9555} 
+REPEAT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CLAMP\_TO\_EDGE@{CLAMP\_TO\_EDGE}!K9ngineCore::Graphics@{K9ngineCore::Graphics}}\index{K9ngineCore::Graphics@{K9ngineCore::Graphics}!CLAMP\_TO\_EDGE@{CLAMP\_TO\_EDGE}}}\Hypertarget{namespace_k9ngine_core_1_1_graphics_acf83b2994b71caecf31f9e1f848da509aca305cdc5d749d643055111218063f26}\label{namespace_k9ngine_core_1_1_graphics_acf83b2994b71caecf31f9e1f848da509aca305cdc5d749d643055111218063f26} 
+CLAMP\+\_\+\+TO\+\_\+\+EDGE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespace_k9ngine_core_1_1_graphics_a22651c72fa06893716cee6a6315078f2}\index{K9ngineCore::Graphics@{K9ngineCore::Graphics}!K9FilterModeToAPI@{K9FilterModeToAPI}}
+\index{K9FilterModeToAPI@{K9FilterModeToAPI}!K9ngineCore::Graphics@{K9ngineCore::Graphics}}
+\doxysubsubsection{\texorpdfstring{K9FilterModeToAPI()}{K9FilterModeToAPI()}}
+{\footnotesize\ttfamily \label{namespace_k9ngine_core_1_1_graphics_a22651c72fa06893716cee6a6315078f2} 
+GLint K9ngine\+Core\+::\+Graphics\+::\+K9\+Filter\+Mode\+To\+API (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_k9ngine_core_1_1_graphics_a6a67a577144c284eba167c5d2ba95dc2}{Texture\+Filter\+Mode}}}]{filter\+Mode}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespace_k9ngine_core_1_1_graphics_a067b947ae9d718c8bf458325c7c51617}\index{K9ngineCore::Graphics@{K9ngineCore::Graphics}!K9NumberOfChannelsToAPI@{K9NumberOfChannelsToAPI}}
+\index{K9NumberOfChannelsToAPI@{K9NumberOfChannelsToAPI}!K9ngineCore::Graphics@{K9ngineCore::Graphics}}
+\doxysubsubsection{\texorpdfstring{K9NumberOfChannelsToAPI()}{K9NumberOfChannelsToAPI()}}
+{\footnotesize\ttfamily \label{namespace_k9ngine_core_1_1_graphics_a067b947ae9d718c8bf458325c7c51617} 
+GLint K9ngine\+Core\+::\+Graphics\+::\+K9\+Number\+Of\+Channels\+To\+API (\begin{DoxyParamCaption}\item[{int}]{number\+Of\+Channels}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespace_k9ngine_core_1_1_graphics_a02a6cb93816f5e63c419de610f0f6c0f}\index{K9ngineCore::Graphics@{K9ngineCore::Graphics}!K9WrapModeToAPI@{K9WrapModeToAPI}}
+\index{K9WrapModeToAPI@{K9WrapModeToAPI}!K9ngineCore::Graphics@{K9ngineCore::Graphics}}
+\doxysubsubsection{\texorpdfstring{K9WrapModeToAPI()}{K9WrapModeToAPI()}}
+{\footnotesize\ttfamily \label{namespace_k9ngine_core_1_1_graphics_a02a6cb93816f5e63c419de610f0f6c0f} 
+GLint K9ngine\+Core\+::\+Graphics\+::\+K9\+Wrap\+Mode\+To\+API (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_k9ngine_core_1_1_graphics_acf83b2994b71caecf31f9e1f848da509}{Texture\+Wrap\+Mode}}}]{wrap\+Mode}{}\end{DoxyParamCaption})}
+

@@ -2,31 +2,48 @@
 #define GAMEOBJECT_H
 
 #include "Common/Hasher.h"
+#include "Common/IObserver.h"
+#include "Common/TransformChangeEvent.h"
 #include "Math/Math.h"
+#include "Math/Transform.h"
+
+#include <memory>
 
 namespace K9ngineCore{
   using namespace K9ngineCore::Common;
   using namespace K9ngineCore::K9Math;
+  
   class GameObject {
   public:
-    GameObject(Hash id);
-    GameObject(Hash id, Vec4 location, Vec3 rotation, Vec3 scale);
+    using TransformChangeEventType = TransformChangeEvent<GameObject>;
+    using ObserverType = TransformChangeEventType::ObserverType;
+    using ObserverTypePtr = TransformChangeEventType::ObserverTypePtr;
 
-    const Vec4& getLocation() const;
-    void setLocation(Vec4);
+    GameObject(const Hash& id);
+    GameObject(const Hash& id, const Transform& transform);
 
-    const Vec3& getRotation() const;
-    void setRotation(Vec3);
+    void addObserver(ObserverTypePtr);
+    void removeObserver(ObserverTypePtr);
 
-    const Vec3& getScale() const;
-    void setScale(Vec3);
+    const Transform& getTransform() const;
+    
+    void moveTo(float x, float y, float z);
+    void moveTo(const Vec3& location);
+
+    void move(float x, float y, float z);
+    void move(const Vec3& delta);
+
+    void setScale(float x, float y, float z);
+    void setScale(const Vec3& scale);
+
+    void setRotation(float x, float y, float z);
+    void setRotation(const Vec3& angle);
 
     const Hash& getId() const;
 
   private:
-    Vec4 mLocation;
-    Vec3 mRotation;
-    Vec3 mScale;
+    TransformChangeEventType mTransformChangeEvent;
+    Transform mTransform;
     Hash mId;
   };
 }

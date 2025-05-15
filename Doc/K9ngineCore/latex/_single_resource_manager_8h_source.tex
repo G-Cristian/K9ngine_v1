@@ -1,0 +1,129 @@
+\doxysection{Single\+Resource\+Manager.\+h}
+\hypertarget{_single_resource_manager_8h_source}{}\label{_single_resource_manager_8h_source}\index{C:/Users/lococ/source/repos/K9ngine\_v1/K9ngineCore/SingleResourceManager.h@{C:/Users/lococ/source/repos/K9ngine\_v1/K9ngineCore/SingleResourceManager.h}}
+\mbox{\hyperlink{_single_resource_manager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SINGLERESOURCEMANAGER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SINGLERESOURCEMANAGER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_handle_8h}{Handle.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_hasher_8h}{Common/Hasher.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_k9_debug_8h}{K9Debug.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_resource_loader_8h}{ResourceLoader.h}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_k9ngine_core}{K9ngineCore}}\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager_ae829fbc7c7c6c61a6dbe3ae609626eb7}{SingleResourceManager}}\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager_ae829fbc7c7c6c61a6dbe3ae609626eb7}{SingleResourceManager}}(\textcolor{keywordtype}{size\_t}\ elementsCount);}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager_a2f85e4fe3ca2a6faa62397513d03f2b0}{SingleResourceManager}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager_ae829fbc7c7c6c61a6dbe3ae609626eb7}{SingleResourceManager}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager_a33ed0f1a064599399e0045f1e417a2ff}{SingleResourceManager}}(\mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager_ae829fbc7c7c6c61a6dbe3ae609626eb7}{SingleResourceManager}}\&\&)\ noexcept\ =\ delete;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager_ae829fbc7c7c6c61a6dbe3ae609626eb7}{SingleResourceManager}}\&operator=(const\ \mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager_ae829fbc7c7c6c61a6dbe3ae609626eb7}{SingleResourceManager}}\&)\ =\ delete;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager_ae829fbc7c7c6c61a6dbe3ae609626eb7}{SingleResourceManager}}\&\ operator=(\mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager_ae829fbc7c7c6c61a6dbe3ae609626eb7}{SingleResourceManager}}\&\&)\ noexcept\ =\ delete;}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_k9ngine_core_1_1_memory}{Memory}}::Handle<T>\ \mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager_ab7b5d73984759a0f55f9ffaad774e079}{loadResourceIfNeeded}}(const\ std::\textcolor{keywordtype}{string}\&\ path);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ template<typename...\ Args>}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_k9ngine_core_1_1_memory}{Memory}}::Handle<T>\ \mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager_a57caabf1cbd2a1ec233d0b05bf97a069}{createResourceIfNeeded}}(const\ std::\textcolor{keywordtype}{string}\&\ sId,\ Args\&\&...\ args)\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager_a57caabf1cbd2a1ec233d0b05bf97a069}{createResourceIfNeeded}}(Utility::hashString(sId),\ std::forward<Args>(args)...);}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{Memory::Handle<T>}}\ \mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager_a57caabf1cbd2a1ec233d0b05bf97a069}{createResourceIfNeeded}}(uint64\_t\ \textcolor{keywordtype}{id},\ Args\&\&...\ args);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{Memory::Handle<T>}}\ \mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager_a08ff835f95693d27734ab339f8792801}{getHandle}}(\textcolor{keyword}{const}\ std::string\&\ path)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager_a08ff835f95693d27734ab339f8792801}{getHandle}}(Utility::hashString(path));}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{Memory::Handle<T>}}\ \mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager_a08ff835f95693d27734ab339f8792801}{getHandle}}(uint64\_t\ uid)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager_ad126abcfadd540a84cb71b3522dc4b60}{deleteResource}}(\textcolor{keyword}{const}\ std::string\&\ sId)\ \{\ \mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager_ad126abcfadd540a84cb71b3522dc4b60}{deleteResource}}(Utility::hashString(sId));\ \}}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager_ad126abcfadd540a84cb71b3522dc4b60}{deleteResource}}(uint64\_t\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{Memory::Handle<T>}}\ retrieveFromHashTable(uint64\_t\ guid,\ uint64\_t\ handleIndex)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{Memory::Handle<T>}}\ addResource(uint64\_t\ \textcolor{keywordtype}{id},\ T*\ pElement);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ std::unordered\_map<uint64\_t,\ uint64\_t>\ \_handlesIndices;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle_table}{Memory::HandleTable<T>}}\ \_handleTable;}
+\DoxyCodeLine{00048\ \ \ \ \ \};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{comment}{\ \ \ \ /*******************************/}}
+\DoxyCodeLine{00051\ \textcolor{comment}{\ \ \ \ /******\ IMPLEMENTATIONS\ ********/}}
+\DoxyCodeLine{00052\ \textcolor{comment}{\ \ \ \ /*******************************/}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{Memory::Handle<T>}}\ \mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager_ab7b5d73984759a0f55f9ffaad774e079}{SingleResourceManager<T>::loadResourceIfNeeded}}(\textcolor{keyword}{const}\ std::string\&\ path)\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ uint64\_t\ uid\ =\ Utility::hashString(path);}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ \_handlesIndices.find(uid);}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ \_handlesIndices.end())\ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_k9_debug_8h_a6634cdad87399d6a7a117d92811644a9}{K9ASSERT}}(\_handleTable.isValid(uid,\ it-\/>second),\ \textcolor{stringliteral}{"{}SingleResourceManager<T>::loadResourceIfNeeded:\ invalid\ handle"{}});}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ retrieveFromHashTable(uid,\ it-\/>second);}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ T*\ resource\ =\ \mbox{\hyperlink{class_k9ngine_core_1_1_i_o_1_1_resource_loader_a9f264c8fbf564d2deba68d5a5b29b494}{IO::ResourceLoader<T>::loadResource}}(path);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ addResource(uid,\ resource);}
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{Memory::Handle<T>}}\ \mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager_a57caabf1cbd2a1ec233d0b05bf97a069}{SingleResourceManager<T>::createResourceIfNeeded}}(uint64\_t\ \textcolor{keywordtype}{id},\ Args\&\&...\ args)\ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ \_handlesIndices.find(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ \_handlesIndices.end())\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_k9_debug_8h_a6634cdad87399d6a7a117d92811644a9}{K9ASSERT}}(\_handleTable.isValid(\textcolor{keywordtype}{id},\ it-\/>second),\ \textcolor{stringliteral}{"{}SingleResourceManager<T>::createResourceIfNeeded:\ invalid\ handle"{}});}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ retrieveFromHashTable(\textcolor{keywordtype}{id},\ it-\/>second);}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ T*\ resource\ =\ \textcolor{keyword}{new}\ T(\textcolor{keywordtype}{id},\ std::forward<Args>(args)...);}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ addResource(uid,\ resource);}
+\DoxyCodeLine{00079\ \ \ \ \ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{Memory::Handle<T>}}\ \mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager_a08ff835f95693d27734ab339f8792801}{SingleResourceManager<T>::getHandle}}(uint64\_t\ uid)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ \_handlesIndices.find(uid);}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ ==\ \_handlesIndices.cend()\ ||\ !\_handleTable.isValid(uid,\ it-\/>second))\ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle_table_af33571dbb73708a7d1b981c84d69aad4}{Memory::HandleTable<T>::NullHandle}};}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_handleTable.getHandle(it-\/>second);}
+\DoxyCodeLine{00089\ \ \ \ \ \}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_k9ngine_core_1_1_single_resource_manager_ad126abcfadd540a84cb71b3522dc4b60}{SingleResourceManager<T>::deleteResource}}(uint64\_t\ \textcolor{keywordtype}{id})\ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ handleIt\ =\ \_handlesIndices.find(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_k9_debug_8h_a6634cdad87399d6a7a117d92811644a9}{K9ASSERT}}(handleIt\ !=\ \_handlesIndices.end(),\ \textcolor{stringliteral}{"{}SingleResourceManager<T>::deleteResource:\ handle\ not\ found"{}});}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (handleIt\ !=\ \_handlesIndices.end())\ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_k9_debug_8h_a6634cdad87399d6a7a117d92811644a9}{K9ASSERT}}(\_handleTable.isValid(\textcolor{keywordtype}{id},\ handleIt-\/>second),\ \textcolor{stringliteral}{"{}SingleResourceManager<T>::deleteResource:\ invalid\ handle"{}});}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_handleTable.isValid(\textcolor{keywordtype}{id},\ handleIt-\/>second))\ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_handleTable.deleteHandle(handleIt-\/>second);}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \_handlesIndices.erase(handleIt);}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00102\ \ \ \ \ \}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00105\ \ \ \ \ \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{Memory::Handle<T>}}\ SingleResourceManager<T>::retrieveFromHashTable(uint64\_t\ guid,\ uint64\_t\ handleIndex)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_handleTable.isValid(guid,\ handleIndex))\ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_handleTable.getHandle(handleIndex);}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_handleTable.NullHandle;}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00112\ \ \ \ \ \}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00115\ \ \ \ \ \mbox{\hyperlink{class_k9ngine_core_1_1_memory_1_1_handle}{Memory::Handle<T>}}\ SingleResourceManager<T>::addResource(uint64\_t\ \textcolor{keywordtype}{id},\ T*\ pElement)\ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_k9_debug_8h_a6634cdad87399d6a7a117d92811644a9}{K9ASSERT}}(\_handlesIndices.find(\textcolor{keywordtype}{id})\ ==\ \_handlesIndices.end(),\ \textcolor{stringliteral}{"{}SingleResourceManager<T>::addResource:\ id\ already\ exists"{}});}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ index\ =\ \_handleTable.createHandle(uid,\ value);}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \_handlesIndices[id]\ =\ index;}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_handleTable.getHandle(index);}
+\DoxyCodeLine{00120\ \ \ \ \ \}}
+\DoxyCodeLine{00121\ \}}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !SINGLERESOURCEMANAGER\_H}}
+
+\end{DoxyCode}

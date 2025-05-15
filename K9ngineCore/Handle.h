@@ -2,6 +2,7 @@
 #define HANDLE_H
 
 #include <cstdint>
+#include <type_traits>
 #include <vector>
 
 #include "K9Debug.h"
@@ -13,6 +14,12 @@ namespace K9ngineCore {
 
 		template<typename T>
 		bool operator<(const Handle<T>&, const Handle<T>&);
+
+		template<typename T>
+		bool operator==(const Handle<T>&, const Handle<T>&);
+
+		template<typename T>
+		bool operator!=(const Handle<T>&, const Handle<T>&);
 
 		template<typename T>
 		class Handle {
@@ -48,7 +55,10 @@ namespace K9ngineCore {
 			}
 
 			T& operator*();
+			const T& operator*()const;
+
 			T* operator->();
+			const T* operator->() const;
 
 			uint64_t uid() const { return _uid; }
 
@@ -125,8 +135,21 @@ namespace K9ngineCore {
 		/******** FUNCTIONS DEFINITIONS *********/
 		/****************************************/
 		template<typename T>
-		bool operator<(const Handle<T>& lhs, const Handle<T>& rhs) {
+		bool operator<(const Handle<T>& lhs, const Handle<T>& rhs)
+		{
 			return lhs.uid() < rhs.uid();
+		}
+
+		template<typename T>
+		bool operator==(const Handle<T>& lhs, const Handle<T>& rhs)
+		{
+			return lhs.uid() == rhs.uid();
+		}
+
+		template<typename T>
+		bool operator!=(const Handle<T>& lhs, const Handle<T>& rhs)
+		{
+			return !(lhs == rhs);
 		}
 
 		/****************************************/
@@ -140,7 +163,20 @@ namespace K9ngineCore {
 		}
 
 		template<typename T>
+		inline const T& Handle<T>::operator*() const
+		{
+			K9ASSERT(isValid(), "Handle<T>::operator*, handle not valid");
+			return *(_pHandleTable->getElementValue(_index));
+		}
+
+		template<typename T>
 		inline T* Handle<T>::operator->() {
+			K9ASSERT(isValid(), "Handle<T>::operator->, handle not valid");
+			return _pHandleTable->getElementValue(_index);
+		}
+
+		template<typename T>
+		inline const T* Handle<T>::operator->() const {
 			K9ASSERT(isValid(), "Handle<T>::operator->, handle not valid");
 			return _pHandleTable->getElementValue(_index);
 		}
@@ -155,7 +191,7 @@ namespace K9ngineCore {
 		/****************************************/
 
 		template<typename T>
-		const Handle<T> HandleTable<T>::NullHandle(nullptr, (uint64_t)-1, (size_t)-1);
+		const Handle<T> HandleTable<T>::NullHandle{ nullptr, (uint64_t)-1, (size_t)-1 };
 
 		template<typename T>
 		HandleTable<T>::HandleTable(size_t size) {

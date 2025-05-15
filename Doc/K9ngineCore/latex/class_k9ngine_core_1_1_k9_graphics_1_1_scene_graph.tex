@@ -1,0 +1,85 @@
+\doxysection{K9ngine\+Core\+::K9\+Graphics\+::Scene\+Graph Class Reference}
+\hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph}{}\label{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph}\index{K9ngineCore::K9Graphics::SceneGraph@{K9ngineCore::K9Graphics::SceneGraph}}
+
+
+{\ttfamily \#include $<$Scene\+Graph.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_a31e769e29c3569206ae08742e9123311}{Scene\+Graph}} ()
+\item 
+\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph}{Scene\+Graph}} \& \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_ad23ac091049d8c8421ab628313c87b7c}{operator=}} (const \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph}{Scene\+Graph}} \&)=delete
+\item 
+\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph}{Scene\+Graph}} \& \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_aeb239ac562c3acd431b4b190945d4857}{operator=}} (\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph}{Scene\+Graph}} \&\&) noexcept=delete
+\item 
+void \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_a39e0db5ad2b6f15c4a88ac37ed81f597}{clean\+Dirty}} (\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node}{INode}} \texorpdfstring{$\ast$}{*})
+\item 
+void \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_a5d2f3a13f1395ec1f4900d1bdc34e3b5}{propagate\+Dirty\+Upwards}} ()
+\item 
+void \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_af099518d8dc74e0233ea67b6159be856}{propagate\+Dirty\+Upwards}} (\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node}{INode}} \texorpdfstring{$\ast$}{*})
+\item 
+void \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_af6133037b5d65054953889fd7d9a1e53}{accept}} (\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_scene_graph_visitor}{IScene\+Graph\+Visitor}} \&)
+\item 
+void \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_a50bc17ecc268427bbf837ad0f9736e7e}{set\+Dirty}} (\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node}{INode}} \texorpdfstring{$\ast$}{*})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_a31e769e29c3569206ae08742e9123311}\index{K9ngineCore::K9Graphics::SceneGraph@{K9ngineCore::K9Graphics::SceneGraph}!SceneGraph@{SceneGraph}}
+\index{SceneGraph@{SceneGraph}!K9ngineCore::K9Graphics::SceneGraph@{K9ngineCore::K9Graphics::SceneGraph}}
+\doxysubsubsection{\texorpdfstring{SceneGraph()}{SceneGraph()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_a31e769e29c3569206ae08742e9123311} 
+K9ngine\+Core\+::\+K9\+Graphics\+::\+Scene\+Graph\+::\+Scene\+Graph (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_af6133037b5d65054953889fd7d9a1e53}\index{K9ngineCore::K9Graphics::SceneGraph@{K9ngineCore::K9Graphics::SceneGraph}!accept@{accept}}
+\index{accept@{accept}!K9ngineCore::K9Graphics::SceneGraph@{K9ngineCore::K9Graphics::SceneGraph}}
+\doxysubsubsection{\texorpdfstring{accept()}{accept()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_af6133037b5d65054953889fd7d9a1e53} 
+void K9ngine\+Core\+::\+K9\+Graphics\+::\+Scene\+Graph\+::accept (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_scene_graph_visitor}{IScene\+Graph\+Visitor}} \&}]{visitor}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_a39e0db5ad2b6f15c4a88ac37ed81f597}\index{K9ngineCore::K9Graphics::SceneGraph@{K9ngineCore::K9Graphics::SceneGraph}!cleanDirty@{cleanDirty}}
+\index{cleanDirty@{cleanDirty}!K9ngineCore::K9Graphics::SceneGraph@{K9ngineCore::K9Graphics::SceneGraph}}
+\doxysubsubsection{\texorpdfstring{cleanDirty()}{cleanDirty()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_a39e0db5ad2b6f15c4a88ac37ed81f597} 
+void K9ngine\+Core\+::\+K9\+Graphics\+::\+Scene\+Graph\+::clean\+Dirty (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node}{INode}} \texorpdfstring{$\ast$}{*}}]{node}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_ad23ac091049d8c8421ab628313c87b7c}\index{K9ngineCore::K9Graphics::SceneGraph@{K9ngineCore::K9Graphics::SceneGraph}!operator=@{operator=}}
+\index{operator=@{operator=}!K9ngineCore::K9Graphics::SceneGraph@{K9ngineCore::K9Graphics::SceneGraph}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_ad23ac091049d8c8421ab628313c87b7c} 
+\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph}{Scene\+Graph}} \& K9ngine\+Core\+::\+K9\+Graphics\+::\+Scene\+Graph\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph}{Scene\+Graph}} \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_aeb239ac562c3acd431b4b190945d4857}\index{K9ngineCore::K9Graphics::SceneGraph@{K9ngineCore::K9Graphics::SceneGraph}!operator=@{operator=}}
+\index{operator=@{operator=}!K9ngineCore::K9Graphics::SceneGraph@{K9ngineCore::K9Graphics::SceneGraph}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_aeb239ac562c3acd431b4b190945d4857} 
+\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph}{Scene\+Graph}} \& K9ngine\+Core\+::\+K9\+Graphics\+::\+Scene\+Graph\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph}{Scene\+Graph}} \&\&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}, {\ttfamily [noexcept]}}
+
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_a5d2f3a13f1395ec1f4900d1bdc34e3b5}\index{K9ngineCore::K9Graphics::SceneGraph@{K9ngineCore::K9Graphics::SceneGraph}!propagateDirtyUpwards@{propagateDirtyUpwards}}
+\index{propagateDirtyUpwards@{propagateDirtyUpwards}!K9ngineCore::K9Graphics::SceneGraph@{K9ngineCore::K9Graphics::SceneGraph}}
+\doxysubsubsection{\texorpdfstring{propagateDirtyUpwards()}{propagateDirtyUpwards()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_a5d2f3a13f1395ec1f4900d1bdc34e3b5} 
+void K9ngine\+Core\+::\+K9\+Graphics\+::\+Scene\+Graph\+::propagate\+Dirty\+Upwards (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_af099518d8dc74e0233ea67b6159be856}\index{K9ngineCore::K9Graphics::SceneGraph@{K9ngineCore::K9Graphics::SceneGraph}!propagateDirtyUpwards@{propagateDirtyUpwards}}
+\index{propagateDirtyUpwards@{propagateDirtyUpwards}!K9ngineCore::K9Graphics::SceneGraph@{K9ngineCore::K9Graphics::SceneGraph}}
+\doxysubsubsection{\texorpdfstring{propagateDirtyUpwards()}{propagateDirtyUpwards()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_af099518d8dc74e0233ea67b6159be856} 
+void K9ngine\+Core\+::\+K9\+Graphics\+::\+Scene\+Graph\+::propagate\+Dirty\+Upwards (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node}{INode}} \texorpdfstring{$\ast$}{*}}]{node}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_a50bc17ecc268427bbf837ad0f9736e7e}\index{K9ngineCore::K9Graphics::SceneGraph@{K9ngineCore::K9Graphics::SceneGraph}!setDirty@{setDirty}}
+\index{setDirty@{setDirty}!K9ngineCore::K9Graphics::SceneGraph@{K9ngineCore::K9Graphics::SceneGraph}}
+\doxysubsubsection{\texorpdfstring{setDirty()}{setDirty()}}
+{\footnotesize\ttfamily \label{class_k9ngine_core_1_1_k9_graphics_1_1_scene_graph_a50bc17ecc268427bbf837ad0f9736e7e} 
+void K9ngine\+Core\+::\+K9\+Graphics\+::\+Scene\+Graph\+::set\+Dirty (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_k9ngine_core_1_1_k9_graphics_1_1_i_node}{INode}} \texorpdfstring{$\ast$}{*}}]{node}{}\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/lococ/source/repos/\+K9ngine\+\_\+v1/\+K9ngine\+Core/\+Graphics/\mbox{\hyperlink{_scene_graph_8h}{Scene\+Graph.\+h}}\item 
+C\+:/\+Users/lococ/source/repos/\+K9ngine\+\_\+v1/\+K9ngine\+Core/\+Graphics/\mbox{\hyperlink{_scene_graph_8cpp}{Scene\+Graph.\+cpp}}\end{DoxyCompactItemize}
