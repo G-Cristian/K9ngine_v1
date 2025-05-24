@@ -1,0 +1,30 @@
+#pragma once
+
+#include "K9ngineApp.h"
+
+namespace K9ngineAppTest
+{
+  class Test1 : public K9ngine::K9ngineApp
+  {
+  public:
+    //const char* settingsFullpath = "K9ngineSettings.txt"
+    explicit Test1(const char* settingsFullpath) :
+      K9ngine::K9ngineApp{ settingsFullpath }
+    {
+    }
+
+    explicit Test1(int contextVersionMajor = 4, int contextVersionMinor = 3, float msPerFrame = 16.0) :
+      K9ngine::K9ngineApp{ contextVersionMajor, contextVersionMinor, msPerFrame }
+    {
+    }
+
+    ~Test1() override = default;
+  private:
+    bool init() override;
+    void processInput() override;
+    void fixedUpdate() override;
+    void fixedPhysics() override;
+    void update(float elapsed) override;
+    void render(float elapsed) override;
+  };
+}

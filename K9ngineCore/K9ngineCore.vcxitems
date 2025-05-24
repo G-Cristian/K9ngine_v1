@@ -48,8 +48,6 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Shader_old.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)SingleResourceManager.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Texture.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)Windows\K9Window.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)Windows\K9WindowsManager.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)Common\Hasher.cpp" />
@@ -75,7 +73,5 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Path.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Shader_old.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Texture.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Windows\K9Window.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Windows\K9WindowsManager.cpp" />
   </ItemGroup>
 </Project>

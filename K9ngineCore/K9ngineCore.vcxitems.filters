@@ -56,12 +56,6 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Graphics\Renderer.cpp">
       <Filter>Graphics</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)Windows\K9Window.cpp">
-      <Filter>Windows</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)Windows\K9WindowsManager.cpp">
-      <Filter>Windows</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)FileReader.h" />
@@ -143,12 +137,6 @@
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\VertexBufferObjectData.h">
       <Filter>Graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)Windows\K9Window.h">
-      <Filter>Windows</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)Windows\K9WindowsManager.h">
-      <Filter>Windows</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

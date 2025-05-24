@@ -1,6 +1,6 @@
 #include "K9WindowsManager.h"
 
-#include "../K9Debug.h"
+#include "K9Debug.h"
 
 #include <GLFW/glfw3.h>
 
