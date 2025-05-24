@@ -49,10 +49,12 @@ namespace K9ngineCore {
       visitor.visit(*this);
     }
 
-    const K9Math::Transform& TransformNode::getTransform() const {
+    const K9Math::Transform TransformNode::getTransform() const {
       if (mGameObject != NullGameObjectPtr) {
         return mGameObject->getTransform();
       }
+
+      return K9Math::Transform::identity();
     }
   }
 }

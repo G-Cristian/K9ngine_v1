@@ -6,7 +6,7 @@
 #include "Graphics/Renderer.h"
 #include "Graphics/TransformNode.h"
 #include "Handle.h"
-#include "Windows/K9WindowsManager.h"
+#include "../K9ngineApp/Windows/K9WindowsManager.h"
 
 namespace K9ngineGame {
   class K9Game {

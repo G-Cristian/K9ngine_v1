@@ -1,16 +1,22 @@
-#include "K9Game.h"
+// K9ngineApp.cpp : Define las funciones de la biblioteca estática.
+//
+
+#include "pch.h"
+#include "framework.h"
+
+#include "K9ngineApp.h"
 
 #include "Graphics/Renderer.h"
 #include "Handle.h"
 #include "K9Debug.h"
-#include "../K9ngineApp/Windows/K9Window.h"
-#include "../K9ngineApp/Windows/K9WindowsManager.h"
+#include "Windows/K9Window.h"
+#include "Windows/K9WindowsManager.h"
 
 #include <chrono>
 
-namespace K9ngineGame {
+namespace K9ngine {
 
-  void K9Game::run() {
+  void K9ngineApp::run() {
     using namespace K9ngineCore;
     if (init()) {
       start();
@@ -24,13 +30,13 @@ namespace K9ngineGame {
     cleanup();
   }
 
-  float K9Game::getCurrentTime() {
+  float K9ngineApp::getCurrentTime() {
     using namespace std::chrono;
 
     return static_cast<float>(duration_cast<milliseconds>(system_clock::now().time_since_epoch()).count());
   }
 
-  bool K9Game::init() {
+  bool K9ngineApp::init() {
     using namespace K9ngineCore;
     using namespace K9ngineCore::K9Graphics;
     LOG_ADD_TAB();
@@ -56,7 +62,7 @@ namespace K9ngineGame {
     return ok;
   }
 
-  void K9Game::start() {
+  void K9ngineApp::start() {
     float previous = getCurrentTime();
     float lag = 0.0;
     float current = 0.0;
@@ -80,24 +86,24 @@ namespace K9ngineGame {
     }
   }
 
-  void K9Game::processInput() {
+  void K9ngineApp::processInput() {
     // TODO: Update keyboard and mouse objects with current values.
   }
 
-  void K9Game::fixedUpdate() {
+  void K9ngineApp::fixedUpdate() {
     // TODO: Update fixed scripts engine (mMsPerFixedUpdate) which must call every fixedUpdate scripts
   }
 
-  void K9Game::fixedPhysics() {
+  void K9ngineApp::fixedPhysics() {
     // TODO: Update physics engine (mMsPerFixedUpdate) (besides updating physics will call the corresponding OnCollision events)
   }
 
-  void K9Game::update(float elapsed) {
+  void K9ngineApp::update(float elapsed) {
     // TODO: Update scripts engine (elapsed) which must call every update scripts
     mMustClose = mMustClose || mWindowsManager.currentWindow().shouldClose();
   }
 
-  void K9Game::render(float elapsed) {
+  void K9ngineApp::render(float elapsed) {
     using namespace K9ngineCore::K9Graphics;
     GraphicsContext::clearColor(1.0f, 0.0f, 0.0f, 1.0f);
     // TODO: Update rendering engine (elapsed)
@@ -105,7 +111,7 @@ namespace K9ngineGame {
     mWindowsManager.update();
   }
 
-  void K9Game::cleanup() {
+  void K9ngineApp::cleanup() {
     // TODO: Do necessary cleanup.
     
     mWindowsManager.destroyAll();

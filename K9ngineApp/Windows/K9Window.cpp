@@ -1,7 +1,7 @@
 #include "K9Window.h"
 
-#include "../K9Debug.h"
-#include  "../Logger.h"
+#include "K9Debug.h"
+#include  "Logger.h"
 
 namespace K9ngineCore {
   namespace K9Windows {

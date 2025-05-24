@@ -41,7 +41,7 @@ namespace K9ngineCore {
 
       void accept(ISceneGraphVisitor&) override final;
 
-      const K9Math::Transform& getTransform() const;
+      const K9Math::Transform getTransform() const;
 
     private:
     private:

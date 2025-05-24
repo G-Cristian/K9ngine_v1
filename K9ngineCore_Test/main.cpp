@@ -88,10 +88,12 @@ bool addTabsRemoveMoreTabsThanAddedAndAddTabAgain();
 
 
 int main(int argc, char** argv) {
+#if (!defined(K9_LOG_CONSOLE) || K9_LOG_CONSOLE==0) && (!defined(K9_LOG_FILE) || K9_LOG_FILE==0)
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 	//_CrtSetReportMode(_CRT_ERROR, _CRTDBG_MODE_DEBUG);
 	_CrtSetReportMode(_CRT_WARN, _CRTDBG_MODE_FILE);
 	_CrtSetReportFile(_CRT_WARN, _CRTDBG_FILE_STDOUT);
+#endif
 
 	int success = 0;
 	int fail = 0;
@@ -160,8 +162,10 @@ int main(int argc, char** argv) {
 	std::cout << "TOTAL: " << total << std::endl;
 
 	std::cout << std::endl;
-	
-	//_CrtDumpMemoryLeaks();
+
+#if (!defined(K9_LOG_CONSOLE) || K9_LOG_CONSOLE==0) && (!defined(K9_LOG_FILE) || K9_LOG_FILE==0)
+	_CrtDumpMemoryLeaks();
+#endif
 	
 	return 0;
 }
