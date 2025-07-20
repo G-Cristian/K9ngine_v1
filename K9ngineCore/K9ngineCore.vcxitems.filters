@@ -5,8 +5,6 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Logger.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)MessageBox.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Path.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Shader_old.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Texture.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Graphics\Shader.cpp">
       <Filter>Graphics</Filter>
     </ClCompile>
@@ -56,6 +54,22 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Graphics\Renderer.cpp">
       <Filter>Graphics</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Graphics\MaterialProperty.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Graphics\Mat4MaterialProperty.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Graphics\PerspectiveCamera.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)World.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Graphics\Mesh.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Graphics\MeshFactory.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)FileReader.h" />
@@ -65,9 +79,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)MessageBox.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Path.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)ResourceLoader.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)Shader_old.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)SingleResourceManager.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)Texture.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\OpenGLContext.h">
       <Filter>Graphics</Filter>
     </ClInclude>
@@ -138,6 +150,23 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\VertexBufferObjectData.h">
       <Filter>Graphics</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\Mat4MaterialProperty.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\Camera.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\PerspectiveCamera.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)World.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\GraphicsHandleTypes.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)CommonHandleTypes.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\MeshFactory.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Graphics">
@@ -148,9 +177,6 @@
     </Filter>
     <Filter Include="Common">
       <UniqueIdentifier>{26cc1e76-585e-4828-9afb-74388e958271}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Windows">
-      <UniqueIdentifier>{36a52ae6-78dd-4db2-9924-260bef1c7f15}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

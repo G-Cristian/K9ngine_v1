@@ -3,25 +3,25 @@
 #include "../Common/IObserver.h"
 #include "../Common/TransformChangeEvent.h"
 #include "../Handle.h"
+#include "GraphicsHandleTypes.h"
 #include "INode.h"
-#include "RenderingComponent.h"
 
 #include <memory>
 
 namespace K9ngineCore {
   namespace K9Graphics {
+    class ISceneGraphVisitor;
+    class RenderingComponent;
     class SceneGraph;
     class RenderNode :public INode
     {
     public:
-      using RenderingComponentPtr = Memory::Handle<RenderingComponent>;
-      using RenderingComponentConstPtr = Memory::Handle<const RenderingComponent>;
-    public:
-      RenderNode(SceneGraph&, RenderingComponentConstPtr);
+      RenderNode(SceneGraph&, RenderingComponentPtr);
 
-      const RenderingComponentConstPtr getRenderingComponent() const;
+      void accept(ISceneGraphVisitor&) override final;
+      const RenderingComponentPtr getRenderingComponent() const;
     private:
-      RenderingComponentConstPtr mRenderingComponent;
+      RenderingComponentPtr mRenderingComponent;
     };
   }
 }

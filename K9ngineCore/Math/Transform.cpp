@@ -1,5 +1,7 @@
 #include "Transform.h"
+
 #include "Math.h"
+#include "../K9Debug.h"
 
 namespace K9ngineCore {
   namespace K9Math {
@@ -13,7 +15,8 @@ namespace K9ngineCore {
       , mRotation{rotation}
       , mScale{scale}
     {
-      mTransformCache = K9Math::translate(rotateZ(rotateY(rotateX(K9Math::scale(mTransformCache, mScale), mRotation.x), mRotation.y), mRotation.z), mLocation);
+      buildTransformCache();
+      mIsDirty = false;
     }
 
     Transform Transform::identity()
@@ -23,6 +26,13 @@ namespace K9ngineCore {
 
     const Mat4& Transform::getTransformMat4() const
     {
+      /*K9ASSERT(!mIsDirty, "Since the transform object is const, it should not happend that it's dirty.");
+      return mTransformCache;*/
+      if (mIsDirty) {
+        buildTransformCache();
+        mIsDirty = false;
+      }
+
       return mTransformCache;
     }
 
@@ -36,7 +46,7 @@ namespace K9ngineCore {
     void Transform::translate(const Vec3& delta)
     {
       mLocation += Vec4(delta, 0.0);
-      mTransformCache = K9Math::translate(mTransformCache, delta);
+      mIsDirty = true;
     }
 
     const Vec3& Transform::getRotation() const { return mRotation; }
@@ -49,20 +59,25 @@ namespace K9ngineCore {
     void Transform::rotate(const Vec3& delta)
     {
       mRotation += delta;
-      mTransformCache = rotateZ(rotateY(rotateX(mTransformCache, delta.x), delta.y), delta.z);
+      mIsDirty = true;
     }
 
     const Vec3& Transform::getScale() const { return mScale; }
 
     void Transform::setScale(const Vec3& scale)
     {
-      this->scale(scale - mScale);
+      this->scale(scale / mScale);
     }
 
     void Transform::scale(const Vec3& delta)
     {
       mScale *= delta;
-      K9Math::scale(mTransformCache, delta);
+      mIsDirty = true;
+    }
+
+    void Transform::buildTransformCache() const
+    {
+      mTransformCache = K9Math::translate(rotateZ(rotateY(rotateX(K9Math::scale(K9Math::identityMat4(), mScale), mRotation.x), mRotation.y), mRotation.z), mLocation);
     }
   }
 }

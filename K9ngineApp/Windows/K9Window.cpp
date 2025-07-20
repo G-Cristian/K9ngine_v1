@@ -28,6 +28,16 @@ namespace K9ngineCore {
       return glfwWindowShouldClose(mWindow);
     }
 
+    K9Window::Size K9Window::getFramebufferSize() const
+    {
+      K9ASSERT(!!(mWindow), "Window is null");
+      int width{};
+      int height{};
+      glfwGetFramebufferSize(mWindow, &width, &height);
+
+      return Size{ width, height };
+    }
+
     void K9Window::swapBuffers() const {
       K9ASSERT(!!(mWindow), "Window is null");
       glfwSwapBuffers(mWindow);

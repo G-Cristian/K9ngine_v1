@@ -9,7 +9,7 @@ namespace K9ngineCore {
   namespace K9Graphics {
     class BufferDataType {
     public:
-      BufferDataType(const std::string&, const std::vector<float>&, K9int, TargetBuffer, BufferDataUsage, TypeEnum, BoolValues, K9sizei);
+      BufferDataType(const std::string& name, const std::vector<float>& data, K9int size, TargetBuffer targetBuffer, BufferDataUsage dataUsage, TypeEnum type, BoolValues normalized, K9sizei stride);
 
       const std::vector<float>& getData() const;
       const std::string& getName() const;

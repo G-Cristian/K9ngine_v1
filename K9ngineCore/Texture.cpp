@@ -2,7 +2,7 @@
 
 #include "K9Debug.h"
 
-#include <glad/glad.h>
+//#include <glad/glad.h>
 
 namespace K9ngineCore {
 	namespace Graphics {

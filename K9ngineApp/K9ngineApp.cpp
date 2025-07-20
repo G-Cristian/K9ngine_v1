@@ -57,6 +57,8 @@ namespace K9ngine {
       }
     }
 
+    GraphicsContext::setClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+
     LOG_REMOVE_TAB();
 
     return ok;
@@ -104,8 +106,6 @@ namespace K9ngine {
   }
 
   void K9ngineApp::render(float elapsed) {
-    using namespace K9ngineCore::K9Graphics;
-    GraphicsContext::clearColor(1.0f, 0.0f, 0.0f, 1.0f);
     // TODO: Update rendering engine (elapsed)
     mRenderer.render(elapsed);
     mWindowsManager.update();

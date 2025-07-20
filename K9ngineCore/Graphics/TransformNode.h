@@ -2,6 +2,7 @@
 
 #include "../Common/IObserver.h"
 #include "../Common/TransformChangeEvent.h"
+#include "../CommonHandleTypes.h"
 #include "../GameObject.h"
 #include "../Handle.h"
 #include "../Math/Transform.h"
@@ -11,11 +12,11 @@
 
 namespace K9ngineCore {
   namespace K9Graphics {
+    class ISceneGraphVisitor;
     class SceneGraph;
+
     class TransformNode :public INode {
     public:
-      using GameObjectPtr = Memory::Handle<K9ngineCore::GameObject>;;
-      using GameObjectConstPtr = Memory::Handle<const GameObject>;
       using GameObjectTransformChangeEvent = Common::TransformChangeEvent<GameObject>;
       using TransformObserverSubject = GameObjectTransformChangeEvent::Subject;
       using TransformObserverEventArg = GameObjectTransformChangeEvent::EventArg;

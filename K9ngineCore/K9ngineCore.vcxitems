@@ -14,19 +14,25 @@
     <ProjectCapability Include="SourceItemsFromImports" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)CommonHandleTypes.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Common\Hasher.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Common\IObserver.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Common\TransformChangeEvent.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)FileReader.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)GameObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\BufferDataType.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\Camera.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\GraphicsContext.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\GraphicsHandleTypes.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\INode.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\ISceneGraphVisitor.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\Mat4MaterialProperty.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\Material.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\MaterialProperty.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\Mesh.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\MeshFactory.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\OpenGLContext.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\PerspectiveCamera.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\Renderer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\RenderingComponent.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\RenderingItem.h" />
@@ -45,9 +51,8 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)MessageBox.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Path.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)ResourceLoader.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)Shader_old.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)SingleResourceManager.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)Texture.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)World.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)Common\Hasher.cpp" />
@@ -56,7 +61,12 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Graphics\BufferDataType.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Graphics\INode.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Graphics\ISceneGraphVisitor.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Graphics\Mat4MaterialProperty.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Graphics\Material.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Graphics\MaterialProperty.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Graphics\Mesh.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Graphics\MeshFactory.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Graphics\PerspectiveCamera.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Graphics\Renderer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Graphics\RenderingComponent.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Graphics\RenderingItem.cpp" />
@@ -71,7 +81,6 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Math\Transform.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)MessageBox.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Path.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Shader_old.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Texture.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)World.cpp" />
   </ItemGroup>
 </Project>

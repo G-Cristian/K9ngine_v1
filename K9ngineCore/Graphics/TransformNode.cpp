@@ -12,7 +12,7 @@
 
 namespace K9ngineCore {
   namespace K9Graphics {
-    const TransformNode::GameObjectPtr TransformNode::NullGameObjectPtr = Memory::HandleTable<K9ngineCore::GameObject>::NullHandle;
+    const GameObjectPtr TransformNode::NullGameObjectPtr = Memory::HandleTable<K9ngineCore::GameObject>::NullHandle;
 
     TransformNode::TransformChangeObserver::TransformChangeObserver(TransformNode* node)
       : Common::IObserver<TransformObserverSubject, TransformObserverEventArg>{}
@@ -50,11 +50,7 @@ namespace K9ngineCore {
     }
 
     const K9Math::Transform TransformNode::getTransform() const {
-      if (mGameObject != NullGameObjectPtr) {
-        return mGameObject->getTransform();
-      }
-
-      return K9Math::Transform::identity();
+      return mGameObject != NullGameObjectPtr ? mGameObject->getTransform() : K9Math::Transform::identity();
     }
   }
 }

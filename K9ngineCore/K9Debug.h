@@ -92,6 +92,10 @@ namespace K9ngineCore {
 #define K9ASSERT(expression, msg) do{\
 										if(!(expression)){\
 											K9ngineCore::K9MessageBox::ShowError(msg, __FILE__, __LINE__);\
+											char lineStr[10];\
+											_itoa_s(__LINE__, lineStr, 10);\
+											std::string finalMsg = std::string(msg) + ". " + std::string(__FILE__) + ". " + std::string(lineStr);\
+											LOG_ERROR(finalMsg);\
 										}\
 									}while(false)
 #else

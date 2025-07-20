@@ -30,6 +30,8 @@ namespace K9ngineCore {
     private:
       void cleanDirty();
       void setDirty();
+      void addChild(NodePtr child);
+      void setParent(NodePtr parent);
     protected:
       std::vector<NodePtr> mChildren{};
       NodePtr mParent{ nullptr };

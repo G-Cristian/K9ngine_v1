@@ -6,7 +6,7 @@
 
 #include "K9Debug.h"
 
-#include <glad/glad.h>
+//#include <glad/glad.h>
 
 #include <glm/glm.hpp>
 #include <glm/gtc/type_ptr.hpp>
@@ -37,7 +37,7 @@ Shader_old::Shader_old(const char* vertexPath, const char* fragmentPath) {
 		fShaderFile.close();
 	}
 	catch (std::ifstream::failure e) {
-		K9ASSERT(false, (std::string("ERROR::SHADER::FILE_NOT_SUCCESFULLY_READ: ") + e.what()).c_str());
+		//K9ASSERT(false, (std::string("ERROR::SHADER::FILE_NOT_SUCCESFULLY_READ: ") + e.what()).c_str());
 	}
 
 	const char* vShaderCode = vertexCode.c_str();
@@ -106,7 +106,7 @@ unsigned int Shader_old::compileShader(const char* shaderCode, GLenum shaderType
 											(shaderType == GL_FRAGMENT_SHADER ? "FRAGMENT" : ""))
 										<< "::COMPILATION_FAILED\n" << infoLog << std::endl;
 
-		K9ASSERT(false, ss.str().c_str());
+		//K9ASSERT(false, ss.str().c_str());
 	}
 
 	return shader;
@@ -126,7 +126,7 @@ unsigned int Shader_old::createLinkProgram(unsigned int vertexShader, unsigned i
 		glGetProgramInfoLog(programID, 512, NULL, infoLog);
 		std::stringstream ss;
 		ss << "ERROR::SHADER::PROGRAM::LINKING_FAILED\n" << infoLog << std::endl;
-		K9ASSERT(false, ss.str().c_str());
+		//K9ASSERT(false, ss.str().c_str());
 	}
 
 	return programID;

@@ -1,5 +1,8 @@
 #include "FileReader.h"
 
+#include <string>
+#include <sstream>
+
 namespace K9ngineCore {
 	namespace IO {
 		FileReader& operator>>(FileReader& fileReader, int& outVal) {
@@ -57,6 +60,19 @@ namespace K9ngineCore {
 			}
 
 			return *this;
+		}
+
+		std::string FileReader::getTextContent()
+		{
+			std::stringstream ss;
+			while (!_file.eof())
+			{
+        std::string line;
+				std::getline(_file, line);
+				ss << line << std::endl;
+			}
+
+      return ss.str();
 		}
 	}
 }

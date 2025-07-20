@@ -4,7 +4,7 @@
 
 namespace K9ngineCore {
   namespace K9Graphics {
-    RenderingItem::RenderingItem(RenderingComponentConstPtr renderingComponent, K9Math::Mat4& transfomr)
+    RenderingItem::RenderingItem(RenderingComponentPtr renderingComponent, K9Math::Mat4& transfomr)
       : mRenderingComponent{renderingComponent}
       , mTransform{transfomr}
     {
@@ -15,7 +15,7 @@ namespace K9ngineCore {
       return mTransform;
     }
 
-    const RenderingItem::RenderingComponentConstPtr RenderingItem::getRenderingComponent() const
+    const RenderingComponentPtr RenderingItem::getRenderingComponent() const
     {
       return mRenderingComponent;
     }

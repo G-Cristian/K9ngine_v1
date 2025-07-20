@@ -5,6 +5,7 @@
 
 #include <fstream>
 #include <string>
+#include <string_view>
 
 namespace K9ngineCore {
 	namespace IO {
@@ -21,11 +22,11 @@ namespace K9ngineCore {
 			friend FileReader& operator>>(FileReader&, bool&);
 
 		public:
-			FileReader(const std::string& fileName) :
-				_fileName(fileName)
+			FileReader(std::string_view fileName) :
+				_fileName(std::string{ fileName })
 			{
 				_file.exceptions(std::ifstream::failbit | std::ifstream::badbit);
-				_file.open(fileName);
+				_file.open(std::string{ fileName });
 			}
 
 			~FileReader() {
@@ -47,6 +48,8 @@ namespace K9ngineCore {
 			bool isOpen() const { return _file.is_open(); }
 
 			const std::string& filename() const { return _fileName; }
+
+			std::string getTextContent();
 		private:
 			std::string _fileName;
 			std::ifstream _file;
