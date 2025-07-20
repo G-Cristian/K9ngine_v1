@@ -1,7 +1,8 @@
 #include "ShaderProgram.h"
 
 #include "GraphicsContext.h"
-#include "K9Debug.h"
+
+#include "../K9Debug.h"
 
 #include <format>
 #include <string>

@@ -1,16 +1,16 @@
 #include "Test1.h"
 
-#include "Common/Hasher.h"
-#include "FileReader.h"
-#include <Graphics/BufferDataType.h>
-#include <Graphics/Camera.h>
-#include <Graphics/Material.h>
-#include <Graphics/Mesh.h>
-#include <Graphics/MeshFactory.h>
-#include <Graphics/PerspectiveCamera.h>
-#include <Graphics/Shader.h>
-#include <Graphics/ShaderProgram.h>
-#include <K9Debug.h>
+#include "../K9ngineCore/Common/Hasher.h"
+#include "../K9ngineCore/FileReader.h"
+#include "../K9ngineCore/Graphics/BufferDataType.h"
+#include "../K9ngineCore/Graphics/Camera.h"
+#include "../K9ngineCore/Graphics/Material.h"
+#include "../K9ngineCore/Graphics/Mesh.h"
+#include "../K9ngineCore/Graphics/MeshFactory.h"
+#include "../K9ngineCore/Graphics/PerspectiveCamera.h"
+#include "../K9ngineCore/Graphics/Shader.h"
+#include "../K9ngineCore/Graphics/ShaderProgram.h"
+#include "../K9ngineCore/K9Debug.h"
 
 #include <format>
 #include <memory>

@@ -1,6 +1,5 @@
 #include "Renderer.h"
 
-#include "CommonHandleTypes.h"
 #include "GraphicsContext.h"
 #include "GraphicsHandleTypes.h"
 #include "INode.h"
@@ -12,7 +11,8 @@
 #include "SceneGraphRenderVisitor.h"
 #include "TransformNode.h"
 
-#include "../Common//Hasher.h"
+#include "../CommonHandleTypes.h"
+#include "../Common/Hasher.h"
 #include "../GameObject.h"
 #include "../Handle.h"
 #include "../K9Debug.h"

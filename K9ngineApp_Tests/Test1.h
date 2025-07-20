@@ -1,8 +1,8 @@
 #pragma once
 
-#include <K9Debug.h>
-#include "K9ngineApp.h"
+#include "../K9ngineApp/K9ngineApp.h"
 
+#include "../K9ngineCore/K9Debug.h"
 #include "../K9ngineCore/World.h"
 #include "../K9ngineCore/Graphics/Renderer.h"
 #include "../K9ngineCore/Graphics/PerspectiveCamera.h"

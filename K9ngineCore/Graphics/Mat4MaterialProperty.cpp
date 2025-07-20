@@ -1,10 +1,12 @@
 #include "Mat4MaterialProperty.h"
 
 #include "GraphicsContext.h"
-#include "K9Debug.h"
 #include "MaterialProperty.h"
 #include "ShaderProgram.h"
 
+#include "../K9Debug.h"
+
+#include <format>
 #include <type_traits>
 
 namespace K9ngineCore {

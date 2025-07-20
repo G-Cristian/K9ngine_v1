@@ -1,5 +1,8 @@
+#ifdef K9_DEBUG_MEMORY
 #define _CRTDBG_MAP_ALLOC
 #define _CRTDBG_MAP_ALLOC_NEW
+#endif // K9_DEBUG_MEMORY
+
 #include <stdlib.h>
 #include <crtdbg.h>
 
@@ -88,7 +91,7 @@ bool addTabsRemoveMoreTabsThanAddedAndAddTabAgain();
 
 
 int main(int argc, char** argv) {
-#if (!defined(K9_LOG_CONSOLE) || K9_LOG_CONSOLE==0) && (!defined(K9_LOG_FILE) || K9_LOG_FILE==0)
+#ifdef K9_DEBUG_MEMORY
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 	//_CrtSetReportMode(_CRT_ERROR, _CRTDBG_MODE_DEBUG);
 	_CrtSetReportMode(_CRT_WARN, _CRTDBG_MODE_FILE);
@@ -163,7 +166,7 @@ int main(int argc, char** argv) {
 
 	std::cout << std::endl;
 
-#if (!defined(K9_LOG_CONSOLE) || K9_LOG_CONSOLE==0) && (!defined(K9_LOG_FILE) || K9_LOG_FILE==0)
+#ifdef K9_DEBUG_MEMORY
 	_CrtDumpMemoryLeaks();
 #endif
 	

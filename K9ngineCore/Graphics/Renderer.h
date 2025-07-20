@@ -1,9 +1,9 @@
 #pragma once
 
-#include "CommonHandleTypes.h"
 #include "GraphicsHandleTypes.h"
 #include "SceneGraph.h"
 
+#include "../CommonHandleTypes.h"
 #include "../Common/Hasher.h"
 
 #include <memory>

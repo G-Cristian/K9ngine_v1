@@ -70,6 +70,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Graphics\MeshFactory.cpp">
       <Filter>Graphics</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Texture.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)FileReader.h" />
@@ -167,6 +168,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\MeshFactory.h">
       <Filter>Graphics</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Texture.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Graphics">

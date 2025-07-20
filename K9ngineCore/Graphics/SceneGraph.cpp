@@ -2,7 +2,6 @@
 
 
 #include "Camera.h"
-#include "CommonHandleTypes.h"
 #include "GraphicsHandleTypes.h"
 #include "ISceneGraphVisitor.h"
 #include "Renderer.h"
@@ -10,6 +9,7 @@
 #include "RenderNode.h"
 #include "TransformNode.h"
 
+#include "../CommonHandleTypes.h"
 #include "../Common//Hasher.h"
 
 #include <cstdint>
