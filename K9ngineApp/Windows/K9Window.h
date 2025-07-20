@@ -10,6 +10,12 @@ namespace K9ngineCore {
     class K9Window {
       friend class K9WindowsManager;
     public:
+      struct Size
+      {
+        int width;
+        int height;
+      };
+
       explicit K9Window(const std::string&, int, int);
       K9Window(K9Window&&) noexcept = default;
       K9Window& operator=(K9Window&&) noexcept = default;
@@ -18,6 +24,8 @@ namespace K9ngineCore {
 
       void init() const;
       bool shouldClose() const;
+
+      Size getFramebufferSize() const;
 
       void swapBuffers() const;
       void destroy();

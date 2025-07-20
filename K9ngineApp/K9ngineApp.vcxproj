@@ -221,7 +221,6 @@
     <ClInclude Include="Windows\K9WindowsManager.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\glad.c" />
     <ClCompile Include="K9ngineApp.cpp" />
     <ClCompile Include="Windows\K9Window.cpp" />
     <ClCompile Include="Windows\K9WindowsManager.cpp" />

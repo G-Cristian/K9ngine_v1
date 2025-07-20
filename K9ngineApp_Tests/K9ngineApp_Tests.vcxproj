@@ -149,7 +149,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\OpenGL\Libs;..\OpenGL\Libs;</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\OpenGL\Libs;</AdditionalLibraryDirectories>
       <AdditionalDependencies>glfw3.lib;opengl32.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -190,16 +190,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\glad.c" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Test1.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Test1.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\K9ngineApp\K9ngineApp.vcxproj">
       <Project>{cea17752-5c3a-4e87-a8b7-4ad69a2b499c}</Project>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Test1.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

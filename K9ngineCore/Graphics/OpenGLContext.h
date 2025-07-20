@@ -1,10 +1,12 @@
 #ifndef OPENGLCONTEXT_H
 #define OPENGLCONTEXT_H
 
+#include <glad/glad.h>
+
 #include "../K9Debug.h"
 
-#include <glad/glad.h>
 #include <string>
+#include <string_view>
 #include <utility>
 #include <vector>
 
@@ -17,6 +19,10 @@ namespace K9ngineCore {
 
     enum class OpenGLBufferDataUsage : GLenum {
       K9_STATIC_DRAW = GL_STATIC_DRAW
+    };
+
+    enum class OpenGLDrawMode : GLenum {
+      K9_TRIANGLES = GL_TRIANGLES
     };
 
     enum class OpenGLShaderType : GLenum{
@@ -77,6 +83,10 @@ namespace K9ngineCore {
         glClear(GL_COLOR_BUFFER_BIT);
       }
 
+      static void clearDepth() {
+        glClear(GL_DEPTH_BUFFER_BIT);
+      }
+
       static void compileShader(GLuint shader) {
         glCompileShader(shader);
       }
@@ -101,6 +111,22 @@ namespace K9ngineCore {
         }
 
         return foundErrors;
+      }
+
+      static void drawArraysTriangles(GLint first, GLsizei count) {
+        glDrawArrays(GL_TRIANGLES, first, count);
+      }
+
+      static void drawArrays(OpenGLDrawMode mode, GLint first, GLsizei count) {
+        glDrawArrays(std::to_underlying(mode), first, count);
+      }
+
+      static void enableDepthTest() {
+        glEnable(GL_DEPTH_TEST);
+      }
+
+      static void enableVertexAttribArray(GLuint index) {
+        glEnableVertexAttribArray(index);
       }
 
       static void generateBuffers(GLsizei n, GLuint* buffers) {
@@ -155,6 +181,10 @@ namespace K9ngineCore {
         return length;
       }
 
+      static GLint getUniformLocation(GLuint program, std::string_view name) {
+        return glGetUniformLocation(program, name.data());
+      }
+
       static bool isProgramLinkStatusOk(GLuint program) {
         GLint status{};
         glGetProgramiv(program, GL_LINK_STATUS, &status);
@@ -173,6 +203,14 @@ namespace K9ngineCore {
 
       static void setClearColor(GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha) {
         glClearColor(red, green, blue, alpha);
+      }
+
+      static void setDepthFuncLessEqual() {
+        glDepthFunc(GL_LEQUAL);
+      }
+
+      static void setUniformMatrix4fv(GLint location, GLsizei count, OpenGLBoolValues transpose, const GLfloat* value) {
+        glUniformMatrix4fv(location, count, std::to_underlying(transpose), value);
       }
 
       static void setVertexAttributePointer(GLuint index, GLint size, OpenGLTypeEnum type, OpenGLBoolValues normalized, GLsizei stride, const void* pointer) {

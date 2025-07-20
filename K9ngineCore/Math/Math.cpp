@@ -11,9 +11,24 @@ namespace K9ngineCore {
     using Vec3 = glm::vec3;
     using Vec4 = glm::vec4;
 
+    const float* asValuePtr(const Mat4& mat)
+    {
+      return glm::value_ptr(mat);
+    }
+
     Mat4 identityMat4()
     {
       return Mat4{1.0f};
+    }
+
+    Mat4 initMat4(float value)
+    {
+      return Mat4{ value };
+    }
+
+    Mat4 perspective(float fovy, float aspect, float zNear, float zFar)
+    {
+      return glm::perspective(fovy, aspect, zNear, zFar);
     }
 
     Mat4 translate(const Mat4& mat, const Vec3& delta) {

@@ -186,21 +186,21 @@ bool K9ASSERTTest() {
 /******** HANDLE TESTS ***********/
 bool createIntTable() {
 	using namespace K9ngineCore::Memory;
-	HandleTable<int> table(2);
+	HandleTable<int, 2> table{};
 	return true;
 }
 
 bool addElement() {
 	using namespace K9ngineCore::Memory;
 
-	HandleTable<int> table(1);
+	HandleTable<int, 1> table{};
 	return table.createHandle(1, new int(1)) == 0;
 }
 
 bool deleteElement() {
 	using namespace K9ngineCore::Memory;
 
-	HandleTable<int> table(1);
+	HandleTable<int, 1> table{};
 	table.createHandle(1, new int(1));
 	table.deleteHandle(0);
 
@@ -210,7 +210,7 @@ bool deleteElement() {
 bool createDeleteCreateElements() {
 	using namespace K9ngineCore::Memory;
 
-	HandleTable<int> table(4);
+	HandleTable<int, 4> table;
 	size_t h1_0 = table.createHandle(1, new int(1));
 	size_t h2_1 = table.createHandle(2, new int(2));
 	size_t h3_2 = table.createHandle(3, new int(3));
@@ -228,27 +228,27 @@ bool createDeleteCreateElements() {
 bool getHandle() {
 	using namespace K9ngineCore::Memory;
 
-	HandleTable<int> table(1);
+	HandleTable<int, 1> table{};
 	table.createHandle(1, new int(2));
-	Handle<int> handle = table.getHandle(0);
+	auto handle = table.getHandle(0);
 	return true;
 }
 
 bool getValid() {
 	using namespace K9ngineCore::Memory;
 
-	HandleTable<int> table(1);
+	HandleTable<int, 1> table;
 	table.createHandle(1, new int(2));
-	Handle<int> handle = table.getHandle(0);
+	auto handle = table.getHandle(0);
 	return handle.isValid();
 }
 
 bool getInvalid() {
 	using namespace K9ngineCore::Memory;
 
-	HandleTable<int> table(1);
+	HandleTable<int, 1> table;
 	table.createHandle(1, new int(2));
-	Handle<int> handle = table.getHandle(0);
+	auto handle = table.getHandle(0);
 	table.deleteHandle(0);
 	return !handle.isValid();
 }
@@ -256,12 +256,12 @@ bool getInvalid() {
 bool starOperator() {
 	using namespace K9ngineCore::Memory;
 
-	HandleTable<int> table(2);
+	HandleTable<int, 2> table;
 	size_t h1 = table.createHandle(1, new int(1));
 	size_t h2 = table.createHandle(2, new int(2));
 
-	Handle<int> handle1 = table.getHandle(h1);
-	Handle<int> handle2 = table.getHandle(h2);
+	auto handle1 = table.getHandle(h1);
+	auto handle2 = table.getHandle(h2);
 
 	return *handle1 == 1 && *handle2 == 2;
 }

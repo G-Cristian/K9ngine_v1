@@ -3,6 +3,7 @@
 
 #include <cstdint>
 #include <string>
+#include<string_view>
 
 namespace K9ngineCore {
 	namespace Common {
@@ -12,7 +13,8 @@ namespace K9ngineCore {
 		using Hash = uint64_t;
 #endif // !NDEBUG
 
-		Hash hashString(const std::string& s);
+		Hash hashString(std::string_view s);
+		uint64_t hashToUInt64(const Hash&);
 	}
 }
 

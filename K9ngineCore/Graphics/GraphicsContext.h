@@ -18,6 +18,7 @@ namespace K9ngineCore {
 
     using BoolValues = OpenGLBoolValues;
     using BufferDataUsage = OpenGLBufferDataUsage;
+    using DrawMode = OpenGLDrawMode;
     using ShaderType = OpenGLShaderType;
     using TargetBuffer = OpenGLTargetBuffer;
     using TypeEnum = OpenGLTypeEnum;

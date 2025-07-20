@@ -2,7 +2,8 @@
 #define MATH_H
 
 #include "glm/matrix.hpp"
-#include "glm/ext/matrix_transform.hpp"
+#include "glm/gtc/matrix_transform.hpp"
+#include "glm/gtc/type_ptr.hpp"
 #include "glm/vec4.hpp"
 
 namespace K9ngineCore {
@@ -12,7 +13,12 @@ namespace K9ngineCore {
     using Vec3 = glm::vec3;
     using Vec4 = glm::vec4;
 
+    const float* asValuePtr(const Mat4& mat);
+
     Mat4 identityMat4();
+    Mat4 initMat4(float value);
+
+    Mat4 perspective(float fovy, float aspect, float zNear, float zFar);
 
     Mat4 translate(const Mat4& mat, const Vec3& delta);
     Mat4 rotateX(const Mat4& mat, float angle);

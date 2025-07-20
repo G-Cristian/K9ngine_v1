@@ -47,5 +47,15 @@ namespace K9ngineCore {
     {
       mIsDirty = true;
     }
+
+    void INode::addChild(NodePtr child)
+    {
+      mChildren.push_back(child);
+    }
+
+    void INode::setParent(NodePtr parent)
+    {
+      mParent = parent;
+    }
   }
 }
