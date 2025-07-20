@@ -6,7 +6,7 @@
 #elif defined K9_USE_DIRECTX // K9_USE_DIRECTX
 #error "DirectX not supported"
 #else
-#include <Graphics/OpenGLContext.h>
+#include "OpenGLContext.h"
 
 namespace K9ngineCore {
   namespace K9Graphics {

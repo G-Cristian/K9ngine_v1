@@ -1,6 +1,7 @@
 #ifndef TEXTURE_H
 #define TEXTURE_H
 
+#include "Graphics/GraphicsContext.h"
 //#include <glad/glad.h>
 
 #include "Common/Hasher.h"

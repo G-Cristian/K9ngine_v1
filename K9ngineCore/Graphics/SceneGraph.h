@@ -4,10 +4,10 @@
 #define RENDERINGCOMPONENTS_COUNT 0
 #endif // !RENDERINGCOMPONENTS_COUNT
 
-#include "CommonHandleTypes.h"
 #include "GraphicsHandleTypes.h"
 #include "INode.h"
 
+#include "../CommonHandleTypes.h"
 #include "../Common/Hasher.h"
 
 #include <cstdint>

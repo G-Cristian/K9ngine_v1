@@ -1,12 +1,11 @@
 #ifndef K9_GAME_H
 #define K9_GAME_H
 
-#include <glad/glad.h>
-#include "GameObject.h"
+#include "../K9ngineCore/Graphics/GraphicsContext.h"
 #include "Windows/K9WindowsManager.h"
 
+#include "../K9ngineCore/GameObject.h"
 #include "../K9ngineCore/Graphics/Camera.h"
-#include "../K9ngineCore/Graphics/GraphicsContext.h"
 #include "../K9ngineCore/Graphics/Renderer.h"
 #include "../K9ngineCore/Graphics/TransformNode.h"
 #include "../K9ngineCore/Handle.h"
