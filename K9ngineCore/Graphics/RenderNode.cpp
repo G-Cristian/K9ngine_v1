@@ -1,3 +1,7 @@
+#include <memory>
+
+#include "../K9Debug.h"
+
 #include "RenderNode.h"
 
 #include "INode.h"

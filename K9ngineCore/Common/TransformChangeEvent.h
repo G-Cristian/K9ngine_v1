@@ -30,6 +30,7 @@ namespace K9ngineCore {
       };
 
       explicit TransformChangeEvent(Subject* subject);
+      ~TransformChangeEvent();
 
       TransformChangeEvent<Subject>& operator+=(ObserverTypePtr);
       TransformChangeEvent<Subject>& operator-=(ObserverTypePtr);
@@ -56,6 +57,13 @@ namespace K9ngineCore {
     TransformChangeEvent<T>::TransformChangeEvent<T>(Subject* subject)
       :mSubject{ subject } {
       K9ASSERT(subject, "Subject is null");
+    }
+
+    template<typename T>
+    TransformChangeEvent<T>::~TransformChangeEvent()
+    {
+      mObservers.clear();
+      mSubject = nullptr;
     }
 
     template<typename T>

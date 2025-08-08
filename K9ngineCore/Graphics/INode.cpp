@@ -1,3 +1,5 @@
+#include <memory>
+
 #include "INode.h"
 
 #include "SceneGraph.h"
@@ -7,6 +9,19 @@ namespace K9ngineCore {
     INode::INode(SceneGraph& sceneGraph)
       : mSceneGraph{ sceneGraph }
     {
+    }
+
+    INode::~INode()
+    {
+      //mParent = nullptr;
+      // Clean up children
+      for (auto& child : mChildren) {
+        child->setParent(nullptr);
+        child = nullptr;
+      }
+
+      mChildren.clear();
+      mChildren.shrink_to_fit();
     }
 
     const SceneGraph& INode::getSceneGraph() const
@@ -26,12 +41,12 @@ namespace K9ngineCore {
 
     const INode::NodePtr INode::getParent() const
     {
-      return mParent;
+      return mParent.lock();
     }
 
     INode::NodePtr INode::getParent()
     {
-      return mParent;
+      return mParent.lock();
     }
 
     const std::vector<INode::NodePtr>& INode::getChildren() const

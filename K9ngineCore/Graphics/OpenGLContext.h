@@ -3,12 +3,12 @@
 
 #include <glad/glad.h>
 
-#include "../K9Debug.h"
-
 #include <string>
 #include <string_view>
 #include <utility>
 #include <vector>
+
+#include "../K9Debug.h"
 
 namespace K9ngineCore {
   namespace K9Graphics {

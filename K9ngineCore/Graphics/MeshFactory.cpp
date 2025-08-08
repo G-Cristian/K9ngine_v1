@@ -1,8 +1,8 @@
+#include <vector>
+
 #include "MeshFactory.h"
 
 #include "Mesh.h"
-
-#include <vector>
 
 namespace K9ngineCore {
   namespace K9Graphics {

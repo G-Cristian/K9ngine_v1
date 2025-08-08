@@ -1,3 +1,5 @@
+#include <memory>
+
 #include "ISceneGraphVisitor.h"
 
 namespace K9ngineCore {

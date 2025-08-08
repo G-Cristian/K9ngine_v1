@@ -1,5 +1,7 @@
 #pragma once
 
+#include <memory>
+
 namespace K9ngineCore {
   namespace K9Graphics {
     class RenderNode;

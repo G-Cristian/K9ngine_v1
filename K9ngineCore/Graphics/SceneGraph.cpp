@@ -23,8 +23,23 @@ namespace K9ngineCore {
   namespace K9Graphics {
     SceneGraph::SceneGraph()
       : mCurrentCamera{nullptr}
-      , mRoot{std::make_shared<TransformNode>(*this, TransformNode::NullGameObjectPtr)}
+      , mRoot{ nullptr }
     {
+      mRoot = std::make_shared<TransformNode>(*this, TransformNode::NullGameObjectPtr);
+    }
+
+    SceneGraph::~SceneGraph()
+    {
+      int count = mRoot.use_count();
+      clear();
+      int count2 = mRoot.use_count();
+    }
+
+    void SceneGraph::clear()
+    {
+      mGameObjectIdTransformNode.clear();
+      mCurrentCamera = nullptr;
+      mRoot = nullptr;
     }
 
     void SceneGraph::cleanDirty(INode* node)

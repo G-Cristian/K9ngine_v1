@@ -1,3 +1,5 @@
+#include "../K9Debug.h"
+
 #include "PerspectiveCamera.h"
 
 #include "Camera.h"
