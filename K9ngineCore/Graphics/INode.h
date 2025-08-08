@@ -11,10 +11,12 @@ namespace K9ngineCore {
     class INode {
     public:
       using NodePtr = std::shared_ptr<INode>;
+      using WeakNodePtr = std::weak_ptr<INode>;
+
       friend SceneGraph;
     public:
       explicit INode(SceneGraph& sceneGraph);
-      virtual ~INode() = default;
+      virtual ~INode();
 
       virtual void accept(ISceneGraphVisitor&) = 0;
 
@@ -34,7 +36,7 @@ namespace K9ngineCore {
       void setParent(NodePtr parent);
     protected:
       std::vector<NodePtr> mChildren{};
-      NodePtr mParent{ nullptr };
+      WeakNodePtr mParent;
       SceneGraph& mSceneGraph;
       bool mIsDirty{ false };
     };

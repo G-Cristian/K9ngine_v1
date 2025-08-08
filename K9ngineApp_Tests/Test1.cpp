@@ -1,5 +1,10 @@
 #include "Test1.h"
 
+#include <format>
+#include <memory>
+
+#include "../K9ngineCore/K9Debug.h"
+
 #include "../K9ngineCore/Common/Hasher.h"
 #include "../K9ngineCore/FileReader.h"
 #include "../K9ngineCore/Graphics/BufferDataType.h"
@@ -10,10 +15,6 @@
 #include "../K9ngineCore/Graphics/PerspectiveCamera.h"
 #include "../K9ngineCore/Graphics/Shader.h"
 #include "../K9ngineCore/Graphics/ShaderProgram.h"
-#include "../K9ngineCore/K9Debug.h"
-
-#include <format>
-#include <memory>
 
 namespace K9ngineAppTest
 {

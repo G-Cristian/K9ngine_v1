@@ -1,5 +1,7 @@
 #pragma once
 
+#include <memory>
+
 #include "../Common/IObserver.h"
 #include "../Common/TransformChangeEvent.h"
 #include "../CommonHandleTypes.h"
@@ -7,8 +9,6 @@
 #include "../Handle.h"
 #include "../Math/Transform.h"
 #include "INode.h"
-
-#include <memory>
 
 namespace K9ngineCore {
   namespace K9Graphics {

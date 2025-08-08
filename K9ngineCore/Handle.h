@@ -6,7 +6,7 @@
 #include <type_traits>
 #include <vector>
 
-#include "K9Debug.h"
+#include "../K9ngineCore/K9Debug.h"
 
 namespace K9ngineCore {
 	namespace Memory {
@@ -35,6 +35,13 @@ namespace K9ngineCore {
 				_index(other._index)
 			{
 				other._pHandleTable = nullptr;
+			}
+
+			~Handle()
+			{
+				_pHandleTable = nullptr;
+				_uid = static_cast<uint64_t>(-1);
+        _index = static_cast<size_t>(-1);
 			}
 
 			explicit operator bool() const {
@@ -123,11 +130,13 @@ namespace K9ngineCore {
 			HandleTable(const HandleTable<T, N>&) = delete;
 			HandleTable(HandleTable<T, N>&&) noexcept = delete;
 
+			~HandleTable();
+
 			HandleTable<T, N>& operator=(const HandleTable<T, N>&) = delete;
 			HandleTable<T, N>& operator=(HandleTable<T, N>&&) noexcept = delete;
 
 			bool isValid(uint64_t uid, size_t index) const {
-				K9ASSERT(index < _elements.size(), "HandleTable::isValid, index out of range");
+				//K9ASSERT(index < _elements.size(), "HandleTable::isValid, index out of range");
 				return (index < _elements.size() && _elements[index].uid == uid && _elements[index].value != nullptr);
 			}
 
@@ -135,6 +144,8 @@ namespace K9ngineCore {
 			void deleteHandle(size_t index);
 			Handle<T,N> getHandle(size_t index);
 			const Handle<T, N> getHandle(size_t index) const;
+
+			void clear();
 		private:
 			T* getElementValue(size_t index) {
 				K9ASSERT(index < _elements.size(), "HandleTable::getElementValue, index out of range");
@@ -230,6 +241,12 @@ namespace K9ngineCore {
 		}
 
 		template<typename T, uint64_t N>
+		HandleTable<T, N>::~HandleTable()
+		{
+			clear();
+		}
+
+		template<typename T, uint64_t N>
 		size_t HandleTable<T, N>::createHandle(uint64_t uid, T* value) {
 			uint64_t newElementIndex = _nextFreeElement;
 
@@ -289,6 +306,19 @@ namespace K9ngineCore {
 		const Handle<T, N> HandleTable<T, N>::getHandle(size_t index) const {
 			K9ASSERT(index < _elements.size(), "HandleTable<T>::getHandle, index out of range");
 			return Handle<T, N>{this, _elements[index].uid, index};
+		}
+
+		template<typename T, uint64_t N>
+		void HandleTable<T, N>::clear()
+		{
+			for (size_t i = 0; i < _elements.size(); i++) {
+				deleteHandle(i);
+			}
+
+			if constexpr (N == 0) {
+				_elements.clear();
+				_elements.shrink_to_fit();
+			}
 		}
 	}
 }

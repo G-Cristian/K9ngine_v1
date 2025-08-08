@@ -1,14 +1,20 @@
+#include <format>
+
+#include "K9Debug.h"
+
 #include "World.h"
 
 #include "CommonHandleTypes.h"
 #include "Common/Hasher.h"
 
 #include "GameObject.h"
-#include "K9Debug.h"
-
-#include <format>
 
 namespace K9ngineCore {
+  World::~World()
+  {
+    clear();
+  }
+
   GameObjectPtr World::createGameObject(const Common::Hash& uid, const K9Math::Transform& transform /*= K9Math::Transform::identity()*/) {
     K9ASSERT(!mGameObjectsIdIndexMap.contains(uid), std::format("World::createGameObject, a game object with id {} already exists", uid).c_str());
     if (mGameObjectsIdIndexMap.contains(uid)) {
@@ -52,5 +58,11 @@ namespace K9ngineCore {
     else {
       return mGameObjects.NullHandle;
     }
+  }
+
+  void World::clear()
+  {
+    mGameObjects.clear();
+    mGameObjectsIdIndexMap.clear();
   }
 }

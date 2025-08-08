@@ -1,3 +1,7 @@
+#include <memory>
+
+#include "../K9Debug.h"
+
 #include "TransformNode.h"
 
 #include "../GameObject.h"
@@ -7,8 +11,6 @@
 #include "INode.h"
 #include "ISceneGraphVisitor.h"
 #include "SceneGraph.h"
-
-#include <memory>
 
 namespace K9ngineCore {
   namespace K9Graphics {
@@ -22,6 +24,7 @@ namespace K9ngineCore {
 
     TransformNode::TransformChangeObserver::~TransformChangeObserver()
     {
+      mNode = nullptr;
     }
 
     void TransformNode::TransformChangeObserver::update(const TransformObserverSubject& subject, const TransformObserverEventArg& args) const
@@ -34,14 +37,18 @@ namespace K9ngineCore {
       , mTransformChangeObserver{ std::make_shared<TransformChangeObserver>(this) }
       , mGameObject{gameObject}
     {
-      if (mGameObject != NullGameObjectPtr) {
+      if (mGameObject.isValid()) {
         mGameObject->addObserver(mTransformChangeObserver);
       }
     }
 
     TransformNode::~TransformNode()
     {
+      if (mGameObject) {
+        mGameObject->removeObserver(mTransformChangeObserver);
+      }
 
+      mTransformChangeObserver = nullptr;
     }
 
     void TransformNode::accept(ISceneGraphVisitor& visitor) 
@@ -50,7 +57,7 @@ namespace K9ngineCore {
     }
 
     const K9Math::Transform TransformNode::getTransform() const {
-      return mGameObject != NullGameObjectPtr ? mGameObject->getTransform() : K9Math::Transform::identity();
+      return mGameObject.isValid() ? mGameObject->getTransform() : K9Math::Transform::identity();
     }
   }
 }

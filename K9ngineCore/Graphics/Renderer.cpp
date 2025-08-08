@@ -1,3 +1,10 @@
+#include <format>
+#include <memory>
+#include <unordered_map>
+#include <vector>
+
+#include "../K9Debug.h"
+
 #include "Renderer.h"
 
 #include "GraphicsContext.h"
@@ -15,13 +22,7 @@
 #include "../Common/Hasher.h"
 #include "../GameObject.h"
 #include "../Handle.h"
-#include "../K9Debug.h"
 #include "../World.h"
-
-#include <format>
-#include <memory>
-#include <unordered_map>
-#include <vector>
 
 namespace K9ngineCore {
   namespace K9Graphics {
@@ -29,9 +30,21 @@ namespace K9ngineCore {
     uint64_t Renderer::mCount{ 0 };
 
     Renderer::Renderer()
-      : mScene{}
+      : mScene{ }
       , mRenderingComponents{ }
     {
+    }
+
+    Renderer::~Renderer()
+    {
+      clear();
+    }
+
+    void Renderer::clear()
+    {
+      mScene.clear();
+      mRenderingComponents.clear();
+      mGameObjectIdRenderingComponents.clear();
     }
 
     std::shared_ptr<Camera> Renderer::setCurrentCamera(std::shared_ptr<Camera> camera)

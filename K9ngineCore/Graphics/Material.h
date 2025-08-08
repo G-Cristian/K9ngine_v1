@@ -1,17 +1,17 @@
 #ifndef MATERIAL_H
 #define MATERIAL_H
 
-#include "GraphicsContext.h"
-#include "Mat4MaterialProperty.h"
-#include "MaterialProperty.h"
-#include "ShaderProgram.h"
-#include "../Math/Math.h"
-
 #include <memory>
 #include <optional>
 #include <string>
 #include <string_view>
 #include <unordered_map>
+
+#include "GraphicsContext.h"
+#include "Mat4MaterialProperty.h"
+#include "MaterialProperty.h"
+#include "ShaderProgram.h"
+#include "../Math/Math.h"
 
 
 namespace K9ngineCore {

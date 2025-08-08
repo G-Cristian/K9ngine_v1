@@ -1,8 +1,8 @@
 #include "K9WindowsManager.h"
 
-#include "K9Debug.h"
-
 #include <GLFW/glfw3.h>
+
+#include "../../K9ngineCore/K9Debug.h"
 
 namespace K9ngineCore {
   namespace K9Windows {
@@ -82,7 +82,7 @@ namespace K9ngineCore {
       mWindows.clear();
     }
 
-    inline void K9WindowsManager::terminate() const {
+    void K9WindowsManager::terminate() const {
       glfwTerminate();
     }
   }

@@ -35,12 +35,16 @@ namespace K9ngineCore {
 
       explicit SceneGraph();
 
+      ~SceneGraph();
+
       /**********************************/
 
       SceneGraph& operator=(const SceneGraph&) = delete;
       SceneGraph& operator=(SceneGraph&&) noexcept = delete;
 
       /******** MEMBER FUNCTIONS ************/
+
+      void clear();
 
       void cleanDirty(INode*);
       void propagateDirtyUpwards();

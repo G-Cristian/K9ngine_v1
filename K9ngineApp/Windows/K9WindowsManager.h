@@ -33,7 +33,7 @@ namespace K9ngineCore {
       K9WindowsManager& operator=(const K9WindowsManager&) = delete;
       K9WindowsManager& operator=(K9WindowsManager&&) noexcept = delete;
 
-      inline void terminate() const;
+      void terminate() const;
     private:
       std::vector<K9Window> mWindows;
       int mCurrentWindowIndex;

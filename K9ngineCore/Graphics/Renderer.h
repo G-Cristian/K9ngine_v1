@@ -1,13 +1,13 @@
 #pragma once
 
+#include <memory>
+#include <vector>
+
 #include "GraphicsHandleTypes.h"
 #include "SceneGraph.h"
 
 #include "../CommonHandleTypes.h"
 #include "../Common/Hasher.h"
-
-#include <memory>
-#include <vector>
 
 namespace K9ngineCore {
   namespace K9Graphics {
@@ -19,6 +19,9 @@ namespace K9ngineCore {
     class Renderer {
     public:
       explicit Renderer();
+      ~Renderer();
+
+      void clear();
 
       std::shared_ptr<Camera> setCurrentCamera(std::shared_ptr<Camera>);
       std::shared_ptr<Camera> getCurrentCamera();

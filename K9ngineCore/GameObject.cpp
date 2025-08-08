@@ -1,3 +1,5 @@
+#include "K9Debug.h"
+
 #include "GameObject.h"
 
 #include "Common/Hasher.h"

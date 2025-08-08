@@ -1,13 +1,13 @@
 #ifndef GAMEOBJECT_H
 #define GAMEOBJECT_H
 
+#include <memory>
+
 #include "Common/Hasher.h"
 #include "Common/IObserver.h"
 #include "Common/TransformChangeEvent.h"
 #include "Math/Math.h"
 #include "Math/Transform.h"
-
-#include <memory>
 
 namespace K9ngineCore{
   using namespace K9ngineCore::Common;

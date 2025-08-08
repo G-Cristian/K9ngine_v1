@@ -1,3 +1,9 @@
+#include <format>
+#include <string>
+#include <string_view>
+
+#include "../K9Debug.h"
+
 #include "Material.h"
 
 #include "GraphicsContext.h"
@@ -5,12 +11,7 @@
 #include "MaterialProperty.h"
 #include "ShaderProgram.h"
 #include "VertexBufferObjectData.h"
-#include "../K9Debug.h"
 #include "../Math/Math.h"
-
-#include <format>
-#include <string>
-#include <string_view>
 
 namespace K9ngineCore {
   namespace K9Graphics {

@@ -1,7 +1,10 @@
 #ifndef K9_GAME_H
 #define K9_GAME_H
 
+#include <memory>
+
 #include "../K9ngineCore/Graphics/GraphicsContext.h"
+
 #include "Windows/K9WindowsManager.h"
 
 #include "../K9ngineCore/GameObject.h"
@@ -10,8 +13,6 @@
 #include "../K9ngineCore/Graphics/TransformNode.h"
 #include "../K9ngineCore/Handle.h"
 #include "../K9ngineCore/World.h"
-
-#include <memory>
 
 namespace K9ngine {
   class K9ngineApp {
@@ -33,7 +34,9 @@ namespace K9ngine {
       , mMustClose(false)
     {
     }
+
     virtual ~K9ngineApp() = default;
+
     void run();
 
     void CloseGame() { mMustClose = true; }
@@ -56,7 +59,7 @@ namespace K9ngine {
 
     virtual void cleanup();
 
-    K9ngineCore::World mWorld{};
+    K9ngineCore::World mWorld;
     K9ngineCore::K9Graphics::Renderer mRenderer;
     K9ngineCore::K9Windows::K9WindowsManager mWindowsManager;
     float mMsPerFixedUpdate;

@@ -2,11 +2,12 @@
 
 #include "Graphics/Renderer.h"
 #include "Handle.h"
-#include "K9Debug.h"
 #include "../K9ngineApp/Windows/K9Window.h"
 #include "../K9ngineApp/Windows/K9WindowsManager.h"
 
 #include <chrono>
+
+#include "K9Debug.h"
 
 namespace K9ngineGame {
 

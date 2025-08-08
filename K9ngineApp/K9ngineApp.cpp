@@ -2,20 +2,33 @@
 //
 
 #include "pch.h"
-#include "framework.h"
+//#include "framework.h"
+
+#if defined(_DEBUG) && defined(K9_DEBUG_MEMORY)
+
+#include "vld.h"
+
+//#define _CRTDBG_MAP_ALLOC
+//#define _CRTDBG_MAP_ALLOC_NEW
+
+//#include <crtdbg.h>
+//#include <stdlib.h>
+
+#endif // K9_DEBUG_MEMORY
 
 #include "K9ngineApp.h"
 
+#include <chrono>
+#include <print>
+
+#include "K9Debug.h"
+
 #include "Graphics/Renderer.h"
 #include "Handle.h"
-#include "K9Debug.h"
 #include "Windows/K9Window.h"
 #include "Windows/K9WindowsManager.h"
 
-#include <chrono>
-
 namespace K9ngine {
-
   void K9ngineApp::run() {
     using namespace K9ngineCore;
     if (init()) {
@@ -40,8 +53,7 @@ namespace K9ngine {
     using namespace K9ngineCore;
     using namespace K9ngineCore::K9Graphics;
     LOG_ADD_TAB();
-    // TODO: Init settings.
-    // TODO: Init necessary stuff.
+
     bool ok = mWindowsManager.init();
     if (ok) {
       mWindowsManager.createWindow("Test Game", 600, 600);
@@ -112,8 +124,10 @@ namespace K9ngine {
   }
 
   void K9ngineApp::cleanup() {
-    // TODO: Do necessary cleanup.
-    
+    mWorld.clear();
+    mRenderer.clear();
     mWindowsManager.destroyAll();
+    //mWindowsManager.terminate();
+    mSettingsFullPath = nullptr;
   }
 }

@@ -1,12 +1,12 @@
 #pragma once
 
+#include <memory>
+
 #include "../Common/IObserver.h"
 #include "../Common/TransformChangeEvent.h"
 #include "../Handle.h"
 #include "GraphicsHandleTypes.h"
 #include "INode.h"
-
-#include <memory>
 
 namespace K9ngineCore {
   namespace K9Graphics {
@@ -17,6 +17,7 @@ namespace K9ngineCore {
     {
     public:
       RenderNode(SceneGraph&, RenderingComponentPtr);
+      ~RenderNode() override final = default;
 
       void accept(ISceneGraphVisitor&) override final;
       const RenderingComponentPtr getRenderingComponent() const;

@@ -1,12 +1,19 @@
 #ifndef K9DEBUG_H
 #define K9DEBUG_H
 
-#include "Logger.h"
-#include "MessageBox.h"
-
 #include <cstdlib>
 #include <exception>
 #include <string>
+
+#if defined(_DEBUG) && defined(K9_DEBUG_MEMORY)
+
+//#define DEBUG_NEW new(_NORMAL_BLOCK, __FILE__, __LINE__)
+//#define new DEBUG_NEW
+
+#endif // _DEBUG && K9_DEBUG_MEMORY
+
+#include "Logger.h"
+#include "MessageBox.h"
 
 namespace K9ngineCore {
 

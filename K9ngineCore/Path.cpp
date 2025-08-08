@@ -1,6 +1,8 @@
-#include "Path.h"
-
 #include <string>
+
+#include "K9Debug.h"
+
+#include "Path.h"
 
 namespace K9ngineCore {
 	namespace Utility {

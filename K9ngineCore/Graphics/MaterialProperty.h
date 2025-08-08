@@ -1,11 +1,11 @@
 #ifndef MATERIALPROPERTY_H
 #define MATERIALPROPERTY_H
 
-#include "../Math/Math.h"
-
 #include <memory>
 #include <string>
 #include <string_view>
+
+#include "../Math/Math.h"
 
 namespace K9ngineCore {
   namespace K9Graphics {
