@@ -24,7 +24,7 @@ namespace K9ngineCore
     bool deleteGameObject(const Common::Hash&);
 
     GameObjectPtr getGameObject(const Common::Hash&);
-    const GameObjectPtr getGameObject(const Common::Hash&) const;
+    ConstGameObjectPtr getGameObject(const Common::Hash&) const;
 
     void clear();
   private:

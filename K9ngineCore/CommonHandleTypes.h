@@ -10,6 +10,7 @@ namespace K9ngineCore {
   class GameObject;
 
   using GameObjectsTable = Memory::HandleTable<GameObject, GAMEOBJECTS_COUNT>;
-  using GameObjectPtr = GameObjectsTable::HandleType;
+  using GameObjectPtr = GameObjectsTable::handle_type;
+  using ConstGameObjectPtr = GameObjectsTable::const_handle_type;
   //using GameObjectConstPtr = const GameObjectPtr;
 }

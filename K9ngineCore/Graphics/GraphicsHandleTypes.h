@@ -16,7 +16,8 @@ namespace K9ngineCore {
     using BufferDataTypePtr = std::shared_ptr<BufferDataType>;
     //using BufferDataTypeConstPtr = const BufferDataTypePtr;
     using RenderingComponentTable = Memory::HandleTable<RenderingComponent, RENDERINGCOMPONENTS_COUNT>;
-    using RenderingComponentPtr = RenderingComponentTable::HandleType;
+    using RenderingComponentPtr = RenderingComponentTable::handle_type;
+    using ConstRenderingComponentPtr = RenderingComponentTable::const_handle_type;
     //using RenderingComponentConstPtr = const RenderingComponentPtr;
   }
 }
