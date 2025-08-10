@@ -50,13 +50,13 @@ namespace K9ngineCore {
     }
   }
 
-  const GameObjectPtr World::getGameObject(const Common::Hash& uid) const {
+  ConstGameObjectPtr World::getGameObject(const Common::Hash& uid) const {
     auto it = mGameObjectsIdIndexMap.find(uid);
     if (it != mGameObjectsIdIndexMap.end()) {
       return mGameObjects.getHandle(it->second);
     }
     else {
-      return mGameObjects.NullHandle;
+      return mGameObjects.ConstNullHandle;
     }
   }
 

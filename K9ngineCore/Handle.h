@@ -10,87 +10,82 @@
 
 namespace K9ngineCore {
 	namespace Memory {
-		template<typename T, uint64_t N> class Handle;
+		template<typename Table> class basic_handle;
 		template<typename T, uint64_t N> class HandleTable;
 
-		template<typename T, uint64_t N>
-		bool operator<(const Handle<T, N>&, const Handle<T, N>&);
+		template<typename Table>
+		bool operator<(const basic_handle<Table>&, const basic_handle<Table>&);
 
-		template<typename T, uint64_t N>
-		bool operator==(const Handle<T, N>&, const Handle<T, N>&);
+		template<typename Table>
+		bool operator==(const basic_handle<Table>&, const basic_handle<Table>&);
 
-		template<typename T, uint64_t N>
-		bool operator!=(const Handle<T, N>&, const Handle<T, N>&);
+		template<typename Table>
+		bool operator!=(const basic_handle<Table>&, const basic_handle<Table>&);
 
-		template<typename T, uint64_t N = 0>
-		class Handle {
-			friend class HandleTable<T, N>;
+		// Core handle that works with either HandleTable<T,N> or const HandleTable<T,N>
+		template<typename Table>
+		class basic_handle {
+			friend Table;
 		public:
-			typedef T ValueType;
+			using table_type = Table;
+			using table_ptr = table_type*;
+			using element_type_nc = typename std::remove_const_t<table_type>::element_type;
+			using is_const_table = std::bool_constant<std::is_const_v<Table>>;
+			using element_ref = std::conditional_t<is_const_table::value, const element_type_nc&, element_type_nc&>;
+			using element_ptr = std::conditional_t<is_const_table::value, const element_type_nc*, element_type_nc*>;
 
-			Handle(const Handle<T, N>&) = default;
-			Handle(Handle<T, N>&& other) noexcept:
-				_pHandleTable(other._pHandleTable),
-				_uid(other._uid),
-				_index(other._index)
+			// Default-constructed = null/invalid
+			constexpr basic_handle() noexcept = default;
+
+			// Factory for explicit null
+			static constexpr basic_handle null() noexcept { return {}; }
+
+			~basic_handle()
 			{
-				other._pHandleTable = nullptr;
+				mHandleTable = nullptr;
+				mUid = static_cast<uint64_t>(-1);
+        mIndex = static_cast<size_t>(-1);
 			}
 
-			~Handle()
-			{
-				_pHandleTable = nullptr;
-				_uid = static_cast<uint64_t>(-1);
-        _index = static_cast<size_t>(-1);
+			// Implicit convert non-const handle -> const handle
+			template<class T2 = Table, std::enable_if_t<!std::is_const_v<T2>, int> = 0>
+			operator basic_handle<std::add_const_t<std::remove_reference_t<T2>>>() const {
+				return {mHandleTable, mUid, mIndex };
 			}
 
-			explicit operator bool() const {
+			explicit constexpr operator bool() const noexcept {
 				return isValid();
 			}
 
-			T& operator=(const Handle<T, N>& other) {
-				if (this != &other) {
-					_pHandleTable = other._pHandleTable;
-					_uid = other._uid;
-					_index = other._index;
-				}
-				return *this;
-			}
+			element_ref  operator*() const;
+			element_ptr operator->() const;
 
-			T& operator=(Handle<T, N>&& other) noexcept {
-				if (this != &other) {
-					_pHandleTable = other._pHandleTable;
-					_uid = other._uid;
-					_index = other._index;
-				}
-				return *this;
-			}
-
-			T& operator*();
-			const T& operator*()const;
-
-			T* operator->();
-			const T* operator->() const;
-
-			uint64_t uid() const { return _uid; }
+			uint64_t uid() const { return mUid; }
 
 			bool isValid() const;
 		private:
-			Handle(const HandleTable<T, N>* handleTable, uint64_t uid, size_t index) :
-				_pHandleTable(handleTable),
-				_uid(uid),
-				_index(index) 
+			basic_handle(table_ptr handleTable, uint64_t uid, size_t index) :
+				mHandleTable(handleTable),
+				mUid(uid),
+				mIndex(index) 
 			{
 			}
 
-			const HandleTable<T, N>* _pHandleTable;
-			uint64_t _uid;
-			size_t _index;
+			table_ptr mHandleTable = nullptr;
+			uint64_t mUid = static_cast<uint64_t>(-1);;
+			size_t mIndex = static_cast<size_t>(-1);
 		};
+
+		template<typename T, uint64_t N = 0>
+		using Handle = basic_handle<HandleTable<T, N>>;
+
+		template<typename T, uint64_t N = 0>
+		using ConstHandle = basic_handle<const HandleTable<T, N>>;
 
 		template<typename T>
 		struct HandleElement {
-			typedef T ValueType;
+			using element_type = T;
+			using element_ptr = element_type*;
 
 			~HandleElement()
 			{
@@ -100,7 +95,7 @@ namespace K9ngineCore {
 			template<typename... Args>
 			void emplace(uint64_t newUId, Args&&... args)
 			{
-				new (get()) ValueType(std::forward<Args>(args)...);
+				new (get()) element_type(std::forward<Args>(args)...);
 				uid = newUId,
 				occupied = true;
 			}
@@ -108,38 +103,42 @@ namespace K9ngineCore {
 			void destroy()
 			{
 				if (occupied) {
-					get()->~ValueType();
+					get()->~element_type();
 					occupied = false;
 				}
 			}
 
-			ValueType*				get()				{ return std::launder(reinterpret_cast<ValueType*>(&value)); }
-			const ValueType*	get() const	{ return std::launder(reinterpret_cast<const ValueType*>(&value)); }
+			element_ptr				get()				{ return std::launder(reinterpret_cast<element_ptr>(&value)); }
+			const element_type*	get() const	{ return std::launder(reinterpret_cast<const element_type*>(&value)); }
 
 			// NOTE: When occupied == false, uid stores the index of the next free slot in the HandleTable.
 			uint64_t uid{ static_cast<uint64_t>(-1) };
-			alignas(ValueType) std::byte value[sizeof(ValueType)];
+			alignas(element_type) std::byte value[sizeof(element_type)];
 			bool occupied = false;
 		};
 
 		template<typename T, uint64_t N = 0>
 		class HandleTable {
-			friend class Handle<T, N>;
+			friend basic_handle<HandleTable<T, N>>;
+			friend basic_handle<const HandleTable<T, N>>;
 		public:
-			using ValueType = T;
-			using HandleType = Handle<T, N>;
-			using ContainerType = std::conditional_t<N == 0, std::vector<HandleElement<T>>, std::array<HandleElement<T>, N>>;
+			using element_type = T;
+			using element_ptr = element_type*;
+			using handle_type = Handle<element_type, N>;
+			using const_handle_type = ConstHandle<element_type, N>;
+			using container_type = std::conditional_t<N == 0, std::vector<HandleElement<element_type>>, std::array<HandleElement<element_type>, N>>;
 
-			static const Handle<T, N> NullHandle;
+			static const handle_type NullHandle;
+			static const const_handle_type ConstNullHandle;
 
 			HandleTable();
-			HandleTable(const HandleTable<T, N>&) = delete;
-			HandleTable(HandleTable<T, N>&&) noexcept = delete;
+			HandleTable(const HandleTable<element_type, N>&) = delete;
+			HandleTable(HandleTable<element_type, N>&&) noexcept = delete;
 
 			~HandleTable();
 
-			HandleTable<T, N>& operator=(const HandleTable<T, N>&) = delete;
-			HandleTable<T, N>& operator=(HandleTable<T, N>&&) noexcept = delete;
+			HandleTable<T, N>& operator=(const HandleTable<element_type, N>&) = delete;
+			HandleTable<T, N>& operator=(HandleTable<element_type, N>&&) noexcept = delete;
 
 			bool isValid(uint64_t uid, size_t index) const {
 				//K9ASSERT(index < _elements.size(), "HandleTable::isValid, index out of range");
@@ -150,21 +149,21 @@ namespace K9ngineCore {
 			size_t createHandle(uint64_t uid, Args&&... args);
 			void deleteHandle(size_t index);
 			Handle<T,N> getHandle(size_t index);
-			const Handle<T, N> getHandle(size_t index) const;
+			ConstHandle<T,N> getHandle(size_t index) const;
 
 			void clear();
 		private:
-			T* getElementValue(size_t index) {
+			element_ptr getElementValue(size_t index) {
 				K9ASSERT(index < _elements.size(), "HandleTable::getElementValue, index out of range");
 				return _elements[index].get();
 			}
 
-			const T* getElementValue(size_t index) const {
+			const element_type* getElementValue(size_t index) const {
 				K9ASSERT(index < _elements.size(), "HandleTable::getElementValue, index out of range");
 				return _elements[index].get();
 			}
 
-			ContainerType _elements{};
+			container_type _elements{};
 			uint64_t _nextFreeElement{0};
 			static constexpr uint64_t InvalidIndex = (uint64_t)(-1);
 		};
@@ -172,20 +171,20 @@ namespace K9ngineCore {
 		/****************************************/
 		/******** FUNCTIONS DEFINITIONS *********/
 		/****************************************/
-		template<typename T, uint64_t N>
-		bool operator<(const Handle<T, N>& lhs, const Handle<T, N>& rhs)
+		template<typename Table>
+		bool operator<(const basic_handle<Table>& lhs, const basic_handle<Table>& rhs)
 		{
 			return lhs.uid() < rhs.uid();
 		}
 
-		template<typename T, uint64_t N>
-		bool operator==(const Handle<T, N>& lhs, const Handle<T, N>& rhs)
+		template<typename Table>
+		bool operator==(const basic_handle<Table>& lhs, const basic_handle<Table>& rhs)
 		{
 			return lhs.uid() == rhs.uid();
 		}
 
-		template<typename T, uint64_t N>
-		bool operator!=(const Handle<T, N>& lhs, const Handle<T, N>& rhs)
+		template<typename Table>
+		bool operator!=(const basic_handle<Table>& lhs, const basic_handle<Table>& rhs)
 		{
 			return !(lhs == rhs);
 		}
@@ -193,35 +192,23 @@ namespace K9ngineCore {
 		/****************************************/
 		/****** HANDLE CLASS DEFINITIONS ********/
 		/****************************************/
-		
-		template<typename T, uint64_t N>
-		inline T& Handle<T, N>::operator*() {
-			K9ASSERT(isValid(), "Handle<T>::operator*, handle not valid");
-			return *(const_cast<HandleTable<T, N>*>(_pHandleTable)->getElementValue(_index));
-		}
 
-		template<typename T, uint64_t N>
-		inline const T& Handle<T, N>::operator*() const
+		template<typename Table>
+		inline typename basic_handle<Table>::element_ref basic_handle<Table>::operator*() const
 		{
-			K9ASSERT(isValid(), "Handle<T>::operator*, handle not valid");
-			return *(_pHandleTable->getElementValue(_index));
+			K9ASSERT(isValid(), "basic_handle<Table>::operator*, handle not valid");
+			return *(mHandleTable->getElementValue(mIndex));
 		}
 
-		template<typename T, uint64_t N>
-		inline T* Handle<T, N>::operator->() {
-			K9ASSERT(isValid(), "Handle<T>::operator->, handle not valid");
-			return const_cast<HandleTable<T, N>*>(_pHandleTable)->getElementValue(_index);
+		template<typename Table>
+		inline typename basic_handle<Table>::element_ptr basic_handle<Table>::operator->() const {
+			K9ASSERT(isValid(), "basic_handle<Table>::operator->, handle not valid");
+			return mHandleTable->getElementValue(mIndex);
 		}
 
-		template<typename T, uint64_t N>
-		inline const T* Handle<T, N>::operator->() const {
-			K9ASSERT(isValid(), "Handle<T>::operator->, handle not valid");
-			return _pHandleTable->getElementValue(_index);
-		}
-
-		template<typename T, uint64_t N>
-		bool Handle<T, N>::isValid() const {
-			return _pHandleTable != nullptr && _pHandleTable->isValid(_uid, _index);
+		template<typename Table>
+		bool basic_handle<Table>::isValid() const {
+			return mHandleTable != nullptr && mHandleTable->isValid(mUid, mIndex);
 		}
 
 		/****************************************/
@@ -229,7 +216,10 @@ namespace K9ngineCore {
 		/****************************************/
 
 		template<typename T, uint64_t N>
-		const Handle<T, N> HandleTable<T, N>::NullHandle{ nullptr, (uint64_t)-1, (size_t)-1 };
+		const Handle<T, N> HandleTable<T, N>::NullHandle{};
+
+		template<typename T, uint64_t N>
+		const ConstHandle<T, N> HandleTable<T, N>::ConstNullHandle{};
 
 		template<typename T, uint64_t N>
 		HandleTable<T, N>::HandleTable() {
@@ -313,15 +303,15 @@ namespace K9ngineCore {
 		}
 
 		template<typename T, uint64_t N>
-		Handle<T, N> HandleTable<T, N>::getHandle(size_t index) {
+		Handle<T,N> HandleTable<T, N>::getHandle(size_t index) {
 			K9ASSERT(index < _elements.size(), "HandleTable<T>::getHandle, index out of range");
 			return Handle<T, N>{this, _elements[index].uid, index};
 		}
 
 		template<typename T, uint64_t N>
-		const Handle<T, N> HandleTable<T, N>::getHandle(size_t index) const {
+		ConstHandle<T, N> HandleTable<T, N>::getHandle(size_t index) const {
 			K9ASSERT(index < _elements.size(), "HandleTable<T>::getHandle, index out of range");
-			return Handle<T, N>{this, _elements[index].uid, index};
+			return ConstHandle<T, N>{this, _elements[index].uid, index};
 		}
 
 		template<typename T, uint64_t N>
