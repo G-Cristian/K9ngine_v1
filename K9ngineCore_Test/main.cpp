@@ -202,14 +202,14 @@ bool addElement() {
 	using namespace K9ngineCore::Memory;
 
 	HandleTable<int, 1> table{};
-	return table.createHandle(1, new int(1)) == 0;
+	return table.createHandle(1, 1) == 0;
 }
 
 bool deleteElement() {
 	using namespace K9ngineCore::Memory;
 
 	HandleTable<int, 1> table{};
-	table.createHandle(1, new int(1));
+	table.createHandle(1, 1);
 	table.deleteHandle(0);
 
 	return true;
@@ -219,16 +219,16 @@ bool createDeleteCreateElements() {
 	using namespace K9ngineCore::Memory;
 
 	HandleTable<int, 4> table;
-	size_t h1_0 = table.createHandle(1, new int(1));
-	size_t h2_1 = table.createHandle(2, new int(2));
-	size_t h3_2 = table.createHandle(3, new int(3));
-	size_t h4_3 = table.createHandle(4, new int(4));
+	size_t h1_0 = table.createHandle(1, 1);
+	size_t h2_1 = table.createHandle(2, 2);
+	size_t h3_2 = table.createHandle(3, 3);
+	size_t h4_3 = table.createHandle(4, 4);
 	table.deleteHandle(1);
 	table.deleteHandle(2);
-	size_t h5_2 = table.createHandle(5, new int(5));
+	size_t h5_2 = table.createHandle(5, 5);
 	table.deleteHandle(3);
-	size_t h6_3 = table.createHandle(6, new int(6));
-	size_t h7_1 = table.createHandle(7, new int(7));
+	size_t h6_3 = table.createHandle(6, 6);
+	size_t h7_1 = table.createHandle(7, 7);
 
 	return h1_0 == 0 && h2_1 == 1 && h3_2 == 2 && h4_3 == 3 && h5_2 == 2 && h6_3 == 3 && h7_1 == 1;
 }
@@ -237,7 +237,7 @@ bool getHandle() {
 	using namespace K9ngineCore::Memory;
 
 	HandleTable<int, 1> table{};
-	table.createHandle(1, new int(2));
+	table.createHandle(1, 2);
 	auto handle = table.getHandle(0);
 	return true;
 }
@@ -246,7 +246,7 @@ bool getValid() {
 	using namespace K9ngineCore::Memory;
 
 	HandleTable<int, 1> table;
-	table.createHandle(1, new int(2));
+	table.createHandle(1, 2);
 	auto handle = table.getHandle(0);
 	return handle.isValid();
 }
@@ -255,7 +255,7 @@ bool getInvalid() {
 	using namespace K9ngineCore::Memory;
 
 	HandleTable<int, 1> table;
-	table.createHandle(1, new int(2));
+	table.createHandle(1, 2);
 	auto handle = table.getHandle(0);
 	table.deleteHandle(0);
 	return !handle.isValid();
@@ -265,8 +265,8 @@ bool starOperator() {
 	using namespace K9ngineCore::Memory;
 
 	HandleTable<int, 2> table;
-	size_t h1 = table.createHandle(1, new int(1));
-	size_t h2 = table.createHandle(2, new int(2));
+	size_t h1 = table.createHandle(1, 1);
+	size_t h2 = table.createHandle(2, 2);
 
 	auto handle1 = table.getHandle(h1);
 	auto handle2 = table.getHandle(h2);

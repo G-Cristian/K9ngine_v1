@@ -21,7 +21,7 @@ namespace K9ngineCore {
       mGameObjects.deleteHandle(mGameObjectsIdIndexMap.find(uid)->second);
     }
 
-    auto index = mGameObjects.createHandle(Common::hashToUInt64(uid), new GameObject(uid, transform));
+    auto index = mGameObjects.createHandle(Common::hashToUInt64(uid), uid, transform);
     mGameObjectsIdIndexMap[uid] = index;
 
     return mGameObjects.getHandle(index);

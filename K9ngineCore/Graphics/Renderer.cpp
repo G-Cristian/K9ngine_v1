@@ -73,7 +73,7 @@ namespace K9ngineCore {
     {
 
       uint64_t uid = Common::hashToUInt64(aHash);
-      auto renderingComponent = mRenderingComponents.getHandle(mRenderingComponents.createHandle(uid, new RenderingComponent(aHash, gameObject, material, buffersData, vertexCount)));
+      auto renderingComponent = mRenderingComponents.getHandle(mRenderingComponents.createHandle(uid, aHash, gameObject, material, buffersData, vertexCount));
       auto transformNode = mScene.createOrGetTransformNode(gameObject);
 
       mGameObjectIdRenderingComponents[gameObject->getId()].push_back(renderingComponent);
