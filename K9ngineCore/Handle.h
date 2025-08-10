@@ -92,28 +92,34 @@ namespace K9ngineCore {
 		struct HandleElement {
 			typedef T ValueType;
 
-			HandleElement()
-			: uid{ static_cast<uint64_t>(-1) }
-			,	value{ nullptr }
+			~HandleElement()
 			{
+				destroy();
 			}
 
-			HandleElement(uint64_t newUId, T* newValue):
-				uid(newUId),
-				value(newValue)
+			template<typename... Args>
+			void emplace(uint64_t newUId, Args&&... args)
 			{
+				new (get()) ValueType(std::forward<Args>(args)...);
+				uid = newUId,
+				occupied = true;
 			}
 
-			~HandleElement() {
-				if (value) {
-					delete value;
+			void destroy()
+			{
+				if (occupied) {
+					get()->~ValueType();
+					occupied = false;
 				}
-				value = nullptr;
 			}
 
-			/* NOTE: if value is null, uid will be the index to the next free element in the HandleTable */
+			ValueType*				get()				{ return std::launder(reinterpret_cast<ValueType*>(&value)); }
+			const ValueType*	get() const	{ return std::launder(reinterpret_cast<const ValueType*>(&value)); }
+
+			// NOTE: When occupied == false, uid stores the index of the next free slot in the HandleTable.
 			uint64_t uid{ static_cast<uint64_t>(-1) };
-			T* value{ nullptr };
+			alignas(ValueType) std::byte value[sizeof(ValueType)];
+			bool occupied = false;
 		};
 
 		template<typename T, uint64_t N = 0>
@@ -137,10 +143,11 @@ namespace K9ngineCore {
 
 			bool isValid(uint64_t uid, size_t index) const {
 				//K9ASSERT(index < _elements.size(), "HandleTable::isValid, index out of range");
-				return (index < _elements.size() && _elements[index].uid == uid && _elements[index].value != nullptr);
+				return (index < _elements.size() && _elements[index].uid == uid && _elements[index].occupied);
 			}
 
-			size_t createHandle(uint64_t uid, T* value);
+			template<typename... Args>
+			size_t createHandle(uint64_t uid, Args&&... args);
 			void deleteHandle(size_t index);
 			Handle<T,N> getHandle(size_t index);
 			const Handle<T, N> getHandle(size_t index) const;
@@ -149,12 +156,12 @@ namespace K9ngineCore {
 		private:
 			T* getElementValue(size_t index) {
 				K9ASSERT(index < _elements.size(), "HandleTable::getElementValue, index out of range");
-				return _elements[index].value;
+				return _elements[index].get();
 			}
 
-			T* const getElementValue(size_t index) const {
+			const T* getElementValue(size_t index) const {
 				K9ASSERT(index < _elements.size(), "HandleTable::getElementValue, index out of range");
-				return _elements[index].value;
+				return _elements[index].get();
 			}
 
 			ContainerType _elements{};
@@ -190,7 +197,7 @@ namespace K9ngineCore {
 		template<typename T, uint64_t N>
 		inline T& Handle<T, N>::operator*() {
 			K9ASSERT(isValid(), "Handle<T>::operator*, handle not valid");
-			return *(_pHandleTable->getElementValue(_index));
+			return *(const_cast<HandleTable<T, N>*>(_pHandleTable)->getElementValue(_index));
 		}
 
 		template<typename T, uint64_t N>
@@ -203,7 +210,7 @@ namespace K9ngineCore {
 		template<typename T, uint64_t N>
 		inline T* Handle<T, N>::operator->() {
 			K9ASSERT(isValid(), "Handle<T>::operator->, handle not valid");
-			return _pHandleTable->getElementValue(_index);
+			return const_cast<HandleTable<T, N>*>(_pHandleTable)->getElementValue(_index);
 		}
 
 		template<typename T, uint64_t N>
@@ -228,13 +235,16 @@ namespace K9ngineCore {
 		HandleTable<T, N>::HandleTable() {
 			if constexpr (N != 0) {
 				for (size_t i = 0; i != N; i++) {
-					_elements[i] = HandleElement<T>{ i + 1, nullptr };
+					_elements[i].uid = static_cast<uint64_t>(i + 1);
+					_elements[i].occupied = false;
 				}
 				_elements[N - 1].uid = InvalidIndex;
 			}
 			else {
 				_elements.reserve(1);
-				_elements.emplace_back(1, nullptr);
+				_elements.emplace_back();
+				_elements[0].uid = 1;
+				_elements[0].occupied = false;
 			}
 
 			_nextFreeElement = 0;
@@ -247,37 +257,44 @@ namespace K9ngineCore {
 		}
 
 		template<typename T, uint64_t N>
-		size_t HandleTable<T, N>::createHandle(uint64_t uid, T* value) {
+		template<typename... Args>
+		size_t HandleTable<T, N>::createHandle(uint64_t uid, Args&&... args) {
+			static_assert(N == 0 || N > 0, "N must be >= 0");
+
 			uint64_t newElementIndex = _nextFreeElement;
 
 			if constexpr(N != 0){
+				// Array mode
 				K9ASSERT(_nextFreeElement != InvalidIndex && _nextFreeElement < _elements.size(), "HandleTable<T>::createHandle, no more space");
-				K9ASSERT(_elements[_nextFreeElement].value == nullptr, "HandleTable<T>::createHandle, element must be freed before reassigning");
+				K9ASSERT(!_elements[_nextFreeElement].occupied, "HandleTable<T>::createHandle, element must be freed before reassigning");
 
 				_nextFreeElement = _elements[newElementIndex].uid;
-
-				_elements[newElementIndex].uid = uid;
-				_elements[newElementIndex].value = value;
+				_elements[newElementIndex].emplace(uid, std::forward<Args>(args)...);
 			}
 			else {
+				// Vector mode
+				//T must be movable if reallocation happens
+				static_assert(std::is_move_constructible_v<HandleElement<T>>, "HandleElement<T> must be move-constructible in vector mode");
+
 				K9ASSERT(_nextFreeElement != InvalidIndex, "HandleTable<T>::createHandle, no more space");
-				if (_nextFreeElement < _elements.size()) {
-					K9ASSERT(_elements[_nextFreeElement].value == nullptr, "HandleTable<T>::createHandle, element must be freed before reassigning");
-				}
-				else {
-					_elements.reserve(_elements.size() * 2);
-					for (int i = _nextFreeElement; i != _elements.capacity(); i++) {
-						_elements.emplace_back(i + 1, nullptr);
+				if (_nextFreeElement >= _elements.size()) {
+					const size_t oldSize = _elements.size();
+					const size_t newCap = oldSize * 2;
+					_elements.reserve(newCap);
+					for (int i = oldSize; i < newCap; i++) {
+						_elements.emplace_back();
+						_elements[i].uid = static_cast<uint64_t>(i + 1);
+						_elements[i].occupied = false;
 					}
 				}
 
+				K9ASSERT(!_elements[_nextFreeElement].occupied, "HandleTable<T>::createHandle, element must be freed before reassigning");
 				_nextFreeElement = _elements[newElementIndex].uid;
 
-				_elements[newElementIndex].uid = uid;
-				_elements[newElementIndex].value = value;
+				_elements[newElementIndex].emplace(uid, std::forward<Args>(args)...);
 			}
 
-			return newElementIndex;
+			return static_cast<size_t>(newElementIndex);
 		}
 
 		template<typename T, uint64_t N>
@@ -286,14 +303,13 @@ namespace K9ngineCore {
 
 			HandleElement<T>& element = _elements[index];
 
-			if (element.value == nullptr) {
+			if (!element.occupied) {
 				return;
 			}
 
-			delete element.value;
-			element.value = nullptr;
+			element.destroy();
 			element.uid = _nextFreeElement;
-			_nextFreeElement = index;
+			_nextFreeElement = static_cast<uint64_t>(index);
 		}
 
 		template<typename T, uint64_t N>
