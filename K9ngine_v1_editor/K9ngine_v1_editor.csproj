@@ -4,7 +4,7 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
-    <Configurations>Debug;Release;DebugMemoryNoLog</Configurations>
+    <Configurations>Debug;Release;DebugMemoryNoLog;DebugLogNoMemory</Configurations>
   </PropertyGroup>
 
 </Project>

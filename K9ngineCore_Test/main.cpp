@@ -14,13 +14,13 @@
 #include <iostream>
 #include <string>
 
-#include "FileReader.h"
+#include "FileSystem/FileReader.h"
 #include "GameObject.h"
 #include "Graphics/TransformNode.h"
 #include "Handle.h"
 #include "K9Debug.h"
-#include "Path.h"
-#include "ResourceLoader.h"
+#include "FileSystem/Path.h"
+#include "FileSystem/ResourceLoader.h"
 #include "Texture.h"
 
 #define EXEC_TEST(name, success, fail, total) do{\
@@ -35,7 +35,7 @@
 
 using namespace K9ngineCore;
 using namespace K9ngineCore::Memory;
-using namespace K9ngineCore::Utility;
+using namespace K9ngineCore::FileSystem;
 
 /******** K9ASSERT ***********/
 bool K9ASSERTTest();
@@ -372,8 +372,8 @@ bool getExtensionFullPath() {
 
 /******** FILERADER TESTS ***********/
 bool readChar() {
-	using namespace K9ngineCore::IO;
-	std::string path = std::string("Tests") + Utility::Path::Separator + "TestFileReader" + Utility::Path::Separator + "Char.txt";
+	using namespace K9ngineCore::FileSystem;
+	std::string path = std::string("Tests") + Path::Separator + "TestFileReader" + Path::Separator + "Char.txt";
 	FileReader reader(path);
 	bool bOk = reader.isOpen();
 
@@ -387,8 +387,8 @@ bool readChar() {
 }
 
 bool readFalse() {
-	using namespace K9ngineCore::IO;
-	std::string path = std::string("Tests") + Utility::Path::Separator + "TestFileReader" + Utility::Path::Separator + "False.txt";
+	using namespace K9ngineCore::FileSystem;
+	std::string path = std::string("Tests") + Path::Separator + "TestFileReader" + Path::Separator + "False.txt";
 	FileReader reader(path);
 	bool bOk = reader.isOpen();
 
@@ -402,8 +402,8 @@ bool readFalse() {
 }
 
 bool readTrue() {
-	using namespace K9ngineCore::IO;
-	std::string path = std::string("Tests") + Utility::Path::Separator + "TestFileReader" + Utility::Path::Separator + "True.txt";
+	using namespace K9ngineCore::FileSystem;
+	std::string path = std::string("Tests") + Path::Separator + "TestFileReader" + Path::Separator + "True.txt";
 	FileReader reader(path);
 	bool bOk = reader.isOpen();
 
@@ -417,8 +417,8 @@ bool readTrue() {
 }
 
 bool readInt() {
-	using namespace K9ngineCore::IO;
-	std::string path = std::string("Tests") + Utility::Path::Separator + "TestFileReader" + Utility::Path::Separator + "Int.txt";
+	using namespace K9ngineCore::FileSystem;
+	std::string path = std::string("Tests") + Path::Separator + "TestFileReader" + Path::Separator + "Int.txt";
 	FileReader reader(path);
 	bool bOk = reader.isOpen();
 
@@ -432,8 +432,8 @@ bool readInt() {
 }
 
 bool readUnsignedInt() {
-	using namespace K9ngineCore::IO;
-	std::string path = std::string("Tests") + Utility::Path::Separator + "TestFileReader" + Utility::Path::Separator + "UnsignedInt.txt";
+	using namespace K9ngineCore::FileSystem;
+	std::string path = std::string("Tests") + Path::Separator + "TestFileReader" + Path::Separator + "UnsignedInt.txt";
 	FileReader reader(path);
 	bool bOk = reader.isOpen();
 
@@ -447,8 +447,8 @@ bool readUnsignedInt() {
 }
 
 bool readCharIntCharCharUnsignedIntChar() {
-	using namespace K9ngineCore::IO;
-	std::string path = std::string("Tests") + Utility::Path::Separator + "TestFileReader" + Utility::Path::Separator + "CharIntCharCharUnsignedIntChar.txt";
+	using namespace K9ngineCore::FileSystem;
+	std::string path = std::string("Tests") + Path::Separator + "TestFileReader" + Path::Separator + "CharIntCharCharUnsignedIntChar.txt";
 	FileReader reader(path);
 	bool bOk = reader.isOpen();
 
@@ -477,7 +477,7 @@ bool readCharIntCharCharUnsignedIntChar() {
 
 /******** TEXTUREDATA TESTS ***********/
 bool loadTexNotFound() {
-	using namespace K9ngineCore::IO;
+	using namespace K9ngineCore::FileSystem;
 	using namespace K9ngineCore::Graphics;
 	bool bOk = false;
 	try {
@@ -490,7 +490,7 @@ bool loadTexNotFound() {
 }
 
 bool loadInvalidFormatNotFound() {
-	using namespace K9ngineCore::IO;
+	using namespace K9ngineCore::FileSystem;
 	using namespace K9ngineCore::Graphics;
 	bool bOk = false;
 	try {
@@ -504,11 +504,11 @@ bool loadInvalidFormatNotFound() {
 }
 
 bool loadThreeBlackPixelsImage() {
-	using namespace K9ngineCore::IO;
+	using namespace K9ngineCore::FileSystem;
 	using namespace K9ngineCore::Graphics;
 
 	bool bOk = false;
-	std::string path = std::string("Tests") + Utility::Path::Separator + "TestTextures" + Utility::Path::Separator + "test1.tex";
+	std::string path = std::string("Tests") + Path::Separator + "TestTextures" + Path::Separator + "test1.tex";
 	try {
 		std::unique_ptr<TextureData> data(ResourceLoader<TextureData>::loadResource(path));
 		bOk = (data &&
@@ -539,11 +539,11 @@ bool loadThreeBlackPixelsImage() {
 	return bOk;
 }
 bool loadThreeRGBPixelsImage() {
-	using namespace K9ngineCore::IO;
+	using namespace K9ngineCore::FileSystem;
 	using namespace K9ngineCore::Graphics;
 
 	bool bOk = false;
-	std::string path = std::string("Tests") + Utility::Path::Separator + "TestTextures" + Utility::Path::Separator + "test2.tex";
+	std::string path = std::string("Tests") + Path::Separator + "TestTextures" + Path::Separator + "test2.tex";
 	try {
 		std::unique_ptr<TextureData> data(ResourceLoader<TextureData>::loadResource(path));
 		bOk = (data &&
@@ -575,11 +575,11 @@ bool loadThreeRGBPixelsImage() {
 }
 
 bool loadThreeVerticalRGBPixelsImage() {
-	using namespace K9ngineCore::IO;
+	using namespace K9ngineCore::FileSystem;
 	using namespace K9ngineCore::Graphics;
 
 	bool bOk = false;
-	std::string path = std::string("Tests") + Utility::Path::Separator + "TestTextures" + Utility::Path::Separator + "test3.tex";
+	std::string path = std::string("Tests") + Path::Separator + "TestTextures" + Path::Separator + "test3.tex";
 	try {
 		std::unique_ptr<TextureData> data(ResourceLoader<TextureData>::loadResource(path));
 		bOk = (data &&
@@ -614,11 +614,11 @@ bool loadThreeVerticalRGBPixelsImage() {
 }
 
 bool loadThreeVerticalFlipYRGBPixelsImage() {
-	using namespace K9ngineCore::IO;
+	using namespace K9ngineCore::FileSystem;
 	using namespace K9ngineCore::Graphics;
 
 	bool bOk = false;
-	std::string path = std::string("Tests") + Utility::Path::Separator + "TestTextures" + Utility::Path::Separator + "test4.tex";
+	std::string path = std::string("Tests") + Path::Separator + "TestTextures" + Path::Separator + "test4.tex";
 	try {
 		std::unique_ptr<TextureData> data(ResourceLoader<TextureData>::loadResource(path));
 		bOk = (data &&

@@ -4,7 +4,7 @@
 #include "Handle.h"
 #include "Common/Hasher.h"
 #include "K9Debug.h"
-#include "ResourceLoader.h"
+#include "FileSystem/ResourceLoader.h"
 
 #include <cstdint>
 #include <string>
@@ -60,7 +60,7 @@ namespace K9ngineCore {
 			return retrieveFromHashTable(uid, it->second);
 		}
 
-		T* resource = IO::ResourceLoader<T>::loadResource(path);
+		T* resource = FileSystem::ResourceLoader<T>::loadResource(path);
 
 		return addResource(uid, resource);
 	}

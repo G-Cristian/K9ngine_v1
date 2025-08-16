@@ -6,7 +6,8 @@
 #include "../K9ngineCore/K9Debug.h"
 
 #include "../K9ngineCore/Common/Hasher.h"
-#include "../K9ngineCore/FileReader.h"
+#include "../K9ngineCore/FileSystem/FileReader.h"
+#include "../K9ngineCore/FileSystem/Path.h"
 #include "../K9ngineCore/Graphics/BufferDataType.h"
 #include "../K9ngineCore/Graphics/Camera.h"
 #include "../K9ngineCore/Graphics/Material.h"
@@ -23,6 +24,7 @@ namespace K9ngineAppTest
   bool Test1::init()
   {
     using namespace Common;
+    using namespace FileSystem;
     LOG_ADD_TAB();
     LOG_MESSAGE("Test1.Init");
 
@@ -38,8 +40,8 @@ namespace K9ngineAppTest
     auto cube1 = mWorld.createGameObject(hashString("Cube1"));
     cube1->moveTo(0.0f, -2.0f, 0.0f);
 
-    std::string vertexShaderSource = IO::FileReader{"C:\\Users\\lococ\\source\\repos\\K9ngine_v1\\x64\\Debug\\vertexShader1.glsl"}.getTextContent();
-    std::string fragmentShaderSource = IO::FileReader{ "C:\\Users\\lococ\\source\\repos\\K9ngine_v1\\x64\\Debug\\fragmentShader1.glsl" }.getTextContent();
+    std::string vertexShaderSource = FileReader{Path::combine(Path::getCurrentPath(), R"(../Resources/Shaders/vertexShader1.glsl)")}.getTextContent();
+    std::string fragmentShaderSource = FileReader{ Path::combine(Path::getCurrentPath(), R"(../Resources/Shaders/fragmentShader1.glsl)") }.getTextContent();
     auto program = std::make_shared<ShaderProgram>( Shader{ShaderType::K9_VERTEX_SHADER, vertexShaderSource.c_str()}
                                                   , Shader{ShaderType::K9_FRAGMENT_SHADER, fragmentShaderSource.c_str()}
                                                   );

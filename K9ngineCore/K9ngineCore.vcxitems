@@ -18,7 +18,9 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Common\Hasher.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Common\IObserver.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Common\TransformChangeEvent.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)FileReader.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)FileSystem\FileReader.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)FileSystem\Path.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)FileSystem\ResourceLoader.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)GameObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\BufferDataType.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\Camera.h" />
@@ -49,15 +51,14 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Math\Math.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Math\Transform.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)MessageBox.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)Path.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)ResourceLoader.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)SingleResourceManager.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Texture.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)World.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)Common\Hasher.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)FileReader.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)FileSystem\FileReader.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)FileSystem\Path.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)GameObject.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Graphics\BufferDataType.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Graphics\INode.cpp" />
@@ -81,7 +82,6 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Math\Math.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Math\Transform.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)MessageBox.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Path.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Texture.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)World.cpp" />
   </ItemGroup>
