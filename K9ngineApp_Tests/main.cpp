@@ -1,4 +1,4 @@
-#if defined(_DEBUG) && defined(K9_DEBUG_MEMORY)
+#if (defined(_DEBUG) && defined(K9_DEBUG_MEMORY))
 
 #include "vld.h"
 
@@ -14,6 +14,7 @@
 
 #include "../K9ngineCore/K9Debug.h"
 #include "Test1.h"
+#include "TestInstanced1.h"
 
 int main(int argc, char** argv) {
 #ifdef K9_DEBUG_MEMORY
@@ -26,7 +27,8 @@ int main(int argc, char** argv) {
   using namespace K9ngineAppTest;
 
   {
-    Test1 game;
+    //Test1 game;
+    TestInstanced1 game;
     game.run();
   }
 

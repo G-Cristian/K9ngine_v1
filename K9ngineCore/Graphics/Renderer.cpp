@@ -62,18 +62,18 @@ namespace K9ngineCore {
       return mScene.getCurrentCamera();
     }
 
-    RenderingComponentPtr Renderer::emplaceRenderingComponent(GameObjectPtr gameObject, const Material& material, const std::vector<BufferDataTypePtr>& buffersData, size_t vertexCount)
+    RenderingComponentPtr Renderer::emplaceRenderingComponent(GameObjectPtr gameObject, const Material& material, const std::vector<BufferDataTypePtr>& buffersData, K9sizei vertexCount, K9sizei instancesCount/* = 1*/)
     {
       using namespace Common;
 
-      return emplaceRenderingComponent(Common::hashString(std::format("{}", mCount++)), gameObject, material, buffersData, vertexCount);
+      return emplaceRenderingComponent(Common::hashString(std::format("{}", mCount++)), gameObject, material, buffersData, vertexCount, instancesCount);
     }
 
-    RenderingComponentPtr Renderer::emplaceRenderingComponent(Common::Hash aHash, GameObjectPtr gameObject, const Material& material, const std::vector<BufferDataTypePtr>& buffersData, size_t vertexCount)
+    RenderingComponentPtr Renderer::emplaceRenderingComponent(Common::Hash aHash, GameObjectPtr gameObject, const Material& material, const std::vector<BufferDataTypePtr>& buffersData, K9sizei vertexCount, K9sizei instancesCount/* = 1*/)
     {
 
       uint64_t uid = Common::hashToUInt64(aHash);
-      auto renderingComponent = mRenderingComponents.getHandle(mRenderingComponents.createHandle(uid, aHash, gameObject, material, buffersData, vertexCount));
+      auto renderingComponent = mRenderingComponents.getHandle(mRenderingComponents.createHandle(uid, aHash, gameObject, material, buffersData, vertexCount, instancesCount));
       auto transformNode = mScene.createOrGetTransformNode(gameObject);
 
       mGameObjectIdRenderingComponents[gameObject->getId()].push_back(renderingComponent);
@@ -81,6 +81,46 @@ namespace K9ngineCore {
       mScene.linkNode(renderNode, transformNode);
 
       return renderingComponent;
+    }
+
+    ConstRenderingComponentPtr Renderer::getRenderingComponent(const Common::Hash& renderingComponentHash) const
+    {
+      uint64_t uid = Common::hashToUInt64(renderingComponentHash);
+      return mRenderingComponents.findHandle(uid);
+    }
+
+    RenderingComponentPtr Renderer::getRenderingComponent(const Common::Hash& renderingComponentHash)
+    {
+      uint64_t uid = Common::hashToUInt64(renderingComponentHash);
+      return mRenderingComponents.findHandle(uid);
+    }
+
+    ConstRenderingComponentPtr Renderer::getRenderingComponent(const Common::Hash& gameObjectId, const Common::Hash& renderingComponentHash) const
+    {
+      auto it = mGameObjectIdRenderingComponents.find(gameObjectId);
+      if (it != mGameObjectIdRenderingComponents.cend()) {
+        for (auto& renderingComponent : it->second) {
+          if (renderingComponent && renderingComponent->getId() == renderingComponentHash) {
+            return renderingComponent;
+          }
+        }
+      }
+
+      return RenderingComponentTable::ConstNullHandle;
+    }
+
+    RenderingComponentPtr Renderer::getRenderingComponent(const Common::Hash& gameObjectId, const Common::Hash& renderingComponentHash)
+    {
+      auto it = mGameObjectIdRenderingComponents.find(gameObjectId);
+      if (it != mGameObjectIdRenderingComponents.end()) {
+        for (auto& renderingComponent : it->second) {
+          if (renderingComponent && renderingComponent->getId() == renderingComponentHash) {
+            return renderingComponent;
+          }
+        }
+      }
+
+      return RenderingComponentTable::NullHandle;
     }
 
     void Renderer::render(float elapsedTime)

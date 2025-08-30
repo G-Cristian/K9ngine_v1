@@ -218,9 +218,15 @@
       <Command>msbuild "$(SolutionDir)K9ngineApp\K9ngineApp.vcxproj" /p:Configuration=$(Configuration) /p:Platform=$(Platform)</Command>
     </PreBuildEvent>
     <ClCompile>
-      <AdditionalIncludeDirectories>..\OpenGL\Include;..\K9ngineApp;%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\OpenGL\Include;..\K9ngineApp</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;K9_LOG_CONSOLE=3;K9_LOG_FILE=3;K9_USE_OPENGL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <SupportJustMyCode>true</SupportJustMyCode>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)$(Platform)\$(Configuration)\;..\OpenGL\Libs</AdditionalLibraryDirectories>
@@ -231,9 +237,11 @@
     <ClCompile Include="..\glad.c" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Test1.cpp" />
+    <ClCompile Include="TestInstanced1.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Test1.h" />
+    <ClInclude Include="TestInstanced1.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

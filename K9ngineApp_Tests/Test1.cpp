@@ -48,8 +48,8 @@ namespace K9ngineAppTest
 
     Material material{ program };
     material.addOrAssignAttributeLocation("cube1", 0);
-    material.addModelViewMatrixProperty(std::make_shared<Mat4MaterialProperty>("mv_matrix"));
-    material.addProjectionMatrixProperty(std::make_shared<Mat4MaterialProperty>("proj_matrix"));
+    material.addModelViewMatrixProperty(Mat4MaterialProperty("mv_matrix"));
+    material.addProjectionMatrixProperty(Mat4MaterialProperty("proj_matrix"));
     auto mesh = MeshFactory::createCube();
     auto bufferDataType = std::make_shared<BufferDataType>( "cube1", mesh.getFlattenedCoordinates(), 3
                                                           , TargetBuffer::K9_ARRAY_BUFFER, BufferDataUsage::K9_STATIC_DRAW
@@ -75,12 +75,12 @@ namespace K9ngineAppTest
     K9ngine::K9ngineApp::fixedPhysics();
   }
 
-  void Test1::update(float elapsed)
+  void Test1::update(double elapsed)
   {
     K9ngine::K9ngineApp::update(elapsed);
   }
 
-  void Test1::render(float elapsed)
+  void Test1::render(double elapsed)
   {
     K9ngine::K9ngineApp::render(elapsed);
   }

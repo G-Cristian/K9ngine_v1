@@ -4,7 +4,7 @@
 #include "pch.h"
 //#include "framework.h"
 
-#if defined(_DEBUG) && defined(K9_DEBUG_MEMORY)
+#if (defined(_DEBUG) && defined(K9_DEBUG_MEMORY))
 
 #include "vld.h"
 
@@ -43,10 +43,11 @@ namespace K9ngine {
     cleanup();
   }
 
-  float K9ngineApp::getCurrentTime() {
-    using namespace std::chrono;
+  double K9ngineApp::getCurrentTime() {
+    /*using namespace std::chrono;
 
-    return static_cast<float>(duration_cast<milliseconds>(system_clock::now().time_since_epoch()).count());
+    return static_cast<float>(duration_cast<milliseconds>(system_clock::now().time_since_epoch()).count());*/
+    return glfwGetTime();
   }
 
   bool K9ngineApp::init() {
@@ -56,7 +57,7 @@ namespace K9ngine {
 
     bool ok = mWindowsManager.init();
     if (ok) {
-      mWindowsManager.createWindow("Test Game", 600, 600);
+      mWindowsManager.createWindow("Test Game", 1280, 800);
       mWindowsManager.setCurrent(0);
 
       int version = GraphicsContext::init();
@@ -77,10 +78,10 @@ namespace K9ngine {
   }
 
   void K9ngineApp::start() {
-    float previous = getCurrentTime();
-    float lag = 0.0;
-    float current = 0.0;
-    float elapsed = 0.0;
+    double previous = getCurrentTime();
+    double lag = 0.0;
+    double current = 0.0;
+    double elapsed = 0.0;
     while (!mMustClose) {
       current = getCurrentTime();
       elapsed = current - previous;
@@ -112,12 +113,12 @@ namespace K9ngine {
     // TODO: Update physics engine (mMsPerFixedUpdate) (besides updating physics will call the corresponding OnCollision events)
   }
 
-  void K9ngineApp::update(float elapsed) {
+  void K9ngineApp::update(double elapsed) {
     // TODO: Update scripts engine (elapsed) which must call every update scripts
     mMustClose = mMustClose || mWindowsManager.currentWindow().shouldClose();
   }
 
-  void K9ngineApp::render(float elapsed) {
+  void K9ngineApp::render(double elapsed) {
     // TODO: Update rendering engine (elapsed)
     mRenderer.render(elapsed);
     mWindowsManager.update();

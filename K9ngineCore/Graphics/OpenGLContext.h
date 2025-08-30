@@ -113,12 +113,16 @@ namespace K9ngineCore {
         return foundErrors;
       }
 
-      static void drawArraysTriangles(GLint first, GLsizei count) {
-        glDrawArrays(GL_TRIANGLES, first, count);
-      }
-
       static void drawArrays(OpenGLDrawMode mode, GLint first, GLsizei count) {
         glDrawArrays(std::to_underlying(mode), first, count);
+      }
+
+      static void drawArraysInstanced(OpenGLDrawMode mode, GLint first, GLsizei count, GLsizei instanceCount) {
+        glDrawArraysInstanced(std::to_underlying(mode), first, count, instanceCount);
+      }
+
+      static void drawArraysTriangles(GLint first, GLsizei count) {
+        glDrawArrays(GL_TRIANGLES, first, count);
       }
 
       static void enableDepthTest() {
@@ -207,6 +211,10 @@ namespace K9ngineCore {
 
       static void setDepthFuncLessEqual() {
         glDepthFunc(GL_LEQUAL);
+      }
+
+      static void setUniform1f(GLint location, GLfloat value) {
+        glUniform1f(location, value);
       }
 
       static void setUniformMatrix4fv(GLint location, GLsizei count, OpenGLBoolValues transpose, const GLfloat* value) {
