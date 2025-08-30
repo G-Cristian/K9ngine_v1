@@ -24,6 +24,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)GameObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\BufferDataType.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\Camera.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\FloatMaterialProperty.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\GraphicsContext.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\GraphicsHandleTypes.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\INode.h" />
@@ -61,6 +62,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)FileSystem\Path.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)GameObject.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Graphics\BufferDataType.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Graphics\FloatMaterialProperty.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Graphics\INode.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Graphics\ISceneGraphVisitor.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Graphics\Mat4MaterialProperty.cpp" />

@@ -24,6 +24,12 @@ namespace K9ngineCore {
     public:
       explicit Material(std::shared_ptr<ShaderProgram> program);
 
+      Material(const Material&);
+      //Material(Material&&) noexcept;
+
+      Material& operator=(const Material&);
+      //Material& operator=(Material&&) noexcept;
+
       void addOrSetProperty(std::shared_ptr<MaterialProperty>);
       bool hasProperty(const MaterialProperty::PropertyIdType&) const;
       std::shared_ptr<const MaterialProperty> getProperty(const MaterialProperty::PropertyIdType&) const;
@@ -42,22 +48,22 @@ namespace K9ngineCore {
       */
       bool setVertexAttribute(K9uint vbo, const VertexBufferObjectData& data) const;
 
-      void addModelMatrixProperty(std::shared_ptr<Mat4MaterialProperty>);
+      void addModelMatrixProperty(const Mat4MaterialProperty&);
       K9Math::Mat4 getModelMatrix() const;
       bool setModelMatrix(const K9Math::Mat4&) const;
       bool checkAndSetModelMatrix(const K9Math::Mat4&) const;
 
-      void addViewMatrixProperty(std::shared_ptr<Mat4MaterialProperty>);
+      void addViewMatrixProperty(const Mat4MaterialProperty&);
       K9Math::Mat4 getViewMatrix() const;
       bool setViewMatrix(const K9Math::Mat4&) const;
       bool checkAndSetViewMatrix(const K9Math::Mat4&) const;
 
-      void addModelViewMatrixProperty(std::shared_ptr<Mat4MaterialProperty>);
+      void addModelViewMatrixProperty(const Mat4MaterialProperty&);
       K9Math::Mat4 getModelViewMatrix() const;
       bool setModelViewMatrix(const K9Math::Mat4&) const;
       bool checkAndSetModelViewMatrix(const K9Math::Mat4&) const;
 
-      void addProjectionMatrixProperty(std::shared_ptr<Mat4MaterialProperty>);
+      void addProjectionMatrixProperty(const Mat4MaterialProperty&);
       K9Math::Mat4 getProjectionMatrix() const;
       bool setProjectionMatrix(const K9Math::Mat4&) const;
       bool checkAndSetProjectionMatrix(const K9Math::Mat4&) const;
@@ -67,10 +73,10 @@ namespace K9ngineCore {
       PropertiesContainer mProperties{};
       AttributesContainer mAttributes{};
 
-      std::shared_ptr<Mat4MaterialProperty> mModelMatrix{nullptr};
-      std::shared_ptr<Mat4MaterialProperty> mViewMatrix{ nullptr };
-      std::shared_ptr<Mat4MaterialProperty> mModelViewMatrix{ nullptr };
-      std::shared_ptr<Mat4MaterialProperty> mProjectionMatrix{ nullptr };
+      std::unique_ptr<Mat4MaterialProperty> mModelMatrix{ nullptr };
+      std::unique_ptr<Mat4MaterialProperty> mViewMatrix{ nullptr };
+      std::unique_ptr<Mat4MaterialProperty> mModelViewMatrix{ nullptr };
+      std::unique_ptr<Mat4MaterialProperty> mProjectionMatrix{ nullptr };
 
       std::shared_ptr<ShaderProgram> mProgram{nullptr};
     };

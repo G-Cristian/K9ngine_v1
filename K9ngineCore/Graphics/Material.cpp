@@ -1,4 +1,6 @@
 #include <format>
+#include <memory>
+#include <optional>
 #include <string>
 #include <string_view>
 
@@ -16,11 +18,50 @@
 namespace K9ngineCore {
   namespace K9Graphics {
     Material::Material(std::shared_ptr<ShaderProgram> program)
-      :mProgram{program}
+      :mProgram{ program != nullptr ? std::make_shared<ShaderProgram>(*program) : nullptr }
     {
       K9ASSERT(program != nullptr, "Shader program is null.");
       K9ASSERT(program != nullptr && program->isCorrect(), "Shader program incorrect.");
     }
+
+    Material::Material(const Material& other)
+      : mAttributes{other.mAttributes}
+      , mProgram{ other.mProgram != nullptr ? std::make_shared<ShaderProgram>(*other.mProgram) : nullptr }
+    {
+      for (const auto& prop : other.mProperties) {
+        addOrSetProperty(prop.second);
+      }
+
+      mModelMatrix = other.mModelMatrix != nullptr ? std::make_unique<Mat4MaterialProperty>(*other.mModelMatrix) : nullptr;
+      mViewMatrix = other.mViewMatrix != nullptr ? std::make_unique<Mat4MaterialProperty>(*other.mViewMatrix) : nullptr;
+      mModelViewMatrix = other.mModelViewMatrix != nullptr ? std::make_unique<Mat4MaterialProperty>(*other.mModelViewMatrix) : nullptr;
+      mProjectionMatrix = other.mProjectionMatrix != nullptr ? std::make_unique<Mat4MaterialProperty>(*other.mProjectionMatrix) : nullptr;
+    }
+
+    //Material::Material(Material&& other) noexcept;
+
+    Material& Material::operator=(const Material& other)
+    {
+      if (this != &other) {
+        this->mAttributes = other.mAttributes;
+        
+        this->mProperties.clear();
+        for (const auto& prop : other.mProperties) {
+          this->addOrSetProperty(prop.second);
+        }
+
+        mModelMatrix = other.mModelMatrix != nullptr ? std::make_unique<Mat4MaterialProperty>(*other.mModelMatrix) : nullptr;
+        mViewMatrix = other.mViewMatrix != nullptr ? std::make_unique<Mat4MaterialProperty>(*other.mViewMatrix) : nullptr;
+        mModelViewMatrix = other.mModelViewMatrix != nullptr ? std::make_unique<Mat4MaterialProperty>(*other.mModelViewMatrix) : nullptr;
+        mProjectionMatrix = other.mProjectionMatrix != nullptr ? std::make_unique<Mat4MaterialProperty>(*other.mProjectionMatrix) : nullptr;
+
+        mProgram = other.mProgram != nullptr ? std::make_shared<ShaderProgram>(*other.mProgram) : nullptr;
+      }
+
+      return *this;
+    }
+
+    //Material& Material::operator=(Material&& other) noexcept;
 
     void Material::addOrSetProperty(std::shared_ptr<MaterialProperty> property) {
       mProperties[property->getId()] = property;
@@ -99,9 +140,9 @@ namespace K9ngineCore {
       return true;
     }
 
-    void Material::addModelMatrixProperty(std::shared_ptr<Mat4MaterialProperty> matProp)
+    void Material::addModelMatrixProperty(const Mat4MaterialProperty& matProp)
     {
-      mModelMatrix = matProp;
+      mModelMatrix = std::make_unique<Mat4MaterialProperty>(matProp);
     }
 
     K9Math::Mat4 Material::getModelMatrix() const
@@ -111,7 +152,7 @@ namespace K9ngineCore {
 
     bool Material::setModelMatrix(const K9Math::Mat4& mat) const
     {
-      K9ASSERT(mModelMatrix != nullptr, "Model matrix property is not set.");
+      K9ASSERT(!!mModelMatrix, "Model matrix property is not set.");
       if (mModelMatrix) {
         mModelMatrix->setMat4(mat);
         return true;
@@ -131,9 +172,9 @@ namespace K9ngineCore {
       return false;
     }
 
-    void Material::addViewMatrixProperty(std::shared_ptr<Mat4MaterialProperty> matProp)
+    void Material::addViewMatrixProperty(const Mat4MaterialProperty& matProp)
     {
-      mViewMatrix = matProp;
+      mViewMatrix = std::make_unique<Mat4MaterialProperty>(matProp);
     }
 
     K9Math::Mat4 Material::getViewMatrix() const
@@ -143,7 +184,7 @@ namespace K9ngineCore {
 
     bool Material::setViewMatrix(const K9Math::Mat4& mat) const
     {
-      K9ASSERT(mViewMatrix != nullptr, "View matrix property is not set.");
+      K9ASSERT(!!mViewMatrix, "View matrix property is not set.");
       if (mViewMatrix) {
         mViewMatrix->setMat4(mat);
         return true;
@@ -163,9 +204,9 @@ namespace K9ngineCore {
       return false;
     }
 
-    void Material::addModelViewMatrixProperty(std::shared_ptr<Mat4MaterialProperty> matProp)
+    void Material::addModelViewMatrixProperty(const Mat4MaterialProperty& matProp)
     {
-      mModelViewMatrix = matProp;
+      mModelViewMatrix = std::make_unique<Mat4MaterialProperty>(matProp);
     }
 
     K9Math::Mat4 Material::getModelViewMatrix() const
@@ -175,7 +216,7 @@ namespace K9ngineCore {
 
     bool Material::setModelViewMatrix(const K9Math::Mat4& mat) const
     {
-      K9ASSERT(mModelViewMatrix != nullptr, "Model view matrix property is not set.");
+      K9ASSERT(!!mModelViewMatrix, "Model view matrix property is not set.");
       if (mModelViewMatrix) {
         mModelViewMatrix->setMat4(mat);
         return true;
@@ -195,9 +236,9 @@ namespace K9ngineCore {
       return false;
     }
 
-    void Material::addProjectionMatrixProperty(std::shared_ptr<Mat4MaterialProperty> matProp)
+    void Material::addProjectionMatrixProperty(const Mat4MaterialProperty& matProp)
     {
-      mProjectionMatrix = matProp;
+      mProjectionMatrix = std::make_unique<Mat4MaterialProperty>(matProp);
     }
 
     K9Math::Mat4 Material::getProjectionMatrix() const
@@ -207,7 +248,7 @@ namespace K9ngineCore {
 
     bool Material::setProjectionMatrix(const K9Math::Mat4& mat) const
     {
-      K9ASSERT(mProjectionMatrix != nullptr, "Projection matrix property is not set.");
+      K9ASSERT(!!mProjectionMatrix, "Projection matrix property is not set.");
       if (mProjectionMatrix) {
         mProjectionMatrix->setMat4(mat);
         return true;

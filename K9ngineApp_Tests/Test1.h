@@ -34,7 +34,7 @@ namespace K9ngineAppTest
     void processInput() override;
     void fixedUpdate() override;
     void fixedPhysics() override;
-    void update(float elapsed) override;
-    void render(float elapsed) override;
+    void update(double elapsed) override;
+    void render(double elapsed) override;
   };
 }

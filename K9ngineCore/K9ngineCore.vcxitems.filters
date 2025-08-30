@@ -75,6 +75,9 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)FileSystem\Path.cpp">
       <Filter>FileSystem</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Graphics\FloatMaterialProperty.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)Handle.h" />
@@ -178,6 +181,9 @@
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)FileSystem\ResourceLoader.h">
       <Filter>FileSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\FloatMaterialProperty.h">
+      <Filter>Graphics</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

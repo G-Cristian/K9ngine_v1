@@ -26,6 +26,9 @@ namespace K9ngineCore {
 		template<typename Table>
 		class basic_handle {
 			friend Table;
+			// Make the *non-const* and *const* twin specializations friends:
+			friend class basic_handle<std::remove_const_t<Table>>;
+			friend class basic_handle<std::add_const_t<std::remove_const_t<Table>>>;
 		public:
 			using table_type = Table;
 			using table_ptr = table_type*;
@@ -150,6 +153,9 @@ namespace K9ngineCore {
 			void deleteHandle(size_t index);
 			Handle<T,N> getHandle(size_t index);
 			ConstHandle<T,N> getHandle(size_t index) const;
+
+			Handle<T, N> findHandle(uint64_t uid);
+			ConstHandle<T, N> findHandle(uint64_t uid) const;
 
 			void clear();
 		private:
@@ -312,6 +318,30 @@ namespace K9ngineCore {
 		ConstHandle<T, N> HandleTable<T, N>::getHandle(size_t index) const {
 			K9ASSERT(index < _elements.size(), "HandleTable<T>::getHandle, index out of range");
 			return ConstHandle<T, N>{this, _elements[index].uid, index};
+		}
+
+		template<typename T, uint64_t N>
+		Handle<T, N> HandleTable<T, N>::findHandle(uint64_t uid)
+		{
+			for (size_t i = 0; i < _elements.size(); i++) {
+				if (_elements[i].occupied && _elements[i].uid == uid) {
+					return Handle<T, N>{this, uid, i};
+				}
+			}
+
+			return NullHandle;
+		}
+
+		template<typename T, uint64_t N>
+		ConstHandle<T, N> HandleTable<T, N>::findHandle(uint64_t uid) const
+		{
+			for (size_t i = 0; i < _elements.size(); i++) {
+				if (_elements[i].occupied && _elements[i].uid == uid) {
+					return ConstHandle<T, N>{this, uid, i};
+				}
+			}
+
+			return ConstNullHandle;
 		}
 
 		template<typename T, uint64_t N>

@@ -1,4 +1,4 @@
-#if defined(_DEBUG) && defined(K9_DEBUG_MEMORY)
+#if (defined(_DEBUG) && defined(K9_DEBUG_MEMORY))
 
 #include "vld.h"
 

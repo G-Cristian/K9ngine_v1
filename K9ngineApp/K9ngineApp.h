@@ -46,7 +46,7 @@ namespace K9ngine {
     K9ngineApp& operator=(const K9ngineApp&) = delete;
     K9ngineApp& operator=(K9ngineApp&&) noexcept = delete;
   protected:
-    float getCurrentTime();
+    double getCurrentTime();
 
     virtual bool init();
     void start();
@@ -54,15 +54,15 @@ namespace K9ngine {
     virtual void processInput();
     virtual void fixedUpdate();
     virtual void fixedPhysics();
-    virtual void update(float elapsed);
-    virtual void render(float elapsed);
+    virtual void update(double elapsed);
+    virtual void render(double elapsed);
 
     virtual void cleanup();
 
     K9ngineCore::World mWorld;
     K9ngineCore::K9Graphics::Renderer mRenderer;
     K9ngineCore::K9Windows::K9WindowsManager mWindowsManager;
-    float mMsPerFixedUpdate;
+    double mMsPerFixedUpdate;
     const char* mSettingsFullPath;
     bool mMustClose;
   };

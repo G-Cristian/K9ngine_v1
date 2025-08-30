@@ -11,21 +11,25 @@
 #include "RenderNode.h"
 #include "VertexBufferObjectData.h"
 
+#include <format>
 #include <memory>
 #include <vector>
 
 namespace K9ngineCore {
   namespace K9Graphics {
-    RenderingComponent::RenderingComponent(const Hash& id, GameObjectPtr gameObject, const Material& material, const std::vector<BufferDataTypePtr>& buffersData, K9sizei verticesCount, K9int firtVertexIndex  /*= 0*/, DrawMode drawMode /*= DrawMode::K9_TRIANGLES*/)
+    RenderingComponent::RenderingComponent(const Hash& id, GameObjectPtr gameObject, const Material& material, const std::vector<BufferDataTypePtr>& buffersData, K9sizei verticesCount, K9sizei instancesCount /*= 1*/, K9int firtVertexIndex  /*= 0*/, DrawMode drawMode /*= DrawMode::K9_TRIANGLES*/)
       : mMaterial{material}
       //, mVertexBufferObjectsData()
       , mVertexBufferObjects{ std::make_unique<K9uint[]>(buffersData.size()) }
       , mGameObject{gameObject}
       , mDrawMode{drawMode}
       , mVerticesCount{verticesCount}
+      , mInstancesCount{instancesCount < 1 ? 1 : instancesCount}
       , mFirtVertexIndex{firtVertexIndex}
       , mId{id}
     {
+      K9ASSERT(instancesCount >= 1, std::format("instances count must be >= 1. Value was {}", instancesCount).c_str());
+
       GraphicsContext::generateVertexArrays(1, &mVAO);
       GraphicsContext::bindVertexArray(mVAO);
       GraphicsContext::generateBuffers(buffersData.size(), mVertexBufferObjects.get());
@@ -64,27 +68,45 @@ namespace K9ngineCore {
       mRenderNode = renderNode;
     }
 
-    const GameObjectPtr RenderingComponent::getGameObject() const { return mGameObject; }
+    ConstGameObjectPtr RenderingComponent::getGameObject() const { return mGameObject; }
 
-    void RenderingComponent::render(float elapsedTime, std::shared_ptr<const Camera> camera) const
+    void RenderingComponent::setVisible(bool visible)
     {
-      if (mMaterial.use()) {
-        const auto& modelMat = mGameObject->getTransform().getTransformMat4();
-        const auto& viewMat = camera->getViewMatrix();
-        mMaterial.checkAndSetModelMatrix(modelMat);
-        mMaterial.checkAndSetViewMatrix(viewMat);
-        mMaterial.checkAndSetModelViewMatrix(viewMat * modelMat);
-        mMaterial.checkAndSetProjectionMatrix(camera->getProjectionMatrix());
+      mVisible = visible;
+    }
 
-        mMaterial.useProperties();
+    bool RenderingComponent::isVisible() const
+    {
+      return mVisible;
+    }
 
-        for (int i{ 0 }; i != mVertexBufferObjectsData.size(); i++) {
-          mMaterial.setVertexAttribute(mVertexBufferObjects[i], mVertexBufferObjectsData[i]);
+    void RenderingComponent::render(double elapsedTime, std::shared_ptr<const Camera> camera) const
+    {
+      if (mVisible) {
+        if (mMaterial.use()) {
+          const auto& modelMat = mGameObject->getTransform().getTransformMat4();
+          const auto& viewMat = camera->getViewMatrix();
+          mMaterial.checkAndSetModelMatrix(modelMat);
+          mMaterial.checkAndSetViewMatrix(viewMat);
+          mMaterial.checkAndSetModelViewMatrix(viewMat * modelMat);
+          mMaterial.checkAndSetProjectionMatrix(camera->getProjectionMatrix());
+
+          mMaterial.useProperties();
+
+          for (int i{ 0 }; i != mVertexBufferObjectsData.size(); i++) {
+            mMaterial.setVertexAttribute(mVertexBufferObjects[i], mVertexBufferObjectsData[i]);
+          }
+
+          GraphicsContext::enableDepthTest();
+          GraphicsContext::setDepthFuncLessEqual();
+
+          if (mInstancesCount > 1) {
+            GraphicsContext::drawArraysInstanced(mDrawMode, mFirtVertexIndex, mVerticesCount, mInstancesCount);
+          }
+          else {
+            GraphicsContext::drawArrays(mDrawMode, mFirtVertexIndex, mVerticesCount);
+          }
         }
-
-        GraphicsContext::enableDepthTest();
-        GraphicsContext::setDepthFuncLessEqual();
-        GraphicsContext::drawArrays(mDrawMode, mFirtVertexIndex, mVerticesCount);
       }
     }
   }

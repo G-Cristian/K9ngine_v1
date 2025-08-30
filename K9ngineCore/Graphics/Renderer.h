@@ -3,6 +3,7 @@
 #include <memory>
 #include <vector>
 
+#include "GraphicsContext.h"
 #include "GraphicsHandleTypes.h"
 #include "SceneGraph.h"
 
@@ -27,8 +28,14 @@ namespace K9ngineCore {
       std::shared_ptr<Camera> getCurrentCamera();
       std::shared_ptr<const Camera> getCurrentCamera() const;
 
-      RenderingComponentPtr emplaceRenderingComponent(GameObjectPtr gameObject, const Material& material, const std::vector<BufferDataTypePtr>& buffersData, size_t vertexCount);
-      RenderingComponentPtr emplaceRenderingComponent(Common::Hash aHash, GameObjectPtr gameObject, const Material& material, const std::vector<BufferDataTypePtr>& buffersData, size_t vertexCount);
+      RenderingComponentPtr emplaceRenderingComponent(GameObjectPtr gameObject, const Material& material, const std::vector<BufferDataTypePtr>& buffersData, K9sizei vertexCount, K9sizei instancesCount = 1);
+      RenderingComponentPtr emplaceRenderingComponent(Common::Hash aHash, GameObjectPtr gameObject, const Material& material, const std::vector<BufferDataTypePtr>& buffersData, K9sizei vertexCount, K9sizei instancesCount = 1);
+
+      ConstRenderingComponentPtr getRenderingComponent(const Common::Hash& renderingComponentHash) const;
+      RenderingComponentPtr getRenderingComponent(const Common::Hash& renderingComponentHash);
+
+      ConstRenderingComponentPtr getRenderingComponent(const Common::Hash& gameObjectId, const Common::Hash& renderingComponentHash) const;
+      RenderingComponentPtr getRenderingComponent(const Common::Hash& gameObjectId, const Common::Hash& renderingComponentHash);
 
       void render(float elapsedTime);
     private:

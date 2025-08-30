@@ -5,12 +5,12 @@
 #include <exception>
 #include <string>
 
-#if defined(_DEBUG) && defined(K9_DEBUG_MEMORY)
-
-//#define DEBUG_NEW new(_NORMAL_BLOCK, __FILE__, __LINE__)
-//#define new DEBUG_NEW
-
-#endif // _DEBUG && K9_DEBUG_MEMORY
+//#if (defined(_DEBUG) && defined(K9_DEBUG_MEMORY))
+//
+////#define DEBUG_NEW new(_NORMAL_BLOCK, __FILE__, __LINE__)
+////#define new DEBUG_NEW
+//
+//#endif // _DEBUG && K9_DEBUG_MEMORY
 
 #include "Logger.h"
 #include "MessageBox.h"
