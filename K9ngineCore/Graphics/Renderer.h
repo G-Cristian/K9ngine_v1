@@ -28,8 +28,8 @@ namespace K9ngineCore {
       std::shared_ptr<Camera> getCurrentCamera();
       std::shared_ptr<const Camera> getCurrentCamera() const;
 
-      RenderingComponentPtr emplaceRenderingComponent(GameObjectPtr gameObject, const Material& material, const std::vector<BufferDataTypePtr>& buffersData, K9sizei vertexCount, K9sizei instancesCount = 1);
-      RenderingComponentPtr emplaceRenderingComponent(Common::Hash aHash, GameObjectPtr gameObject, const Material& material, const std::vector<BufferDataTypePtr>& buffersData, K9sizei vertexCount, K9sizei instancesCount = 1);
+      RenderingComponentPtr emplaceRenderingComponent(GameObjectPtr gameObject, const Material& material, const std::vector<RenderingComponent::BufferDataTypePtr>& buffersData, K9sizei vertexCount, K9sizei instancesCount = 1);
+      RenderingComponentPtr emplaceRenderingComponent(Common::Hash aHash, GameObjectPtr gameObject, const Material& material, const std::vector<RenderingComponent::BufferDataTypePtr>& buffersData, K9sizei vertexCount, K9sizei instancesCount = 1);
 
       ConstRenderingComponentPtr getRenderingComponent(const Common::Hash& renderingComponentHash) const;
       RenderingComponentPtr getRenderingComponent(const Common::Hash& renderingComponentHash);

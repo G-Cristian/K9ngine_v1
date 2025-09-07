@@ -62,14 +62,14 @@ namespace K9ngineCore {
       return mScene.getCurrentCamera();
     }
 
-    RenderingComponentPtr Renderer::emplaceRenderingComponent(GameObjectPtr gameObject, const Material& material, const std::vector<BufferDataTypePtr>& buffersData, K9sizei vertexCount, K9sizei instancesCount/* = 1*/)
+    RenderingComponentPtr Renderer::emplaceRenderingComponent(GameObjectPtr gameObject, const Material& material, const std::vector<RenderingComponent::BufferDataTypePtr>& buffersData, K9sizei vertexCount, K9sizei instancesCount/* = 1*/)
     {
       using namespace Common;
 
       return emplaceRenderingComponent(Common::hashString(std::format("{}", mCount++)), gameObject, material, buffersData, vertexCount, instancesCount);
     }
 
-    RenderingComponentPtr Renderer::emplaceRenderingComponent(Common::Hash aHash, GameObjectPtr gameObject, const Material& material, const std::vector<BufferDataTypePtr>& buffersData, K9sizei vertexCount, K9sizei instancesCount/* = 1*/)
+    RenderingComponentPtr Renderer::emplaceRenderingComponent(Common::Hash aHash, GameObjectPtr gameObject, const Material& material, const std::vector<RenderingComponent::BufferDataTypePtr>& buffersData, K9sizei vertexCount, K9sizei instancesCount/* = 1*/)
     {
 
       uint64_t uid = Common::hashToUInt64(aHash);

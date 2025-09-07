@@ -51,6 +51,49 @@ namespace K9ngineCore {
       }
     }
 
+    RenderingComponent::RenderingComponent(RenderingComponent&& other) noexcept
+      : mMaterial{ std::move(other.mMaterial) }
+      , mVertexBufferObjectsData{ std::move(other.mVertexBufferObjectsData) }
+      , mVertexBufferObjects{ std::move(other.mVertexBufferObjects) }
+      , mRenderNode{ std::move(other.mRenderNode) }
+      , mGameObject{ std::move(other.mGameObject) }
+      , mId{ std::move(other.mId) }
+      , mDrawMode{ other.mDrawMode }
+      , mVerticesCount{ other.mVerticesCount }
+      , mInstancesCount{ other.mInstancesCount }
+      , mFirtVertexIndex{ other.mFirtVertexIndex }
+      , mVAO{ other.mVAO }
+      , mVisible{ other.mVisible }
+    {
+      other.mVertexBufferObjectsData.clear();
+      other.mVertexBufferObjects = nullptr;
+      other.mGameObject = GameObjectPtr::null();
+    }
+
+    RenderingComponent& RenderingComponent::operator=(RenderingComponent&& other) noexcept
+    {
+      if (this != &other) {
+        mMaterial = std::move(other.mMaterial);
+        mVertexBufferObjectsData = std::move(other.mVertexBufferObjectsData);
+        mVertexBufferObjects = std::move(other.mVertexBufferObjects);
+        mRenderNode = std::move(other.mRenderNode);
+        mGameObject = std::move(other.mGameObject);
+        mId = std::move(other.mId);
+        mDrawMode = other.mDrawMode;
+        mVerticesCount = other.mVerticesCount;
+        mInstancesCount = other.mInstancesCount;
+        mFirtVertexIndex = other.mFirtVertexIndex;
+        mVAO = other.mVAO;
+        mVisible = other.mVisible;
+
+        other.mVertexBufferObjectsData.clear();
+        other.mVertexBufferObjects = nullptr;
+        other.mGameObject = GameObjectPtr::null();
+      }
+
+      return *this;
+    }
+
     const Hash& RenderingComponent::getId() const { return mId; }
 
     const std::shared_ptr<const RenderNode> RenderingComponent::getRenderNode() const

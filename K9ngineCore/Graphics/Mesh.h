@@ -8,6 +8,7 @@ namespace K9ngineCore {
     {
     public:
       explicit Mesh(const std::vector<float>& flattenedCoordinates, unsigned int vertexSize);
+      explicit Mesh(std::initializer_list<float> flattenedCoordinates, unsigned int vertexSize);
 
       const std::vector<float>& getFlattenedCoordinates() const;
       unsigned int getVertexSize() const;

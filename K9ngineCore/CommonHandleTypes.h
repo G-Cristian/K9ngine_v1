@@ -4,6 +4,7 @@
 #define GAMEOBJECTS_COUNT 0
 #endif // !GAMEOBJECTS_COUNT
 
+#include "GameObject.h"
 #include "Handle.h"
 
 namespace K9ngineCore {

@@ -27,6 +27,24 @@ namespace K9ngineCore {
       , 3 };
     }
 
+    Mesh MeshFactory::createPyramid(float width /*= 1.0f*/, float depth /*= 1.0f*/, float height /*= 1.0f*/)
+    {
+      float halfWidth = width * 0.5f;
+      float halfDepth = depth * 0.5f;
+      float halfHeight = height * 0.5f;
+
+      return Mesh(
+        {
+          -halfWidth, -halfHeight, halfDepth, halfWidth, -halfHeight, halfDepth, 0.0f, halfHeight, 0.0f,
+           halfWidth, -halfHeight, halfDepth, halfWidth, -halfHeight, -halfDepth, 0.0f, halfHeight, 0.0f,
+           halfWidth, -halfHeight, -halfDepth, -halfWidth, -halfHeight, -halfDepth, 0.0f, halfHeight, 0.0f,
+           -halfWidth, -halfHeight, -halfDepth, -halfWidth, -halfHeight, halfDepth, 0.0f, halfHeight, 0.0f,
+           -halfWidth, -halfHeight, -halfDepth, halfWidth, -halfHeight, halfDepth, -halfWidth, -halfHeight, halfDepth,
+            halfWidth, -halfHeight, halfDepth, -halfWidth, -halfHeight, -halfDepth, halfWidth, -halfHeight, -halfDepth
+        },
+        3);
+    }
+
     //static Mesh* createSphere(float radius = 1.0f, int segments = 16);
     //static Mesh* createPlane(float width = 1.0f, float height = 1.0f, int widthSegments = 1, int heightSegments = 1);
     //static Mesh* createCylinder(float radiusTop = 1.0f, float radiusBottom = 1.0f, float height = 1.0f, int radialSegments = 8, int heightSegments = 1);

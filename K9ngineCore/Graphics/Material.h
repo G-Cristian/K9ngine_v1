@@ -25,10 +25,12 @@ namespace K9ngineCore {
       explicit Material(std::shared_ptr<ShaderProgram> program);
 
       Material(const Material&);
-      //Material(Material&&) noexcept;
+      Material(Material&&) noexcept;
+
+      ~Material() = default;
 
       Material& operator=(const Material&);
-      //Material& operator=(Material&&) noexcept;
+      Material& operator=(Material&&) noexcept;
 
       void addOrSetProperty(std::shared_ptr<MaterialProperty>);
       bool hasProperty(const MaterialProperty::PropertyIdType&) const;

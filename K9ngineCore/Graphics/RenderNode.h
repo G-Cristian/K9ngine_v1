@@ -17,11 +17,16 @@ namespace K9ngineCore {
     {
     public:
       RenderNode(SceneGraph&, RenderingComponentPtr);
+      RenderNode(RenderNode&&) noexcept;
       ~RenderNode() override final = default;
 
       void accept(ISceneGraphVisitor&) override final;
       const RenderingComponentPtr getRenderingComponent() const;
     private:
+      RenderNode(const RenderNode&) = delete;
+      RenderNode& operator=(const RenderNode&) = delete;
+      RenderNode& operator=(RenderNode&&) noexcept = delete;
+
       RenderingComponentPtr mRenderingComponent;
     };
   }

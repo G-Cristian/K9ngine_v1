@@ -22,9 +22,28 @@ namespace K9ngineCore {
     {
     }
 
+    TransformNode::TransformChangeObserver::TransformChangeObserver(TransformChangeObserver&& other) noexcept
+      : Common::IObserver<TransformObserverSubject, TransformObserverEventArg>{}
+      , mNode{ other.mNode }
+    {
+      other.mNode = nullptr;
+    }
+
     TransformNode::TransformChangeObserver::~TransformChangeObserver()
     {
       mNode = nullptr;
+    }
+
+    TransformNode::TransformChangeObserver& TransformNode::TransformChangeObserver::operator=(TransformChangeObserver&& other) noexcept
+    {
+      if (this != &other) {
+        Common::IObserver<TransformObserverSubject, TransformObserverEventArg>::operator=(std::move(other));
+        mNode = other.mNode;
+
+        other.mNode = nullptr;
+      }
+
+      return *this;
     }
 
     void TransformNode::TransformChangeObserver::update(const TransformObserverSubject& subject, const TransformObserverEventArg& args) const

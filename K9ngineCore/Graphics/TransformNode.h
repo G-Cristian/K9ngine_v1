@@ -29,9 +29,18 @@ namespace K9ngineCore {
       class TransformChangeObserver :public Common::IObserver<TransformObserverSubject, TransformObserverEventArg>{
       public:
         explicit TransformChangeObserver(TransformNode*);
+        
+        TransformChangeObserver(TransformChangeObserver&&) noexcept;
+
         ~TransformChangeObserver() override final;
+
+        TransformChangeObserver& operator=(TransformChangeObserver&&) noexcept;
+
         void update(const TransformObserverSubject&, const TransformObserverEventArg&) const override final;
       private:
+        TransformChangeObserver(const TransformChangeObserver&) = delete;
+        TransformChangeObserver& operator=(const TransformChangeObserver&) = delete;
+
         TransformNode* mNode;
       };
 
@@ -45,7 +54,10 @@ namespace K9ngineCore {
       const K9Math::Transform getTransform() const;
 
     private:
-    private:
+      TransformNode(const TransformNode&) = delete;
+      TransformNode(TransformNode&& other) noexcept = delete;
+      TransformNode& operator=(const TransformNode&) = delete;
+      TransformNode& operator=(TransformNode&&) noexcept = delete;
       std::shared_ptr<TransformChangeObserver> mTransformChangeObserver;
       GameObjectPtr mGameObject;
 

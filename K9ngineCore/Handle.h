@@ -39,6 +39,8 @@ namespace K9ngineCore {
 
 			// Default-constructed = null/invalid
 			constexpr basic_handle() noexcept = default;
+			basic_handle(const basic_handle&) noexcept = default;
+			basic_handle(basic_handle&&) noexcept = default;
 
 			// Factory for explicit null
 			static constexpr basic_handle null() noexcept { return {}; }
@@ -49,6 +51,9 @@ namespace K9ngineCore {
 				mUid = static_cast<uint64_t>(-1);
         mIndex = static_cast<size_t>(-1);
 			}
+
+			basic_handle& operator=(const basic_handle&) noexcept = default;
+			basic_handle& operator=(basic_handle&&) noexcept = default;
 
 			// Implicit convert non-const handle -> const handle
 			template<class T2 = Table, std::enable_if_t<!std::is_const_v<T2>, int> = 0>
@@ -90,10 +95,51 @@ namespace K9ngineCore {
 			using element_type = T;
 			using element_ptr = element_type*;
 
+			static_assert(std::is_move_constructible_v<element_type>,
+				"HandleElement<T>: T must be move-constructible");
+			
+			// Optional: also require move-assignable
+			// static_assert(std::is_move_assignable_v<element_type>,
+			//               "HandleElement<T>: T must be move-assignable");
+
+			static_assert(std::is_nothrow_move_constructible_v<element_type>,
+				"HandleElement<T>: T move ctor must be noexcept");
+
+      HandleElement() = default;
+
+			HandleElement(HandleElement<T>&& other) noexcept(std::is_nothrow_move_constructible_v<element_type>)
+				:	uid{ other.uid }
+        , occupied{ other.occupied }
+			{
+				if (other.occupied) {
+					new (get()) element_type(std::move(*other.get()));
+					uid = other.uid;
+					occupied = true;
+					other.destroy();
+					other.uid = static_cast<uint64_t>(-1);
+				}
+      }
+
 			~HandleElement()
 			{
 				destroy();
 			}
+
+			HandleElement<T>& operator=(HandleElement<T>&& other) noexcept(std::is_nothrow_move_constructible_v<element_type>)
+			{
+				if (this != &other) {
+					destroy();
+					uid = other.uid;
+					occupied = other.occupied;
+					if (other.occupied) {
+						new (get()) element_type(std::move(*other.get()));
+						other.destroy();
+						other.uid = static_cast<uint64_t>(-1);
+					}
+				}
+
+				return *this;
+      }
 
 			template<typename... Args>
 			void emplace(uint64_t newUId, Args&&... args)
@@ -114,6 +160,11 @@ namespace K9ngineCore {
 			element_ptr				get()				{ return std::launder(reinterpret_cast<element_ptr>(&value)); }
 			const element_type*	get() const	{ return std::launder(reinterpret_cast<const element_type*>(&value)); }
 
+		private:
+      HandleElement(const HandleElement<T>&) = delete;
+      HandleElement<T>& operator=(const HandleElement<T>&) = delete;
+		public:
+
 			// NOTE: When occupied == false, uid stores the index of the next free slot in the HandleTable.
 			uint64_t uid{ static_cast<uint64_t>(-1) };
 			alignas(element_type) std::byte value[sizeof(element_type)];
@@ -130,6 +181,12 @@ namespace K9ngineCore {
 			using handle_type = Handle<element_type, N>;
 			using const_handle_type = ConstHandle<element_type, N>;
 			using container_type = std::conditional_t<N == 0, std::vector<HandleElement<element_type>>, std::array<HandleElement<element_type>, N>>;
+
+			static_assert(std::is_move_constructible_v<HandleElement<T>>,
+				"HandleTable<T,N>: HandleElement<T> must be move-constructible ");
+			
+			static_assert(std::is_nothrow_move_constructible_v<HandleElement<T>>,
+				"HandleTable<T,N>: HandleElement<T> move ctor must be noexcept");
 
 			static const handle_type NullHandle;
 			static const const_handle_type ConstNullHandle;

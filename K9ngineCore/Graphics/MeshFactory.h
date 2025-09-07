@@ -7,6 +7,7 @@ namespace K9ngineCore {
     class MeshFactory {
     public:
       static Mesh createCube(float size = 1.0f);
+      static Mesh createPyramid(float width = 1.0f, float depth = 1.0f, float height = 1.0f);
       //static Mesh createSphere(float radius = 1.0f, int segments = 16);
       //static Mesh createPlane(float width = 1.0f, float height = 1.0f, int widthSegments = 1, int heightSegments = 1);
       //static Mesh createCylinder(float radiusTop = 1.0f, float radiusBottom = 1.0f, float height = 1.0f, int radialSegments = 8, int heightSegments = 1);

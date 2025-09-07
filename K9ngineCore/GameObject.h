@@ -21,6 +21,9 @@ namespace K9ngineCore{
 
     GameObject(const Hash& id);
     GameObject(const Hash& id, const Transform& transform);
+    GameObject(GameObject&&) noexcept;
+
+    ~GameObject() = default;
 
     void addObserver(ObserverTypePtr);
     void removeObserver(ObserverTypePtr);
@@ -42,6 +45,11 @@ namespace K9ngineCore{
     const Hash& getId() const;
 
   private:
+
+    GameObject(const GameObject&) = delete;
+    GameObject& operator=(const GameObject&) = delete;
+    GameObject& operator=(GameObject&&) noexcept = delete;
+
     TransformChangeEventType mTransformChangeEvent;
     Transform mTransform;
     Hash mId;

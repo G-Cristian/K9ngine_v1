@@ -1,10 +1,17 @@
 #include "Mesh.h"
 
+#include <initializer_list>
 #include <vector>
 
 namespace K9ngineCore {
   namespace K9Graphics {
     Mesh::Mesh(const std::vector<float>& flattenedCoordinates, unsigned int vertexSize)
+      : mFlattenedCoordinates{ flattenedCoordinates }
+      , mVertexSize{ vertexSize }
+    {
+    }
+
+    Mesh::Mesh(std::initializer_list<float> flattenedCoordinates, unsigned int vertexSize)
       : mFlattenedCoordinates{ flattenedCoordinates }
       , mVertexSize{ vertexSize }
     {

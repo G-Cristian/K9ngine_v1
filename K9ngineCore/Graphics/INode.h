@@ -16,6 +16,8 @@ namespace K9ngineCore {
       friend SceneGraph;
     public:
       explicit INode(SceneGraph& sceneGraph);
+      INode(INode&&) noexcept;
+
       virtual ~INode();
 
       virtual void accept(ISceneGraphVisitor&) = 0;
@@ -30,6 +32,10 @@ namespace K9ngineCore {
 
       const std::vector<NodePtr>& getChildren() const;
     private:
+      INode(const INode&) = delete;
+      INode& operator=(const INode&) = delete;
+      INode& operator=(INode&&) noexcept = delete;
+
       void cleanDirty();
       void setDirty();
       void addChild(NodePtr child);

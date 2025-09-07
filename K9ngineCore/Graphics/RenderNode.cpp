@@ -17,6 +17,12 @@ namespace K9ngineCore {
     {
     }
 
+    RenderNode::RenderNode(RenderNode&& other) noexcept
+      : INode{ std::move(other) }
+      , mRenderingComponent{ std::move(other.mRenderingComponent) }
+    {
+      other.mRenderingComponent = RenderingComponentPtr::null();
+    }
 
     void RenderNode::accept(ISceneGraphVisitor& visitor)
     {
