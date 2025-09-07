@@ -18,6 +18,14 @@ namespace K9ngineCore {
     , mId{ id } {
   }
 
+  GameObject::GameObject(GameObject&& other) noexcept
+    : mTransformChangeEvent{ this }
+    , mTransform{ std::move(other.mTransform) }
+    , mId{ std::move(other.mId) }
+  {
+    other.mTransformChangeEvent.moveObserversTo(mTransformChangeEvent);
+  }
+
   void GameObject::addObserver(ObserverTypePtr observer) {
     mTransformChangeEvent += observer;
   }

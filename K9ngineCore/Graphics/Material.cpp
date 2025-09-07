@@ -38,7 +38,23 @@ namespace K9ngineCore {
       mProjectionMatrix = other.mProjectionMatrix != nullptr ? std::make_unique<Mat4MaterialProperty>(*other.mProjectionMatrix) : nullptr;
     }
 
-    //Material::Material(Material&& other) noexcept;
+    Material::Material(Material&& other) noexcept
+      : mAttributes{ std::move(other.mAttributes) }
+      , mProperties{ std::move(other.mProperties) }
+      , mModelMatrix{ std::move(other.mModelMatrix) }
+      , mViewMatrix{ std::move(other.mViewMatrix) }
+      , mModelViewMatrix{ std::move(other.mModelViewMatrix) }
+      , mProjectionMatrix{ std::move(other.mProjectionMatrix) }
+      , mProgram{ std::move(other.mProgram) }
+    {
+      other.mAttributes.clear();
+      other.mProperties.clear();
+      other.mModelMatrix = nullptr;
+      other.mViewMatrix = nullptr;
+      other.mModelViewMatrix = nullptr;
+      other.mProjectionMatrix = nullptr;
+      other.mProgram = nullptr;
+    }
 
     Material& Material::operator=(const Material& other)
     {
@@ -61,7 +77,28 @@ namespace K9ngineCore {
       return *this;
     }
 
-    //Material& Material::operator=(Material&& other) noexcept;
+    Material& Material::operator=(Material&& other) noexcept
+    {
+      if (this != &other) {
+        this->mAttributes = std::move(other.mAttributes);
+        this->mProperties = std::move(other.mProperties);
+        this->mModelMatrix = std::move(other.mModelMatrix);
+        this->mViewMatrix = std::move(other.mViewMatrix);
+        this->mModelViewMatrix = std::move(other.mModelViewMatrix);
+        this->mProjectionMatrix = std::move(other.mProjectionMatrix);
+        this->mProgram = std::move(other.mProgram);
+
+        other.mAttributes.clear();
+        other.mProperties.clear();
+        other.mModelMatrix = nullptr;
+        other.mViewMatrix = nullptr;
+        other.mModelViewMatrix = nullptr;
+        other.mProjectionMatrix = nullptr;
+        other.mProgram = nullptr;
+      }
+
+      return *this;
+    }
 
     void Material::addOrSetProperty(std::shared_ptr<MaterialProperty> property) {
       mProperties[property->getId()] = property;

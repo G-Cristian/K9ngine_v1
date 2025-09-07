@@ -7,7 +7,7 @@
 #include <algorithm>
 #include <memory>
 #include <set>
-
+#include <iostream>
 namespace K9ngineCore {
   namespace Common {
     template<typename T>
@@ -30,13 +30,20 @@ namespace K9ngineCore {
       };
 
       explicit TransformChangeEvent(Subject* subject);
+      TransformChangeEvent(TransformChangeEvent&&) noexcept;
+      TransformChangeEvent& operator=(TransformChangeEvent&&) noexcept;
       ~TransformChangeEvent();
 
       TransformChangeEvent<Subject>& operator+=(ObserverTypePtr);
       TransformChangeEvent<Subject>& operator-=(ObserverTypePtr);
 
+      void moveObserversTo(TransformChangeEvent<T>& other);
+
       void notify(const K9Math::Transform&, const K9Math::Transform&)const;
     private:
+      TransformChangeEvent(const TransformChangeEvent&);
+      TransformChangeEvent& operator=(const TransformChangeEvent&) = delete;
+
       std::set< ObserverTypePtr > mObservers{};
       Subject* mSubject;
     };
@@ -57,6 +64,27 @@ namespace K9ngineCore {
     TransformChangeEvent<T>::TransformChangeEvent<T>(Subject* subject)
       :mSubject{ subject } {
       K9ASSERT(subject, "Subject is null");
+    }
+
+    template<typename T>
+    TransformChangeEvent<T>::TransformChangeEvent(TransformChangeEvent&& other) noexcept
+      : mObservers{ std::move(other.mObservers) }
+      , mSubject{ other.mSubject }
+    {
+      other.mSubject = nullptr;
+    }
+
+    template<typename T>
+    TransformChangeEvent<T>& TransformChangeEvent<T>::operator=(TransformChangeEvent&& other) noexcept
+    {
+      if (this != &other) {
+        mObservers = std::move(other.mObservers);
+        mSubject = other.mSubject;
+
+        other.mSubject = nullptr;
+      }
+
+      return *this;
     }
 
     template<typename T>
@@ -81,6 +109,15 @@ namespace K9ngineCore {
       }
 
       return *this;
+    }
+
+    template<typename T>
+    void TransformChangeEvent<T>::moveObserversTo(TransformChangeEvent<T>& other) {
+      for (auto& observer :mObservers) {
+        other += observer;
+      }
+
+      mObservers.clear();
     }
 
     template<typename T>

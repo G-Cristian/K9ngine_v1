@@ -27,8 +27,8 @@ int main(int argc, char** argv) {
   using namespace K9ngineAppTest;
 
   {
-    //Test1 game;
-    TestInstanced1 game;
+    Test1 game;
+    //TestInstanced1 game;
     game.run();
   }
 

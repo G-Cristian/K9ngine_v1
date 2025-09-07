@@ -5,7 +5,6 @@
 #include "../Handle.h"
 #include "BufferDataType.h"
 #include "GraphicsContext.h"
-#include "GraphicsHandleTypes.h"
 #include "Material.h"
 #include "VertexBufferObjectData.h"
 
@@ -19,10 +18,18 @@ namespace K9ngineCore {
     class RenderNode;
     class RenderingComponent {
     public:
+      using BufferDataTypePtr = std::shared_ptr<BufferDataType>;
+      //using BufferDataTypeConstPtr = const BufferDataTypePtr;
       using RenderNodePtr = std::weak_ptr<RenderNode>;
       using Hash = Common::Hash;
 
       RenderingComponent(const Hash& id, GameObjectPtr gameObject, const Material& material, const std::vector<BufferDataTypePtr>& buffersData, K9sizei verticesCount, K9sizei instancesCount = 1, K9int firtVertexIndex = 0, DrawMode drawMode = DrawMode::K9_TRIANGLES);
+
+      RenderingComponent(RenderingComponent&&) noexcept;
+
+      ~RenderingComponent() = default;
+
+      RenderingComponent& operator=(RenderingComponent&&) noexcept;
 
       const Hash& getId() const;
 
@@ -40,6 +47,9 @@ namespace K9ngineCore {
       
       void render(double elapsedTime, std::shared_ptr<const Camera>) const;
     private:
+      RenderingComponent(const RenderingComponent&) = delete;
+      RenderingComponent& operator=(const RenderingComponent&) = delete;
+
       Material mMaterial;
       std::vector<VertexBufferObjectData> mVertexBufferObjectsData;
       std::unique_ptr<K9uint[]> mVertexBufferObjects;

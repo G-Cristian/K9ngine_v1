@@ -11,6 +11,15 @@ namespace K9ngineCore {
     {
     }
 
+    INode::INode(INode&& other) noexcept
+      : mChildren{ std::move(other.mChildren) }
+      , mParent{ std::move(other.mParent) }
+      , mSceneGraph{ other.mSceneGraph }
+      , mIsDirty{ other.mIsDirty }
+    {
+      other.mChildren.clear();
+    }
+
     INode::~INode()
     {
       //mParent = nullptr;

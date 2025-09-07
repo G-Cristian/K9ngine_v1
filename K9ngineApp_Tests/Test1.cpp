@@ -32,13 +32,13 @@ namespace K9ngineAppTest
     auto windowSize = mWindowsManager.currentWindow().getFramebufferSize();
     float aspect = static_cast<float>(windowSize.width) / windowSize.height;
     auto camera = mRenderer.setCurrentCamera(std::make_shared<PerspectiveCamera>(aspect));
-    
-    mRenderer.setCurrentCamera(camera);
-
     camera->moveTo(0.0f, 0.0f, 8.0f);
     
     auto cube1 = mWorld.createGameObject(hashString("Cube1"));
     cube1->moveTo(0.0f, -2.0f, 0.0f);
+
+    auto pyramid1 = mWorld.createGameObject(hashString("Pyramid1"));
+    pyramid1->moveTo(2.0f, 0.0f, 0.0f);
 
     std::string vertexShaderSource = FileReader{Path::combine(Path::getCurrentPath(), R"(../Resources/Shaders/vertexShader1.glsl)")}.getTextContent();
     std::string fragmentShaderSource = FileReader{ Path::combine(Path::getCurrentPath(), R"(../Resources/Shaders/fragmentShader1.glsl)") }.getTextContent();
@@ -46,15 +46,25 @@ namespace K9ngineAppTest
                                                   , Shader{ShaderType::K9_FRAGMENT_SHADER, fragmentShaderSource.c_str()}
                                                   );
 
-    Material material{ program };
-    material.addOrAssignAttributeLocation("cube1", 0);
-    material.addModelViewMatrixProperty(Mat4MaterialProperty("mv_matrix"));
-    material.addProjectionMatrixProperty(Mat4MaterialProperty("proj_matrix"));
+    Material cubeMaterial{ program };
+    cubeMaterial.addOrAssignAttributeLocation("cube1", 0);
+    cubeMaterial.addModelViewMatrixProperty(Mat4MaterialProperty("mv_matrix"));
+    cubeMaterial.addProjectionMatrixProperty(Mat4MaterialProperty("proj_matrix"));
     auto mesh = MeshFactory::createCube();
     auto bufferDataType = std::make_shared<BufferDataType>( "cube1", mesh.getFlattenedCoordinates(), 3
                                                           , TargetBuffer::K9_ARRAY_BUFFER, BufferDataUsage::K9_STATIC_DRAW
                                                           , TypeEnum::K9_FLOAT, BoolValues::K9_FALSE, 0);
-    mRenderer.emplaceRenderingComponent(cube1, material, { bufferDataType }, mesh.getVertexCount());
+    mRenderer.emplaceRenderingComponent(cube1, cubeMaterial, { bufferDataType }, mesh.getVertexCount());
+
+    Material pyramidMaterial{ program };
+    pyramidMaterial.addOrAssignAttributeLocation("pyramid1", 0);
+    pyramidMaterial.addModelViewMatrixProperty(Mat4MaterialProperty("mv_matrix"));
+    pyramidMaterial.addProjectionMatrixProperty(Mat4MaterialProperty("proj_matrix"));
+    auto pyramidMesh = MeshFactory::createPyramid();
+    auto bufferDataTypePyramid = std::make_shared<BufferDataType>( "pyramid1", pyramidMesh.getFlattenedCoordinates(), 3
+                                                                , TargetBuffer::K9_ARRAY_BUFFER, BufferDataUsage::K9_STATIC_DRAW
+                                                                , TypeEnum::K9_FLOAT, BoolValues::K9_FALSE, 0);
+    mRenderer.emplaceRenderingComponent(pyramid1, pyramidMaterial, { bufferDataTypePyramid }, pyramidMesh.getVertexCount());
     
     LOG_REMOVE_TAB();
 
