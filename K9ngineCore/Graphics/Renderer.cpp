@@ -123,6 +123,11 @@ namespace K9ngineCore {
       return RenderingComponentTable::NullHandle;
     }
 
+    void Renderer::propagateDirtySceneGraphNodes()
+    {
+      mScene.propagateDirtyUpwards();
+    }
+
     void Renderer::render(float elapsedTime)
     {
       SceneGraphRenderVisitor sceneGraphVisitor{ mScene };
@@ -137,8 +142,7 @@ namespace K9ngineCore {
         for (auto renderingItem : *renderingItems) {
           K9ASSERT(renderingItem, "Rendering item must not be null.");
           if (renderingItem) {
-            K9ASSERT(renderingItem->getRenderingComponent(), "renderItem rendering component must not be null.");
-            renderingItem->getRenderingComponent()->render(elapsedTime, mScene.getCurrentCamera());
+            renderingItem->render(elapsedTime, mScene.getCurrentCamera());
           }
         }
       }

@@ -2,6 +2,7 @@
 
 #include "../Handle.h"
 #include "../Math/Math.h"
+#include "Camera.h"
 #include "GraphicsHandleTypes.h"
 
 namespace K9ngineCore {
@@ -14,6 +15,8 @@ namespace K9ngineCore {
 
       const K9Math::Mat4& getTransform() const;
       const RenderingComponentPtr getRenderingComponent() const;
+
+      void render(double elapsedTime, std::shared_ptr<const Camera>) const;
     private:
       RenderingComponentPtr mRenderingComponent;
       K9Math::Mat4 mTransform;

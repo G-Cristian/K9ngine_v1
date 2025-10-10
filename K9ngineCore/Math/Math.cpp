@@ -2,6 +2,7 @@
 
 #include "glm/matrix.hpp"
 #include "glm/ext/matrix_transform.hpp"
+#include <glm/gtx/matrix_decompose.hpp >
 #include "glm/vec4.hpp"
 
 namespace K9ngineCore {
@@ -47,8 +48,83 @@ namespace K9ngineCore {
       return glm::rotate(mat, angle, Vec3{ 0, 0, 1 });
     }
 
+    Mat4 rotate(const Mat4& mat, Vec3 angle)
+    {
+      return rotateZ(rotateX(rotateY(mat, angle.y), angle.x), angle.z);
+    }
+
+    Mat4 inverseRotate(const Mat4& mat, Vec3 angle)
+    {
+      return rotateY(rotateX(rotateZ(mat, -angle.z), -angle.x), -angle.y);
+    }
+
     Mat4 scale(const Mat4& mat, const Vec3& value) {
       return glm::scale(mat, value);
+    }
+
+    bool decompose(const Mat4& modelMatrix, Vec3& outScale, Quat& outOrientation, Vec3& outTranslation)
+    {
+      Vec3 skew;
+      Vec4 perspective;
+      
+      return glm::decompose(modelMatrix, outScale, outOrientation, outTranslation, skew, perspective);
+    }
+
+    bool decompose(const Mat4& modelMatrix, Vec3& outScale, Quat& outOrientation, Vec3& outTranslation, Vec3& outSkew, Vec4& outPerspective)
+    {
+      return glm::decompose(modelMatrix, outScale, outOrientation, outTranslation, outSkew, outPerspective);
+    }
+
+    bool decompose(const Mat4& modelMatrix, Vec3& outScale, Quat& outOrientation, Vec4& outTranslation)
+    {
+      Vec3 skew;
+      Vec4 perspective;
+
+      return decompose(modelMatrix, outScale, outOrientation, outTranslation, skew, perspective);
+    }
+
+    bool decompose(const Mat4& modelMatrix, Vec3& outScale, Quat& outOrientation, Vec4& outTranslation, Vec3& outSkew, Vec4& outPerspective)
+    {
+      Vec3 translation{ outTranslation.x, outTranslation.y, outTranslation.z };
+      bool result = decompose(modelMatrix, outScale, outOrientation, translation, outSkew, outPerspective);
+      outTranslation = Vec4{ translation.x, translation.y, translation.z, 1.0f };
+
+      return result;
+    }
+
+    bool decompose(const Mat4& modelMatrix, Vec3& outScale, Vec3& outOrientation, Vec4& outTranslation)
+    {
+      Vec3 skew;
+      Vec4 perspective;
+
+      return decompose(modelMatrix, outScale, outOrientation, outTranslation, skew, perspective);
+    }
+
+    bool decompose(const Mat4& modelMatrix, Vec3& outScale, Vec3& outOrientation, Vec4& outTranslation, Vec3& outSkew, Vec4& outPerspective)
+    {
+      Quat rotQuat;
+      bool result = decompose(modelMatrix, outScale, rotQuat, outTranslation, outSkew, outPerspective);
+      rotQuat = normalize(rotQuat);
+
+      // Yaw (Y), Pitch (X), Roll (Z) in radians
+      float yawY = yaw(rotQuat);    // rotation about +Y
+      float pitchX = pitch(rotQuat);  // rotation about +X
+      float rollZ = roll(rotQuat);   // rotation about +Z
+
+      // Convert to degrees
+      outOrientation = Vec3(pitchX, yawY, rollZ);
+
+      return result;
+    }
+
+    float length(Vec3 vec)
+    {
+      return glm::length(vec);
+    }
+
+    float length(Vec4 vec)
+    {
+      return glm::length(vec);
     }
 
     Vec3 normalize(Vec3 vec) {
@@ -69,6 +145,26 @@ namespace K9ngineCore {
 
     Vec3 cross(Vec3 vec1, Vec3 vec2) {
       return glm::cross(vec1, vec2);
+    }
+
+    Quat normalize(Quat quat)
+    {
+      return glm::normalize(quat);
+    }
+
+    float yaw(Quat quat)
+    {
+      return glm::yaw(quat);
+    }
+
+    float pitch(Quat quat)
+    {
+      return glm::pitch(quat);
+    }
+
+    float roll(Quat quat)
+    {
+      return glm::roll(quat);
     }
   }
 }

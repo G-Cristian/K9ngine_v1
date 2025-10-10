@@ -122,35 +122,5 @@ namespace K9ngineCore {
     {
       return mVisible;
     }
-
-    void RenderingComponent::render(double elapsedTime, std::shared_ptr<const Camera> camera) const
-    {
-      if (mVisible) {
-        if (mMaterial.use()) {
-          const auto& modelMat = mGameObject->getTransform().getTransformMat4();
-          const auto& viewMat = camera->getViewMatrix();
-          mMaterial.checkAndSetModelMatrix(modelMat);
-          mMaterial.checkAndSetViewMatrix(viewMat);
-          mMaterial.checkAndSetModelViewMatrix(viewMat * modelMat);
-          mMaterial.checkAndSetProjectionMatrix(camera->getProjectionMatrix());
-
-          mMaterial.useProperties();
-
-          for (int i{ 0 }; i != mVertexBufferObjectsData.size(); i++) {
-            mMaterial.setVertexAttribute(mVertexBufferObjects[i], mVertexBufferObjectsData[i]);
-          }
-
-          GraphicsContext::enableDepthTest();
-          GraphicsContext::setDepthFuncLessEqual();
-
-          if (mInstancesCount > 1) {
-            GraphicsContext::drawArraysInstanced(mDrawMode, mFirtVertexIndex, mVerticesCount, mInstancesCount);
-          }
-          else {
-            GraphicsContext::drawArrays(mDrawMode, mFirtVertexIndex, mVerticesCount);
-          }
-        }
-      }
-    }
   }
 }

@@ -37,6 +37,8 @@ namespace K9ngineCore {
       ConstRenderingComponentPtr getRenderingComponent(const Common::Hash& gameObjectId, const Common::Hash& renderingComponentHash) const;
       RenderingComponentPtr getRenderingComponent(const Common::Hash& gameObjectId, const Common::Hash& renderingComponentHash);
 
+      void propagateDirtySceneGraphNodes();
+
       void render(float elapsedTime);
     private:
       SceneGraph mScene;

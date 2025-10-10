@@ -45,9 +45,9 @@ namespace K9ngine {
 
   double K9ngineApp::getCurrentTime() {
     /*using namespace std::chrono;
-
     return static_cast<float>(duration_cast<milliseconds>(system_clock::now().time_since_epoch()).count());*/
-    return glfwGetTime();
+
+    return glfwGetTime()*1000.0;
   }
 
   bool K9ngineApp::init() {
@@ -57,7 +57,7 @@ namespace K9ngine {
 
     bool ok = mWindowsManager.init();
     if (ok) {
-      mWindowsManager.createWindow("Test Game", 1280, 800);
+      mWindowsManager.createWindow("Test Game", 2560, 1600);
       mWindowsManager.setCurrent(0);
 
       int version = GraphicsContext::init();
@@ -97,6 +97,7 @@ namespace K9ngine {
       }
 
       update(elapsed);
+      preRenderPrepare();
       render(elapsed);
     }
   }
@@ -116,6 +117,11 @@ namespace K9ngine {
   void K9ngineApp::update(double elapsed) {
     // TODO: Update scripts engine (elapsed) which must call every update scripts
     mMustClose = mMustClose || mWindowsManager.currentWindow().shouldClose();
+  }
+
+  void K9ngineApp::preRenderPrepare()
+  {
+    mRenderer.propagateDirtySceneGraphNodes();
   }
 
   void K9ngineApp::render(double elapsed) {

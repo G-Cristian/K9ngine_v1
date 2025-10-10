@@ -12,7 +12,7 @@ namespace K9ngineCore {
       
       return Mesh{ std::vector<float>{
         -halfSize,  halfSize, -halfSize, -halfSize, -halfSize, -halfSize,  halfSize, -halfSize, -halfSize,
-         halfSize, -halfSize, -halfSize, -halfSize,  halfSize, -halfSize, -halfSize,  halfSize, -halfSize,
+         halfSize, -halfSize, -halfSize,  halfSize,  halfSize, -halfSize, -halfSize,  halfSize, -halfSize,
          halfSize, -halfSize, -halfSize,  halfSize, -halfSize,  halfSize,  halfSize,  halfSize, -halfSize,
          halfSize, -halfSize,  halfSize,  halfSize,  halfSize,  halfSize,  halfSize,  halfSize, -halfSize,
          halfSize, -halfSize,  halfSize, -halfSize, -halfSize,  halfSize,  halfSize,  halfSize,  halfSize,

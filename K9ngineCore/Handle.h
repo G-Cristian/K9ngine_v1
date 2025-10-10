@@ -95,13 +95,6 @@ namespace K9ngineCore {
 			using element_type = T;
 			using element_ptr = element_type*;
 
-			static_assert(std::is_move_constructible_v<element_type>,
-				"HandleElement<T>: T must be move-constructible");
-			
-			// Optional: also require move-assignable
-			// static_assert(std::is_move_assignable_v<element_type>,
-			//               "HandleElement<T>: T must be move-assignable");
-
 			static_assert(std::is_nothrow_move_constructible_v<element_type>,
 				"HandleElement<T>: T move ctor must be noexcept");
 
@@ -111,6 +104,12 @@ namespace K9ngineCore {
 				:	uid{ other.uid }
         , occupied{ other.occupied }
 			{
+				static_assert(std::is_move_constructible_v<element_type>
+										, "HandleElement<T>: T must be move-constructible");
+				// Optional: also require move-assignable
+				// static_assert(std::is_move_assignable_v<element_type>
+				//             , "HandleElement<T>: T must be move-assignable");
+
 				if (other.occupied) {
 					new (get()) element_type(std::move(*other.get()));
 					uid = other.uid;
@@ -181,12 +180,6 @@ namespace K9ngineCore {
 			using handle_type = Handle<element_type, N>;
 			using const_handle_type = ConstHandle<element_type, N>;
 			using container_type = std::conditional_t<N == 0, std::vector<HandleElement<element_type>>, std::array<HandleElement<element_type>, N>>;
-
-			static_assert(std::is_move_constructible_v<HandleElement<T>>,
-				"HandleTable<T,N>: HandleElement<T> must be move-constructible ");
-			
-			static_assert(std::is_nothrow_move_constructible_v<HandleElement<T>>,
-				"HandleTable<T,N>: HandleElement<T> move ctor must be noexcept");
 
 			static const handle_type NullHandle;
 			static const const_handle_type ConstNullHandle;
@@ -286,6 +279,12 @@ namespace K9ngineCore {
 
 		template<typename T, uint64_t N>
 		HandleTable<T, N>::HandleTable() {
+			static_assert(std::is_move_constructible_v<HandleElement<T>>
+									, "HandleTable<T,N>: HandleElement<T> must be move-constructible ");
+
+			static_assert(std::is_nothrow_move_constructible_v<HandleElement<T>>
+									, "HandleTable<T,N>: HandleElement<T> move ctor must be noexcept");
+
 			if constexpr (N != 0) {
 				for (size_t i = 0; i != N; i++) {
 					_elements[i].uid = static_cast<uint64_t>(i + 1);

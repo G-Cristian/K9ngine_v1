@@ -76,7 +76,7 @@ namespace K9ngineCore {
     }
 
     const K9Math::Transform TransformNode::getTransform() const {
-      return mGameObject.isValid() ? mGameObject->getTransform() : K9Math::Transform::identity();
+      return mGameObject.isValid() ? mGameObject->getWorldTransform() : K9Math::Transform::identity();
     }
   }
 }
