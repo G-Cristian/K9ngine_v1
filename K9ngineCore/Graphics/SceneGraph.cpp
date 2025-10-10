@@ -58,7 +58,7 @@ namespace K9ngineCore {
 
     void SceneGraph::propagateDirtyUpwards(INode* node)
     {
-      if (node->isDirty()) {
+      if (node->isDirty() && node->getParent()) {
         if (!node->getParent()->isDirty()) {
           setDirty(node->getParent().get());
         }
@@ -86,6 +86,10 @@ namespace K9ngineCore {
       if (!mGameObjectIdTransformNode.contains(gameObject->getId())) {
         mGameObjectIdTransformNode[gameObject->getId()] = transformNode = std::make_shared<TransformNode>(*this, gameObject);
         auto parentTransformationNode = mRoot;
+        auto gameObjectParent = gameObject->getParent();
+        if (gameObjectParent) {
+          parentTransformationNode = createOrGetTransformNode(gameObjectParent);
+        }
         // TODO: When I add nested game objects I will have to look for the parent's game object's transformation node in the scene graph (mGameObjectIdTransformNode)
         //       and set parentTransformationNode to it
 

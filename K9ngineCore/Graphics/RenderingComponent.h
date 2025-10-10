@@ -39,13 +39,19 @@ namespace K9ngineCore {
 
       Material& getMaterial() { return mMaterial; }
       const Material& getMaterial() const { return mMaterial; }
+
+      const std::vector<VertexBufferObjectData>& getVertexBufferObjectsData() const { return mVertexBufferObjectsData; }
+      constexpr K9uint* getVertexBufferObjects() const{ return mVertexBufferObjects.get(); }
       
       ConstGameObjectPtr getGameObject() const;
 
+      DrawMode getDrawMode() const { return mDrawMode; }
+      K9sizei getVerticesCount() const { return mVerticesCount; }
+      K9sizei getInstancesCount() const { return mInstancesCount; }
+      K9int getFirtVertexIndex() const { return mFirtVertexIndex; }
+
       void setVisible(bool visible);
       bool isVisible() const;
-      
-      void render(double elapsedTime, std::shared_ptr<const Camera>) const;
     private:
       RenderingComponent(const RenderingComponent&) = delete;
       RenderingComponent& operator=(const RenderingComponent&) = delete;

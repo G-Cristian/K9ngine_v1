@@ -1,9 +1,5 @@
 #pragma once
 
-#ifndef GAMEOBJECTS_COUNT
-#define GAMEOBJECTS_COUNT 0
-#endif // !GAMEOBJECTS_COUNT
-
 #include <unordered_map>
 
 #include "CommonHandleTypes.h"
@@ -13,6 +9,8 @@
 
 namespace K9ngineCore
 {  
+  template<typename T>
+  class Linker;
   class World
   {
   public:
@@ -27,6 +25,8 @@ namespace K9ngineCore
     ConstGameObjectPtr getGameObject(const Common::Hash&) const;
 
     void clear();
+
+    void attachGameObjects(GameObjectPtr parent, GameObjectPtr child, bool combineParentTranslation, bool combineParentRotation, bool combineParentScale) const;
   private:
     GameObjectsIdsIndicesMapType mGameObjectsIdIndexMap{};
     GameObjectsTable mGameObjects{};

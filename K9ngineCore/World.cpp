@@ -65,4 +65,17 @@ namespace K9ngineCore {
     mGameObjects.clear();
     mGameObjectsIdIndexMap.clear();
   }
+
+  void World::attachGameObjects(GameObjectPtr parent, GameObjectPtr child, bool combineParentTranslation, bool combineParentRotation, bool combineParentScale) const
+  {
+    K9ASSERT(!!(parent && child), "World::attachGameObjects, parent or child is null");
+    K9ASSERT(!!(parent != child), "World::attachGameObjects, parent and child are the same");
+    if (parent && child && parent != child) {
+      child->setCombineParentTranslation(combineParentTranslation);
+      child->setCombineParentRotation(combineParentRotation);
+      child->setCombineParentScale(combineParentScale);
+      parent->attachGameObject(child);
+      child->setParentGameObject(parent);
+    }
+  }
 }

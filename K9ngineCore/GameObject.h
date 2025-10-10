@@ -2,10 +2,13 @@
 #define GAMEOBJECT_H
 
 #include <memory>
+#include <vector>
 
 #include "Common/Hasher.h"
 #include "Common/IObserver.h"
 #include "Common/TransformChangeEvent.h"
+#include "CommonHandleTypes.h"
+#include "Handle.h"
 #include "Math/Math.h"
 #include "Math/Transform.h"
 
@@ -14,6 +17,7 @@ namespace K9ngineCore{
   using namespace K9ngineCore::K9Math;
   
   class GameObject {
+    friend class World;
   public:
     using TransformChangeEventType = TransformChangeEvent<GameObject>;
     using ObserverType = TransformChangeEventType::ObserverType;
@@ -27,8 +31,6 @@ namespace K9ngineCore{
 
     void addObserver(ObserverTypePtr);
     void removeObserver(ObserverTypePtr);
-
-    const Transform& getTransform() const;
     
     void moveTo(float x, float y, float z);
     void moveTo(const Vec3& location);
@@ -44,15 +46,34 @@ namespace K9ngineCore{
 
     const Hash& getId() const;
 
-  private:
+    GameObjectPtr getParent() const;
 
+    void setCombineParentTranslation(bool combine);
+    bool getCombineParentTranslation() const;
+    void setCombineParentRotation(bool combine);
+    bool getCombineParentRotation() const;
+    void setCombineParentScale(bool combine);
+    bool getCombineParentScale() const;
+
+    K9Math::Transform getWorldTransform() const;
+
+    const Transform& getTransform() const;
+  private:
     GameObject(const GameObject&) = delete;
     GameObject& operator=(const GameObject&) = delete;
     GameObject& operator=(GameObject&&) noexcept = delete;
 
-    TransformChangeEventType mTransformChangeEvent;
-    Transform mTransform;
+    void attachGameObject(GameObjectPtr);
+    void setParentGameObject(GameObjectPtr);
+
     Hash mId;
+    std::vector<GameObjectPtr> mAttachedGameObjects;
+    TransformChangeEventType mTransformChangeEvent;
+    GameObjectPtr mParentGameObject;
+    Transform mTransform;
+    bool mCombineParentTranslation{ true };
+    bool mCombineParentRotation{ true };
+    bool mCombineParentScale{ false };
   };
 }
 

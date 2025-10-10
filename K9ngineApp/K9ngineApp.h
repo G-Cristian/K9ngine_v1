@@ -55,6 +55,7 @@ namespace K9ngine {
     virtual void fixedUpdate();
     virtual void fixedPhysics();
     virtual void update(double elapsed);
+    void preRenderPrepare();
     virtual void render(double elapsed);
 
     virtual void cleanup();
