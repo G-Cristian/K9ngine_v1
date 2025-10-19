@@ -96,10 +96,8 @@ namespace K9ngineCore {
 
   K9Math::Transform GameObject::getWorldTransform() const
   {
-    LOG_MESSAGE(std::format("mTransform {}", mTransform));
     if (mParentGameObject) {
       const auto& parentTransform = mParentGameObject->getTransform();
-      LOG_MESSAGE(std::format("Parent {}", parentTransform));
       auto compensatingTransform = Transform::identity();
       if (!mCombineParentTranslation) {
         compensatingTransform = Transform::buildTranslate(-parentTransform.getLocation()) * compensatingTransform;
@@ -112,8 +110,6 @@ namespace K9ngineCore {
       if (!mCombineParentScale) {
         compensatingTransform = Transform::buildScale(K9Math::Vec3{ 1.0f } / parentTransform.getScale()) * compensatingTransform;
       }
-
-      LOG_MESSAGE(std::format("World {}", compensatingTransform * mTransform));
 
       return compensatingTransform * mTransform;
     }

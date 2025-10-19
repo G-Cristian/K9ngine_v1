@@ -403,3 +403,5 @@ K9ngineApp_Tests/[Ll]og*.txt
 
 # Other
 K9ngine_v1_editor/[Pp]roperties
+OpenGL/glad (debug).zip
+OpenGL/glad.zip

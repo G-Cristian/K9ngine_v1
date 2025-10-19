@@ -25,7 +25,6 @@ namespace K9ngineAppTest
     explicit TestInstanced1(int contextVersionMajor = 4, int contextVersionMinor = 3, float msPerFrame = 16.0) :
       K9ngine::K9ngineApp{ contextVersionMajor, contextVersionMinor, msPerFrame }
     {
-      LOG_MESSAGE("TestInstanced1.TestInstanced1");
     }
 
     ~TestInstanced1() override = default;

@@ -26,7 +26,6 @@ namespace K9ngineAppTest
     using namespace Common;
     using namespace FileSystem;
     LOG_ADD_TAB();
-    LOG_MESSAGE("Test1.Init");
 
     auto ok = K9ngine::K9ngineApp::init();
     auto windowSize = mWindowsManager.currentWindow().getFramebufferSize();
