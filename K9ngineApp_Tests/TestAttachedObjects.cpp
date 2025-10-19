@@ -30,11 +30,9 @@ namespace K9ngineAppTest
     using namespace Common;
     using namespace FileSystem;
     LOG_ADD_TAB();
-    LOG_MESSAGE("TestAttachedObjects.Init");
-
     auto ok = K9ngine::K9ngineApp::init();
     auto windowSize = mWindowsManager.currentWindow().getFramebufferSize();
-    
+
     float aspect = static_cast<float>(windowSize.width) / windowSize.height;
     auto camera = mRenderer.setCurrentCamera(std::make_shared<PerspectiveCamera>(aspect));
     camera->moveTo(0.0f, 0.0f, 30.0f);

@@ -22,7 +22,18 @@ namespace K9ngineCore {
     };
 
     enum class OpenGLDrawMode : GLenum {
-      K9_TRIANGLES = GL_TRIANGLES
+      K9_POINTS = GL_POINTS,
+      K9_TRIANGLES = GL_TRIANGLES,
+      K9_TRIANGLE_STRIP = GL_TRIANGLE_STRIP,
+      K9_TRIANGLE_FAN = GL_TRIANGLE_FAN,
+      K9_TRIANGLE_ADJACENCY = GL_TRIANGLES_ADJACENCY,
+      K9_TRIANGLE_STRIP_ADJACENCY = GL_TRIANGLE_STRIP_ADJACENCY,
+      K9_LINES = GL_LINES,
+      K9_LINE_STRIP = GL_LINE_STRIP,
+      K9_LINE_LOOP = GL_LINE_LOOP,
+      K9_LINES_ADJACENCY = GL_LINES_ADJACENCY,
+      K9_LINE_STRIP_ADJACENCY = GL_LINE_STRIP_ADJACENCY,
+      K9_PATCHES = GL_PATCHES
     };
 
     enum class OpenGLShaderType : GLenum{
@@ -141,6 +152,18 @@ namespace K9ngineCore {
         glGenVertexArrays(n, VAOs);
       }
 
+      static GLint getMajorVersion() {
+        GLint major{ 0 };
+        glGetIntegerv(GL_MAJOR_VERSION, &major);
+        return major;
+      }
+
+      static GLint getMinorVersion() {
+        GLint minor{ 0 };
+        glGetIntegerv(GL_MINOR_VERSION, &minor);
+        return minor;
+      }
+
       static std::string getProgramInfoLog(GLuint program, GLuint length) {
         std::string log;
 
@@ -187,6 +210,15 @@ namespace K9ngineCore {
 
       static GLint getUniformLocation(GLuint program, std::string_view name) {
         return glGetUniformLocation(program, name.data());
+      }
+
+      static std::string getVersionString() {
+        const GLubyte* version = glGetString(GL_VERSION);
+        if (!version) {
+          return std::string{};
+        }
+
+        return std::string(reinterpret_cast<const char*>(version));
       }
 
       static bool isProgramLinkStatusOk(GLuint program) {
