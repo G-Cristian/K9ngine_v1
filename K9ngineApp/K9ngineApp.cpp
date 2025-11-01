@@ -70,6 +70,8 @@ namespace K9ngine {
       }
     }
 
+    mWindowsManager.currentWindow().addWindowSizeChangeObserver(mWindowSizeChangeObserver);
+
     GraphicsContext::setClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 
     LOG_REMOVE_TAB();

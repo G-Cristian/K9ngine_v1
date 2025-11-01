@@ -13,6 +13,7 @@
 #include "../Common//Hasher.h"
 
 #include <cstdint>
+#include <functional>
 #include <format>
 #include <memory>
 #include <queue>
@@ -130,6 +131,11 @@ namespace K9ngineCore {
     std::shared_ptr<const Camera> SceneGraph::getCurrentCamera() const
     {
       return mCurrentCamera;
+    }
+
+    void SceneGraph::forEachCamera(const std::function<void(Camera&)>& func)
+    {
+      func(*mCurrentCamera);
     }
   }
 }

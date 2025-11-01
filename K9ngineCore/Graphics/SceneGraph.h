@@ -11,6 +11,7 @@
 #include "../Common/Hasher.h"
 
 #include <cstdint>
+#include <functional>
 #include <memory>
 #include <queue>
 #include <unordered_map>
@@ -59,6 +60,8 @@ namespace K9ngineCore {
       std::shared_ptr<Camera> setCurrentCamera(std::shared_ptr<Camera>);
       std::shared_ptr<Camera> getCurrentCamera();
       std::shared_ptr<const Camera> getCurrentCamera() const;
+
+      void forEachCamera(const std::function<void(Camera&)>& func);
     private:
 
       /**********************************/

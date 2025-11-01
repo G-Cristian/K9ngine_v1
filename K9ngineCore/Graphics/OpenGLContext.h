@@ -257,6 +257,11 @@ namespace K9ngineCore {
         glVertexAttribPointer(index, size, std::to_underlying(type), std::to_underlying(normalized), stride, pointer);
       }
 
+      static void setViewport(GLint x, GLint y, GLsizei width, GLsizei height)
+      {
+        glViewport(x, y, width, height);
+      }
+
       static void shaderSource(GLuint shader, GLsizei count, const GLchar* const* string, const GLint* length) {
         glShaderSource(shader, count, string, length);
       }

@@ -42,7 +42,7 @@ namespace K9ngineGame {
     void cleanup();
 
     K9ngineCore::K9Graphics::Renderer mRenderer;
-    K9ngineCore::K9Windows::K9WindowsManager mWindowsManager;
+    K9ngine::K9Windows::K9WindowsManager mWindowsManager;
     float mMsPerFixedUpdate;
     const char* mSettingsFullPath;
     bool mMustClose;

@@ -5,6 +5,7 @@
 
 #include "../K9ngineCore/Graphics/GraphicsContext.h"
 
+#include "K9ngineAppWindowSizeChangeObserver.h"
 #include "Windows/K9WindowsManager.h"
 
 #include "../K9ngineCore/GameObject.h"
@@ -21,6 +22,7 @@ namespace K9ngine {
     explicit K9ngineApp(const char* settingsFullpath) :
         mRenderer{}
       , mWindowsManager(4, 3)
+      , mWindowSizeChangeObserver{ std::make_shared<K9ngineAppWindowSizeChangeObserver>(this) }
       , mMsPerFixedUpdate(16.0)   // 1000 ms/60 fs = 16.66 ms per frame
       , mSettingsFullPath(settingsFullpath)
       , mMustClose(false)
@@ -29,6 +31,7 @@ namespace K9ngine {
     explicit K9ngineApp(int contextVersionMajor = 4, int contextVersionMinor = 3, float msPerFrame = 16.0) :
         mRenderer{}
       , mWindowsManager{ contextVersionMajor, contextVersionMinor }
+      , mWindowSizeChangeObserver{ std::make_shared<K9ngineAppWindowSizeChangeObserver>(this) }
       , mMsPerFixedUpdate{ msPerFrame }
       , mSettingsFullPath(nullptr)
       , mMustClose(false)
@@ -40,6 +43,8 @@ namespace K9ngine {
     void run();
 
     void CloseGame() { mMustClose = true; }
+
+    K9ngineCore::K9Graphics::Renderer& getRenderer() { return mRenderer; }
   private:
     K9ngineApp(const K9ngineApp&) = delete;
     K9ngineApp(K9ngineApp&&) noexcept = delete;
@@ -62,7 +67,8 @@ namespace K9ngine {
 
     K9ngineCore::World mWorld;
     K9ngineCore::K9Graphics::Renderer mRenderer;
-    K9ngineCore::K9Windows::K9WindowsManager mWindowsManager;
+    K9ngine::K9Windows::K9WindowsManager mWindowsManager;
+    std::shared_ptr<K9ngineAppWindowSizeChangeObserver> mWindowSizeChangeObserver;
     double mMsPerFixedUpdate;
     const char* mSettingsFullPath;
     bool mMustClose;
