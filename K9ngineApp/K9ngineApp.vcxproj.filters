@@ -33,6 +33,12 @@
     <ClInclude Include="K9ngineApp.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+    <ClInclude Include="Windows\WindowObservers.h">
+      <Filter>Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="K9ngineAppWindowSizeChangeObserver.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Windows\K9Window.cpp">
@@ -42,6 +48,9 @@
       <Filter>Windows</Filter>
     </ClCompile>
     <ClCompile Include="K9ngineApp.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="K9ngineAppWindowSizeChangeObserver.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>

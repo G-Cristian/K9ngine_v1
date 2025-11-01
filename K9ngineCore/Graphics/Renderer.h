@@ -1,5 +1,6 @@
 #pragma once
 
+#include <functional>
 #include <memory>
 #include <vector>
 
@@ -38,6 +39,8 @@ namespace K9ngineCore {
       RenderingComponentPtr getRenderingComponent(const Common::Hash& gameObjectId, const Common::Hash& renderingComponentHash);
 
       void propagateDirtySceneGraphNodes();
+
+      void forEachCamera(const std::function<void(Camera&)>&);
 
       void render(float elapsedTime);
     private:

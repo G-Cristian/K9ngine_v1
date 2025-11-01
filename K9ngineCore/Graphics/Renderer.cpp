@@ -1,4 +1,5 @@
 #include <format>
+#include <functional>
 #include <memory>
 #include <unordered_map>
 #include <vector>
@@ -126,6 +127,11 @@ namespace K9ngineCore {
     void Renderer::propagateDirtySceneGraphNodes()
     {
       mScene.propagateDirtyUpwards();
+    }
+
+    void Renderer::forEachCamera(const std::function<void(Camera&)>& func)
+    {
+      mScene.forEachCamera(func);
     }
 
     void Renderer::render(float elapsedTime)

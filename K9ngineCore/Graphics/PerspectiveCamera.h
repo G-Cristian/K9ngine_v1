@@ -27,7 +27,16 @@ namespace K9ngineCore {
 
       const K9Math::Mat4& getViewMatrix() override final;
       const K9Math::Mat4& getViewMatrix() const override final;
+      void setProjectionMatrix(const K9Math::Mat4&) override final;
+      void setProjectionMatrix(K9Math::Mat4&&) override final;
       const K9Math::Mat4& getProjectionMatrix() const override final;
+
+      void changeAspect(float) override final;
+      float getAspect() const override final;
+      float getNearClippingPlane() const override final;
+      float getFarClippingPlane() const override final;
+      float getFOV_Y() const;
+
     private:
       K9Math::Transform mTransform;
       K9Math::Mat4 mPerspectiveMatrix;

@@ -4,7 +4,7 @@
 
 #include "../../K9ngineCore/K9Debug.h"
 
-namespace K9ngineCore {
+namespace K9ngine {
   namespace K9Windows {
     K9WindowsManager::K9WindowsManager(int contextVersionMajor /*= 4*/, int contextVersionMinor /*= 3*/) noexcept :
       mWindows()
@@ -26,6 +26,7 @@ namespace K9ngineCore {
     }
 
     K9Window& K9WindowsManager::setCurrent(int index) {
+      using namespace K9ngineCore;
       K9ASSERT(!!(index >= 0 && index < mWindows.size()), "window index out of range");
 
       mCurrentWindowIndex = index;
@@ -41,11 +42,13 @@ namespace K9ngineCore {
     }
 
     K9Window& K9WindowsManager::currentWindow() {
+      using namespace K9ngineCore;
       K9ASSERT(!!(mCurrentWindowIndex >= 0 && mCurrentWindowIndex < mWindows.size()), "mCurrentWindowIndex out of range");
       return mWindows[mCurrentWindowIndex];
     }
 
     const K9Window& K9WindowsManager::currentWindow() const {
+      using namespace K9ngineCore;
       K9ASSERT(!!(mCurrentWindowIndex >= 0 && mCurrentWindowIndex < mWindows.size()), "mCurrentWindowIndex out of range");
       return mWindows[mCurrentWindowIndex];
     }
@@ -55,6 +58,7 @@ namespace K9ngineCore {
     }
 
     bool K9WindowsManager::init() const {
+      using namespace K9ngineCore;
       if (!glfwInit()) {
         LOG_ADD_TAB();
         LOG_ERROR("glfwInit() returned false.");

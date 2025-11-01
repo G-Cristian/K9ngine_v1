@@ -3,9 +3,13 @@
 
 #include "GLFW/glfw3.h"
 
-#include <string>
+#include "WindowObservers.h"
 
-namespace K9ngineCore {
+#include <memory>
+#include <string>
+#include <vector>
+
+namespace K9ngine {
   namespace K9Windows {
     class K9Window {
       friend class K9WindowsManager;
@@ -17,8 +21,9 @@ namespace K9ngineCore {
       };
 
       explicit K9Window(const std::string&, int, int);
-      K9Window(K9Window&&) noexcept = default;
-      K9Window& operator=(K9Window&&) noexcept = default;
+      explicit K9Window(const std::string&, int, int, size_t);
+      K9Window(K9Window&&) noexcept;
+      K9Window& operator=(K9Window&&) noexcept;
 
       ~K9Window();
 
@@ -26,18 +31,31 @@ namespace K9ngineCore {
       bool shouldClose() const;
 
       Size getFramebufferSize() const;
+      size_t getId() const;
 
       void swapBuffers() const;
       void destroy();
+
+      void addWindowSizeChangeObserver(std::shared_ptr<IWindowSizeChangeObserber>);
+      void addFramebufferSizeChangeObserver(std::shared_ptr<IFramebufferSizeChangeObserber>);
+
+      static void onSetWindowSizeCallback(GLFWwindow*, int, int);
+      static void onSetFramebufferSizeCallback(GLFWwindow*, int, int);
 
     private:
       K9Window(const K9Window&) = delete;
       K9Window& operator=(const K9Window&) = delete;
 
       void makeContextCurrent() const;
+
+      void onSetWindowSize(int, int);
+      void onSetFramebufferSize(int, int);
     private:
+      std::vector<std::shared_ptr<IWindowSizeChangeObserber>> mWindowSizeChangeObserver{};
+      std::vector<std::shared_ptr<IFramebufferSizeChangeObserber>> mFramebufferSizeChangeObserver{};
       std::string mTitle;
       GLFWwindow* mWindow;
+      size_t mId;
       int mWidth;
       int mHeight;
     };

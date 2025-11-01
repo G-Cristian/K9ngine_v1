@@ -6,7 +6,7 @@
 #include <string>
 #include <vector>
 
-namespace K9ngineCore {
+namespace K9ngine {
   namespace K9Windows {
     class K9WindowsManager {
     public:
