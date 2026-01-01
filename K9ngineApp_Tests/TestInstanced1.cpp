@@ -57,7 +57,8 @@ namespace K9ngineAppTest
     auto bufferDataType = std::make_shared<BufferDataType>( "cube1", mesh.getFlattenedCoordinates(), 3
                                                           , TargetBuffer::K9_ARRAY_BUFFER, BufferDataUsage::K9_STATIC_DRAW
                                                           , TypeEnum::K9_FLOAT, BoolValues::K9_FALSE, 0);
-    mRenderer.emplaceRenderingComponent(hashString("Cube1RC"), cube1, material, {bufferDataType}, mesh.getVertexCount(), 100000);
+    auto component = mRenderer.emplaceRenderingComponent(hashString("Cube1RC"), cube1, material, {bufferDataType}, mesh.getVertexCount(), 100000);
+    component->setFrontFaceMode(mesh.isCCW() ? FrontFaceMode::K9_CCW : FrontFaceMode::K9_CW);
 
     LOG_REMOVE_TAB();
 

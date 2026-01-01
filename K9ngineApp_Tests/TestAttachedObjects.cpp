@@ -69,9 +69,16 @@ namespace K9ngineAppTest
     moonGO->moveTo(0.0f, 3.0f, 0.0f);
     mWorld.attachGameObjects(planetMoonPivotGO, moonGO, true, true, false);
 
-    emplaceRenderingComponent("sun", sunGO, sunMesh, sunMaterial);
-    emplaceRenderingComponent("planet", planetGO, planetMesh, planetMaterial);
-    emplaceRenderingComponent("moon", moonGO, moonMesh, moonMaterial);
+    auto sunComp = emplaceRenderingComponent("sun", sunGO, sunMesh, sunMaterial);
+    sunComp->setFrontFaceMode(sunMesh.isCCW() ? FrontFaceMode::K9_CCW : FrontFaceMode::K9_CW);
+
+
+    auto planetComp = emplaceRenderingComponent("planet", planetGO, planetMesh, planetMaterial);
+    planetComp->setFrontFaceMode(planetMesh.isCCW() ? FrontFaceMode::K9_CCW : FrontFaceMode::K9_CW);
+
+
+    auto moonComp = emplaceRenderingComponent("moon", moonGO, moonMesh, moonMaterial);
+    moonComp->setFrontFaceMode(moonMesh.isCCW() ? FrontFaceMode::K9_CCW : FrontFaceMode::K9_CW);
 
     LOG_REMOVE_TAB();
 
@@ -142,11 +149,11 @@ namespace K9ngineAppTest
 
   }
 
-  void TestAttachedObjects::emplaceRenderingComponent(std::string_view name, GameObjectPtr gameObject, Mesh mesh, const Material& material)
+  RenderingComponentPtr TestAttachedObjects::emplaceRenderingComponent(std::string_view name, GameObjectPtr gameObject, Mesh mesh, const Material& material)
   {
     auto bufferDataType = std::make_shared<BufferDataType>(std::string{ name }, mesh.getFlattenedCoordinates(), 3
       , TargetBuffer::K9_ARRAY_BUFFER, BufferDataUsage::K9_STATIC_DRAW
       , TypeEnum::K9_FLOAT, BoolValues::K9_FALSE, 0);
-    mRenderer.emplaceRenderingComponent(gameObject, material, { bufferDataType }, mesh.getVertexCount());
+    return mRenderer.emplaceRenderingComponent(gameObject, material, { bufferDataType }, mesh.getVertexCount());
   }
 }

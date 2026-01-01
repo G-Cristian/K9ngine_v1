@@ -24,7 +24,8 @@ namespace K9ngineCore {
         -halfSize,  halfSize, -halfSize,  halfSize,  halfSize, -halfSize,  halfSize,  halfSize,  halfSize,
          halfSize,  halfSize,  halfSize, -halfSize,  halfSize,  halfSize, -halfSize,  halfSize, -halfSize,
       }
-      , 3 };
+      , 3
+      , false };
     }
 
     Mesh MeshFactory::createPyramid(float width /*= 1.0f*/, float depth /*= 1.0f*/, float height /*= 1.0f*/)
@@ -41,8 +42,10 @@ namespace K9ngineCore {
            -halfWidth, -halfHeight, -halfDepth, -halfWidth, -halfHeight, halfDepth, 0.0f, halfHeight, 0.0f,
            -halfWidth, -halfHeight, -halfDepth, halfWidth, -halfHeight, halfDepth, -halfWidth, -halfHeight, halfDepth,
             halfWidth, -halfHeight, halfDepth, -halfWidth, -halfHeight, -halfDepth, halfWidth, -halfHeight, -halfDepth
-        },
-        3);
+        }
+        , 3
+        , true
+      );
     }
 
     //static Mesh* createSphere(float radius = 1.0f, int segments = 16);

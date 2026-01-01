@@ -53,7 +53,8 @@ namespace K9ngineAppTest
     auto bufferDataType = std::make_shared<BufferDataType>( "cube1", mesh.getFlattenedCoordinates(), 3
                                                           , TargetBuffer::K9_ARRAY_BUFFER, BufferDataUsage::K9_STATIC_DRAW
                                                           , TypeEnum::K9_FLOAT, BoolValues::K9_FALSE, 0);
-    mRenderer.emplaceRenderingComponent(cube1, cubeMaterial, { bufferDataType }, mesh.getVertexCount());
+    auto cubeComponent = mRenderer.emplaceRenderingComponent(cube1, cubeMaterial, { bufferDataType }, mesh.getVertexCount());
+    cubeComponent->setFrontFaceMode(mesh.isCCW() ? FrontFaceMode::K9_CCW : FrontFaceMode::K9_CW);
 
     Material pyramidMaterial{ program };
     pyramidMaterial.addOrAssignAttributeLocation("pyramid1", 0);
@@ -63,7 +64,8 @@ namespace K9ngineAppTest
     auto bufferDataTypePyramid = std::make_shared<BufferDataType>( "pyramid1", pyramidMesh.getFlattenedCoordinates(), 3
                                                                 , TargetBuffer::K9_ARRAY_BUFFER, BufferDataUsage::K9_STATIC_DRAW
                                                                 , TypeEnum::K9_FLOAT, BoolValues::K9_FALSE, 0);
-    mRenderer.emplaceRenderingComponent(pyramid1, pyramidMaterial, { bufferDataTypePyramid }, pyramidMesh.getVertexCount());
+    auto pyramidComponent = mRenderer.emplaceRenderingComponent(pyramid1, pyramidMaterial, { bufferDataTypePyramid }, pyramidMesh.getVertexCount());
+    pyramidComponent->setFrontFaceMode(pyramidMesh.isCCW() ? FrontFaceMode::K9_CCW : FrontFaceMode::K9_CW);
     
     LOG_REMOVE_TAB();
 
