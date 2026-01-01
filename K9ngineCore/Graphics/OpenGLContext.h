@@ -21,6 +21,10 @@ namespace K9ngineCore {
       K9_STATIC_DRAW = GL_STATIC_DRAW
     };
 
+    enum class OpenGLDepthFunctionMode : GLenum {
+      K9_LEQUAL = GL_LEQUAL
+    };
+
     enum class OpenGLDrawMode : GLenum {
       K9_POINTS = GL_POINTS,
       K9_TRIANGLES = GL_TRIANGLES,
@@ -34,6 +38,11 @@ namespace K9ngineCore {
       K9_LINES_ADJACENCY = GL_LINES_ADJACENCY,
       K9_LINE_STRIP_ADJACENCY = GL_LINE_STRIP_ADJACENCY,
       K9_PATCHES = GL_PATCHES
+    };
+
+    enum class OpenGLFrontFaceMode : GLenum {
+      K9_CW = GL_CW,
+      K9_CCW = GL_CCW
     };
 
     enum class OpenGLShaderType : GLenum{
@@ -134,6 +143,10 @@ namespace K9ngineCore {
 
       static void drawArraysTriangles(GLint first, GLsizei count) {
         glDrawArrays(GL_TRIANGLES, first, count);
+      }
+
+      static void enableCullFace() {
+        glEnable(GL_CULL_FACE);
       }
 
       static void enableDepthTest() {
@@ -241,8 +254,24 @@ namespace K9ngineCore {
         glClearColor(red, green, blue, alpha);
       }
 
+      static void setDepthFuncMode(OpenGLDepthFunctionMode depthFunctionMode) {
+        glDepthFunc(std::to_underlying(depthFunctionMode));
+      }
+
       static void setDepthFuncLessEqual() {
         glDepthFunc(GL_LEQUAL);
+      }
+
+      static void setFrontFaceMode(OpenGLFrontFaceMode frontFace) {
+        glFrontFace(std::to_underlying(frontFace));
+      }
+
+      static void setFrontFaceCCW() {
+        glFrontFace(GL_CCW);
+      }
+
+      static void setFrontFaceCW() {
+        glFrontFace(GL_CW);
       }
 
       static void setUniform1f(GLint location, GLfloat value) {

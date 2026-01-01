@@ -41,8 +41,16 @@ namespace K9ngineCore {
             material.setVertexAttribute(mRenderingComponent->getVertexBufferObjects()[i], vertexBufferObjectsData[i]);
           }
 
-          GraphicsContext::enableDepthTest();
-          GraphicsContext::setDepthFuncLessEqual();
+          if (mRenderingComponent->isCullFaceEnabled()) {
+            GraphicsContext::enableCullFace();
+          }
+
+          if (mRenderingComponent->isDepthTestEnabled()) {
+            GraphicsContext::enableDepthTest();
+          }
+
+          GraphicsContext::setDepthFuncMode(mRenderingComponent->getDepthFunctionMode());
+          GraphicsContext::setFrontFaceMode(mRenderingComponent->getFrontFaceMode());
 
           if (mRenderingComponent->getInstancesCount() > 1) {
             GraphicsContext::drawArraysInstanced(mRenderingComponent->getDrawMode(), mRenderingComponent->getFirtVertexIndex(), mRenderingComponent->getVerticesCount(), mRenderingComponent->getInstancesCount());

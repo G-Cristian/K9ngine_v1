@@ -50,6 +50,18 @@ namespace K9ngineCore {
       K9sizei getInstancesCount() const { return mInstancesCount; }
       K9int getFirtVertexIndex() const { return mFirtVertexIndex; }
 
+      void setDepthFunctionMode(DepthFunctionMode mode);
+      DepthFunctionMode getDepthFunctionMode() const;
+
+      void setFrontFaceMode(FrontFaceMode mode);
+      FrontFaceMode getFrontFaceMode() const;
+
+      void setCullFaceEnabled(bool enabled);
+      bool isCullFaceEnabled() const;
+
+      void setDepthTestEnabled(bool enabled);
+      bool isDepthTestEnabled() const;
+
       void setVisible(bool visible);
       bool isVisible() const;
     private:
@@ -67,7 +79,11 @@ namespace K9ngineCore {
       K9sizei mInstancesCount{1};
       K9int mFirtVertexIndex{0};
       K9uint mVAO = {};
-      bool mVisible{true};
+      DepthFunctionMode mDepthFunctionMode{ DepthFunctionMode::K9_LEQUAL };
+      FrontFaceMode mFrontFaceMode{ FrontFaceMode::K9_CCW };
+      bool mCullFaceEnabled{ true };
+      bool mDepthTestEnabled{ true };
+      bool mVisible{ true };
     };
   }
 }

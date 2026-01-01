@@ -50,6 +50,6 @@ namespace K9ngineAppTest
 
     std::shared_ptr<K9Graphics::ShaderProgram> createShaderProgram(std::string_view vs, std::string_view fs) const;
     Material createMaterial(std::shared_ptr<ShaderProgram> program, std::string_view attrLocationName, std::string_view mvMatrixName, std::string_view projMatrixName) const;
-    void emplaceRenderingComponent(std::string_view name, GameObjectPtr gameObject, Mesh mesh, const Material& material);
+    RenderingComponentPtr emplaceRenderingComponent(std::string_view name, GameObjectPtr gameObject, Mesh mesh, const Material& material);
   };
 }

@@ -63,6 +63,10 @@ namespace K9ngineCore {
       , mInstancesCount{ other.mInstancesCount }
       , mFirtVertexIndex{ other.mFirtVertexIndex }
       , mVAO{ other.mVAO }
+      , mDepthFunctionMode{ other.mDepthFunctionMode }
+      , mFrontFaceMode{ other.mFrontFaceMode }
+      , mCullFaceEnabled{ other.mCullFaceEnabled }
+      , mDepthTestEnabled{ other.mDepthTestEnabled }
       , mVisible{ other.mVisible }
     {
       other.mVertexBufferObjectsData.clear();
@@ -84,6 +88,10 @@ namespace K9ngineCore {
         mInstancesCount = other.mInstancesCount;
         mFirtVertexIndex = other.mFirtVertexIndex;
         mVAO = other.mVAO;
+        mDepthFunctionMode = other.mDepthFunctionMode;
+        mFrontFaceMode = other.mFrontFaceMode;
+        mCullFaceEnabled = other.mCullFaceEnabled;
+        mDepthTestEnabled = other.mDepthTestEnabled;
         mVisible = other.mVisible;
 
         other.mVertexBufferObjectsData.clear();
@@ -112,6 +120,46 @@ namespace K9ngineCore {
     }
 
     ConstGameObjectPtr RenderingComponent::getGameObject() const { return mGameObject; }
+
+    void RenderingComponent::setDepthFunctionMode(DepthFunctionMode mode)
+    {
+      mDepthFunctionMode = mode;
+    }
+
+    DepthFunctionMode RenderingComponent::getDepthFunctionMode() const
+    {
+      return mDepthFunctionMode;
+    }
+
+    void RenderingComponent::setFrontFaceMode(FrontFaceMode mode)
+    {
+      mFrontFaceMode = mode;
+    }
+
+    FrontFaceMode RenderingComponent::getFrontFaceMode() const
+    {
+      return mFrontFaceMode;
+    }
+
+    void RenderingComponent::setCullFaceEnabled(bool enabled)
+    {
+      mCullFaceEnabled = enabled;
+    }
+
+    bool RenderingComponent::isCullFaceEnabled() const
+    {
+      return mCullFaceEnabled;
+    }
+
+    void RenderingComponent::setDepthTestEnabled(bool enabled)
+    {
+      mDepthTestEnabled = enabled;
+    }
+
+    bool RenderingComponent::isDepthTestEnabled() const
+    {
+      return mDepthTestEnabled;
+    }
 
     void RenderingComponent::setVisible(bool visible)
     {

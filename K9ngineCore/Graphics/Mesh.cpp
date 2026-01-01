@@ -5,15 +5,17 @@
 
 namespace K9ngineCore {
   namespace K9Graphics {
-    Mesh::Mesh(const std::vector<float>& flattenedCoordinates, unsigned int vertexSize)
+    Mesh::Mesh(const std::vector<float>& flattenedCoordinates, unsigned int vertexSize, bool CCW)
       : mFlattenedCoordinates{ flattenedCoordinates }
       , mVertexSize{ vertexSize }
+      , mCCW{ CCW }
     {
     }
 
-    Mesh::Mesh(std::initializer_list<float> flattenedCoordinates, unsigned int vertexSize)
+    Mesh::Mesh(std::initializer_list<float> flattenedCoordinates, unsigned int vertexSize, bool CCW)
       : mFlattenedCoordinates{ flattenedCoordinates }
       , mVertexSize{ vertexSize }
+      , mCCW{ CCW }
     {
     }
 
@@ -30,6 +32,11 @@ namespace K9ngineCore {
     size_t Mesh::getVertexCount() const
     {
       return mFlattenedCoordinates.size() / mVertexSize;
+    }
+
+    bool Mesh::isCCW() const
+    {
+      return mCCW;
     }
   }
 }
