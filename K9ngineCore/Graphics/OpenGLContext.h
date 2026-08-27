@@ -54,6 +54,14 @@ namespace K9ngineCore {
       K9_ARRAY_BUFFER = GL_ARRAY_BUFFER
     };
 
+    enum class OpenGLTargetTexture : GLenum {
+      K9_TEXTURE_2D = GL_TEXTURE_2D
+    };
+
+    enum class OpenGLTextureSampler : GLenum {
+      K9_TEXTURE0 = GL_TEXTURE0
+    };
+
     enum class OpenGLTypeEnum : GLenum {
       K9_FLOAT = GL_FLOAT
     };
@@ -78,6 +86,10 @@ namespace K9ngineCore {
 
       static void bindBuffer(OpenGLTargetBuffer targetBuffer, GLuint buffer) {
         glBindBuffer(std::to_underlying(targetBuffer), buffer);
+      }
+
+      static void bindTexture(OpenGLTargetTexture target, GLuint texture) {
+        glBindTexture(std::to_underlying(target), texture);
       }
 
       static void bindVertexArray(GLuint vertexArray) {
@@ -248,6 +260,10 @@ namespace K9ngineCore {
 
       static void linkProgram(GLuint program) {
         glLinkProgram(program);
+      }
+
+      static void setActiveTexture(OpenGLTextureSampler texture) {
+        glActiveTexture(std::to_underlying(texture));
       }
 
       static void setClearColor(GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha) {

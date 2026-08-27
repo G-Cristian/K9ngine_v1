@@ -158,14 +158,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;K9_DEBUG_MEMORY;K9_LOG_CONSOLE=3;K9_LOG_FILE=3;K9_USE_OPENGL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\OpenGL\Include;..\K9ngineApp;C:\Program Files (x86)\Visual Leak Detector\include;%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\SOIL2\include;..\OpenGL\Include;..\K9ngineApp;C:\Program Files (x86)\Visual Leak Detector\include;%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)$(Platform)\$(Configuration)\;..\OpenGL\Libs;C:\Program Files (x86)\Visual Leak Detector\lib\Win64</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glfw3.lib;opengl32.lib;K9ngineApp.lib;vld.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\SOIL2\lib;$(SolutionDir)$(Platform)\$(Configuration)\;..\OpenGL\Libs;C:\Program Files (x86)\Visual Leak Detector\lib\Win64</AdditionalLibraryDirectories>
+      <AdditionalDependencies>soil2-debug.lib;glfw3.lib;opengl32.lib;K9ngineApp.lib;vld.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
       <Command>msbuild "$(SolutionDir)K9ngineApp\K9ngineApp.vcxproj" /p:Configuration=$(Configuration) /p:Platform=$(Platform)</Command>
@@ -177,14 +177,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;K9_USE_OPENGL;K9_DEBUG_MEMORY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\OpenGL\Include;..\K9ngineApp;C:\Program Files (x86)\Visual Leak Detector\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\SOIL2\include;..\OpenGL\Include;..\K9ngineApp;C:\Program Files (x86)\Visual Leak Detector\include</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)$(Platform)\$(Configuration)\;..\OpenGL\Libs;C:\Program Files (x86)\Visual Leak Detector\lib\Win64</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glfw3.lib;opengl32.lib;K9ngineApp.lib;vld.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\SOIL2\lib;$(SolutionDir)$(Platform)\$(Configuration)\;..\OpenGL\Libs;C:\Program Files (x86)\Visual Leak Detector\lib\Win64</AdditionalLibraryDirectories>
+      <AdditionalDependencies>soil2-debug.lib;glfw3.lib;opengl32.lib;K9ngineApp.lib;vld.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
       <Command>msbuild "$(SolutionDir)K9ngineApp\K9ngineApp.vcxproj" /p:Configuration=$(Configuration) /p:Platform=$(Platform)</Command>
@@ -198,7 +198,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\OpenGL\Include;..\K9ngineApp;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\SOIL2\include;..\OpenGL\Include;..\K9ngineApp</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
@@ -206,8 +206,8 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)$(Platform)\$(Configuration)\;..\OpenGL\Libs</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glfw3.lib;opengl32.lib;K9ngineApp.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\SOIL2\lib;$(SolutionDir)$(Platform)\$(Configuration)\;..\OpenGL\Libs;</AdditionalLibraryDirectories>
+      <AdditionalDependencies>soil2.lib;glfw3.lib;opengl32.lib;K9ngineApp.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
       <Command>msbuild "$(SolutionDir)K9ngineApp\K9ngineApp.vcxproj" /p:Configuration=$(Configuration) /p:Platform=$(Platform)</Command>
@@ -218,7 +218,7 @@
       <Command>msbuild "$(SolutionDir)K9ngineApp\K9ngineApp.vcxproj" /p:Configuration=$(Configuration) /p:Platform=$(Platform)</Command>
     </PreBuildEvent>
     <ClCompile>
-      <AdditionalIncludeDirectories>..\OpenGL\Include;..\K9ngineApp</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\SOIL2\include;..\OpenGL\Include;..\K9ngineApp</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;K9_LOG_CONSOLE=3;K9_LOG_FILE=3;K9_USE_OPENGL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <WarningLevel>Level3</WarningLevel>
@@ -229,8 +229,8 @@
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>$(SolutionDir)$(Platform)\$(Configuration)\;..\OpenGL\Libs</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glfw3.lib;opengl32.lib;K9ngineApp.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\SOIL2\lib;$(SolutionDir)$(Platform)\$(Configuration)\;..\OpenGL\Libs;</AdditionalLibraryDirectories>
+      <AdditionalDependencies>soil2-debug.lib;glfw3.lib;opengl32.lib;K9ngineApp.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -239,11 +239,13 @@
     <ClCompile Include="Test1.cpp" />
     <ClCompile Include="TestAttachedObjects.cpp" />
     <ClCompile Include="TestInstanced1.cpp" />
+    <ClCompile Include="TestTexture.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Test1.h" />
     <ClInclude Include="TestAttachedObjects.h" />
     <ClInclude Include="TestInstanced1.h" />
+    <ClInclude Include="TestTexture.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

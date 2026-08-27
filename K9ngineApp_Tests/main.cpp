@@ -16,6 +16,7 @@
 #include "Test1.h"
 #include "TestInstanced1.h"
 #include "TestAttachedObjects.h"
+#include "TestTexture.h"
 
 int main(int argc, char** argv) {
 #ifdef K9_DEBUG_MEMORY
@@ -30,7 +31,8 @@ int main(int argc, char** argv) {
   {
     //Test1 game;
     //TestInstanced1 game;
-    TestAttachedObjects game;
+    //TestAttachedObjects game;
+    TestTexture game;
 
     game.run();
   }

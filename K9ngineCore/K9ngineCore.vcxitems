@@ -44,6 +44,9 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\SceneGraphRenderVisitor.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\Shader.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\ShaderProgram.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\Texture.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\TextureManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\TextureProperty.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\TransformNode.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\VertexBufferObjectData.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Handle.h" />
@@ -79,6 +82,9 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Graphics\SceneGraphRenderVisitor.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Graphics\Shader.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Graphics\ShaderProgram.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Graphics\Texture.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Graphics\TextureManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Graphics\TextureProperty.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Graphics\TransformNode.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Logger.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Math\Math.cpp" />
