@@ -171,7 +171,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpplatest</LanguageStandard>
-      <AdditionalIncludeDirectories>..\OpenGL\Include;C:\Program Files (x86)\Visual Leak Detector\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\SOIL2\include;..\OpenGL\Include;C:\Program Files (x86)\Visual Leak Detector\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -179,8 +179,8 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalLibraryDirectories>..\OpenGL\Libs;C:\Program Files (x86)\Visual Leak Detector\lib\Win64</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glfw3.lib;opengl32.lib;vld.lib;</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\SOIL2\lib;..\OpenGL\Libs;C:\Program Files (x86)\Visual Leak Detector\lib\Win64</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;vld.lib;soil2-debug.lib</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugMemoryNoLog|x64'">
@@ -192,7 +192,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpplatest</LanguageStandard>
-      <AdditionalIncludeDirectories>..\OpenGL\Include;C:\Program Files (x86)\Visual Leak Detector\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\SOIL2\include;..\OpenGL\Include;C:\Program Files (x86)\Visual Leak Detector\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -200,8 +200,8 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalLibraryDirectories>..\OpenGL\Libs;C:\Program Files (x86)\Visual Leak Detector\lib\Win64;</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glfw3.lib;opengl32.lib;vld.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\SOIL2\lib;..\OpenGL\Libs;C:\Program Files (x86)\Visual Leak Detector\lib\Win64;</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;vld.lib;soil2-debug.lib</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -215,7 +215,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpplatest</LanguageStandard>
-      <AdditionalIncludeDirectories>..\OpenGL\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\SOIL2\include;..\OpenGL\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -225,13 +225,13 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalLibraryDirectories>..\OpenGL\Libs;</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glfw3.lib;opengl32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\SOIL2\lib;..\OpenGL\Libs;</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;soil2.lib</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugLogNoMemory|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\OpenGL\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\SOIL2\include;..\OpenGL\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;_LIB;K9_LOG_CONSOLE=3;K9_LOG_FILE=3;K9_USE_OPENGL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <WarningLevel>Level3</WarningLevel>
@@ -247,8 +247,8 @@
       <AdditionalLibraryDirectories>..\OpenGL\Libs;</AdditionalLibraryDirectories>
     </Link>
     <Lib>
-      <AdditionalDependencies>glfw3.lib;opengl32.lib;</AdditionalDependencies>
-      <AdditionalLibraryDirectories>..\OpenGL\Libs</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;soil2-debug.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\SOIL2\lib;..\OpenGL\Libs;</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>

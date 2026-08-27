@@ -23,6 +23,8 @@ namespace K9ngineCore {
     using FrontFaceMode = OpenGLFrontFaceMode;
     using ShaderType = OpenGLShaderType;
     using TargetBuffer = OpenGLTargetBuffer;
+    using TargetTexture = OpenGLTargetTexture;
+    using TextureSampler = OpenGLTextureSampler;
     using TypeEnum = OpenGLTypeEnum;
 
     typedef OpenGLContext GraphicsContext;

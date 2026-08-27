@@ -10,22 +10,38 @@ namespace K9ngineCore {
     {
       float halfSize = size * 0.5f;
       
-      return Mesh{ std::vector<float>{
-        -halfSize,  halfSize, -halfSize, -halfSize, -halfSize, -halfSize,  halfSize, -halfSize, -halfSize,
-         halfSize, -halfSize, -halfSize,  halfSize,  halfSize, -halfSize, -halfSize,  halfSize, -halfSize,
-         halfSize, -halfSize, -halfSize,  halfSize, -halfSize,  halfSize,  halfSize,  halfSize, -halfSize,
-         halfSize, -halfSize,  halfSize,  halfSize,  halfSize,  halfSize,  halfSize,  halfSize, -halfSize,
-         halfSize, -halfSize,  halfSize, -halfSize, -halfSize,  halfSize,  halfSize,  halfSize,  halfSize,
-        -halfSize, -halfSize,  halfSize, -halfSize,  halfSize,  halfSize,  halfSize,  halfSize,  halfSize,
-        -halfSize, -halfSize,  halfSize, -halfSize, -halfSize, -halfSize, -halfSize,  halfSize,  halfSize,
-        -halfSize, -halfSize, -halfSize, -halfSize,  halfSize, -halfSize, -halfSize,  halfSize,  halfSize,
-        -halfSize, -halfSize,  halfSize,  halfSize, -halfSize,  halfSize,  halfSize, -halfSize, -halfSize,
-         halfSize, -halfSize, -halfSize, -halfSize, -halfSize, -halfSize, -halfSize, -halfSize,  halfSize,
-        -halfSize,  halfSize, -halfSize,  halfSize,  halfSize, -halfSize,  halfSize,  halfSize,  halfSize,
-         halfSize,  halfSize,  halfSize, -halfSize,  halfSize,  halfSize, -halfSize,  halfSize, -halfSize,
-      }
-      , 3
-      , false };
+      return Mesh(
+        {
+          -halfSize,  halfSize, -halfSize, -halfSize, -halfSize, -halfSize,  halfSize, -halfSize, -halfSize,
+           halfSize, -halfSize, -halfSize,  halfSize,  halfSize, -halfSize, -halfSize,  halfSize, -halfSize,
+           halfSize, -halfSize, -halfSize,  halfSize, -halfSize,  halfSize,  halfSize,  halfSize, -halfSize,
+           halfSize, -halfSize,  halfSize,  halfSize,  halfSize,  halfSize,  halfSize,  halfSize, -halfSize,
+           halfSize, -halfSize,  halfSize, -halfSize, -halfSize,  halfSize,  halfSize,  halfSize,  halfSize,
+          -halfSize, -halfSize,  halfSize, -halfSize,  halfSize,  halfSize,  halfSize,  halfSize,  halfSize,
+          -halfSize, -halfSize,  halfSize, -halfSize, -halfSize, -halfSize, -halfSize,  halfSize,  halfSize,
+          -halfSize, -halfSize, -halfSize, -halfSize,  halfSize, -halfSize, -halfSize,  halfSize,  halfSize,
+          -halfSize, -halfSize,  halfSize,  halfSize, -halfSize,  halfSize,  halfSize, -halfSize, -halfSize,
+           halfSize, -halfSize, -halfSize, -halfSize, -halfSize, -halfSize, -halfSize, -halfSize,  halfSize,
+          -halfSize,  halfSize, -halfSize,  halfSize,  halfSize, -halfSize,  halfSize,  halfSize,  halfSize,
+           halfSize,  halfSize,  halfSize, -halfSize,  halfSize,  halfSize, -halfSize,  halfSize, -halfSize,
+        }
+        , 
+        {
+            1.0f, 1.0f, 1.0f, 0.0f, 0.0f, 0.0f
+          , 0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 0.0f
+          , 1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 1.0f
+          , 0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f
+          , 1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 1.0f
+          , 0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f
+          , 1.0f , 0.0f, 0.0f, 0.0f, 1.0f, 1.0f
+          , 0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f
+          , 0.0f, 1.0f, 1.0f, 1.0f, 1.0f, 0.0f
+          , 1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f
+          , 0.0f, 1.0f, 1.0f, 1.0f, 1.0f, 0.0f
+          , 1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f
+        }
+        , 3
+        , false );
     }
 
     Mesh MeshFactory::createPyramid(float width /*= 1.0f*/, float depth /*= 1.0f*/, float height /*= 1.0f*/)
@@ -42,6 +58,12 @@ namespace K9ngineCore {
            -halfWidth, -halfHeight, -halfDepth, -halfWidth, -halfHeight, halfDepth, 0.0f, halfHeight, 0.0f,
            -halfWidth, -halfHeight, -halfDepth, halfWidth, -halfHeight, halfDepth, -halfWidth, -halfHeight, halfDepth,
             halfWidth, -halfHeight, halfDepth, -halfWidth, -halfHeight, -halfDepth, halfWidth, -halfHeight, -halfDepth
+        }
+        ,
+        {
+          0.0f, 0.0f, 1.0f, 0.0f, 0.5f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.5f, 1.0f,
+          0.0f, 0.0f, 1.0f, 0.0f, 0.5f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.5f, 1.0f,
+          0.0f, 0.0f, 1.0f, 1.0f, 0.0f, 1.0f, 1.0f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f
         }
         , 3
         , true

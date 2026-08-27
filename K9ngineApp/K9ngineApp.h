@@ -11,6 +11,7 @@
 #include "../K9ngineCore/GameObject.h"
 #include "../K9ngineCore/Graphics/Camera.h"
 #include "../K9ngineCore/Graphics/Renderer.h"
+#include "../K9ngineCore/Graphics/TextureManager.h"
 #include "../K9ngineCore/Graphics/TransformNode.h"
 #include "../K9ngineCore/Handle.h"
 #include "../K9ngineCore/World.h"
@@ -67,6 +68,7 @@ namespace K9ngine {
 
     K9ngineCore::World mWorld;
     K9ngineCore::K9Graphics::Renderer mRenderer;
+    K9ngineCore::K9Graphics::TextureManager mTextureManager;
     K9ngine::K9Windows::K9WindowsManager mWindowsManager;
     std::shared_ptr<K9ngineAppWindowSizeChangeObserver> mWindowSizeChangeObserver;
     double mMsPerFixedUpdate;
