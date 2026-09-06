@@ -21,7 +21,7 @@
 #include "K9Debug.h"
 #include "FileSystem/Path.h"
 #include "FileSystem/ResourceLoader.h"
-#include "Texture.h"
+#include "TextureData.h"
 
 #define EXEC_TEST(name, success, fail, total) do{\
 													total++;\

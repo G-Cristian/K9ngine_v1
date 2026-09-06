@@ -3,6 +3,7 @@
 #include "../../K9ngineCore/K9Debug.h"
 #include "../../K9ngineCore/Logger.h"
 
+#include <format>
 #include <functional>
 
 namespace K9ngine {
