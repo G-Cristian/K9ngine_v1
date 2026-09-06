@@ -5,7 +5,7 @@
 #include "Common/Hasher.h"
 #include "K9Debug.h"
 #include "FileSystem/Path.h"
-#include "Texture.h"
+#include "TextureData.h"
 
 //#include <glad/glad.h>
 #include <stb_image.h>
