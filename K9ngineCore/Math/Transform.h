@@ -36,6 +36,8 @@ namespace K9ngineCore {
       const Vec3& getScale() const;
       void setScale(const Vec3&);
       void scale(const Vec3&);
+
+      void swap(Transform& other) noexcept;
     private:
       void buildTransformCache() const;
 
@@ -45,6 +47,8 @@ namespace K9ngineCore {
       Vec3 mScale;
       mutable bool mIsDirty{ true };
     };
+
+    void swap(Transform& lhs, Transform& rhs) noexcept;
   }
 }
 

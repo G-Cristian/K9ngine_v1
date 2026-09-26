@@ -3,6 +3,8 @@
 #include "Math.h"
 #include "../K9Debug.h"
 
+#include <utility>
+
 namespace K9ngineCore {
   namespace K9Math {
 
@@ -127,9 +129,24 @@ namespace K9ngineCore {
       mIsDirty = true;
     }
 
+    void Transform::swap(Transform& other) noexcept
+    {
+      using std::swap;
+      swap(mTransformCache, other.mTransformCache);
+      swap(mLocation, other.mLocation);
+      swap(mRotation, other.mRotation);
+      swap(mScale, other.mScale);
+      swap(mIsDirty, other.mIsDirty);
+    }
+
     void Transform::buildTransformCache() const
     {
       mTransformCache = K9Math::translate(K9Math::identityMat4(), mLocation) * K9Math::rotate(K9Math::identityMat4(), mRotation) * K9Math::scale(K9Math::identityMat4(), mScale);
+    }
+
+    void swap(Transform& lhs, Transform& rhs) noexcept
+    {
+      lhs.swap(rhs);
     }
   }
 }
