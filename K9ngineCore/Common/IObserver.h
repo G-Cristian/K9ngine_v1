@@ -11,7 +11,7 @@ namespace K9ngineCore
       using Subject = T;
       using Args = S;
 
-      virtual ~IObserver() {}
+      virtual ~IObserver() = default;
       virtual void update(const Subject&, const Args&) const = 0;
     protected:
 

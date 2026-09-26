@@ -5,9 +5,10 @@
 #include "IObserver.h"
 
 #include <algorithm>
+#include <iostream>
 #include <memory>
 #include <set>
-#include <iostream>
+#include <utility>
 namespace K9ngineCore {
   namespace Common {
     template<typename T>
@@ -24,14 +25,14 @@ namespace K9ngineCore {
 
         const K9Math::Transform& getOldValue() const;
         const K9Math::Transform& getNewValue() const;
+
+        void swap(EventArg& other) noexcept;
       private:
         K9Math::Transform mOldValue;
         K9Math::Transform mNewValue;
       };
 
       explicit TransformChangeEvent(Subject* subject);
-      TransformChangeEvent(TransformChangeEvent&&) noexcept;
-      TransformChangeEvent& operator=(TransformChangeEvent&&) noexcept;
       ~TransformChangeEvent();
 
       TransformChangeEvent<Subject>& operator+=(ObserverTypePtr);
@@ -43,10 +44,18 @@ namespace K9ngineCore {
     private:
       TransformChangeEvent(const TransformChangeEvent&);
       TransformChangeEvent& operator=(const TransformChangeEvent&) = delete;
+      TransformChangeEvent(TransformChangeEvent&&) noexcept = delete;
+      TransformChangeEvent& operator=(TransformChangeEvent&&) noexcept = delete;
 
       std::set< ObserverTypePtr > mObservers{};
       Subject* mSubject;
     };
+
+    template<typename T>
+    void swap(typename TransformChangeEvent<T>::EventArg& lhs, typename TransformChangeEvent<T>::EventArg& rhs) noexcept
+    {
+      lhs.swap(rhs);
+    }
 
     template<typename T>
     TransformChangeEvent<T>::EventArg::EventArg(const K9Math::Transform& oldValue, const K9Math::Transform& newValue)
@@ -61,30 +70,17 @@ namespace K9ngineCore {
     const K9Math::Transform& TransformChangeEvent<T>::EventArg::getNewValue() const { return mNewValue; }
 
     template<typename T>
+    void TransformChangeEvent<T>::EventArg::swap(EventArg& other) noexcept
+    {
+      using std::swap;
+      swap(mOldValue, other.mOldValue);
+      swap(mNewValue, other.mNewValue);
+    }
+
+    template<typename T>
     TransformChangeEvent<T>::TransformChangeEvent<T>(Subject* subject)
       :mSubject{ subject } {
       K9ASSERT(subject, "Subject is null");
-    }
-
-    template<typename T>
-    TransformChangeEvent<T>::TransformChangeEvent(TransformChangeEvent&& other) noexcept
-      : mObservers{ std::move(other.mObservers) }
-      , mSubject{ other.mSubject }
-    {
-      other.mSubject = nullptr;
-    }
-
-    template<typename T>
-    TransformChangeEvent<T>& TransformChangeEvent<T>::operator=(TransformChangeEvent&& other) noexcept
-    {
-      if (this != &other) {
-        mObservers = std::move(other.mObservers);
-        mSubject = other.mSubject;
-
-        other.mSubject = nullptr;
-      }
-
-      return *this;
     }
 
     template<typename T>

@@ -68,7 +68,6 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Graphics\MeshFactory.cpp">
       <Filter>Graphics</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)Texture.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)FileSystem\FileReader.cpp">
       <Filter>FileSystem</Filter>
     </ClCompile>
@@ -87,6 +86,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Graphics\Texture.cpp">
       <Filter>Graphics</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)TextureData.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)Handle.h" />
@@ -181,7 +181,6 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\MeshFactory.h">
       <Filter>Graphics</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)Texture.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)FileSystem\FileReader.h">
       <Filter>FileSystem</Filter>
     </ClInclude>
@@ -203,6 +202,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Graphics\TextureProperty.h">
       <Filter>Graphics</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)TextureData.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Graphics">
